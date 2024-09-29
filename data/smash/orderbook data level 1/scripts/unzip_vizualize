@@ -1,0 +1,77 @@
+import os
+import zipfile
+import json
+import matplotlib.pyplot as plt
+from dbn import DataBento  # Assurez-vous d'avoir installé la bibliothèque dbn
+
+def unzip_file(zip_path, extract_path):
+    """Décompresse un fichier zip."""
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_path)
+    print(f"Fichier décompressé dans : {extract_path}")
+
+def load_metadata(metadata_path):
+    """Charge les métadonnées du fichier JSON."""
+    with open(metadata_path, 'r') as f:
+        return json.load(f)
+
+def load_symbology(symbology_path):
+    """Charge la symbologie du fichier JSON."""
+    with open(symbology_path, 'r') as f:
+        return json.load(f)
+
+def visualize_orderbook(dbn_file, symbol):
+    """Visualise le carnet d'ordres pour un symbole donné."""
+    db = DataBento(dbn_file)
+    
+    # Extraction des données du carnet d'ordres
+    bids = []
+    asks = []
+    timestamps = []
+    
+    for record in db.records():
+        if record.symbol == symbol:
+            bids.append(record.bid_price)
+            asks.append(record.ask_price)
+            timestamps.append(record.ts_event)
+    
+    # Création du graphique
+    plt.figure(figsize=(12, 6))
+    plt.plot(timestamps, bids, label='Bid', color='green')
+    plt.plot(timestamps, asks, label='Ask', color='red')
+    plt.title(f"Carnet d'ordres pour {symbol}")
+    plt.xlabel("Temps")
+    plt.ylabel("Prix")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+def main():
+    # Chemin vers le dossier contenant les fichiers
+    folder_path = "data/smash/orderbook data level 1/DBEQ-20240924-4468SLPNAT"
+    
+    # Décompression du fichier zip s'il existe
+    zip_files = [f for f in os.listdir(folder_path) if f.endswith('.zip')]
+    if zip_files:
+        zip_path = os.path.join(folder_path, zip_files[0])
+        unzip_file(zip_path, folder_path)
+    
+    # Chargement des métadonnées et de la symbologie
+    metadata = load_metadata(os.path.join(folder_path, "metadata.json"))
+    symbology = load_symbology(os.path.join(folder_path, "symbology.json"))
+    
+    # Recherche du fichier DBN
+    dbn_files = [f for f in os.listdir(folder_path) if f.endswith('.dbn')]
+    if not dbn_files:
+        print("Aucun fichier DBN trouvé dans le dossier.")
+        return
+    
+    dbn_file = os.path.join(folder_path, dbn_files[0])
+    
+    # Visualisation du carnet d'ordres pour chaque symbole
+    for symbol in symbology['symbols']:
+        visualize_orderbook(dbn_file, symbol)
+
+if __name__ == "__main__":
+    main()
