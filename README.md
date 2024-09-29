@@ -29,54 +29,54 @@ The project is organized into several key components:
    cd HFT_QR_RL
    ```
 
-2. Utilisez le Makefile pour configurer l'environnement et installer les dépendances :
+2. Use the Makefile to set up the environment and install dependencies:
    ```
    make setup
    ```
 
-3. Pour installer les dépendances avec Poetry :
+3. To install dependencies with Poetry:
    ```
    make install
    ```
 
 ## Usage
 
-1. Pour exécuter le script principal :
+1. To run the main script:
    ```
    make run
    ```
 
-2. Pour télécharger les données nécessaires :
+2. To download necessary data:
    ```
    make data
    ```
 
-3. Pour générer les visualisations :
+3. To generate visualizations:
    ```
    make visualize
    ```
 
-4. Pour nettoyer l'environnement et les fichiers générés :
+4. To clean the environment and generated files:
    ```
    make clean
    ```
 
-5. Pour afficher l'aide du Makefile :
+5. To display Makefile help:
    ```
    make help
    ```
 
-6. Pour vérifier la présence du fichier LICENSE :
+6. To check for the LICENSE file:
    ```
    make check-license
    ```
 
-7. Pour afficher le contenu du README :
+7. To display README content:
    ```
    make show-readme
    ```
 
-Les résultats seront générés dans le dossier `databento/`.
+Results will be generated in the `databento/` folder.
 
 ## Main Components
 
@@ -113,10 +113,17 @@ Experiment results will be stored in the `databento/` folder. They will include:
 Contributions to this project are welcome. Please follow these steps to contribute:
 
 1. Fork the project
-2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a development branch for your feature (`git checkout -b dev/NewFeature`)
+3. Make your changes and commit them (`git commit -m 'Add NewFeature'`)
+4. Push to the branch (`git push origin dev/NewFeature`)
+5. Open a Pull Request to the `dev` branch
+
+### Development Practices
+
+- Always use the `dev` branch for ongoing development.
+- Ensure your commits are clear and descriptive.
+- Before submitting a Pull Request, make sure your code is well-commented and follows the project's style conventions.
+- For technical discussions or questions, contact janis.aiad@polytechnique.edu.
 
 ## License
 
@@ -125,3 +132,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 ## Contact
 
 Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)
+
+For any questions or suggestions, please contact: janis.aiad@polytechnique.edu
