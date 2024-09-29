@@ -5,3 +5,5 @@ pandas==1.3.3
 # Bibliothèques requises pour visualization.py
 matplotlib==3.4.3
 seaborn==0.11.2
+matplotlib-terminal==0.1.0  # Ajout de matplotlib-terminal
+poetry==1.8.0   

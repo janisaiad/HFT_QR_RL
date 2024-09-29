@@ -29,51 +29,56 @@ The project is organized into several key components:
    cd HFT_QR_RL
    ```
 
-2. Use the Makefile to set up the environment and install dependencies:
+2. Install Poetry (if not already installed):
    ```
-   make setup
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
-3. To install dependencies with Poetry:
+3. Use Poetry to set up the environment and install dependencies:
    ```
-   make install
+   poetry install
+   ```
+
+4. Activate the Poetry shell:
+   ```
+   poetry shell
    ```
 
 ## Usage
 
 1. To run the main script:
    ```
-   make run
+   poetry run python main.py
    ```
 
 2. To download necessary data:
    ```
-   make data
+   poetry run python data/script.py
    ```
 
 3. To generate visualizations:
    ```
-   make visualize
+   poetry run python data/visualization.py
    ```
 
 4. To clean the environment and generated files:
    ```
-   make clean
+   poetry run python clean.py
    ```
 
-5. To display Makefile help:
+5. To display project information:
    ```
-   make help
-   ```
-
-6. To check for the LICENSE file:
-   ```
-   make check-license
+   poetry show
    ```
 
-7. To display README content:
+6. To update dependencies:
    ```
-   make show-readme
+   poetry update
+   ```
+
+7. To add a new dependency:
+   ```
+   poetry add <package_name>
    ```
 
 Results will be generated in the `databento/` folder.
@@ -131,6 +136,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)
+Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)  
 
 For any questions or suggestions, please contact: janis.aiad@polytechnique.edu
