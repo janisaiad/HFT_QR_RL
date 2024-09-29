@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import time
 from typing import Dict, List, Optional, Any
+from requests.exceptions import RequestException, HTTPError
 
 # Créer le dossier databento s'il n'existe pas
 os.makedirs("databento", exist_ok=True)
@@ -33,13 +34,19 @@ def download_databento_data(symbol: str) -> Optional[Dict[str, Any]]:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
             return response.json()
-        except requests.RequestException as e:
+        except HTTPError as e:
+            if e.response.status_code == 404:
+                print(f"Le symbole {symbol} n'a pas été trouvé sur Databento.")
+                return None
+            print(f"Erreur HTTP lors du téléchargement des données pour {symbol}: {e}")
+        except RequestException as e:
             print(f"Erreur lors du téléchargement des données pour {symbol}: {e}")
-            if attempt < max_retries - 1:
-                print(f"Nouvelle tentative dans {retry_delay} secondes...")
-                time.sleep(retry_delay)
-            else:
-                print(f"Échec du téléchargement après {max_retries} tentatives.")
+        
+        if attempt < max_retries - 1:
+            print(f"Nouvelle tentative dans {retry_delay} secondes...")
+            time.sleep(retry_delay)
+        else:
+            print(f"Échec du téléchargement après {max_retries} tentatives.")
     return None
 
 # Dictionnaire pour stocker les données
@@ -48,6 +55,8 @@ data: Dict[str, Optional[Dict[str, Any]]] = {}
 # Télécharger les données pour chaque symbole
 for symbol in symbols:
     data[symbol] = download_databento_data(symbol)
+    if data[symbol] is None:
+        print(f"Impossible de télécharger les données pour {symbol}. Passage au symbole suivant.")
 
 # Filtrer les données non nulles et les convertir en DataFrame
 valid_data: Dict[str, Dict[str, Any]] = {k: v for k, v in data.items() if v is not None}
