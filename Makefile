@@ -74,6 +74,7 @@ show-readme:
 .PHONY: data
 data:
 	$(PYTHON) data/script.py
+	$(PYTHON) data/smash_download.py
 
 # Génération des visualisations
 .PHONY: visualize
