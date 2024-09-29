@@ -25,8 +25,8 @@ The project is organized into several key components:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/janisaiad/qr-queue-rl-control-hft.git
-   cd qr-queue-rl-control-hft
+   git clone https://github.com/janisaiad/HFT_QR_RL.git
+   cd HFT_QR_RL
    ```
 
 2. Utilisez le Makefile pour configurer l'environnement et installer les dépendances :
@@ -124,4 +124,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-Project Link: [https://github.com/janisaiad/qr-queue-rl-control-hft](https://github.com/janisaiad/qr-queue-rl-control-hft)
+Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)
