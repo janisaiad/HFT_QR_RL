@@ -4,6 +4,11 @@
 
 This project aims to apply reinforcement learning techniques to optimize the control of reactive QR (Quick Response) queues in a high-frequency trading context. It combines advanced concepts of machine learning, queueing theory, and optimization to improve resource management and performance of trading systems.
 
+### New Libraries
+
+- **NumPy**: Utilisé pour le calcul numérique et le traitement des données.
+- **Scikit-learn**: Utilisé pour les algorithmes d'apprentissage automatique et l'évaluation des modèles.
+
 ## Project Objectives
 
 1. Model reactive QR queues in a high-frequency trading environment
