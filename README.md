@@ -44,7 +44,49 @@ The project is organized into several key components:
    poetry shell
    ```
 
-## Usage
+## Usage with Makefile
+
+1. To set up the environment and install dependencies:
+   ```
+   make setup
+   ```
+
+2. To run the main script:
+   ```
+   make run
+   ```
+
+3. To download necessary data:
+   ```
+   make data
+   ```
+
+4. To generate visualizations:
+   ```
+   make visualize
+   ```
+
+5. To clean the environment and generated files:
+   ```
+   make clean
+   ```
+
+6. To display help information:
+   ```
+   make help
+   ```
+
+7. To check the license:
+   ```
+   make check-license
+   ```
+
+8. To show the README content:
+   ```
+   make show-readme
+   ```
+
+## Usage with Poetry
 
 1. To run the main script:
    ```
@@ -61,22 +103,17 @@ The project is organized into several key components:
    poetry run python data/visualization.py
    ```
 
-4. To clean the environment and generated files:
-   ```
-   poetry run python clean.py
-   ```
-
-5. To display project information:
+4. To display project information:
    ```
    poetry show
    ```
 
-6. To update dependencies:
+5. To update dependencies:
    ```
    poetry update
    ```
 
-7. To add a new dependency:
+6. To add a new dependency:
    ```
    poetry add <package_name>
    ```

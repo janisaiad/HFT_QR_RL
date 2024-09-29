@@ -1,37 +1,60 @@
 import requests
 import pandas as pd
 import os
+import time
+from typing import Dict, List, Optional, Any
 
 # Créer le dossier databento s'il n'existe pas
 os.makedirs("databento", exist_ok=True)
 
 # Liste des symboles boursiers
-symbols = [
+symbols: List[str] = [
     "YMM", "APLT", "ERIC", "ANGO", "IE", 
     "UA", "RIOT", "ASAI", "CGAU", "PBI", 
     "CX", "ITUB", "HL", "DBI"
 ]
 
-# Fonction pour télécharger les données de Databento
-def download_databento_data(symbol):
-    url = f"https://api.databento.com/v1/equities/{symbol}/basic"  # Remplacez par l'URL correcte de l'API
-    response = requests.get(url)
+def download_databento_data(symbol: str) -> Optional[Dict[str, Any]]:
+    """
+    Télécharge les données de Databento pour un symbole donné.
     
-    if response.status_code == 200:
-        return response.json()  # Retourne les données au format JSON
-    else:
-        print(f"Erreur lors du téléchargement des données pour {symbol}: {response.status_code}")
-        return None
+    Args:
+        symbol (str): Le symbole boursier à télécharger.
+    
+    Returns:
+        Optional[Dict[str, Any]]: Les données au format JSON si le téléchargement réussit, None sinon.
+    """
+    url: str = f"https://api.databento.com/v1/equities/{symbol}/basic"
+    max_retries: int = 3
+    retry_delay: int = 5
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            print(f"Erreur lors du téléchargement des données pour {symbol}: {e}")
+            if attempt < max_retries - 1:
+                print(f"Nouvelle tentative dans {retry_delay} secondes...")
+                time.sleep(retry_delay)
+            else:
+                print(f"Échec du téléchargement après {max_retries} tentatives.")
+    return None
 
 # Dictionnaire pour stocker les données
-data = {}
+data: Dict[str, Optional[Dict[str, Any]]] = {}
 
 # Télécharger les données pour chaque symbole
 for symbol in symbols:
     data[symbol] = download_databento_data(symbol)
 
-# Convertir les données en DataFrame et sauvegarder dans un fichier CSV dans le dossier databento
-df = pd.DataFrame(data)
-df.to_csv("databento/databento_equities_basic.csv", index=False)
+# Filtrer les données non nulles et les convertir en DataFrame
+valid_data: Dict[str, Dict[str, Any]] = {k: v for k, v in data.items() if v is not None}
 
-print("Téléchargement terminé et données sauvegardées dans 'databento/databento_equities_basic.csv'.")
+if valid_data:
+    df = pd.DataFrame.from_dict(valid_data, orient='index')
+    df.to_csv("databento/databento_equities_basic.csv", index=True)
+    print("Téléchargement terminé et données sauvegardées dans 'databento/databento_equities_basic.csv'.")
+else:
+    print("Aucune donnée valide n'a été téléchargée. Vérifiez les symboles et l'accès à l'API.")
