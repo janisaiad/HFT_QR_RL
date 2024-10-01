@@ -7,3 +7,4 @@ matplotlib
 seaborn==0.11.2
 matplotlib-terminal==0.1a4
 poetry==1.8.0   
+databento

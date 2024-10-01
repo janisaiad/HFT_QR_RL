@@ -1,13 +1,15 @@
 import os
-import zipfile
+import zstandard as zstd
 import json
 import matplotlib.pyplot as plt
-from dbn import DataBento  # T'as intérêt à avoir installé la lib dbn, sinon ça va pas le faire
+from dbn import DataBento  # T'as intérêt à avoir installé les libs dbn et zstandard, sinon ça va pas le faire
 
-def unzip_file(zip_path, extract_path):
-    """Décompresse un fichier zip comme un boss."""
-    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        zip_ref.extractall(extract_path)
+def decompress_zst(zst_path, extract_path):
+    """Décompresse un fichier zst comme un boss."""
+    with open(zst_path, 'rb') as zst_file:
+        dctx = zstd.ZstdDecompressor()
+        with open(extract_path, 'wb') as out_file:
+            dctx.copy_stream(zst_file, out_file)
     print(f"Bam ! Fichier décompressé dans : {extract_path}")
 
 def load_metadata(metadata_path):
@@ -51,11 +53,12 @@ def main():
     # Le chemin vers le dossier avec tous les trucs dedans
     folder_path = "data/smash/orderbook data level 1/DBEQ-20240924-4468SLPNAT"
     
-    # On décompresse le zip s'il y en a un
-    zip_files = [f for f in os.listdir(folder_path) if f.endswith('.zip')]
-    if zip_files:
-        zip_path = os.path.join(folder_path, zip_files[0])
-        unzip_file(zip_path, folder_path)
+    # On décompresse le fichier zst s'il y en a un
+    zst_files = [f for f in os.listdir(folder_path) if f.endswith('.zst')]
+    if zst_files:
+        zst_path = os.path.join(folder_path, zst_files[0])
+        extract_path = os.path.join(folder_path, zst_files[0][:-4])  # On enlève l'extension .zst
+        decompress_zst(zst_path, extract_path)
     
     # On charge les métadonnées et la symbologie
     metadata = load_metadata(os.path.join(folder_path, "metadata.json"))
@@ -75,3 +78,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    # On applique le tout à DBEQ-20240924-4468SLPNAT/test.zst
+    specific_zst_path = "data/smash/orderbook data level 1/DBEQ-20240924-4468SLPNAT/test.zst"
+    specific_extract_path = specific_zst_path[:-4]  # On enlève l'extension .zst
+    decompress_zst(specific_zst_path, specific_extract_path)
+    
+    # On charge les métadonnées et la symbologie spécifiques si elles existent
+    specific_folder = os.path.dirname(specific_zst_path)
+    specific_metadata = load_metadata(os.path.join(specific_folder, "metadata.json"))
+    specific_symbology = load_symbology(os.path.join(specific_folder, "symbology.json"))
+    
+    # On cherche le fichier DBN spécifique
+    specific_dbn_files = [f for f in os.listdir(specific_folder) if f.endswith('.dbn')]
+    if not specific_dbn_files:
+        print("Pas de fichier DBN dans le dossier spécifique.")
+    else:
+        specific_dbn_file = os.path.join(specific_folder, specific_dbn_files[0])
+        # On visualise le carnet d'ordres pour chaque symbole spécifique
+        for symbol in specific_symbology['symbols']:
+            visualize_orderbook(specific_dbn_file, symbol)
