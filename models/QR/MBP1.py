@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from enum import Enum
 import random
 
+
 @dataclass
 class Queue:
     price: float
