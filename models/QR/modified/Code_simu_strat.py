@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 20 11:30:37 2019
 
-@author: othmane.mounjid
-"""
 
 ### Import libraries
 import pandas as pd

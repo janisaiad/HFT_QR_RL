@@ -447,7 +447,7 @@ def plot_results(mid_prices: List[float], bid_prices: List[float], ask_prices: L
 params = {
     "k": 3,
     "candle_size": 100,
-    "resize": 100,  # Reduced from 100 to 10
+    "resize": 100,  
     "p_ref": 100.0,
     "tick_size": 0.01,
     "stf": 1,
