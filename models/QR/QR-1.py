@@ -41,20 +41,48 @@ class OrderBook:
         ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price  # Meilleur prix ask
         return bid, ask  # Retourne les meilleurs prix bid et ask
 
-    def update_state(self, lambda_: List[List[float]], mju: List[List[float]], stf: int):
+    def update_state(self, lambda_: List[List[float]], mju: List[List[float]], stf: int, Cbound: int, delta: float, H: float):
         """
-        Met à jour l'état du carnet d'ordres en fonction des distributions lambda et mju.
+        Met à jour l'état du carnet d'ordres en fonction des distributions lambda et mju en tenant compte des Assumptions 1 et 2.
 
         :param lambda_: Taux d'arrivée des ordres
         :param mju: Taux d'annulation des ordres
         :param stf: Facteur de mise à l'échelle du temps
+        :param Cbound: Limite supérieure pour la taille de la file d'attente
+        :param delta: Valeur delta pour la diminution de la taille de la file d'attente
+        :param H: Limite supérieure pour le flux entrant
         """
         for i in range(self.k * 2):  # Pour chaque niveau de prix
             size = self.state[i].size  # Taille actuelle de la file d'attente
             s_lambda = np.random.poisson(lambda_[i % self.k] * stf)  # Taux d'arrivée des ordres
             s_mju = np.random.poisson(mju[i % self.k] * stf)  # Taux d'annulation des ordres
             proposed_change = s_lambda - s_mju  # Changement proposé de la taille
+
+            # Assumption 1: Negative individual drift
+            if size > Cbound:
+                proposed_change -= delta
+
+            # Assumption 2: Bound on the incoming flow
+            total_incoming_flow = sum(np.random.poisson(lambda_[j % self.k] * stf) for j in range(-self.k, self.k) if j != 0)
+            if total_incoming_flow > H:
+                proposed_change = min(proposed_change, H - size)
+
+            # Utilisation de la fonction de régénération pour ajuster la taille
+            if size + proposed_change <= 0:
+                Regen_func_basic(i, self.state)  # Appel à la fonction de régénération
+
             self.state[i].size = max(0, size + proposed_change)  # Mise à jour de la taille de la file d'attente
+            
+            
+def Regen_func_basic(i: int, state: List[Queue]):
+    """
+    Fonction de régénération pour ajuster la taille de la file d'attente.
+
+    :param i: Indice de la file d'attente
+    :param state: État actuel du carnet d'ordres
+    """
+    if state[i].size <= 0:
+        state[i].size = 1  # Régénération de la taille de la file d'attente
 
 def init_order_book(p_ref: float, invariant: List[List[float]], k: int, tick_size: float) -> OrderBook:
     """
@@ -110,6 +138,9 @@ params = {
     "tick_size": 0.1,  # Taille du tick
     "stf": 1,  # Facteur de mise à l'échelle du temps
     "simulation_time": 60000,  # Temps de simulation
+    "Cbound": 100,  # Limite supérieure pour la taille de la file d'attente
+    "delta": 0.1,  # Valeur delta pour la diminution de la taille de la file d'attente
+    "H": 50  # Limite supérieure pour le flux entrant
 }
 
 # Initialisation
@@ -145,7 +176,7 @@ times = []  # Liste des moments
 # Simulation
 lob = init_order_book(params["p_ref"], invariant, params["k"], params["tick_size"])  # Initialisation du carnet d'ordres
 for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulation Progress"):  # Pour chaque instant de simulation avec barre de progression
-    lob.update_state(lambda_, mju, params["stf"])  # Mise à jour de l'état du carnet d'ordres
+    lob.update_state(lambda_, mju, params["stf"], params["Cbound"], params["delta"], params["H"])  # Mise à jour de l'état du carnet d'ordres
     if t % 1000 == 0:  # Enregistrer l'état toutes les 1000 itérations
         order_books.append(OrderBook([Queue(q.price, q.size) for q in lob.state], lob.k, lob.p_ref))  # Ajout de l'état actuel à la liste
         times.append(t)  # Ajout du moment actuel à la liste
