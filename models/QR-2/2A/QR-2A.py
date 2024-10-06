@@ -21,6 +21,8 @@ class QType(Enum):
     ASK = 1  # Type ASK
     BID = 2  # Type BID
 
+
+
 """
 Définition de la classe OrderBook pour représenter un carnet d'ordres avec un état, un nombre de niveaux de prix et un prix de référence.
 """
@@ -28,7 +30,7 @@ Définition de la classe OrderBook pour représenter un carnet d'ordres avec un 
 class OrderBook:
     state: List[Queue]  # État du carnet d'ordres
     k: int  # Nombre de niveaux de prix
-    p_ref: float  # Prix de référence
+    p_ref: float  # Prix de référence, fixé
 
     def get_best(self) -> Tuple[float, float]:
         """
@@ -40,6 +42,8 @@ class OrderBook:
         bid = self.state[k - 1].price if self.state[k - 1].size > 0 else self.state[k - 2].price  # Meilleur prix bid
         ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price  # Meilleur prix ask
         return bid, ask  # Retourne les meilleurs prix bid et ask
+
+
 
     def update_state(self, lambda_funcs: List[Callable], mju_funcs: List[Callable], stf: int, Cbound: int, delta: float, H: float):
         """
@@ -61,7 +65,7 @@ class OrderBook:
             if i in [self.k - 2, self.k + 1]:  # Q±2
                 lambda_intensity = lambda_funcs[i](size, q1_not_empty)
             else:
-                lambda_intensity = lambda_funcs[i](size)
+                lambda_intensity = lambda_funcs[i](size, q1_not_empty)
             
             mju_intensity = mju_funcs[i](size)
             
@@ -170,7 +174,7 @@ params = {
     "p_ref": 10.0,
     "tick_size": 0.1,
     "stf": 1,
-    "simulation_time": 6000,
+    "simulation_time": 20000,
     "Cbound": 10,
     "delta": 0.1,
     "H": 5
@@ -210,3 +214,42 @@ for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulati
 
 # Affichage des résultats
 plot_heatmap(order_books, times)
+
+
+import plotly.graph_objects as go
+
+def plot_intensities_at_Q2(lambda_funcs: List[Callable], mju_funcs: List[Callable], market_order_func: Callable, max_queue_size: int):
+    """
+    Trace les intensités des ordres limites, des annulations et des ordres de marché à Q±2 en fonction de q±1 et q±2.
+
+    :param lambda_funcs: Fonctions d'intensité d'arrivée des ordres
+    :param mju_funcs: Fonctions d'intensité d'annulation des ordres
+    :param market_order_func: Fonction d'intensité des ordres de marché
+    :param max_queue_size: Taille maximale de la file d'attente
+    """
+    q2_values = list(range(max_queue_size + 1))
+    q1_values = [0, 1]  # q1 == 0 et q1 > 0
+
+    fig = go.Figure()
+
+    for q1 in q1_values:
+        lambda_intensities = [lambda_funcs[params["k"] - 2](q2, q1 > 0) for q2 in q2_values]
+        mju_intensities = [mju_funcs[params["k"] - 2](q2) for q2 in q2_values]
+        market_order_intensities = [market_order_func(q2) for q2 in q2_values]
+
+        fig.add_trace(go.Scatter(x=q2_values, y=lambda_intensities, mode='lines', name=f'Limit Order Insertion q1 {"== 0" if q1 == 0 else "> 0"}'))
+        fig.add_trace(go.Scatter(x=q2_values, y=mju_intensities, mode='lines', name=f'Limit Order Cancellation q1 {"== 0" if q1 == 0 else "> 0"}'))
+        fig.add_trace(go.Scatter(x=q2_values, y=market_order_intensities, mode='lines', name=f'Market Order Insertion q1 {"== 0" if q1 == 0 else "> 0"}'))
+
+    fig.update_layout(
+        title="Intensities at Q±2",
+        xaxis_title="Queue Size (per average event size)",
+        yaxis_title="Intensity (num per second)",
+        legend_title="Intensity Types",
+        height=800
+    )
+
+    fig.show()
+
+# Plotting the intensities at Q2
+plot_intensities_at_Q2(lambda_funcs, mju_funcs, market_order_func, max_queue_size=40)
