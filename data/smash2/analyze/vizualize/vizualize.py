@@ -21,7 +21,7 @@ def load_csv(stock):
 
 # Charger les données pour chaque stock
 stocks = ['ASAI', 'CGAU', 'HL', 'RIOT']
-data = {stock: load_csv(stock) for stock in stocks}
+data = {stock: load_csv(stock).sample(frac=0.1, random_state=1) for stock in stocks}
 
 # Créer une figure avec des sous-graphiques pour chaque stock
 fig = make_subplots(rows=2, cols=2, subplot_titles=stocks)
@@ -51,12 +51,12 @@ for i, stock in enumerate(stocks):
 
     # Tracer la taille de la meilleure offre
     fig.add_trace(go.Scatter(x=df['ts_event'], y=df['bid_sz_00'], mode='markers',
-                             marker=dict(size=df['bid_sz_00']**0.5, color='blue', opacity=0.5),
+                             marker=dict(size=df['bid_sz_00']**0.5 / 10, color='blue', opacity=0.5),
                              name=f'{stock} Best Bid Size'), row=row, col=col)
 
     # Tracer la taille de la meilleure demande
     fig.add_trace(go.Scatter(x=df['ts_event'], y=df['ask_sz_00'], mode='markers',
-                             marker=dict(size=df['ask_sz_00']**0.5, color='red', opacity=0.5),
+                             marker=dict(size=df['ask_sz_00']**0.5 / 10, color='red', opacity=0.5),
                              name=f'{stock} Best Ask Size'), row=row, col=col)
 
     # Mise à jour des axes
