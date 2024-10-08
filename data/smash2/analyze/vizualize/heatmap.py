@@ -20,28 +20,25 @@ def load_csv(stock):
 
 # Spécifier le stock
 stock = 'ASAI'
-data = load_csv(stock).sample(frac=0.1, random_state=1)
+data = load_csv(stock).sample(frac=0.03, random_state=1)
 
 # Convertir ts_event en datetime
 data['ts_event'] = pd.to_datetime(data['ts_event'], unit='ns')
-
-# Calculer le prix moyen
-data['mid_price'] = (data['bid_px_00'] + data['ask_px_00']) / 2
 
 # Créer une figure
 fig = go.Figure()
 
 # Tracer le prix moyen
-fig.add_trace(go.Scatter(x=data['ts_event'], y=data['mid_price'], mode='lines', name='Mid Price', line=dict(color='black')))
+fig.add_trace(go.Scatter(x=data['ts_event'], y=data['price'], mode='lines', name='Mid Price', line=dict(color='black')))
 
 # Tracer la taille de la meilleure offre
-fig.add_trace(go.Scatter(x=data['ts_event'], y=data['bid_sz_00'], mode='markers',
-                         marker=dict(size=data['bid_sz_00']**0.5 / 10, color='blue', opacity=0.5),
+fig.add_trace(go.Scatter(x=data['ts_event'], y=data['bid_px_00'], mode='markers',
+                         marker=dict(size=data['bid_sz_00']**0.5 / 2, color='blue', opacity=0.5),
                          name='Best Bid Size'))
 
 # Tracer la taille de la meilleure demande
-fig.add_trace(go.Scatter(x=data['ts_event'], y=data['ask_sz_00'], mode='markers',
-                         marker=dict(size=data['ask_sz_00']**0.5 / 10, color='red', opacity=0.5),
+fig.add_trace(go.Scatter(x=data['ts_event'], y=data['ask_px_00'], mode='markers',
+                         marker=dict(size=data['ask_sz_00']**0.5 / 2, color='red', opacity=0.5),
                          name='Best Ask Size'))
 
 # Mettre à jour la mise en page
