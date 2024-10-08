@@ -14,7 +14,10 @@ numpy = "1.21.2"
 scikit-learn = "0.24.2"
 matplotlib = "3.4.3"
 seaborn = "0.11.2"
-matplotlib-terminal = "0.1a4" 
+matplotlib-terminal = "0.1a4"
+plotly = "5.3.1"
+tqdm = "4.66.1"
+databento = "0.42"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

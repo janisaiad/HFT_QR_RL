@@ -1,0 +1,15 @@
+{
+    "version": "3.9.18",
+    "configurations": [
+        {
+            "name": "Python: Debug Test Script",
+            "type": "debugpy",   
+            "request": "launch",
+            "program": "${workspaceFolder}/data/smash2/analyze/vizualize/test_matplotlib_terminal.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}
