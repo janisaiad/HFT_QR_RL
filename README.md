@@ -48,47 +48,46 @@ The project is organized into several key components:
    ```
    poetry shell
    ```
-
 ## Usage with Makefile
 
 1. To set up the environment and install dependencies:
    ```
-   make setup
+   @make setup
    ```
 
 2. To run the main script:
    ```
-   make run
+   @make run
    ```
 
 3. To download necessary data:
    ```
-   make data
+   @make data
    ```
 
 4. To generate visualizations:
    ```
-   make visualize
+   @make visualize
    ```
 
 5. To clean the environment and generated files:
    ```
-   make clean
+   @make clean
    ```
 
 6. To display help information:
    ```
-   make help
+   @make help
    ```
 
 7. To check the license:
    ```
-   make check-license
+   @make check-license
    ```
 
 8. To show the README content:
    ```
-   make show-readme
+   @make show-readme
    ```
 
 ## Usage with Poetry
