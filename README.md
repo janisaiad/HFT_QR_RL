@@ -4,6 +4,11 @@
 
 This project aims to apply reinforcement learning techniques to optimize the control of reactive QR (Quick Response) queues in a high-frequency trading context. It combines advanced concepts of machine learning, queueing theory, and optimization to improve resource management and performance of trading systems.
 
+### New Libraries
+
+- **NumPy**: Utilisé pour le calcul numérique et le traitement des données.
+- **Scikit-learn**: Utilisé pour les algorithmes d'apprentissage automatique et l'évaluation des modèles.
+
 ## Project Objectives
 
 1. Model reactive QR queues in a high-frequency trading environment
@@ -29,54 +34,95 @@ The project is organized into several key components:
    cd HFT_QR_RL
    ```
 
-2. Utilisez le Makefile pour configurer l'environnement et installer les dépendances :
+2. Install Poetry (if not already installed):
    ```
-   make setup
-   ```
-
-3. Pour installer les dépendances avec Poetry :
-   ```
-   make install
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
-## Usage
-
-1. Pour exécuter le script principal :
+3. Use Poetry to set up the environment and install dependencies:
    ```
-   make run
+   poetry install
    ```
 
-2. Pour télécharger les données nécessaires :
+4. Activate the Poetry shell:
    ```
-   make data
+   poetry shell
+   ```
+## Usage with Makefile
+
+1. To set up the environment and install dependencies:
+   ```
+   @make setup
    ```
 
-3. Pour générer les visualisations :
+2. To run the main script:
    ```
-   make visualize
-   ```
-
-4. Pour nettoyer l'environnement et les fichiers générés :
-   ```
-   make clean
+   @make run
    ```
 
-5. Pour afficher l'aide du Makefile :
+3. To download necessary data:
    ```
-   make help
-   ```
-
-6. Pour vérifier la présence du fichier LICENSE :
-   ```
-   make check-license
+   @make data
    ```
 
-7. Pour afficher le contenu du README :
+4. To generate visualizations:
    ```
-   make show-readme
+   @make visualize
    ```
 
-Les résultats seront générés dans le dossier `databento/`.
+5. To clean the environment and generated files:
+   ```
+   @make clean
+   ```
+
+6. To display help information:
+   ```
+   @make help
+   ```
+
+7. To check the license:
+   ```
+   @make check-license
+   ```
+
+8. To show the README content:
+   ```
+   @make show-readme
+   ```
+
+## Usage with Poetry
+
+1. To run the main script:
+   ```
+   poetry run python main.py
+   ```
+
+2. To download necessary data:
+   ```
+   poetry run python data/script.py
+   ```
+
+3. To generate visualizations:
+   ```
+   poetry run python data/visualization.py
+   ```
+
+4. To display project information:
+   ```
+   poetry show
+   ```
+
+5. To update dependencies:
+   ```
+   poetry update
+   ```
+
+6. To add a new dependency:
+   ```
+   poetry add <package_name>
+   ```
+
+Results will be generated in the `databento/` folder.
 
 ## Main Components
 
@@ -113,10 +159,17 @@ Experiment results will be stored in the `databento/` folder. They will include:
 Contributions to this project are welcome. Please follow these steps to contribute:
 
 1. Fork the project
-2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a development branch for your feature (`git checkout -b dev/NewFeature`)
+3. Make your changes and commit them (`git commit -m 'Add NewFeature'`)
+4. Push to the branch (`git push origin dev/NewFeature`)
+5. Open a Pull Request to the `dev` branch
+
+### Development Practices
+
+- Always use the `dev` branch for ongoing development.
+- Ensure your commits are clear and descriptive.
+- Before submitting a Pull Request, make sure your code is well-commented and follows the project's style conventions.
+- For technical discussions or questions, contact janis.aiad@polytechnique.edu.
 
 ## License
 
@@ -124,4 +177,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)
+Project Link: [https://github.com/janisaiad/HFT_QR_RL](https://github.com/janisaiad/HFT_QR_RL)  
+
+For any questions or suggestions, please contact: janis.aiad@polytechnique.edu

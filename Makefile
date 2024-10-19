@@ -39,16 +39,21 @@ clean:
 .PHONY: help
 help:
 	@echo "Utilisation du Makefile:"
-	@echo "  make setup    : Crée l'environnement virtuel et installe les dépendances"
-	@echo "  make install  : Installe les dépendances avec Poetry"
-	@echo "  make run      : Exécute le script principal"
-	@echo "  make clean    : Nettoie l'environnement virtuel et les fichiers .pyc"
-	@echo "  make all      : Exécute setup et run"
-	@echo "  make help     : Affiche ce message d'aide"
-	@echo "  make check-license : Vérifie la présence du fichier LICENSE"
-	@echo "  make show-readme   : Affiche le contenu du README.md"
-	@echo "  make data     : Exécute le script de téléchargement des données"
-	@echo "  make visualize: Génère les visualisations"
+	@echo "  make setup          : Crée l'environnement virtuel et installe les dépendances"
+	@echo "  make install        : Installe les dépendances avec Poetry"
+	@echo "  make run            : Exécute le script principal"
+	@echo "  make clean          : Nettoie l'environnement virtuel et les fichiers .pyc"
+	@echo "  make all            : Exécute setup et run"
+	@echo "  make help           : Affiche ce message d'aide"
+	@echo "  make check-license  : Vérifie la présence du fichier LICENSE"
+	@echo "  make show-readme    : Affiche le contenu du README.md"
+	@echo "  make data           : Exécute le script de téléchargement des données"
+	@echo "  make visualize      : Génère les visualisations"
+	@echo "  make data-clean     : Nettoie les fichiers de données"
+	@echo "  make data-process   : Traite les données"
+	@echo "  make models-train   : Entraîne les modèles"
+	@echo "  make models-evaluate: Évalue les modèles"
+	@echo "  make models-clean   : Nettoie les fichiers de modèles"
 
 # Vérification de la licence
 .PHONY: check-license
@@ -74,8 +79,42 @@ show-readme:
 .PHONY: data
 data:
 	$(PYTHON) data/script.py
+	$(PYTHON) data/smash_download.py
 
 # Génération des visualisations
 .PHONY: visualize
 visualize:
 	$(PYTHON) data/vizualization.py
+
+# Commandes pour le dossier data
+.PHONY: data-clean
+data-clean:
+	@echo "Nettoyage des fichiers de données..."
+	rm -rf data/smash/Status_unzip
+	rm -rf data/smash/TBBO_unzip
+	rm -rf data/smash/Trades/TBBO_unzip
+	rm -f data/smash/Status.csv
+	rm -f data/smash/TBBO.csv
+	rm -f data/smash/Trade.csv
+
+.PHONY: data-process
+data-process:
+	@echo "Traitement des données..."
+	$(PYTHON) data/process_data.py
+
+# Commandes pour le dossier models
+.PHONY: models-train
+models-train:
+	@echo "Entraînement des modèles..."
+	$(PYTHON) models/train_model.py
+
+.PHONY: models-evaluate
+models-evaluate:
+	@echo "Évaluation des modèles..."
+	$(PYTHON) models/evaluate_model.py
+
+.PHONY: models-clean
+models-clean:
+	@echo "Nettoyage des fichiers de modèles..."
+	rm -rf models/QR/modified/Data/Intens_val_qr.csv
+	rm -rf former/qr/Data/Intens_val_qr.csv

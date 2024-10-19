@@ -1,1 +1,13 @@
-/venv
+/venv/
+/data/Data_order_book_premiere_analyse/Data_csv
+/data/smash/Status_unzip
+/data/smash/TBBO_unzip
+/data/smash/Trades/TBBO_unzip
+data/smash/Status.csv
+data/smash/TBBO.csv
+data/smash/Trade.csv
+models/QR/modified/Data/Intens_val_qr.csv
+former/qr/Data/Intens_val_qr.csv
+
+data/smash2/data/csv/
+data/smash2/data/dbn/
