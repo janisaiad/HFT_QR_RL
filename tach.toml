@@ -1,0 +1,17 @@
+exclude = [
+    ".*__pycache__",
+    ".*egg-info",
+    "docs",
+    "tests",
+]
+source_roots = [
+    ".",
+]
+modules = [
+    { path = "former.moujrl", depends_on = [] },
+    { path = "former.orderbookviz", depends_on = [] },
+    { path = "former.qr", depends_on = [] },
+    { path = "models.QR", depends_on = [] },
+    { path = "models.QR model I", depends_on = [] },
+    { path = "models.QR-2", depends_on = [] },
+]
