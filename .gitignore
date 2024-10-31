@@ -12,3 +12,5 @@ former/qr/Data/Intens_val_qr.csv
 data/smash2/data/csv/
 data/smash2/data/dbn/
 
+hft_qr_rl.egg-info/
+**/__pycache__/
