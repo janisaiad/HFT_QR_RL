@@ -2,9 +2,7 @@
 
 # Variables
 PYTHON = python3
-VENV = venv
-PIP = $(VENV)/bin/pip
-POETRY = poetry
+UV = uv
 
 # Cibles par défaut
 .PHONY: all
@@ -12,21 +10,24 @@ all: setup run
 
 # Configuration de l'environnement
 .PHONY: setup
-setup: $(VENV)/bin/activate
+setup:
+	$(UV) venv
+	source .venv/bin/activate
+	$(UV) sync
+	$(UV) pip install -e .
+	$(UV) cache prune
 
-$(VENV)/bin/activate: requirements.txt
-	$(PYTHON) -m venv $(VENV)
-	$(PIP) install -r requirements.txt
-
-# Installation des dépendances avec Poetry
+# Installation des dépendances avec uv
 .PHONY: install
 install:
-	$(POETRY) install
+	$(UV) sync
+	$(UV) pip install -e .
+	$(UV) cache prune
 
 # Exécution du script principal
 .PHONY: run
 run:
-	$(PYTHON) main.py
+	$(UV) run tests/test_env.py
 
 # Nettoyage
 .PHONY: clean
@@ -102,19 +103,22 @@ data-process:
 	@echo "Traitement des données..."
 	$(PYTHON) data/process_data.py
 
-# Commandes pour le dossier models
-.PHONY: models-train
-models-train:
-	@echo "Entraînement des modèles..."
-	$(PYTHON) models/train_model.py
 
-.PHONY: models-evaluate
-models-evaluate:
-	@echo "Évaluation des modèles..."
-	$(PYTHON) models/evaluate_model.py
 
-.PHONY: models-clean
-models-clean:
-	@echo "Nettoyage des fichiers de modèles..."
-	rm -rf models/QR/modified/Data/Intens_val_qr.csv
-	rm -rf former/qr/Data/Intens_val_qr.csv
+
+# # Commandes pour le dossier models
+# .PHONY: models-train
+# models-train:
+# 	@echo "Entraînement des modèles..."
+# 	$(PYTHON) models/train_model.py
+
+# .PHONY: models-evaluate
+# models-evaluate:
+# 	@echo "Évaluation des modèles..."
+# 	$(PYTHON) models/evaluate_model.py
+
+# .PHONY: models-clean
+# models-clean:
+# 	@echo "Nettoyage des fichiers de modèles..."
+# 	rm -rf models/QR/modified/Data/Intens_val_qr.csv
+# 	rm -rf former/qr/Data/Intens_val_qr.csv
