@@ -2,7 +2,6 @@ import os
 import zstandard as zstd
 import json
 import matplotlib.pyplot as plt
-from databento import DBNStore  # T'as intérêt à avoir installé les libs dbn et zstandard, sinon ça va pas le faire
 
 def decompress_zst(zst_path, extract_path):
     """Décompresse un fichier zst comme un boss."""

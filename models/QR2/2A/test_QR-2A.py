@@ -1,5 +1,5 @@
 import unittest
-from QR_2A import Queue, QType, OrderBook, init_order_book, lambda_func, mju_func, market_order_func
+from QR_2A import QType, init_order_book, lambda_func, mju_func, market_order_func
 
 class TestQR2A(unittest.TestCase):
 

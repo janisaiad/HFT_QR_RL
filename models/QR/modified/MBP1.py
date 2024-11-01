@@ -1,7 +1,6 @@
 import numpy as np
-import scipy.optimize as optimize
 import plotly.graph_objects as go
-from typing import List, Tuple, Dict, Optional
+from typing import List, Tuple
 from dataclasses import dataclass
 from enum import Enum
 import random

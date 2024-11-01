@@ -1,6 +1,6 @@
 import numpy as np
 import plotly.graph_objects as go
-from typing import List, Tuple, Dict, Callable
+from typing import List, Tuple, Callable
 from dataclasses import dataclass
 from enum import Enum
 import random
@@ -216,7 +216,6 @@ for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulati
 plot_heatmap(order_books, times)
 
 
-import plotly.graph_objects as go
 
 def plot_intensities_at_Q2(lambda_funcs: List[Callable], mju_funcs: List[Callable], market_order_func: Callable, max_queue_size: int):
     """

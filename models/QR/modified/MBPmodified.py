@@ -1,18 +1,11 @@
 import numpy as np
-import scipy.optimize as optimize
-import plotly.graph_objects as go
-from typing import List, Tuple, Dict, Optional
+from typing import List, Tuple
 from dataclasses import dataclass
 from enum import Enum
-import random
 
-from Code import pull_from_invariant, get_distributions, assign_invariant
+from Code import pull_from_invariant
 from Code_simu_strat import (
     simulation,
-    iterate,
-    maybe_modify,
-    maybe_save_prices,
-    maybe_save_candle,
     plot_results
 )
 
