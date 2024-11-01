@@ -27,7 +27,7 @@ Définition de la classe OrderBook pour représenter un carnet d'ordres avec un 
 @dataclass
 class OrderBook:
     state: List[Queue]  # État du carnet d'ordres
-    k: int  # Nombre de niveaux de prix
+    k: int  # Nombre de niveaux de prix pour bid et pour ask
     p_ref: float  # Prix de référence
 
     def get_best(self) -> Tuple[float, float]:
@@ -36,10 +36,11 @@ class OrderBook:
 
         :return: Tuple contenant le meilleur prix bid et le meilleur prix ask
         """
-        k = self.k  # Nombre de niveaux de prix
-        bid = self.state[k - 1].price if self.state[k - 1].size > 0 else self.state[k - 2].price  # Meilleur prix bid
-        ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price  # Meilleur prix ask
-        return bid, ask  # Retourne les meilleurs prix bid et ask
+        k = self.k 
+        bid = self.state[k - 1].price if self.state[k - 1].size > 0 else self.state[k - 2].price  # best price bid
+        ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price  # best price ask
+        return bid, ask 
+
 
     def update_state(self, lambda_: List[List[float]], mju: List[List[float]], stf: int, Cbound: int, delta: float, H: float):
         """
@@ -52,6 +53,8 @@ class OrderBook:
         :param delta: Valeur delta pour la diminution de la taille de la file d'attente
         :param H: Limite supérieure pour le flux entrant
         """
+        
+        
         for i in range(self.k * 2):  # Pour chaque niveau de prix
             size = self.state[i].size  # Taille actuelle de la file d'attente
             s_lambda = np.random.poisson(lambda_[i % self.k] * stf)  # Taux d'arrivée des ordres
@@ -99,33 +102,59 @@ def init_order_book(p_ref: float, invariant: List[List[float]], k: int, tick_siz
     state = [Queue(p_lowest + i * tick_size, random.choice(invariant[i % k])) for i in range(k * 2)]  # Initialisation de l'état
     return OrderBook(state, k, p_ref)  # Retourne le carnet d'ordres initialisé
 
-
-def plot_heatmap(order_books: List[OrderBook], times: List[int]):
+def plot_prices(order_books: List[OrderBook], times: List[int]):
     """
-    Trace une heatmap de l'évolution des 3 files d'attente au fil du temps.
+    Trace l'évolution des prix (mid, bid, ask) au fil du temps.
 
     :param order_books: Liste des carnets d'ordres à différents moments
     :param times: Liste des moments correspondants
     """
-    # Préparation des données pour la heatmap
-    z_data = []
+    # Préparation des données pour le graphique
+    bid_prices = []
+    ask_prices = []
+    mid_prices = []
+    
     for lob in order_books:
-        row = [q.size for q in lob.state[:3]] + [q.size for q in lob.state[-3:]]
-        z_data.append(row)
+        bid, ask = lob.get_best()
+        bid_prices.append(bid)
+        ask_prices.append(ask)
+        mid_prices.append((bid + ask) / 2)
 
-    # Création de la heatmap
-    fig = go.Figure(data=go.Heatmap(
-        z=z_data,
-        x=['Bid 3', 'Bid 2', 'Bid 1', 'Ask 1', 'Ask 2', 'Ask 3'],
-        y=times,
-        colorscale='Viridis'
+    # Création du graphique
+    fig = go.Figure()
+    
+    # Ajout des courbes de prix
+    fig.add_trace(go.Scatter(
+        x=times,
+        y=bid_prices,
+        mode='lines',
+        name='Bid Price'
+    ))
+    
+    fig.add_trace(go.Scatter(
+        x=times,
+        y=ask_prices,
+        mode='lines',
+        name='Ask Price'
+    ))
+    
+    fig.add_trace(go.Scatter(
+        x=times,
+        y=mid_prices,
+        mode='lines',
+        name='Mid Price'
     ))
 
     fig.update_layout(
-        title="Évolution des files d'attente au fil du temps",
-        xaxis_title="Files d'attente",
-        yaxis_title="Temps",
-        yaxis=dict(autorange="reversed")  # Pour que le temps s'écoule de haut en bas
+        title="Évolution des prix au fil du temps",
+        xaxis_title="Temps",
+        yaxis_title="Prix",
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="left",
+            x=0.01
+        )
     )
 
     fig.show()
@@ -136,7 +165,7 @@ params = {
     "p_ref": 10.0,  # Prix de référence
     "tick_size": 0.1,  # Taille du tick
     "stf": 1,  # Facteur de mise à l'échelle du temps
-    "simulation_time": 6000,  # Temps de simulation
+    "simulation_time": 60000,  # Temps de simulation
     "Cbound": 10,  # Limite supérieure pour la taille de la file d'attente
     "delta": 0.1,  # Valeur delta pour la diminution de la taille de la file d'attente
     "H": 5  # Limite supérieure pour le flux entrant
@@ -153,7 +182,11 @@ def get_distributions(k: int, scale: int) -> Tuple[List[float], List[float]]:
     """
     lambda_ = [min(scale, max(0, scale - i)) for i in range(k)]  # Génération des valeurs lambda selon Assumption 1 et 2
     mju = [random.uniform(0, 1) * scale for _ in range(k)]  # Génération des valeurs mju
+    print('lambda_', lambda_)
+    print('mju', mju)
     return lambda_, mju  # Retourne les distributions lambda et mju
+
+
 
 def assign_invariant(lambda_: List[float], mju: List[float], k: int) -> List[List[float]]:
     """
@@ -167,10 +200,14 @@ def assign_invariant(lambda_: List[float], mju: List[float], k: int) -> List[Lis
     invariant = [[lambda_[i], mju[i]] for i in range(k)]  # Création des états invariants
     return invariant  # Retourne les états invariants
 
+
+
 lambda_, mju = get_distributions(params["k"], 100)  # Récupération des distributions lambda et mju
 invariant = assign_invariant(lambda_, mju, params["k"])  # Assignation des états invariants
 order_books = []  # Liste des carnets d'ordres
 times = []  # Liste des moments
+
+
 
 # Simulation
 lob = init_order_book(params["p_ref"], invariant, params["k"], params["tick_size"])  # Initialisation du carnet d'ordres
@@ -181,4 +218,4 @@ for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulati
         times.append(t)  # Ajout du moment actuel à la liste
 
 # Affichage des résultats
-plot_heatmap(order_books, times)  # Affichage de la heatmap de l'évolution des files d'attente
+plot_prices(order_books, times)  # Affichage de l'évolution des prix
