@@ -1,8 +1,6 @@
-import os
 import json
 import pandas as pd
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 
 # Fonction pour charger les données JSON
 def load_json(file_path):
