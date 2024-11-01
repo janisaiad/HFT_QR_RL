@@ -1,4 +1,6 @@
 databento>=0.13.0
+flask-cors>=5.0.0
+flask>=3.0.3
 ipykernel>=6.29.5
 matplotlib>=3.8.4
 nbformat>=5.10.4
