@@ -17,7 +17,7 @@ def extract_zst_files(directory: str) -> None:
         raise FileNotFoundError(f"The directory {directory} does not exist.")
     
     # Define the output directory
-    output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash2/data/dbn/"
+    output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/"
     
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_directory):
@@ -38,4 +38,4 @@ def extract_zst_files(directory: str) -> None:
                 dctx.copy_stream(compressed_file, output_file)
 
 # Example usage
-extract_zst_files("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash2/data/download/DBEQ-20241008-TX6EVQRQXS/")
+extract_zst_files("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/download/DBEQ-20241022-MYAHGPS79Q")

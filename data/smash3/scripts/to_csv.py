@@ -19,7 +19,7 @@ def convert_dbn_to_csv(directory: str) -> None:
         raise FileNotFoundError(f"The directory {directory} does not exist.")
     
     # Define the output directory
-    output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash2/data/csv/"
+    output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/csv/"
     
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_directory):
@@ -56,7 +56,7 @@ def convert_dbn_to_csv(directory: str) -> None:
             group.to_csv(output_file_path, index=False)
 
 # Example usage
-convert_dbn_to_csv("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash2/data/dbn/")
+convert_dbn_to_csv("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/")
 
 
 # important : error  33/64 afer that disk usage is 100%
