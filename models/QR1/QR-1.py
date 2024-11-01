@@ -102,6 +102,8 @@ def init_order_book(p_ref: float, invariant: List[List[float]], k: int, tick_siz
     state = [Queue(p_lowest + i * tick_size, random.choice(invariant[i % k])) for i in range(k * 2)]  # Initialisation de l'état
     return OrderBook(state, k, p_ref)  # Retourne le carnet d'ordres initialisé
 
+
+
 def plot_prices(order_books: List[OrderBook], times: List[int]):
     """
     Trace l'évolution des prix (mid, bid, ask) au fil du temps.
@@ -110,14 +112,14 @@ def plot_prices(order_books: List[OrderBook], times: List[int]):
     :param times: Liste des moments correspondants
     """
     # Préparation des données pour le graphique
-    bid_prices = []
-    ask_prices = []
+    best_bid_prices = []
+    best_ask_prices = []
     mid_prices = []
     
     for lob in order_books:
         bid, ask = lob.get_best()
-        bid_prices.append(bid)
-        ask_prices.append(ask)
+        best_bid_prices.append(bid)
+        best_ask_prices.append(ask)
         mid_prices.append((bid + ask) / 2)
 
     # Création du graphique
@@ -126,14 +128,14 @@ def plot_prices(order_books: List[OrderBook], times: List[int]):
     # Ajout des courbes de prix
     fig.add_trace(go.Scatter(
         x=times,
-        y=bid_prices,
+        y=best_bid_prices,
         mode='lines',
         name='Bid Price'
     ))
     
     fig.add_trace(go.Scatter(
         x=times,
-        y=ask_prices,
+        y=best_ask_prices,
         mode='lines',
         name='Ask Price'
     ))
@@ -158,6 +160,50 @@ def plot_prices(order_books: List[OrderBook], times: List[int]):
     )
 
     fig.show()
+
+
+def plot_sizes(order_books: List[OrderBook], times: List[int]):
+    """
+    Trace l'évolution des tailles des files d'attente au fil du temps.
+    
+    :param order_books: Liste des carnets d'ordres à différents moments
+    :param times: Liste des moments correspondants
+    """
+    # Création d'un tableau numpy pour stocker les tailles
+    n_times = len(times)
+    n_queues = len(order_books[0].state)
+    sizes = np.zeros((n_times, n_queues))
+    
+    # Remplissage efficace du tableau
+    for t, lob in enumerate(order_books):
+        sizes[t] = [q.size for q in lob.state]
+    
+    # Création du graphique
+    fig = go.Figure()
+    
+    # Ajout des courbes pour chaque niveau de prix
+    for i in range(n_queues):
+        fig.add_trace(go.Scatter(
+            x=times,
+            y=sizes[:, i],
+            mode='lines',
+            name=f'Queue {i+1} (Price: {order_books[0].state[i].price:.2f})'
+        ))
+
+    fig.update_layout(
+        title="Évolution des tailles des files d'attente",
+        xaxis_title="Temps",
+        yaxis_title="Taille",
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="left",
+            x=0.01
+        )
+    )
+
+    fig.show()
+
 
 # Paramètres du modèle
 params = {
@@ -219,3 +265,4 @@ for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulati
 
 # Affichage des résultats
 plot_prices(order_books, times)  # Affichage de l'évolution des prix
+plot_sizes(order_books, times)  # Affichage de l'évolution des tailles
