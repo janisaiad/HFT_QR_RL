@@ -38,4 +38,4 @@ def extract_zst_files(directory: str) -> None:
                 dctx.copy_stream(compressed_file, output_file)
 
 # Example usage
-extract_zst_files("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/download/DBEQ-20241022-MYAHGPS79Q")
+extract_zst_files("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/download/XNAS-20241022-7YKWN9689U")
