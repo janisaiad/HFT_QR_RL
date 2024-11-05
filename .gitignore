@@ -41,6 +41,7 @@ data/smash3/data/csv/
 data/smash3/data/dbn/
 
 
+<<<<<<< HEAD
 frontend/node_modules/
 data/smash3/analyze/imbalance/imbalance_plot_all_stocks_all_dates.png
 data/smash3/analyze/imbalance/imbalance_plot_LCID_20240722.png
@@ -109,3 +110,6 @@ data/smash3/analyze/imbalance/imbalance_plot_LCID_20241017.png
 data/smash3/analyze/imbalance/imbalance_plot_LCID_20241018.png
 data/smash3/analyze/imbalance/imbalance_plot_LCID_20241021.png
 data/smash3/analyze/imbalance/imbalance_plot_LCID_all_dates.png
+=======
+frontend/node_modules/
+>>>>>>> 78595a71ce3e42b4812637e8fcab6fb2598f4ec6
