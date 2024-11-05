@@ -34,20 +34,16 @@ The project is organized into several key components:
    cd HFT_QR_RL
    ```
 
-2. Install Poetry (if not already installed):
+2. Grant execution rights to the launch script:
    ```
-   curl -sSL https://install.python-poetry.org | python3 -
-   ```
-
-3. Use Poetry to set up the environment and install dependencies:
-   ```
-   poetry install
+   chmod +x launch.sh
    ```
 
-4. Activate the Poetry shell:
+3. Launch the environment:
    ```
-   poetry shell
+   ./launch.sh
    ```
+
 ## Usage with Makefile
 
 1. To set up the environment and install dependencies:

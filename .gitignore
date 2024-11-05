@@ -8,6 +8,104 @@ data/smash/TBBO.csv
 data/smash/Trade.csv
 models/QR/modified/Data/Intens_val_qr.csv
 former/qr/Data/Intens_val_qr.csv
+models/QR/modified/Data/Intens_val_qr.csv
+models/QR/modified/Data/Intens_val_qr.csv
+
+
+data/Data_order_book_premiere_analyse/Visualisation_data.ipynb
 
 data/smash2/data/csv/
 data/smash2/data/dbn/
+
+data/MBO-10 analyse/CSV_dezippés_
+data/MBO-10 analyse/DBEQ-20241008-TX6EVQRQXS
+data/MBO-10 analyse/Données_dezippées
+data/MBO-10 analyse/Données_zippées
+data/MBO-10 analyse/Notebooks/Analyse_MBO_10.ipynb
+data/MBO-10 analyse/Notebooks/CSV_dezippés.csv
+data/MBO-10 analyse/Notebooks/MBO_10_RIOT
+data/MBO-10 analyse/Notebooks/MBO_10
+data/MBO-10 analyse/Notebooks/MBO_10_CGAU
+data/MBO-10 analyse/Notebooks/MBO_10_HL
+data/MBO-10 analyse/Notebooks/MBO_10_ASAI
+data/MBO-10 analyse/Notebooks/Tes_atre_OB.ipynb
+data/MBO-10 analyse/Notebooks/tes.ipynb
+data/MBO-10 analyse/Notebooks/un_jour.ipynb
+data/MBO-10 analyse/Notebooks/dezip.ipynb
+
+hft_qr_rl.egg-info/
+**/__pycache__/
+
+data/smash3/data/download/
+data/smash3/data/csv/
+data/smash3/data/dbn/
+
+
+frontend/node_modules/
+data/smash3/analyze/imbalance/imbalance_plot_all_stocks_all_dates.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240722.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240723.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240724.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240725.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240726.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240729.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240730.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240731.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240801.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240802.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240805.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240806.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240807.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240808.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240809.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240812.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240813.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240814.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240815.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240816.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240819.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240820.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240821.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240822.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240823.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240826.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240827.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240828.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240829.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240830.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240903.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240904.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240905.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240906.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240909.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240910.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240911.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240912.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240913.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240916.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240917.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240918.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240919.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240920.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240923.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240924.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240925.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240926.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240927.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20240930.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241001.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241002.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241003.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241004.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241007.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241008.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241009.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241010.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241011.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241014.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241015.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241016.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241017.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241018.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_20241021.png
+data/smash3/analyze/imbalance/imbalance_plot_LCID_all_dates.png
