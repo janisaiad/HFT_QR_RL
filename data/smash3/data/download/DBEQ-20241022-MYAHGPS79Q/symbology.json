@@ -1,0 +1,22 @@
+{
+    "result": {
+        "LCID": [
+            {
+                "d0": "2024-07-22",
+                "d1": "2024-10-22",
+                "s": "9698"
+            }
+        ]
+    },
+    "symbols": [
+        "LCID"
+    ],
+    "stype_in": "raw_symbol",
+    "stype_out": "instrument_id",
+    "start_date": "2024-07-22",
+    "end_date": "2024-10-22",
+    "partial": [],
+    "not_found": [],
+    "message": "OK",
+    "status": 0
+}
