@@ -3,7 +3,7 @@ pip install uv
 uv venv
 source .venv/bin/activate
 
-uv sync
+uv --link-mode=copysync
 uv pip install -e .
 uv cache prune
 
