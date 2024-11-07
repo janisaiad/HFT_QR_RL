@@ -33,6 +33,7 @@ data/MBO-10 analyse/Notebooks/tes.ipynb
 data/MBO-10 analyse/Notebooks/un_jour.ipynb
 data/MBO-10 analyse/Notebooks/dezip.ipynb
 
+
 data/MBO-10 analyse_2/CSV_dezippe_nasdaq
 data/MBO-10 analyse_2/CSV_dezzipes_chicago
 data/MBO-10 analyse_2/data_dezzip_nasdaq
@@ -44,3 +45,13 @@ data/MBO-10 analyse_2/Notebook/polars_MBO-10.ipynb
 
 data/smash/
 data/smash2/
+=======
+data/smash3/data/download/
+data/smash3/data/csv/
+data/smash3/data/dbn/
+
+hft_qr_rl.egg-info/
+**/__pycache__/
+
+frontend/node_modules/
+>>>>>>> dbb47a50f5da626faaa1e619dad64e017a8058dc
