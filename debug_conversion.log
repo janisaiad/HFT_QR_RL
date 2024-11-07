@@ -8,3 +8,2730 @@
 2024-11-07 21:26:14,744 - INFO - File size: 1714.11 MB
 2024-11-07 21:26:14,745 - INFO - DBNStore loaded
 2024-11-07 21:26:14,745 - INFO - Memory usage: 167.55 MB
+2024-11-07 21:40:48,193 - INFO - Processing file: dbeq-basic-20240909.mbp-10.dbn
+2024-11-07 21:40:48,193 - INFO - Memory usage: 165.75 MB
+2024-11-07 21:40:48,194 - INFO - File size: 14.00 MB
+2024-11-07 21:40:48,195 - INFO - DBNStore loaded
+2024-11-07 21:40:48,195 - INFO - Memory usage: 165.75 MB
+2024-11-07 21:40:49,861 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:49,861 - INFO - Memory usage: 299.05 MB
+2024-11-07 21:40:49,893 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:49,893 - INFO - Memory usage: 309.41 MB
+2024-11-07 21:40:49,893 - ERROR - Error processing file dbeq-basic-20240909.mbp-10.dbn: list index out of range
+2024-11-07 21:40:49,893 - INFO - Processing file: dbeq-basic-20240926.mbp-10.dbn
+2024-11-07 21:40:49,893 - INFO - Memory usage: 309.41 MB
+2024-11-07 21:40:49,893 - INFO - File size: 17.75 MB
+2024-11-07 21:40:49,894 - INFO - DBNStore loaded
+2024-11-07 21:40:49,894 - INFO - Memory usage: 309.41 MB
+2024-11-07 21:40:51,318 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:51,318 - INFO - Memory usage: 358.70 MB
+2024-11-07 21:40:51,330 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:51,330 - INFO - Memory usage: 364.89 MB
+2024-11-07 21:40:51,330 - ERROR - Error processing file dbeq-basic-20240926.mbp-10.dbn: list index out of range
+2024-11-07 21:40:51,330 - INFO - Processing file: dbeq-basic-20241001.mbp-10.dbn
+2024-11-07 21:40:51,330 - INFO - Memory usage: 364.89 MB
+2024-11-07 21:40:51,331 - INFO - File size: 26.74 MB
+2024-11-07 21:40:51,331 - INFO - DBNStore loaded
+2024-11-07 21:40:51,331 - INFO - Memory usage: 364.89 MB
+2024-11-07 21:40:50,493 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:50,493 - INFO - Memory usage: 450.62 MB
+2024-11-07 21:40:50,509 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:50,509 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:50,510 - ERROR - Error processing file dbeq-basic-20241001.mbp-10.dbn: list index out of range
+2024-11-07 21:40:50,510 - INFO - Processing file: dbeq-basic-20240812.mbp-10.dbn
+2024-11-07 21:40:50,510 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:50,510 - INFO - File size: 13.76 MB
+2024-11-07 21:40:50,511 - INFO - DBNStore loaded
+2024-11-07 21:40:50,512 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:51,480 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:51,480 - INFO - Memory usage: 455.19 MB
+2024-11-07 21:40:51,489 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:51,489 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:51,489 - ERROR - Error processing file dbeq-basic-20240812.mbp-10.dbn: list index out of range
+2024-11-07 21:40:51,490 - INFO - Processing file: dbeq-basic-20240724.mbp-10.dbn
+2024-11-07 21:40:51,490 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:51,490 - INFO - File size: 19.19 MB
+2024-11-07 21:40:51,500 - INFO - DBNStore loaded
+2024-11-07 21:40:51,500 - INFO - Memory usage: 454.98 MB
+2024-11-07 21:40:52,896 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:52,897 - INFO - Memory usage: 402.04 MB
+2024-11-07 21:40:52,908 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:52,908 - INFO - Memory usage: 401.84 MB
+2024-11-07 21:40:52,908 - ERROR - Error processing file dbeq-basic-20240724.mbp-10.dbn: list index out of range
+2024-11-07 21:40:52,908 - INFO - Processing file: dbeq-basic-20240807.mbp-10.dbn
+2024-11-07 21:40:52,908 - INFO - Memory usage: 401.84 MB
+2024-11-07 21:40:52,908 - INFO - File size: 22.68 MB
+2024-11-07 21:40:52,909 - INFO - DBNStore loaded
+2024-11-07 21:40:52,909 - INFO - Memory usage: 401.84 MB
+2024-11-07 21:40:54,581 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:54,582 - INFO - Memory usage: 442.56 MB
+2024-11-07 21:40:54,594 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:54,595 - INFO - Memory usage: 444.81 MB
+2024-11-07 21:40:54,595 - ERROR - Error processing file dbeq-basic-20240807.mbp-10.dbn: list index out of range
+2024-11-07 21:40:54,595 - INFO - Processing file: dbeq-basic-20241016.mbp-10.dbn
+2024-11-07 21:40:54,595 - INFO - Memory usage: 444.81 MB
+2024-11-07 21:40:54,595 - INFO - File size: 6.07 MB
+2024-11-07 21:40:54,605 - INFO - DBNStore loaded
+2024-11-07 21:40:54,606 - INFO - Memory usage: 444.81 MB
+2024-11-07 21:40:55,029 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:55,029 - INFO - Memory usage: 450.60 MB
+2024-11-07 21:40:55,035 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:55,035 - INFO - Memory usage: 450.31 MB
+2024-11-07 21:40:55,035 - ERROR - Error processing file dbeq-basic-20241016.mbp-10.dbn: list index out of range
+2024-11-07 21:40:55,035 - INFO - Processing file: dbeq-basic-20240820.mbp-10.dbn
+2024-11-07 21:40:55,035 - INFO - Memory usage: 450.31 MB
+2024-11-07 21:40:55,035 - INFO - File size: 8.35 MB
+2024-11-07 21:40:55,036 - INFO - DBNStore loaded
+2024-11-07 21:40:55,037 - INFO - Memory usage: 450.31 MB
+2024-11-07 21:40:55,683 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:55,683 - INFO - Memory usage: 445.60 MB
+2024-11-07 21:40:55,690 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:55,691 - INFO - Memory usage: 445.60 MB
+2024-11-07 21:40:55,691 - ERROR - Error processing file dbeq-basic-20240820.mbp-10.dbn: list index out of range
+2024-11-07 21:40:55,691 - INFO - Processing file: dbeq-basic-20240809.mbp-10.dbn
+2024-11-07 21:40:55,691 - INFO - Memory usage: 445.60 MB
+2024-11-07 21:40:55,691 - INFO - File size: 19.95 MB
+2024-11-07 21:40:55,700 - INFO - DBNStore loaded
+2024-11-07 21:40:55,700 - INFO - Memory usage: 445.60 MB
+2024-11-07 21:40:57,090 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:57,090 - INFO - Memory usage: 445.10 MB
+2024-11-07 21:40:57,101 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:57,101 - INFO - Memory usage: 444.85 MB
+2024-11-07 21:40:57,101 - ERROR - Error processing file dbeq-basic-20240809.mbp-10.dbn: list index out of range
+2024-11-07 21:40:57,101 - INFO - Processing file: dbeq-basic-20240815.mbp-10.dbn
+2024-11-07 21:40:57,101 - INFO - Memory usage: 444.85 MB
+2024-11-07 21:40:57,101 - INFO - File size: 14.94 MB
+2024-11-07 21:40:57,102 - INFO - DBNStore loaded
+2024-11-07 21:40:57,103 - INFO - Memory usage: 444.85 MB
+2024-11-07 21:40:58,143 - INFO - Converted to pandas DataFrame
+2024-11-07 21:40:58,143 - INFO - Memory usage: 446.35 MB
+2024-11-07 21:40:58,152 - INFO - Converted to polars DataFrame
+2024-11-07 21:40:58,152 - INFO - Memory usage: 445.35 MB
+2024-11-07 21:40:58,152 - ERROR - Error processing file dbeq-basic-20240815.mbp-10.dbn: list index out of range
+2024-11-07 21:40:58,152 - INFO - Processing file: dbeq-basic-20241002.mbp-10.dbn
+2024-11-07 21:40:58,153 - INFO - Memory usage: 445.35 MB
+2024-11-07 21:40:58,153 - INFO - File size: 27.89 MB
+2024-11-07 21:40:58,153 - INFO - DBNStore loaded
+2024-11-07 21:40:58,153 - INFO - Memory usage: 445.35 MB
+2024-11-07 21:41:00,117 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:00,117 - INFO - Memory usage: 466.64 MB
+2024-11-07 21:41:00,133 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:00,133 - INFO - Memory usage: 466.14 MB
+2024-11-07 21:41:00,133 - ERROR - Error processing file dbeq-basic-20241002.mbp-10.dbn: list index out of range
+2024-11-07 21:41:00,133 - INFO - Processing file: dbeq-basic-20240916.mbp-10.dbn
+2024-11-07 21:41:00,134 - INFO - Memory usage: 466.14 MB
+2024-11-07 21:41:00,134 - INFO - File size: 9.30 MB
+2024-11-07 21:41:00,134 - INFO - DBNStore loaded
+2024-11-07 21:41:00,135 - INFO - Memory usage: 466.14 MB
+2024-11-07 21:41:00,824 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:00,824 - INFO - Memory usage: 466.39 MB
+2024-11-07 21:41:00,830 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:00,831 - INFO - Memory usage: 466.39 MB
+2024-11-07 21:41:00,831 - ERROR - Error processing file dbeq-basic-20240916.mbp-10.dbn: list index out of range
+2024-11-07 21:41:00,831 - INFO - Processing file: dbeq-basic-20240722.mbp-10.dbn
+2024-11-07 21:41:00,831 - INFO - Memory usage: 466.39 MB
+2024-11-07 21:41:00,831 - INFO - File size: 33.24 MB
+2024-11-07 21:41:00,832 - INFO - DBNStore loaded
+2024-11-07 21:41:00,832 - INFO - Memory usage: 466.39 MB
+2024-11-07 21:41:03,420 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:03,420 - INFO - Memory usage: 509.61 MB
+2024-11-07 21:41:03,450 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:03,450 - INFO - Memory usage: 509.36 MB
+2024-11-07 21:41:03,450 - ERROR - Error processing file dbeq-basic-20240722.mbp-10.dbn: list index out of range
+2024-11-07 21:41:03,451 - INFO - Processing file: dbeq-basic-20240729.mbp-10.dbn
+2024-11-07 21:41:03,451 - INFO - Memory usage: 509.36 MB
+2024-11-07 21:41:03,451 - INFO - File size: 15.09 MB
+2024-11-07 21:41:03,452 - INFO - DBNStore loaded
+2024-11-07 21:41:03,452 - INFO - Memory usage: 509.36 MB
+2024-11-07 21:41:04,682 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:04,683 - INFO - Memory usage: 511.86 MB
+2024-11-07 21:41:04,692 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:04,692 - INFO - Memory usage: 511.11 MB
+2024-11-07 21:41:04,692 - ERROR - Error processing file dbeq-basic-20240729.mbp-10.dbn: list index out of range
+2024-11-07 21:41:04,693 - INFO - Processing file: dbeq-basic-20240821.mbp-10.dbn
+2024-11-07 21:41:04,693 - INFO - Memory usage: 511.11 MB
+2024-11-07 21:41:04,693 - INFO - File size: 21.98 MB
+2024-11-07 21:41:04,693 - INFO - DBNStore loaded
+2024-11-07 21:41:04,693 - INFO - Memory usage: 511.11 MB
+2024-11-07 21:41:06,376 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:06,376 - INFO - Memory usage: 510.39 MB
+2024-11-07 21:41:06,392 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:06,392 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:06,392 - ERROR - Error processing file dbeq-basic-20240821.mbp-10.dbn: list index out of range
+2024-11-07 21:41:06,393 - INFO - Processing file: dbeq-basic-20240903.mbp-10.dbn
+2024-11-07 21:41:06,393 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:06,393 - INFO - File size: 16.67 MB
+2024-11-07 21:41:06,404 - INFO - DBNStore loaded
+2024-11-07 21:41:06,404 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:07,904 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:07,905 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:07,917 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:07,918 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:07,918 - ERROR - Error processing file dbeq-basic-20240903.mbp-10.dbn: list index out of range
+2024-11-07 21:41:07,918 - INFO - Processing file: dbeq-basic-20241021.mbp-10.dbn
+2024-11-07 21:41:07,918 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:07,918 - INFO - File size: 8.96 MB
+2024-11-07 21:41:07,928 - INFO - DBNStore loaded
+2024-11-07 21:41:07,928 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:08,740 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:08,740 - INFO - Memory usage: 510.89 MB
+2024-11-07 21:41:08,749 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:08,749 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:08,749 - ERROR - Error processing file dbeq-basic-20241021.mbp-10.dbn: list index out of range
+2024-11-07 21:41:08,750 - INFO - Processing file: dbeq-basic-20241009.mbp-10.dbn
+2024-11-07 21:41:08,750 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:08,750 - INFO - File size: 8.84 MB
+2024-11-07 21:41:08,751 - INFO - DBNStore loaded
+2024-11-07 21:41:08,752 - INFO - Memory usage: 510.14 MB
+2024-11-07 21:41:09,416 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:09,417 - INFO - Memory usage: 510.01 MB
+2024-11-07 21:41:09,426 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:09,426 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:09,426 - ERROR - Error processing file dbeq-basic-20241009.mbp-10.dbn: list index out of range
+2024-11-07 21:41:09,426 - INFO - Processing file: dbeq-basic-20240919.mbp-10.dbn
+2024-11-07 21:41:09,427 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:09,427 - INFO - File size: 13.40 MB
+2024-11-07 21:41:09,436 - INFO - DBNStore loaded
+2024-11-07 21:41:09,436 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:10,449 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:10,450 - INFO - Memory usage: 510.39 MB
+2024-11-07 21:41:10,458 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:10,458 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:10,458 - ERROR - Error processing file dbeq-basic-20240919.mbp-10.dbn: list index out of range
+2024-11-07 21:41:10,459 - INFO - Processing file: dbeq-basic-20241011.mbp-10.dbn
+2024-11-07 21:41:10,459 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:10,459 - INFO - File size: 4.95 MB
+2024-11-07 21:41:10,460 - INFO - DBNStore loaded
+2024-11-07 21:41:10,461 - INFO - Memory usage: 509.89 MB
+2024-11-07 21:41:10,796 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:10,797 - INFO - Memory usage: 513.83 MB
+2024-11-07 21:41:10,802 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:10,802 - INFO - Memory usage: 513.83 MB
+2024-11-07 21:41:10,802 - ERROR - Error processing file dbeq-basic-20241011.mbp-10.dbn: list index out of range
+2024-11-07 21:41:10,802 - INFO - Processing file: dbeq-basic-20240802.mbp-10.dbn
+2024-11-07 21:41:10,802 - INFO - Memory usage: 513.83 MB
+2024-11-07 21:41:10,802 - INFO - File size: 15.57 MB
+2024-11-07 21:41:10,803 - INFO - DBNStore loaded
+2024-11-07 21:41:10,803 - INFO - Memory usage: 513.83 MB
+2024-11-07 21:41:11,886 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:11,886 - INFO - Memory usage: 510.64 MB
+2024-11-07 21:41:11,897 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:11,898 - INFO - Memory usage: 510.64 MB
+2024-11-07 21:41:11,898 - ERROR - Error processing file dbeq-basic-20240802.mbp-10.dbn: list index out of range
+2024-11-07 21:41:11,898 - INFO - Processing file: dbeq-basic-20240913.mbp-10.dbn
+2024-11-07 21:41:11,898 - INFO - Memory usage: 510.64 MB
+2024-11-07 21:41:11,898 - INFO - File size: 10.43 MB
+2024-11-07 21:41:11,908 - INFO - DBNStore loaded
+2024-11-07 21:41:11,908 - INFO - Memory usage: 510.64 MB
+2024-11-07 21:41:12,655 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:12,655 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:12,662 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:12,663 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:12,663 - ERROR - Error processing file dbeq-basic-20240913.mbp-10.dbn: list index out of range
+2024-11-07 21:41:12,663 - INFO - Processing file: dbeq-basic-20240827.mbp-10.dbn
+2024-11-07 21:41:12,663 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:12,663 - INFO - File size: 22.12 MB
+2024-11-07 21:41:12,673 - INFO - DBNStore loaded
+2024-11-07 21:41:12,674 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:14,217 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:14,217 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:14,230 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:14,230 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:14,230 - ERROR - Error processing file dbeq-basic-20240827.mbp-10.dbn: list index out of range
+2024-11-07 21:41:14,230 - INFO - Processing file: dbeq-basic-20240910.mbp-10.dbn
+2024-11-07 21:41:14,230 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:14,231 - INFO - File size: 13.43 MB
+2024-11-07 21:41:14,231 - INFO - DBNStore loaded
+2024-11-07 21:41:14,231 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:15,139 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:15,140 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:15,148 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:15,148 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:15,148 - ERROR - Error processing file dbeq-basic-20240910.mbp-10.dbn: list index out of range
+2024-11-07 21:41:15,148 - INFO - Processing file: dbeq-basic-20240912.mbp-10.dbn
+2024-11-07 21:41:15,148 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:15,148 - INFO - File size: 14.99 MB
+2024-11-07 21:41:15,158 - INFO - DBNStore loaded
+2024-11-07 21:41:15,158 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:16,147 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:16,147 - INFO - Memory usage: 510.41 MB
+2024-11-07 21:41:16,156 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:16,156 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:16,156 - ERROR - Error processing file dbeq-basic-20240912.mbp-10.dbn: list index out of range
+2024-11-07 21:41:16,156 - INFO - Processing file: dbeq-basic-20240801.mbp-10.dbn
+2024-11-07 21:41:16,156 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:16,156 - INFO - File size: 14.07 MB
+2024-11-07 21:41:16,166 - INFO - DBNStore loaded
+2024-11-07 21:41:16,167 - INFO - Memory usage: 510.16 MB
+2024-11-07 21:41:17,101 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:17,101 - INFO - Memory usage: 511.16 MB
+2024-11-07 21:41:17,111 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:17,111 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:17,111 - ERROR - Error processing file dbeq-basic-20240801.mbp-10.dbn: list index out of range
+2024-11-07 21:41:17,111 - INFO - Processing file: dbeq-basic-20240816.mbp-10.dbn
+2024-11-07 21:41:17,111 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:17,111 - INFO - File size: 11.35 MB
+2024-11-07 21:41:17,113 - INFO - DBNStore loaded
+2024-11-07 21:41:17,113 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:17,908 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:17,908 - INFO - Memory usage: 510.42 MB
+2024-11-07 21:41:17,916 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:17,916 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:17,916 - ERROR - Error processing file dbeq-basic-20240816.mbp-10.dbn: list index out of range
+2024-11-07 21:41:17,916 - INFO - Processing file: dbeq-basic-20241010.mbp-10.dbn
+2024-11-07 21:41:17,916 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:17,916 - INFO - File size: 7.73 MB
+2024-11-07 21:41:17,917 - INFO - DBNStore loaded
+2024-11-07 21:41:17,918 - INFO - Memory usage: 510.17 MB
+2024-11-07 21:41:18,455 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:18,455 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:18,461 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:18,462 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:18,462 - ERROR - Error processing file dbeq-basic-20241010.mbp-10.dbn: list index out of range
+2024-11-07 21:41:18,462 - INFO - Processing file: dbeq-basic-20240731.mbp-10.dbn
+2024-11-07 21:41:18,462 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:18,462 - INFO - File size: 16.87 MB
+2024-11-07 21:41:18,463 - INFO - DBNStore loaded
+2024-11-07 21:41:18,463 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:19,616 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:19,616 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:19,626 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:19,626 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:19,626 - ERROR - Error processing file dbeq-basic-20240731.mbp-10.dbn: list index out of range
+2024-11-07 21:41:19,626 - INFO - Processing file: dbeq-basic-20241007.mbp-10.dbn
+2024-11-07 21:41:19,627 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:19,627 - INFO - File size: 21.60 MB
+2024-11-07 21:41:19,636 - INFO - DBNStore loaded
+2024-11-07 21:41:19,636 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,135 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:21,135 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:21,147 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:21,147 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,147 - ERROR - Error processing file dbeq-basic-20241007.mbp-10.dbn: list index out of range
+2024-11-07 21:41:21,148 - INFO - Processing file: dbeq-basic-20240920.mbp-10.dbn
+2024-11-07 21:41:21,148 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,148 - INFO - File size: 11.20 MB
+2024-11-07 21:41:21,157 - INFO - DBNStore loaded
+2024-11-07 21:41:21,158 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,913 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:21,914 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,921 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:21,921 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,922 - ERROR - Error processing file dbeq-basic-20240920.mbp-10.dbn: list index out of range
+2024-11-07 21:41:21,922 - INFO - Processing file: dbeq-basic-20240918.mbp-10.dbn
+2024-11-07 21:41:21,922 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:21,922 - INFO - File size: 17.47 MB
+2024-11-07 21:41:21,923 - INFO - DBNStore loaded
+2024-11-07 21:41:21,923 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:20,234 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:20,234 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:20,245 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:20,245 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:20,245 - ERROR - Error processing file dbeq-basic-20240918.mbp-10.dbn: list index out of range
+2024-11-07 21:41:20,245 - INFO - Processing file: dbeq-basic-20240927.mbp-10.dbn
+2024-11-07 21:41:20,245 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:20,245 - INFO - File size: 17.89 MB
+2024-11-07 21:41:20,246 - INFO - DBNStore loaded
+2024-11-07 21:41:20,246 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:21,480 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:21,480 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:21,491 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:21,491 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:21,491 - ERROR - Error processing file dbeq-basic-20240927.mbp-10.dbn: list index out of range
+2024-11-07 21:41:21,491 - INFO - Processing file: dbeq-basic-20240805.mbp-10.dbn
+2024-11-07 21:41:21,491 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:21,491 - INFO - File size: 31.34 MB
+2024-11-07 21:41:21,492 - INFO - DBNStore loaded
+2024-11-07 21:41:21,492 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:23,674 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:23,674 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:23,690 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:23,690 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:23,690 - ERROR - Error processing file dbeq-basic-20240805.mbp-10.dbn: list index out of range
+2024-11-07 21:41:23,690 - INFO - Processing file: dbeq-basic-20241015.mbp-10.dbn
+2024-11-07 21:41:23,690 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:23,690 - INFO - File size: 6.68 MB
+2024-11-07 21:41:23,692 - INFO - DBNStore loaded
+2024-11-07 21:41:23,692 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:24,147 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:24,147 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:24,153 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:24,153 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:24,153 - ERROR - Error processing file dbeq-basic-20241015.mbp-10.dbn: list index out of range
+2024-11-07 21:41:24,153 - INFO - Processing file: dbeq-basic-20240830.mbp-10.dbn
+2024-11-07 21:41:24,153 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:24,153 - INFO - File size: 16.79 MB
+2024-11-07 21:41:24,154 - INFO - DBNStore loaded
+2024-11-07 21:41:24,155 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:25,278 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:25,286 - INFO - Memory usage: 510.92 MB
+2024-11-07 21:41:25,296 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:25,296 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:25,296 - ERROR - Error processing file dbeq-basic-20240830.mbp-10.dbn: list index out of range
+2024-11-07 21:41:25,296 - INFO - Processing file: dbeq-basic-20240906.mbp-10.dbn
+2024-11-07 21:41:25,297 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:25,297 - INFO - File size: 15.57 MB
+2024-11-07 21:41:25,297 - INFO - DBNStore loaded
+2024-11-07 21:41:25,297 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:26,401 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:26,401 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:26,410 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:26,410 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:26,410 - ERROR - Error processing file dbeq-basic-20240906.mbp-10.dbn: list index out of range
+2024-11-07 21:41:26,410 - INFO - Processing file: dbeq-basic-20241004.mbp-10.dbn
+2024-11-07 21:41:26,411 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:26,411 - INFO - File size: 16.68 MB
+2024-11-07 21:41:26,420 - INFO - DBNStore loaded
+2024-11-07 21:41:26,420 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:27,508 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:27,508 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:27,517 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:27,517 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:27,517 - ERROR - Error processing file dbeq-basic-20241004.mbp-10.dbn: list index out of range
+2024-11-07 21:41:27,518 - INFO - Processing file: dbeq-basic-20240723.mbp-10.dbn
+2024-11-07 21:41:27,518 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:27,518 - INFO - File size: 18.94 MB
+2024-11-07 21:41:27,527 - INFO - DBNStore loaded
+2024-11-07 21:41:27,527 - INFO - Memory usage: 510.67 MB
+2024-11-07 21:41:28,805 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:28,805 - INFO - Memory usage: 513.17 MB
+2024-11-07 21:41:28,817 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:28,817 - INFO - Memory usage: 511.92 MB
+2024-11-07 21:41:28,817 - ERROR - Error processing file dbeq-basic-20240723.mbp-10.dbn: list index out of range
+2024-11-07 21:41:28,817 - INFO - Processing file: dbeq-basic-20240828.mbp-10.dbn
+2024-11-07 21:41:28,817 - INFO - Memory usage: 511.92 MB
+2024-11-07 21:41:28,817 - INFO - File size: 17.34 MB
+2024-11-07 21:41:28,818 - INFO - DBNStore loaded
+2024-11-07 21:41:28,818 - INFO - Memory usage: 511.92 MB
+2024-11-07 21:41:30,082 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:30,082 - INFO - Memory usage: 512.17 MB
+2024-11-07 21:41:30,092 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:30,092 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:30,092 - ERROR - Error processing file dbeq-basic-20240828.mbp-10.dbn: list index out of range
+2024-11-07 21:41:30,092 - INFO - Processing file: dbeq-basic-20240930.mbp-10.dbn
+2024-11-07 21:41:30,092 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:30,092 - INFO - File size: 13.41 MB
+2024-11-07 21:41:30,101 - INFO - DBNStore loaded
+2024-11-07 21:41:30,102 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:30,994 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:30,994 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:31,002 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:31,002 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:31,002 - ERROR - Error processing file dbeq-basic-20240930.mbp-10.dbn: list index out of range
+2024-11-07 21:41:31,002 - INFO - Processing file: dbeq-basic-20240905.mbp-10.dbn
+2024-11-07 21:41:31,002 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:31,002 - INFO - File size: 16.55 MB
+2024-11-07 21:41:31,013 - INFO - DBNStore loaded
+2024-11-07 21:41:31,013 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:32,082 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:32,082 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:32,092 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:32,092 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:32,092 - ERROR - Error processing file dbeq-basic-20240905.mbp-10.dbn: list index out of range
+2024-11-07 21:41:32,092 - INFO - Processing file: dbeq-basic-20241014.mbp-10.dbn
+2024-11-07 21:41:32,092 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:32,092 - INFO - File size: 7.12 MB
+2024-11-07 21:41:32,102 - INFO - DBNStore loaded
+2024-11-07 21:41:32,102 - INFO - Memory usage: 511.67 MB
+2024-11-07 21:41:32,580 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:32,580 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:32,586 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:32,586 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:32,586 - ERROR - Error processing file dbeq-basic-20241014.mbp-10.dbn: list index out of range
+2024-11-07 21:41:32,586 - INFO - Processing file: dbeq-basic-20240904.mbp-10.dbn
+2024-11-07 21:41:32,586 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:32,586 - INFO - File size: 12.98 MB
+2024-11-07 21:41:32,587 - INFO - DBNStore loaded
+2024-11-07 21:41:32,588 - INFO - Memory usage: 511.42 MB
+2024-11-07 21:41:33,460 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:33,460 - INFO - Memory usage: 511.58 MB
+2024-11-07 21:41:33,469 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:33,470 - INFO - Memory usage: 511.58 MB
+2024-11-07 21:41:33,470 - ERROR - Error processing file dbeq-basic-20240904.mbp-10.dbn: list index out of range
+2024-11-07 21:41:33,470 - INFO - Processing file: dbeq-basic-20240823.mbp-10.dbn
+2024-11-07 21:41:33,470 - INFO - Memory usage: 511.58 MB
+2024-11-07 21:41:33,470 - INFO - File size: 35.59 MB
+2024-11-07 21:41:33,471 - INFO - DBNStore loaded
+2024-11-07 21:41:33,471 - INFO - Memory usage: 511.58 MB
+2024-11-07 21:41:35,861 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:35,861 - INFO - Memory usage: 537.36 MB
+2024-11-07 21:41:35,878 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:35,878 - INFO - Memory usage: 537.11 MB
+2024-11-07 21:41:35,878 - ERROR - Error processing file dbeq-basic-20240823.mbp-10.dbn: list index out of range
+2024-11-07 21:41:35,878 - INFO - Processing file: dbeq-basic-20240923.mbp-10.dbn
+2024-11-07 21:41:35,878 - INFO - Memory usage: 537.11 MB
+2024-11-07 21:41:35,878 - INFO - File size: 10.97 MB
+2024-11-07 21:41:35,880 - INFO - DBNStore loaded
+2024-11-07 21:41:35,880 - INFO - Memory usage: 537.11 MB
+2024-11-07 21:41:36,631 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:36,631 - INFO - Memory usage: 536.86 MB
+2024-11-07 21:41:36,638 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:36,638 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:36,638 - ERROR - Error processing file dbeq-basic-20240923.mbp-10.dbn: list index out of range
+2024-11-07 21:41:36,639 - INFO - Processing file: dbeq-basic-20240924.mbp-10.dbn
+2024-11-07 21:41:36,639 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:36,639 - INFO - File size: 9.08 MB
+2024-11-07 21:41:36,641 - INFO - DBNStore loaded
+2024-11-07 21:41:36,641 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:37,262 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:37,263 - INFO - Memory usage: 536.36 MB
+2024-11-07 21:41:37,269 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:37,270 - INFO - Memory usage: 536.36 MB
+2024-11-07 21:41:37,270 - ERROR - Error processing file dbeq-basic-20240924.mbp-10.dbn: list index out of range
+2024-11-07 21:41:37,270 - INFO - Processing file: dbeq-basic-20240806.mbp-10.dbn
+2024-11-07 21:41:37,270 - INFO - Memory usage: 536.36 MB
+2024-11-07 21:41:37,270 - INFO - File size: 16.66 MB
+2024-11-07 21:41:37,271 - INFO - DBNStore loaded
+2024-11-07 21:41:37,271 - INFO - Memory usage: 536.36 MB
+2024-11-07 21:41:38,402 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:38,403 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:38,412 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:38,412 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:38,412 - ERROR - Error processing file dbeq-basic-20240806.mbp-10.dbn: list index out of range
+2024-11-07 21:41:38,413 - INFO - Processing file: dbeq-basic-20240826.mbp-10.dbn
+2024-11-07 21:41:38,413 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:38,413 - INFO - File size: 33.74 MB
+2024-11-07 21:41:38,414 - INFO - DBNStore loaded
+2024-11-07 21:41:38,414 - INFO - Memory usage: 536.61 MB
+2024-11-07 21:41:40,724 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:40,725 - INFO - Memory usage: 536.62 MB
+2024-11-07 21:41:40,742 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:40,743 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:40,743 - ERROR - Error processing file dbeq-basic-20240826.mbp-10.dbn: list index out of range
+2024-11-07 21:41:40,743 - INFO - Processing file: dbeq-basic-20240813.mbp-10.dbn
+2024-11-07 21:41:40,743 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:40,743 - INFO - File size: 9.72 MB
+2024-11-07 21:41:40,744 - INFO - DBNStore loaded
+2024-11-07 21:41:40,744 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:41,457 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:41,457 - INFO - Memory usage: 536.62 MB
+2024-11-07 21:41:41,464 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:41,464 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:41,464 - ERROR - Error processing file dbeq-basic-20240813.mbp-10.dbn: list index out of range
+2024-11-07 21:41:41,464 - INFO - Processing file: dbeq-basic-20240829.mbp-10.dbn
+2024-11-07 21:41:41,464 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:41,464 - INFO - File size: 19.14 MB
+2024-11-07 21:41:41,473 - INFO - DBNStore loaded
+2024-11-07 21:41:41,474 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:42,772 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:42,772 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:42,782 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:42,782 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:42,782 - ERROR - Error processing file dbeq-basic-20240829.mbp-10.dbn: list index out of range
+2024-11-07 21:41:42,782 - INFO - Processing file: dbeq-basic-20240917.mbp-10.dbn
+2024-11-07 21:41:42,783 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:42,783 - INFO - File size: 13.15 MB
+2024-11-07 21:41:42,784 - INFO - DBNStore loaded
+2024-11-07 21:41:42,784 - INFO - Memory usage: 536.37 MB
+2024-11-07 21:41:43,690 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:43,690 - INFO - Memory usage: 537.62 MB
+2024-11-07 21:41:43,699 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:43,699 - INFO - Memory usage: 536.87 MB
+2024-11-07 21:41:43,699 - ERROR - Error processing file dbeq-basic-20240917.mbp-10.dbn: list index out of range
+2024-11-07 21:41:43,700 - INFO - Processing file: dbeq-basic-20241003.mbp-10.dbn
+2024-11-07 21:41:43,700 - INFO - Memory usage: 536.87 MB
+2024-11-07 21:41:43,700 - INFO - File size: 23.08 MB
+2024-11-07 21:41:43,709 - INFO - DBNStore loaded
+2024-11-07 21:41:43,709 - INFO - Memory usage: 536.87 MB
+2024-11-07 21:41:45,311 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:45,312 - INFO - Memory usage: 536.87 MB
+2024-11-07 21:41:45,329 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:45,329 - INFO - Memory usage: 536.62 MB
+2024-11-07 21:41:45,329 - ERROR - Error processing file dbeq-basic-20241003.mbp-10.dbn: list index out of range
+2024-11-07 21:41:45,329 - INFO - Processing file: dbeq-basic-20241017.mbp-10.dbn
+2024-11-07 21:41:45,329 - INFO - Memory usage: 536.62 MB
+2024-11-07 21:41:45,329 - INFO - File size: 31.27 MB
+2024-11-07 21:41:45,331 - INFO - DBNStore loaded
+2024-11-07 21:41:45,331 - INFO - Memory usage: 536.62 MB
+2024-11-07 21:41:47,499 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:47,499 - INFO - Memory usage: 542.68 MB
+2024-11-07 21:41:47,515 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:47,515 - INFO - Memory usage: 543.96 MB
+2024-11-07 21:41:47,515 - ERROR - Error processing file dbeq-basic-20241017.mbp-10.dbn: list index out of range
+2024-11-07 21:41:47,516 - INFO - Processing file: dbeq-basic-20240911.mbp-10.dbn
+2024-11-07 21:41:47,516 - INFO - Memory usage: 543.96 MB
+2024-11-07 21:41:47,516 - INFO - File size: 19.72 MB
+2024-11-07 21:41:47,516 - INFO - DBNStore loaded
+2024-11-07 21:41:47,517 - INFO - Memory usage: 543.96 MB
+2024-11-07 21:41:48,861 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:48,861 - INFO - Memory usage: 544.29 MB
+2024-11-07 21:41:48,879 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:48,880 - INFO - Memory usage: 543.79 MB
+2024-11-07 21:41:48,880 - ERROR - Error processing file dbeq-basic-20240911.mbp-10.dbn: list index out of range
+2024-11-07 21:41:48,880 - INFO - Processing file: dbeq-basic-20240726.mbp-10.dbn
+2024-11-07 21:41:48,880 - INFO - Memory usage: 543.79 MB
+2024-11-07 21:41:48,881 - INFO - File size: 34.70 MB
+2024-11-07 21:41:48,890 - INFO - DBNStore loaded
+2024-11-07 21:41:48,890 - INFO - Memory usage: 543.79 MB
+2024-11-07 21:41:51,259 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:51,260 - INFO - Memory usage: 544.54 MB
+2024-11-07 21:41:51,276 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:51,276 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:51,276 - ERROR - Error processing file dbeq-basic-20240726.mbp-10.dbn: list index out of range
+2024-11-07 21:41:51,277 - INFO - Processing file: dbeq-basic-20241018.mbp-10.dbn
+2024-11-07 21:41:51,277 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:51,277 - INFO - File size: 16.52 MB
+2024-11-07 21:41:51,278 - INFO - DBNStore loaded
+2024-11-07 21:41:51,278 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:49,651 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:49,651 - INFO - Memory usage: 547.29 MB
+2024-11-07 21:41:49,661 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:49,661 - INFO - Memory usage: 546.54 MB
+2024-11-07 21:41:49,661 - ERROR - Error processing file dbeq-basic-20241018.mbp-10.dbn: list index out of range
+2024-11-07 21:41:49,662 - INFO - Processing file: dbeq-basic-20240808.mbp-10.dbn
+2024-11-07 21:41:49,662 - INFO - Memory usage: 546.54 MB
+2024-11-07 21:41:49,662 - INFO - File size: 15.24 MB
+2024-11-07 21:41:49,672 - INFO - DBNStore loaded
+2024-11-07 21:41:49,672 - INFO - Memory usage: 546.54 MB
+2024-11-07 21:41:50,691 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:50,691 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:50,700 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:50,700 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:50,700 - ERROR - Error processing file dbeq-basic-20240808.mbp-10.dbn: list index out of range
+2024-11-07 21:41:50,700 - INFO - Processing file: dbeq-basic-20240725.mbp-10.dbn
+2024-11-07 21:41:50,700 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:50,700 - INFO - File size: 45.18 MB
+2024-11-07 21:41:50,701 - INFO - DBNStore loaded
+2024-11-07 21:41:50,701 - INFO - Memory usage: 546.04 MB
+2024-11-07 21:41:53,822 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:53,823 - INFO - Memory usage: 629.42 MB
+2024-11-07 21:41:53,844 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:53,844 - INFO - Memory usage: 629.30 MB
+2024-11-07 21:41:53,844 - ERROR - Error processing file dbeq-basic-20240725.mbp-10.dbn: list index out of range
+2024-11-07 21:41:53,844 - INFO - Processing file: dbeq-basic-20241008.mbp-10.dbn
+2024-11-07 21:41:53,845 - INFO - Memory usage: 629.30 MB
+2024-11-07 21:41:53,845 - INFO - File size: 8.93 MB
+2024-11-07 21:41:53,854 - INFO - DBNStore loaded
+2024-11-07 21:41:53,854 - INFO - Memory usage: 629.30 MB
+2024-11-07 21:41:54,439 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:54,440 - INFO - Memory usage: 629.06 MB
+2024-11-07 21:41:54,446 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:54,446 - INFO - Memory usage: 628.81 MB
+2024-11-07 21:41:54,446 - ERROR - Error processing file dbeq-basic-20241008.mbp-10.dbn: list index out of range
+2024-11-07 21:41:54,446 - INFO - Processing file: dbeq-basic-20240814.mbp-10.dbn
+2024-11-07 21:41:54,446 - INFO - Memory usage: 628.81 MB
+2024-11-07 21:41:54,447 - INFO - File size: 9.46 MB
+2024-11-07 21:41:54,456 - INFO - DBNStore loaded
+2024-11-07 21:41:54,456 - INFO - Memory usage: 628.81 MB
+2024-11-07 21:41:55,136 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:55,136 - INFO - Memory usage: 630.80 MB
+2024-11-07 21:41:55,143 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:55,143 - INFO - Memory usage: 630.30 MB
+2024-11-07 21:41:55,143 - ERROR - Error processing file dbeq-basic-20240814.mbp-10.dbn: list index out of range
+2024-11-07 21:41:55,144 - INFO - Processing file: dbeq-basic-20240822.mbp-10.dbn
+2024-11-07 21:41:55,144 - INFO - Memory usage: 630.30 MB
+2024-11-07 21:41:55,144 - INFO - File size: 29.58 MB
+2024-11-07 21:41:55,154 - INFO - DBNStore loaded
+2024-11-07 21:41:55,154 - INFO - Memory usage: 630.30 MB
+2024-11-07 21:41:57,143 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:57,143 - INFO - Memory usage: 516.29 MB
+2024-11-07 21:41:57,158 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:57,158 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:57,158 - ERROR - Error processing file dbeq-basic-20240822.mbp-10.dbn: list index out of range
+2024-11-07 21:41:57,158 - INFO - Processing file: dbeq-basic-20240730.mbp-10.dbn
+2024-11-07 21:41:57,158 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:57,158 - INFO - File size: 14.43 MB
+2024-11-07 21:41:57,160 - INFO - DBNStore loaded
+2024-11-07 21:41:57,160 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:58,093 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:58,093 - INFO - Memory usage: 515.29 MB
+2024-11-07 21:41:58,101 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:58,102 - INFO - Memory usage: 515.04 MB
+2024-11-07 21:41:58,102 - ERROR - Error processing file dbeq-basic-20240730.mbp-10.dbn: list index out of range
+2024-11-07 21:41:58,102 - INFO - Processing file: dbeq-basic-20240819.mbp-10.dbn
+2024-11-07 21:41:58,102 - INFO - Memory usage: 515.04 MB
+2024-11-07 21:41:58,102 - INFO - File size: 14.58 MB
+2024-11-07 21:41:58,103 - INFO - DBNStore loaded
+2024-11-07 21:41:58,104 - INFO - Memory usage: 515.04 MB
+2024-11-07 21:41:59,055 - INFO - Converted to pandas DataFrame
+2024-11-07 21:41:59,056 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:59,064 - INFO - Converted to polars DataFrame
+2024-11-07 21:41:59,065 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:59,065 - ERROR - Error processing file dbeq-basic-20240819.mbp-10.dbn: list index out of range
+2024-11-07 21:41:59,065 - INFO - Processing file: dbeq-basic-20240925.mbp-10.dbn
+2024-11-07 21:41:59,065 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:41:59,065 - INFO - File size: 19.57 MB
+2024-11-07 21:41:59,066 - INFO - DBNStore loaded
+2024-11-07 21:41:59,066 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:42:00,408 - INFO - Converted to pandas DataFrame
+2024-11-07 21:42:00,408 - INFO - Memory usage: 516.54 MB
+2024-11-07 21:42:00,420 - INFO - Converted to polars DataFrame
+2024-11-07 21:42:00,421 - INFO - Memory usage: 515.54 MB
+2024-11-07 21:42:00,421 - ERROR - Error processing file dbeq-basic-20240925.mbp-10.dbn: list index out of range
+2024-11-07 21:42:00,421 - INFO - shutting down event loop in databento_live
+2024-11-07 21:42:27,777 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 21:42:27,777 - INFO - Memory usage: 166.23 MB
+2024-11-07 21:42:27,777 - INFO - File size: 626.05 MB
+2024-11-07 21:42:27,787 - INFO - DBNStore loaded
+2024-11-07 21:42:27,787 - INFO - Memory usage: 166.52 MB
+2024-11-07 21:42:38,862 - INFO - shutting down event loop in databento_live
+2024-11-07 21:47:13,351 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 21:47:13,352 - INFO - Memory usage: 163.79 MB
+2024-11-07 21:47:13,352 - INFO - File size: 626.05 MB
+2024-11-07 21:47:13,352 - INFO - DBNStore loaded
+2024-11-07 21:47:13,352 - INFO - Memory usage: 163.79 MB
+2024-11-07 21:47:30,392 - INFO - shutting down event loop in databento_live
+2024-11-07 21:49:12,280 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 21:49:12,280 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,280 - INFO - File size: 626.05 MB
+2024-11-07 21:49:12,281 - INFO - DBNStore loaded
+2024-11-07 21:49:12,281 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,281 - ERROR - Error processing file xnas-itch-20241014.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,281 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 21:49:12,281 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,281 - INFO - File size: 672.86 MB
+2024-11-07 21:49:12,283 - INFO - DBNStore loaded
+2024-11-07 21:49:12,283 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,284 - ERROR - Error processing file xnas-itch-20241011.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,284 - INFO - Processing file: xnas-itch-20241018.mbp-10.dbn
+2024-11-07 21:49:12,284 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,284 - INFO - File size: 705.14 MB
+2024-11-07 21:49:12,285 - INFO - DBNStore loaded
+2024-11-07 21:49:12,285 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,285 - ERROR - Error processing file xnas-itch-20241018.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,285 - INFO - Processing file: xnas-itch-20240819.mbp-10.dbn
+2024-11-07 21:49:12,286 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,286 - INFO - File size: 713.74 MB
+2024-11-07 21:49:12,287 - INFO - DBNStore loaded
+2024-11-07 21:49:12,287 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,287 - ERROR - Error processing file xnas-itch-20240819.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,287 - INFO - Processing file: xnas-itch-20241008.mbp-10.dbn
+2024-11-07 21:49:12,287 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,287 - INFO - File size: 717.02 MB
+2024-11-07 21:49:12,289 - INFO - DBNStore loaded
+2024-11-07 21:49:12,289 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,289 - ERROR - Error processing file xnas-itch-20241008.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,289 - INFO - Processing file: xnas-itch-20241003.mbp-10.dbn
+2024-11-07 21:49:12,289 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,289 - INFO - File size: 722.11 MB
+2024-11-07 21:49:12,290 - INFO - DBNStore loaded
+2024-11-07 21:49:12,290 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,290 - ERROR - Error processing file xnas-itch-20241003.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,290 - INFO - Processing file: xnas-itch-20240925.mbp-10.dbn
+2024-11-07 21:49:12,290 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,290 - INFO - File size: 723.33 MB
+2024-11-07 21:49:12,291 - INFO - DBNStore loaded
+2024-11-07 21:49:12,291 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,291 - ERROR - Error processing file xnas-itch-20240925.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,292 - INFO - Processing file: xnas-itch-20240815.mbp-10.dbn
+2024-11-07 21:49:12,292 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,292 - INFO - File size: 744.63 MB
+2024-11-07 21:49:12,293 - INFO - DBNStore loaded
+2024-11-07 21:49:12,293 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,293 - ERROR - Error processing file xnas-itch-20240815.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,293 - INFO - Processing file: xnas-itch-20240813.mbp-10.dbn
+2024-11-07 21:49:12,293 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,293 - INFO - File size: 755.26 MB
+2024-11-07 21:49:12,294 - INFO - DBNStore loaded
+2024-11-07 21:49:12,294 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,294 - ERROR - Error processing file xnas-itch-20240813.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,294 - INFO - Processing file: xnas-itch-20240820.mbp-10.dbn
+2024-11-07 21:49:12,295 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,295 - INFO - File size: 758.51 MB
+2024-11-07 21:49:12,296 - INFO - DBNStore loaded
+2024-11-07 21:49:12,296 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,296 - ERROR - Error processing file xnas-itch-20240820.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,296 - INFO - Processing file: xnas-itch-20240930.mbp-10.dbn
+2024-11-07 21:49:12,296 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,296 - INFO - File size: 772.20 MB
+2024-11-07 21:49:12,297 - INFO - DBNStore loaded
+2024-11-07 21:49:12,297 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,297 - ERROR - Error processing file xnas-itch-20240930.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,297 - INFO - Processing file: xnas-itch-20241010.mbp-10.dbn
+2024-11-07 21:49:12,297 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,297 - INFO - File size: 775.76 MB
+2024-11-07 21:49:12,298 - INFO - DBNStore loaded
+2024-11-07 21:49:12,298 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,298 - ERROR - Error processing file xnas-itch-20241010.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,298 - INFO - Processing file: xnas-itch-20241021.mbp-10.dbn
+2024-11-07 21:49:12,298 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,298 - INFO - File size: 787.84 MB
+2024-11-07 21:49:12,299 - INFO - DBNStore loaded
+2024-11-07 21:49:12,299 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,299 - ERROR - Error processing file xnas-itch-20241021.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,300 - INFO - Processing file: xnas-itch-20240827.mbp-10.dbn
+2024-11-07 21:49:12,300 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,300 - INFO - File size: 788.50 MB
+2024-11-07 21:49:12,301 - INFO - DBNStore loaded
+2024-11-07 21:49:12,301 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,301 - ERROR - Error processing file xnas-itch-20240827.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,301 - INFO - Processing file: xnas-itch-20240927.mbp-10.dbn
+2024-11-07 21:49:12,301 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,301 - INFO - File size: 789.95 MB
+2024-11-07 21:49:12,302 - INFO - DBNStore loaded
+2024-11-07 21:49:12,302 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,302 - ERROR - Error processing file xnas-itch-20240927.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,302 - INFO - Processing file: xnas-itch-20241016.mbp-10.dbn
+2024-11-07 21:49:12,302 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,302 - INFO - File size: 796.32 MB
+2024-11-07 21:49:12,303 - INFO - DBNStore loaded
+2024-11-07 21:49:12,303 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,303 - ERROR - Error processing file xnas-itch-20241016.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,303 - INFO - Processing file: xnas-itch-20241004.mbp-10.dbn
+2024-11-07 21:49:12,303 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,304 - INFO - File size: 799.12 MB
+2024-11-07 21:49:12,305 - INFO - DBNStore loaded
+2024-11-07 21:49:12,305 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,305 - ERROR - Error processing file xnas-itch-20241004.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,305 - INFO - Processing file: xnas-itch-20241002.mbp-10.dbn
+2024-11-07 21:49:12,305 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,305 - INFO - File size: 817.05 MB
+2024-11-07 21:49:12,306 - INFO - DBNStore loaded
+2024-11-07 21:49:12,306 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,306 - ERROR - Error processing file xnas-itch-20241002.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,306 - INFO - Processing file: xnas-itch-20241009.mbp-10.dbn
+2024-11-07 21:49:12,306 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,306 - INFO - File size: 835.66 MB
+2024-11-07 21:49:12,307 - INFO - DBNStore loaded
+2024-11-07 21:49:12,307 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,307 - ERROR - Error processing file xnas-itch-20241009.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,307 - INFO - Processing file: xnas-itch-20240920.mbp-10.dbn
+2024-11-07 21:49:12,307 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,307 - INFO - File size: 863.24 MB
+2024-11-07 21:49:12,308 - INFO - DBNStore loaded
+2024-11-07 21:49:12,308 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,308 - ERROR - Error processing file xnas-itch-20240920.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,308 - INFO - Processing file: xnas-itch-20240830.mbp-10.dbn
+2024-11-07 21:49:12,309 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,309 - INFO - File size: 872.80 MB
+2024-11-07 21:49:12,310 - INFO - DBNStore loaded
+2024-11-07 21:49:12,310 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,310 - ERROR - Error processing file xnas-itch-20240830.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,311 - INFO - Processing file: xnas-itch-20240926.mbp-10.dbn
+2024-11-07 21:49:12,311 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,311 - INFO - File size: 884.90 MB
+2024-11-07 21:49:12,312 - INFO - DBNStore loaded
+2024-11-07 21:49:12,312 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,312 - ERROR - Error processing file xnas-itch-20240926.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,312 - INFO - Processing file: xnas-itch-20240924.mbp-10.dbn
+2024-11-07 21:49:12,312 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,312 - INFO - File size: 887.10 MB
+2024-11-07 21:49:12,313 - INFO - DBNStore loaded
+2024-11-07 21:49:12,313 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,313 - ERROR - Error processing file xnas-itch-20240924.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,313 - INFO - Processing file: xnas-itch-20240821.mbp-10.dbn
+2024-11-07 21:49:12,313 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,314 - INFO - File size: 903.48 MB
+2024-11-07 21:49:12,314 - INFO - DBNStore loaded
+2024-11-07 21:49:12,315 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,315 - ERROR - Error processing file xnas-itch-20240821.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,315 - INFO - Processing file: xnas-itch-20240816.mbp-10.dbn
+2024-11-07 21:49:12,315 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,315 - INFO - File size: 903.84 MB
+2024-11-07 21:49:12,316 - INFO - DBNStore loaded
+2024-11-07 21:49:12,316 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,316 - ERROR - Error processing file xnas-itch-20240816.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,316 - INFO - Processing file: xnas-itch-20241007.mbp-10.dbn
+2024-11-07 21:49:12,316 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,317 - INFO - File size: 911.06 MB
+2024-11-07 21:49:12,318 - INFO - DBNStore loaded
+2024-11-07 21:49:12,318 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,318 - ERROR - Error processing file xnas-itch-20241007.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,318 - INFO - Processing file: xnas-itch-20240812.mbp-10.dbn
+2024-11-07 21:49:12,318 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,318 - INFO - File size: 913.23 MB
+2024-11-07 21:49:12,319 - INFO - DBNStore loaded
+2024-11-07 21:49:12,319 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,319 - ERROR - Error processing file xnas-itch-20240812.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,319 - INFO - Processing file: xnas-itch-20240814.mbp-10.dbn
+2024-11-07 21:49:12,319 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,320 - INFO - File size: 923.51 MB
+2024-11-07 21:49:12,320 - INFO - DBNStore loaded
+2024-11-07 21:49:12,321 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,321 - ERROR - Error processing file xnas-itch-20240814.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,321 - INFO - Processing file: xnas-itch-20240923.mbp-10.dbn
+2024-11-07 21:49:12,321 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,321 - INFO - File size: 938.75 MB
+2024-11-07 21:49:12,324 - INFO - DBNStore loaded
+2024-11-07 21:49:12,324 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,324 - ERROR - Error processing file xnas-itch-20240923.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,324 - INFO - Processing file: xnas-itch-20240723.mbp-10.dbn
+2024-11-07 21:49:12,324 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,324 - INFO - File size: 943.47 MB
+2024-11-07 21:49:12,326 - INFO - DBNStore loaded
+2024-11-07 21:49:12,326 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,326 - ERROR - Error processing file xnas-itch-20240723.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,326 - INFO - Processing file: xnas-itch-20240826.mbp-10.dbn
+2024-11-07 21:49:12,326 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,326 - INFO - File size: 945.43 MB
+2024-11-07 21:49:12,327 - INFO - DBNStore loaded
+2024-11-07 21:49:12,327 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,327 - ERROR - Error processing file xnas-itch-20240826.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,327 - INFO - Processing file: xnas-itch-20240828.mbp-10.dbn
+2024-11-07 21:49:12,328 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,328 - INFO - File size: 949.08 MB
+2024-11-07 21:49:12,329 - INFO - DBNStore loaded
+2024-11-07 21:49:12,329 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,329 - ERROR - Error processing file xnas-itch-20240828.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,329 - INFO - Processing file: xnas-itch-20241017.mbp-10.dbn
+2024-11-07 21:49:12,329 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,329 - INFO - File size: 958.45 MB
+2024-11-07 21:49:12,330 - INFO - DBNStore loaded
+2024-11-07 21:49:12,331 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,331 - ERROR - Error processing file xnas-itch-20241017.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,331 - INFO - Processing file: xnas-itch-20240916.mbp-10.dbn
+2024-11-07 21:49:12,331 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,331 - INFO - File size: 968.33 MB
+2024-11-07 21:49:12,332 - INFO - DBNStore loaded
+2024-11-07 21:49:12,332 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,333 - ERROR - Error processing file xnas-itch-20240916.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,333 - INFO - Processing file: xnas-itch-20240919.mbp-10.dbn
+2024-11-07 21:49:12,333 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,333 - INFO - File size: 982.53 MB
+2024-11-07 21:49:12,334 - INFO - DBNStore loaded
+2024-11-07 21:49:12,334 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,334 - ERROR - Error processing file xnas-itch-20240919.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,334 - INFO - Processing file: xnas-itch-20240729.mbp-10.dbn
+2024-11-07 21:49:12,334 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,334 - INFO - File size: 1023.23 MB
+2024-11-07 21:49:12,335 - INFO - DBNStore loaded
+2024-11-07 21:49:12,336 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,336 - ERROR - Error processing file xnas-itch-20240729.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,336 - INFO - Processing file: xnas-itch-20240913.mbp-10.dbn
+2024-11-07 21:49:12,336 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,336 - INFO - File size: 1025.95 MB
+2024-11-07 21:49:12,337 - INFO - DBNStore loaded
+2024-11-07 21:49:12,337 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,338 - ERROR - Error processing file xnas-itch-20240913.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,338 - INFO - Processing file: xnas-itch-20240904.mbp-10.dbn
+2024-11-07 21:49:12,338 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,338 - INFO - File size: 1053.69 MB
+2024-11-07 21:49:12,339 - INFO - DBNStore loaded
+2024-11-07 21:49:12,339 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,339 - ERROR - Error processing file xnas-itch-20240904.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,339 - INFO - Processing file: xnas-itch-20240724.mbp-10.dbn
+2024-11-07 21:49:12,340 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,340 - INFO - File size: 1064.57 MB
+2024-11-07 21:49:12,341 - INFO - DBNStore loaded
+2024-11-07 21:49:12,341 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,342 - ERROR - Error processing file xnas-itch-20240724.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,342 - INFO - Processing file: xnas-itch-20241015.mbp-10.dbn
+2024-11-07 21:49:12,342 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,342 - INFO - File size: 1070.91 MB
+2024-11-07 21:49:12,343 - INFO - DBNStore loaded
+2024-11-07 21:49:12,343 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,344 - ERROR - Error processing file xnas-itch-20241015.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,344 - INFO - Processing file: xnas-itch-20240722.mbp-10.dbn
+2024-11-07 21:49:12,344 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,344 - INFO - File size: 1075.12 MB
+2024-11-07 21:49:12,345 - INFO - DBNStore loaded
+2024-11-07 21:49:12,346 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,346 - ERROR - Error processing file xnas-itch-20240722.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,346 - INFO - Processing file: xnas-itch-20240910.mbp-10.dbn
+2024-11-07 21:49:12,346 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,346 - INFO - File size: 1085.15 MB
+2024-11-07 21:49:12,347 - INFO - DBNStore loaded
+2024-11-07 21:49:12,348 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,348 - ERROR - Error processing file xnas-itch-20240910.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,348 - INFO - Processing file: xnas-itch-20240909.mbp-10.dbn
+2024-11-07 21:49:12,348 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,348 - INFO - File size: 1107.99 MB
+2024-11-07 21:49:12,349 - INFO - DBNStore loaded
+2024-11-07 21:49:12,350 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,350 - ERROR - Error processing file xnas-itch-20240909.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,350 - INFO - Processing file: xnas-itch-20240903.mbp-10.dbn
+2024-11-07 21:49:12,350 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,350 - INFO - File size: 1119.74 MB
+2024-11-07 21:49:12,351 - INFO - DBNStore loaded
+2024-11-07 21:49:12,351 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,351 - ERROR - Error processing file xnas-itch-20240903.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,352 - INFO - Processing file: xnas-itch-20240912.mbp-10.dbn
+2024-11-07 21:49:12,352 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,352 - INFO - File size: 1151.50 MB
+2024-11-07 21:49:12,353 - INFO - DBNStore loaded
+2024-11-07 21:49:12,353 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,353 - ERROR - Error processing file xnas-itch-20240912.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,353 - INFO - Processing file: xnas-itch-20240829.mbp-10.dbn
+2024-11-07 21:49:12,353 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,353 - INFO - File size: 1152.76 MB
+2024-11-07 21:49:12,354 - INFO - DBNStore loaded
+2024-11-07 21:49:12,355 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,355 - ERROR - Error processing file xnas-itch-20240829.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,355 - INFO - Processing file: xnas-itch-20241001.mbp-10.dbn
+2024-11-07 21:49:12,355 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,355 - INFO - File size: 1159.27 MB
+2024-11-07 21:49:12,356 - INFO - DBNStore loaded
+2024-11-07 21:49:12,356 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,356 - ERROR - Error processing file xnas-itch-20241001.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,356 - INFO - Processing file: xnas-itch-20240917.mbp-10.dbn
+2024-11-07 21:49:12,356 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,356 - INFO - File size: 1161.67 MB
+2024-11-07 21:49:12,358 - INFO - DBNStore loaded
+2024-11-07 21:49:12,358 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,358 - ERROR - Error processing file xnas-itch-20240917.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,359 - INFO - Processing file: xnas-itch-20240730.mbp-10.dbn
+2024-11-07 21:49:12,359 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,359 - INFO - File size: 1166.38 MB
+2024-11-07 21:49:12,360 - INFO - DBNStore loaded
+2024-11-07 21:49:12,360 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,360 - ERROR - Error processing file xnas-itch-20240730.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,360 - INFO - Processing file: xnas-itch-20240809.mbp-10.dbn
+2024-11-07 21:49:12,361 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,361 - INFO - File size: 1171.58 MB
+2024-11-07 21:49:12,362 - INFO - DBNStore loaded
+2024-11-07 21:49:12,362 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,362 - ERROR - Error processing file xnas-itch-20240809.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,362 - INFO - Processing file: xnas-itch-20240731.mbp-10.dbn
+2024-11-07 21:49:12,362 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,362 - INFO - File size: 1182.39 MB
+2024-11-07 21:49:12,363 - INFO - DBNStore loaded
+2024-11-07 21:49:12,363 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,363 - ERROR - Error processing file xnas-itch-20240731.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,364 - INFO - Processing file: xnas-itch-20240823.mbp-10.dbn
+2024-11-07 21:49:12,364 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,364 - INFO - File size: 1193.55 MB
+2024-11-07 21:49:12,365 - INFO - DBNStore loaded
+2024-11-07 21:49:12,365 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,365 - ERROR - Error processing file xnas-itch-20240823.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,366 - INFO - Processing file: xnas-itch-20240822.mbp-10.dbn
+2024-11-07 21:49:12,366 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,366 - INFO - File size: 1197.60 MB
+2024-11-07 21:49:12,367 - INFO - DBNStore loaded
+2024-11-07 21:49:12,367 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,367 - ERROR - Error processing file xnas-itch-20240822.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,368 - INFO - Processing file: xnas-itch-20240905.mbp-10.dbn
+2024-11-07 21:49:12,368 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,368 - INFO - File size: 1225.78 MB
+2024-11-07 21:49:12,369 - INFO - DBNStore loaded
+2024-11-07 21:49:12,369 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,369 - ERROR - Error processing file xnas-itch-20240905.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,369 - INFO - Processing file: xnas-itch-20240726.mbp-10.dbn
+2024-11-07 21:49:12,369 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,369 - INFO - File size: 1301.38 MB
+2024-11-07 21:49:12,370 - INFO - DBNStore loaded
+2024-11-07 21:49:12,370 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,370 - ERROR - Error processing file xnas-itch-20240726.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,370 - INFO - Processing file: xnas-itch-20240911.mbp-10.dbn
+2024-11-07 21:49:12,370 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,371 - INFO - File size: 1329.03 MB
+2024-11-07 21:49:12,371 - INFO - DBNStore loaded
+2024-11-07 21:49:12,372 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,372 - ERROR - Error processing file xnas-itch-20240911.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,372 - INFO - Processing file: xnas-itch-20240808.mbp-10.dbn
+2024-11-07 21:49:12,372 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,372 - INFO - File size: 1331.46 MB
+2024-11-07 21:49:12,373 - INFO - DBNStore loaded
+2024-11-07 21:49:12,373 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,373 - ERROR - Error processing file xnas-itch-20240808.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,373 - INFO - Processing file: xnas-itch-20240906.mbp-10.dbn
+2024-11-07 21:49:12,373 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,373 - INFO - File size: 1335.67 MB
+2024-11-07 21:49:12,374 - INFO - DBNStore loaded
+2024-11-07 21:49:12,374 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,374 - ERROR - Error processing file xnas-itch-20240906.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,374 - INFO - Processing file: xnas-itch-20240918.mbp-10.dbn
+2024-11-07 21:49:12,374 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,374 - INFO - File size: 1434.91 MB
+2024-11-07 21:49:12,376 - INFO - DBNStore loaded
+2024-11-07 21:49:12,376 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,377 - ERROR - Error processing file xnas-itch-20240918.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,377 - INFO - Processing file: xnas-itch-20240807.mbp-10.dbn
+2024-11-07 21:49:12,377 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,377 - INFO - File size: 1472.57 MB
+2024-11-07 21:49:12,378 - INFO - DBNStore loaded
+2024-11-07 21:49:12,378 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,378 - ERROR - Error processing file xnas-itch-20240807.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,378 - INFO - Processing file: xnas-itch-20240801.mbp-10.dbn
+2024-11-07 21:49:12,379 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,379 - INFO - File size: 1508.59 MB
+2024-11-07 21:49:12,380 - INFO - DBNStore loaded
+2024-11-07 21:49:12,380 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,380 - ERROR - Error processing file xnas-itch-20240801.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,380 - INFO - Processing file: xnas-itch-20240725.mbp-10.dbn
+2024-11-07 21:49:12,380 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,381 - INFO - File size: 1537.91 MB
+2024-11-07 21:49:12,382 - INFO - DBNStore loaded
+2024-11-07 21:49:12,382 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,382 - ERROR - Error processing file xnas-itch-20240725.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,382 - INFO - Processing file: xnas-itch-20240802.mbp-10.dbn
+2024-11-07 21:49:12,382 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,382 - INFO - File size: 1714.11 MB
+2024-11-07 21:49:12,384 - INFO - DBNStore loaded
+2024-11-07 21:49:12,384 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,384 - ERROR - Error processing file xnas-itch-20240802.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,384 - INFO - Processing file: xnas-itch-20240806.mbp-10.dbn
+2024-11-07 21:49:12,385 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,385 - INFO - File size: 1716.90 MB
+2024-11-07 21:49:12,386 - INFO - DBNStore loaded
+2024-11-07 21:49:12,386 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,386 - ERROR - Error processing file xnas-itch-20240806.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,386 - INFO - Processing file: xnas-itch-20240805.mbp-10.dbn
+2024-11-07 21:49:12,386 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,386 - INFO - File size: 2181.35 MB
+2024-11-07 21:49:12,387 - INFO - DBNStore loaded
+2024-11-07 21:49:12,387 - INFO - Memory usage: 162.24 MB
+2024-11-07 21:49:12,387 - ERROR - Error processing file xnas-itch-20240805.mbp-10.dbn: 'DBNStore' object has no attribute 'to_arrow'
+2024-11-07 21:49:12,388 - INFO - shutting down event loop in databento_live
+2024-11-07 21:54:34,363 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 21:54:34,363 - INFO - Memory usage: 165.76 MB
+2024-11-07 21:54:34,363 - INFO - File size: 626.05 MB
+2024-11-07 21:54:34,363 - INFO - DBNStore loaded
+2024-11-07 21:54:34,363 - INFO - Memory usage: 165.76 MB
+2024-11-07 22:02:45,788 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:02:45,788 - INFO - Memory usage: 163.30 MB
+2024-11-07 22:02:45,788 - INFO - File size: 626.05 MB
+2024-11-07 22:02:45,790 - INFO - DBNStore loaded
+2024-11-07 22:02:45,790 - INFO - Memory usage: 163.30 MB
+2024-11-07 22:02:45,790 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,800 - ERROR - Error processing file xnas-itch-20241014.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,800 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 22:02:45,801 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,801 - INFO - File size: 672.86 MB
+2024-11-07 22:02:45,802 - INFO - DBNStore loaded
+2024-11-07 22:02:45,802 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,802 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,802 - ERROR - Error processing file xnas-itch-20241011.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,803 - INFO - Processing file: xnas-itch-20241018.mbp-10.dbn
+2024-11-07 22:02:45,803 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,803 - INFO - File size: 705.14 MB
+2024-11-07 22:02:45,804 - INFO - DBNStore loaded
+2024-11-07 22:02:45,804 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,804 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,804 - ERROR - Error processing file xnas-itch-20241018.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,804 - INFO - Processing file: xnas-itch-20240819.mbp-10.dbn
+2024-11-07 22:02:45,804 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,804 - INFO - File size: 713.74 MB
+2024-11-07 22:02:45,805 - INFO - DBNStore loaded
+2024-11-07 22:02:45,805 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,805 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,806 - ERROR - Error processing file xnas-itch-20240819.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,807 - INFO - Processing file: xnas-itch-20241008.mbp-10.dbn
+2024-11-07 22:02:45,807 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,807 - INFO - File size: 717.02 MB
+2024-11-07 22:02:45,808 - INFO - DBNStore loaded
+2024-11-07 22:02:45,808 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,808 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,808 - ERROR - Error processing file xnas-itch-20241008.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,808 - INFO - Processing file: xnas-itch-20241003.mbp-10.dbn
+2024-11-07 22:02:45,808 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,809 - INFO - File size: 722.11 MB
+2024-11-07 22:02:45,809 - INFO - DBNStore loaded
+2024-11-07 22:02:45,810 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,810 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,810 - ERROR - Error processing file xnas-itch-20241003.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,810 - INFO - Processing file: xnas-itch-20240925.mbp-10.dbn
+2024-11-07 22:02:45,810 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,811 - INFO - File size: 723.33 MB
+2024-11-07 22:02:45,811 - INFO - DBNStore loaded
+2024-11-07 22:02:45,812 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,812 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,812 - ERROR - Error processing file xnas-itch-20240925.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,812 - INFO - Processing file: xnas-itch-20240815.mbp-10.dbn
+2024-11-07 22:02:45,812 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,812 - INFO - File size: 744.63 MB
+2024-11-07 22:02:45,813 - INFO - DBNStore loaded
+2024-11-07 22:02:45,813 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,813 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,813 - ERROR - Error processing file xnas-itch-20240815.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,814 - INFO - Processing file: xnas-itch-20240813.mbp-10.dbn
+2024-11-07 22:02:45,814 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,814 - INFO - File size: 755.26 MB
+2024-11-07 22:02:45,815 - INFO - DBNStore loaded
+2024-11-07 22:02:45,815 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,815 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,815 - ERROR - Error processing file xnas-itch-20240813.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,815 - INFO - Processing file: xnas-itch-20240820.mbp-10.dbn
+2024-11-07 22:02:45,816 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,816 - INFO - File size: 758.51 MB
+2024-11-07 22:02:45,816 - INFO - DBNStore loaded
+2024-11-07 22:02:45,817 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,817 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,817 - ERROR - Error processing file xnas-itch-20240820.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,817 - INFO - Processing file: xnas-itch-20240930.mbp-10.dbn
+2024-11-07 22:02:45,817 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,817 - INFO - File size: 772.20 MB
+2024-11-07 22:02:45,818 - INFO - DBNStore loaded
+2024-11-07 22:02:45,818 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,818 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,819 - ERROR - Error processing file xnas-itch-20240930.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,819 - INFO - Processing file: xnas-itch-20241010.mbp-10.dbn
+2024-11-07 22:02:45,819 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,819 - INFO - File size: 775.76 MB
+2024-11-07 22:02:45,820 - INFO - DBNStore loaded
+2024-11-07 22:02:45,820 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,820 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,820 - ERROR - Error processing file xnas-itch-20241010.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,820 - INFO - Processing file: xnas-itch-20241021.mbp-10.dbn
+2024-11-07 22:02:45,820 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,820 - INFO - File size: 787.84 MB
+2024-11-07 22:02:45,821 - INFO - DBNStore loaded
+2024-11-07 22:02:45,821 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,821 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,821 - ERROR - Error processing file xnas-itch-20241021.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,822 - INFO - Processing file: xnas-itch-20240827.mbp-10.dbn
+2024-11-07 22:02:45,822 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,822 - INFO - File size: 788.50 MB
+2024-11-07 22:02:45,822 - INFO - DBNStore loaded
+2024-11-07 22:02:45,823 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,823 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,823 - ERROR - Error processing file xnas-itch-20240827.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,823 - INFO - Processing file: xnas-itch-20240927.mbp-10.dbn
+2024-11-07 22:02:45,823 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,823 - INFO - File size: 789.95 MB
+2024-11-07 22:02:45,824 - INFO - DBNStore loaded
+2024-11-07 22:02:45,824 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,824 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,825 - ERROR - Error processing file xnas-itch-20240927.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,825 - INFO - Processing file: xnas-itch-20241016.mbp-10.dbn
+2024-11-07 22:02:45,825 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,825 - INFO - File size: 796.32 MB
+2024-11-07 22:02:45,826 - INFO - DBNStore loaded
+2024-11-07 22:02:45,826 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,826 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,827 - ERROR - Error processing file xnas-itch-20241016.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,827 - INFO - Processing file: xnas-itch-20241004.mbp-10.dbn
+2024-11-07 22:02:45,827 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,827 - INFO - File size: 799.12 MB
+2024-11-07 22:02:45,828 - INFO - DBNStore loaded
+2024-11-07 22:02:45,828 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,829 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,829 - ERROR - Error processing file xnas-itch-20241004.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,829 - INFO - Processing file: xnas-itch-20241002.mbp-10.dbn
+2024-11-07 22:02:45,829 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,829 - INFO - File size: 817.05 MB
+2024-11-07 22:02:45,830 - INFO - DBNStore loaded
+2024-11-07 22:02:45,830 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,830 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,830 - ERROR - Error processing file xnas-itch-20241002.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,830 - INFO - Processing file: xnas-itch-20241009.mbp-10.dbn
+2024-11-07 22:02:45,831 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,831 - INFO - File size: 835.66 MB
+2024-11-07 22:02:45,831 - INFO - DBNStore loaded
+2024-11-07 22:02:45,831 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,831 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,832 - ERROR - Error processing file xnas-itch-20241009.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,832 - INFO - Processing file: xnas-itch-20240920.mbp-10.dbn
+2024-11-07 22:02:45,832 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,832 - INFO - File size: 863.24 MB
+2024-11-07 22:02:45,833 - INFO - DBNStore loaded
+2024-11-07 22:02:45,833 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,833 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,833 - ERROR - Error processing file xnas-itch-20240920.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,833 - INFO - Processing file: xnas-itch-20240830.mbp-10.dbn
+2024-11-07 22:02:45,833 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,833 - INFO - File size: 872.80 MB
+2024-11-07 22:02:45,834 - INFO - DBNStore loaded
+2024-11-07 22:02:45,834 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,834 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,835 - ERROR - Error processing file xnas-itch-20240830.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,835 - INFO - Processing file: xnas-itch-20240926.mbp-10.dbn
+2024-11-07 22:02:45,835 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,835 - INFO - File size: 884.90 MB
+2024-11-07 22:02:45,836 - INFO - DBNStore loaded
+2024-11-07 22:02:45,836 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,836 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,836 - ERROR - Error processing file xnas-itch-20240926.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,836 - INFO - Processing file: xnas-itch-20240924.mbp-10.dbn
+2024-11-07 22:02:45,836 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,837 - INFO - File size: 887.10 MB
+2024-11-07 22:02:45,837 - INFO - DBNStore loaded
+2024-11-07 22:02:45,837 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,838 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,838 - ERROR - Error processing file xnas-itch-20240924.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,838 - INFO - Processing file: xnas-itch-20240821.mbp-10.dbn
+2024-11-07 22:02:45,838 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,838 - INFO - File size: 903.48 MB
+2024-11-07 22:02:45,839 - INFO - DBNStore loaded
+2024-11-07 22:02:45,839 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,839 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,840 - ERROR - Error processing file xnas-itch-20240821.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,840 - INFO - Processing file: xnas-itch-20240816.mbp-10.dbn
+2024-11-07 22:02:45,840 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,840 - INFO - File size: 903.84 MB
+2024-11-07 22:02:45,841 - INFO - DBNStore loaded
+2024-11-07 22:02:45,841 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,841 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,841 - ERROR - Error processing file xnas-itch-20240816.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,841 - INFO - Processing file: xnas-itch-20241007.mbp-10.dbn
+2024-11-07 22:02:45,841 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,841 - INFO - File size: 911.06 MB
+2024-11-07 22:02:45,842 - INFO - DBNStore loaded
+2024-11-07 22:02:45,842 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,842 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,842 - ERROR - Error processing file xnas-itch-20241007.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,842 - INFO - Processing file: xnas-itch-20240812.mbp-10.dbn
+2024-11-07 22:02:45,843 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,843 - INFO - File size: 913.23 MB
+2024-11-07 22:02:45,843 - INFO - DBNStore loaded
+2024-11-07 22:02:45,844 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,844 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,844 - ERROR - Error processing file xnas-itch-20240812.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,844 - INFO - Processing file: xnas-itch-20240814.mbp-10.dbn
+2024-11-07 22:02:45,844 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,844 - INFO - File size: 923.51 MB
+2024-11-07 22:02:45,845 - INFO - DBNStore loaded
+2024-11-07 22:02:45,845 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,845 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,845 - ERROR - Error processing file xnas-itch-20240814.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,845 - INFO - Processing file: xnas-itch-20240923.mbp-10.dbn
+2024-11-07 22:02:45,845 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,845 - INFO - File size: 938.75 MB
+2024-11-07 22:02:45,846 - INFO - DBNStore loaded
+2024-11-07 22:02:45,846 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,846 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,847 - ERROR - Error processing file xnas-itch-20240923.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,847 - INFO - Processing file: xnas-itch-20240723.mbp-10.dbn
+2024-11-07 22:02:45,847 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,847 - INFO - File size: 943.47 MB
+2024-11-07 22:02:45,848 - INFO - DBNStore loaded
+2024-11-07 22:02:45,848 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,848 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,848 - ERROR - Error processing file xnas-itch-20240723.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,848 - INFO - Processing file: xnas-itch-20240826.mbp-10.dbn
+2024-11-07 22:02:45,848 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,848 - INFO - File size: 945.43 MB
+2024-11-07 22:02:45,849 - INFO - DBNStore loaded
+2024-11-07 22:02:45,849 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,849 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,850 - ERROR - Error processing file xnas-itch-20240826.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,850 - INFO - Processing file: xnas-itch-20240828.mbp-10.dbn
+2024-11-07 22:02:45,850 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,850 - INFO - File size: 949.08 MB
+2024-11-07 22:02:45,851 - INFO - DBNStore loaded
+2024-11-07 22:02:45,851 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,851 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,852 - ERROR - Error processing file xnas-itch-20240828.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,852 - INFO - Processing file: xnas-itch-20241017.mbp-10.dbn
+2024-11-07 22:02:45,852 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,852 - INFO - File size: 958.45 MB
+2024-11-07 22:02:45,853 - INFO - DBNStore loaded
+2024-11-07 22:02:45,853 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,853 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,853 - ERROR - Error processing file xnas-itch-20241017.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,853 - INFO - Processing file: xnas-itch-20240916.mbp-10.dbn
+2024-11-07 22:02:45,853 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,853 - INFO - File size: 968.33 MB
+2024-11-07 22:02:45,854 - INFO - DBNStore loaded
+2024-11-07 22:02:45,854 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,854 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,855 - ERROR - Error processing file xnas-itch-20240916.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,855 - INFO - Processing file: xnas-itch-20240919.mbp-10.dbn
+2024-11-07 22:02:45,855 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,855 - INFO - File size: 982.53 MB
+2024-11-07 22:02:45,856 - INFO - DBNStore loaded
+2024-11-07 22:02:45,856 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,856 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,856 - ERROR - Error processing file xnas-itch-20240919.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,856 - INFO - Processing file: xnas-itch-20240729.mbp-10.dbn
+2024-11-07 22:02:45,857 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,857 - INFO - File size: 1023.23 MB
+2024-11-07 22:02:45,857 - INFO - DBNStore loaded
+2024-11-07 22:02:45,858 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,858 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,858 - ERROR - Error processing file xnas-itch-20240729.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,858 - INFO - Processing file: xnas-itch-20240913.mbp-10.dbn
+2024-11-07 22:02:45,858 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,858 - INFO - File size: 1025.95 MB
+2024-11-07 22:02:45,859 - INFO - DBNStore loaded
+2024-11-07 22:02:45,859 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,859 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,859 - ERROR - Error processing file xnas-itch-20240913.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,859 - INFO - Processing file: xnas-itch-20240904.mbp-10.dbn
+2024-11-07 22:02:45,859 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,859 - INFO - File size: 1053.69 MB
+2024-11-07 22:02:45,860 - INFO - DBNStore loaded
+2024-11-07 22:02:45,860 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,860 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,861 - ERROR - Error processing file xnas-itch-20240904.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,861 - INFO - Processing file: xnas-itch-20240724.mbp-10.dbn
+2024-11-07 22:02:45,861 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,861 - INFO - File size: 1064.57 MB
+2024-11-07 22:02:45,861 - INFO - DBNStore loaded
+2024-11-07 22:02:45,862 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,862 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,862 - ERROR - Error processing file xnas-itch-20240724.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,862 - INFO - Processing file: xnas-itch-20241015.mbp-10.dbn
+2024-11-07 22:02:45,862 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,862 - INFO - File size: 1070.91 MB
+2024-11-07 22:02:45,863 - INFO - DBNStore loaded
+2024-11-07 22:02:45,863 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,863 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,863 - ERROR - Error processing file xnas-itch-20241015.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,863 - INFO - Processing file: xnas-itch-20240722.mbp-10.dbn
+2024-11-07 22:02:45,863 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,863 - INFO - File size: 1075.12 MB
+2024-11-07 22:02:45,864 - INFO - DBNStore loaded
+2024-11-07 22:02:45,864 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,864 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,865 - ERROR - Error processing file xnas-itch-20240722.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,865 - INFO - Processing file: xnas-itch-20240910.mbp-10.dbn
+2024-11-07 22:02:45,865 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,865 - INFO - File size: 1085.15 MB
+2024-11-07 22:02:45,866 - INFO - DBNStore loaded
+2024-11-07 22:02:45,866 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,866 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,866 - ERROR - Error processing file xnas-itch-20240910.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,866 - INFO - Processing file: xnas-itch-20240909.mbp-10.dbn
+2024-11-07 22:02:45,866 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,866 - INFO - File size: 1107.99 MB
+2024-11-07 22:02:45,867 - INFO - DBNStore loaded
+2024-11-07 22:02:45,867 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,867 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,868 - ERROR - Error processing file xnas-itch-20240909.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,868 - INFO - Processing file: xnas-itch-20240903.mbp-10.dbn
+2024-11-07 22:02:45,868 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,868 - INFO - File size: 1119.74 MB
+2024-11-07 22:02:45,868 - INFO - DBNStore loaded
+2024-11-07 22:02:45,869 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,869 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,869 - ERROR - Error processing file xnas-itch-20240903.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,869 - INFO - Processing file: xnas-itch-20240912.mbp-10.dbn
+2024-11-07 22:02:45,869 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,869 - INFO - File size: 1151.50 MB
+2024-11-07 22:02:45,870 - INFO - DBNStore loaded
+2024-11-07 22:02:45,870 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,870 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,870 - ERROR - Error processing file xnas-itch-20240912.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,870 - INFO - Processing file: xnas-itch-20240829.mbp-10.dbn
+2024-11-07 22:02:45,870 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,870 - INFO - File size: 1152.76 MB
+2024-11-07 22:02:45,871 - INFO - DBNStore loaded
+2024-11-07 22:02:45,871 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,871 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,871 - ERROR - Error processing file xnas-itch-20240829.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,872 - INFO - Processing file: xnas-itch-20241001.mbp-10.dbn
+2024-11-07 22:02:45,872 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,872 - INFO - File size: 1159.27 MB
+2024-11-07 22:02:45,873 - INFO - DBNStore loaded
+2024-11-07 22:02:45,873 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,873 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,873 - ERROR - Error processing file xnas-itch-20241001.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,873 - INFO - Processing file: xnas-itch-20240917.mbp-10.dbn
+2024-11-07 22:02:45,873 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,874 - INFO - File size: 1161.67 MB
+2024-11-07 22:02:45,874 - INFO - DBNStore loaded
+2024-11-07 22:02:45,875 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,875 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,875 - ERROR - Error processing file xnas-itch-20240917.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,875 - INFO - Processing file: xnas-itch-20240730.mbp-10.dbn
+2024-11-07 22:02:45,876 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,876 - INFO - File size: 1166.38 MB
+2024-11-07 22:02:45,876 - INFO - DBNStore loaded
+2024-11-07 22:02:45,877 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,877 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,877 - ERROR - Error processing file xnas-itch-20240730.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,877 - INFO - Processing file: xnas-itch-20240809.mbp-10.dbn
+2024-11-07 22:02:45,877 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,877 - INFO - File size: 1171.58 MB
+2024-11-07 22:02:45,878 - INFO - DBNStore loaded
+2024-11-07 22:02:45,878 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,878 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,878 - ERROR - Error processing file xnas-itch-20240809.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,878 - INFO - Processing file: xnas-itch-20240731.mbp-10.dbn
+2024-11-07 22:02:45,879 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,879 - INFO - File size: 1182.39 MB
+2024-11-07 22:02:45,879 - INFO - DBNStore loaded
+2024-11-07 22:02:45,879 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,880 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,880 - ERROR - Error processing file xnas-itch-20240731.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,880 - INFO - Processing file: xnas-itch-20240823.mbp-10.dbn
+2024-11-07 22:02:45,880 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,880 - INFO - File size: 1193.55 MB
+2024-11-07 22:02:45,881 - INFO - DBNStore loaded
+2024-11-07 22:02:45,881 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,881 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,882 - ERROR - Error processing file xnas-itch-20240823.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,882 - INFO - Processing file: xnas-itch-20240822.mbp-10.dbn
+2024-11-07 22:02:45,882 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,882 - INFO - File size: 1197.60 MB
+2024-11-07 22:02:45,883 - INFO - DBNStore loaded
+2024-11-07 22:02:45,883 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,883 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,884 - ERROR - Error processing file xnas-itch-20240822.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,884 - INFO - Processing file: xnas-itch-20240905.mbp-10.dbn
+2024-11-07 22:02:45,884 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,884 - INFO - File size: 1225.78 MB
+2024-11-07 22:02:45,887 - INFO - DBNStore loaded
+2024-11-07 22:02:45,887 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,887 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,888 - ERROR - Error processing file xnas-itch-20240905.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,888 - INFO - Processing file: xnas-itch-20240726.mbp-10.dbn
+2024-11-07 22:02:45,888 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,888 - INFO - File size: 1301.38 MB
+2024-11-07 22:02:45,889 - INFO - DBNStore loaded
+2024-11-07 22:02:45,889 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,890 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,890 - ERROR - Error processing file xnas-itch-20240726.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,890 - INFO - Processing file: xnas-itch-20240911.mbp-10.dbn
+2024-11-07 22:02:45,890 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,890 - INFO - File size: 1329.03 MB
+2024-11-07 22:02:45,891 - INFO - DBNStore loaded
+2024-11-07 22:02:45,891 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,892 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,892 - ERROR - Error processing file xnas-itch-20240911.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,892 - INFO - Processing file: xnas-itch-20240808.mbp-10.dbn
+2024-11-07 22:02:45,893 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,893 - INFO - File size: 1331.46 MB
+2024-11-07 22:02:45,894 - INFO - DBNStore loaded
+2024-11-07 22:02:45,894 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,894 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,894 - ERROR - Error processing file xnas-itch-20240808.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,894 - INFO - Processing file: xnas-itch-20240906.mbp-10.dbn
+2024-11-07 22:02:45,895 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,895 - INFO - File size: 1335.67 MB
+2024-11-07 22:02:45,895 - INFO - DBNStore loaded
+2024-11-07 22:02:45,896 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,896 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,896 - ERROR - Error processing file xnas-itch-20240906.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,896 - INFO - Processing file: xnas-itch-20240918.mbp-10.dbn
+2024-11-07 22:02:45,896 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,896 - INFO - File size: 1434.91 MB
+2024-11-07 22:02:45,897 - INFO - DBNStore loaded
+2024-11-07 22:02:45,897 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,897 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,898 - ERROR - Error processing file xnas-itch-20240918.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,898 - INFO - Processing file: xnas-itch-20240807.mbp-10.dbn
+2024-11-07 22:02:45,898 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,898 - INFO - File size: 1472.57 MB
+2024-11-07 22:02:45,899 - INFO - DBNStore loaded
+2024-11-07 22:02:45,900 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,900 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,900 - ERROR - Error processing file xnas-itch-20240807.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,901 - INFO - Processing file: xnas-itch-20240801.mbp-10.dbn
+2024-11-07 22:02:45,901 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,901 - INFO - File size: 1508.59 MB
+2024-11-07 22:02:45,902 - INFO - DBNStore loaded
+2024-11-07 22:02:45,902 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,902 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,903 - ERROR - Error processing file xnas-itch-20240801.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,903 - INFO - Processing file: xnas-itch-20240725.mbp-10.dbn
+2024-11-07 22:02:45,903 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,903 - INFO - File size: 1537.91 MB
+2024-11-07 22:02:45,904 - INFO - DBNStore loaded
+2024-11-07 22:02:45,905 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,905 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,905 - ERROR - Error processing file xnas-itch-20240725.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,905 - INFO - Processing file: xnas-itch-20240802.mbp-10.dbn
+2024-11-07 22:02:45,906 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,906 - INFO - File size: 1714.11 MB
+2024-11-07 22:02:45,906 - INFO - DBNStore loaded
+2024-11-07 22:02:45,907 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,907 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,907 - ERROR - Error processing file xnas-itch-20240802.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,907 - INFO - Processing file: xnas-itch-20240806.mbp-10.dbn
+2024-11-07 22:02:45,907 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,907 - INFO - File size: 1716.90 MB
+2024-11-07 22:02:45,908 - INFO - DBNStore loaded
+2024-11-07 22:02:45,909 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,909 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,909 - ERROR - Error processing file xnas-itch-20240806.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,909 - INFO - Processing file: xnas-itch-20240805.mbp-10.dbn
+2024-11-07 22:02:45,910 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,910 - INFO - File size: 2181.35 MB
+2024-11-07 22:02:45,911 - INFO - DBNStore loaded
+2024-11-07 22:02:45,911 - INFO - Memory usage: 163.86 MB
+2024-11-07 22:02:45,911 - INFO - Number of unique symbols: 3
+2024-11-07 22:02:45,912 - ERROR - Error processing file xnas-itch-20240805.mbp-10.dbn: to_csv() got an unexpected keyword argument 'compression'
+2024-11-07 22:02:45,912 - INFO - shutting down event loop in databento_live
+2024-11-07 22:03:14,329 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:03:14,329 - INFO - Memory usage: 167.94 MB
+2024-11-07 22:03:14,329 - INFO - File size: 626.05 MB
+2024-11-07 22:03:14,329 - INFO - DBNStore loaded
+2024-11-07 22:03:14,329 - INFO - Memory usage: 167.94 MB
+2024-11-07 22:03:14,329 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,332 - ERROR - Error processing file xnas-itch-20241014.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,332 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 22:03:14,332 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,333 - INFO - File size: 672.86 MB
+2024-11-07 22:03:14,333 - INFO - DBNStore loaded
+2024-11-07 22:03:14,333 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,333 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,333 - ERROR - Error processing file xnas-itch-20241011.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,333 - INFO - Processing file: xnas-itch-20241018.mbp-10.dbn
+2024-11-07 22:03:14,333 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,333 - INFO - File size: 705.14 MB
+2024-11-07 22:03:14,334 - INFO - DBNStore loaded
+2024-11-07 22:03:14,334 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,334 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,334 - ERROR - Error processing file xnas-itch-20241018.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,334 - INFO - Processing file: xnas-itch-20240819.mbp-10.dbn
+2024-11-07 22:03:14,334 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,334 - INFO - File size: 713.74 MB
+2024-11-07 22:03:14,334 - INFO - DBNStore loaded
+2024-11-07 22:03:14,334 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,334 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,335 - ERROR - Error processing file xnas-itch-20240819.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,335 - INFO - Processing file: xnas-itch-20241008.mbp-10.dbn
+2024-11-07 22:03:14,335 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,335 - INFO - File size: 717.02 MB
+2024-11-07 22:03:14,335 - INFO - DBNStore loaded
+2024-11-07 22:03:14,335 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,335 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,336 - ERROR - Error processing file xnas-itch-20241008.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,336 - INFO - Processing file: xnas-itch-20241003.mbp-10.dbn
+2024-11-07 22:03:14,336 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,336 - INFO - File size: 722.11 MB
+2024-11-07 22:03:14,336 - INFO - DBNStore loaded
+2024-11-07 22:03:14,336 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,336 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,336 - ERROR - Error processing file xnas-itch-20241003.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,337 - INFO - Processing file: xnas-itch-20240925.mbp-10.dbn
+2024-11-07 22:03:14,337 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,337 - INFO - File size: 723.33 MB
+2024-11-07 22:03:14,337 - INFO - DBNStore loaded
+2024-11-07 22:03:14,337 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,337 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,337 - ERROR - Error processing file xnas-itch-20240925.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,337 - INFO - Processing file: xnas-itch-20240815.mbp-10.dbn
+2024-11-07 22:03:14,338 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,338 - INFO - File size: 744.63 MB
+2024-11-07 22:03:14,338 - INFO - DBNStore loaded
+2024-11-07 22:03:14,338 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,338 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,338 - ERROR - Error processing file xnas-itch-20240815.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,338 - INFO - Processing file: xnas-itch-20240813.mbp-10.dbn
+2024-11-07 22:03:14,338 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,338 - INFO - File size: 755.26 MB
+2024-11-07 22:03:14,339 - INFO - DBNStore loaded
+2024-11-07 22:03:14,339 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,339 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,339 - ERROR - Error processing file xnas-itch-20240813.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,339 - INFO - Processing file: xnas-itch-20240820.mbp-10.dbn
+2024-11-07 22:03:14,339 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,339 - INFO - File size: 758.51 MB
+2024-11-07 22:03:14,339 - INFO - DBNStore loaded
+2024-11-07 22:03:14,339 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,339 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,340 - ERROR - Error processing file xnas-itch-20240820.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,340 - INFO - Processing file: xnas-itch-20240930.mbp-10.dbn
+2024-11-07 22:03:14,340 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,340 - INFO - File size: 772.20 MB
+2024-11-07 22:03:14,340 - INFO - DBNStore loaded
+2024-11-07 22:03:14,340 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,340 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,340 - ERROR - Error processing file xnas-itch-20240930.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,340 - INFO - Processing file: xnas-itch-20241010.mbp-10.dbn
+2024-11-07 22:03:14,341 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,341 - INFO - File size: 775.76 MB
+2024-11-07 22:03:14,341 - INFO - DBNStore loaded
+2024-11-07 22:03:14,341 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,341 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,341 - ERROR - Error processing file xnas-itch-20241010.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,341 - INFO - Processing file: xnas-itch-20241021.mbp-10.dbn
+2024-11-07 22:03:14,341 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,341 - INFO - File size: 787.84 MB
+2024-11-07 22:03:14,341 - INFO - DBNStore loaded
+2024-11-07 22:03:14,342 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,342 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,342 - ERROR - Error processing file xnas-itch-20241021.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,342 - INFO - Processing file: xnas-itch-20240827.mbp-10.dbn
+2024-11-07 22:03:14,342 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,342 - INFO - File size: 788.50 MB
+2024-11-07 22:03:14,342 - INFO - DBNStore loaded
+2024-11-07 22:03:14,342 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,343 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,343 - ERROR - Error processing file xnas-itch-20240827.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,343 - INFO - Processing file: xnas-itch-20240927.mbp-10.dbn
+2024-11-07 22:03:14,343 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,343 - INFO - File size: 789.95 MB
+2024-11-07 22:03:14,343 - INFO - DBNStore loaded
+2024-11-07 22:03:14,343 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,344 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,344 - ERROR - Error processing file xnas-itch-20240927.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,344 - INFO - Processing file: xnas-itch-20241016.mbp-10.dbn
+2024-11-07 22:03:14,344 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,344 - INFO - File size: 796.32 MB
+2024-11-07 22:03:14,344 - INFO - DBNStore loaded
+2024-11-07 22:03:14,344 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,344 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,345 - ERROR - Error processing file xnas-itch-20241016.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,345 - INFO - Processing file: xnas-itch-20241004.mbp-10.dbn
+2024-11-07 22:03:14,345 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,345 - INFO - File size: 799.12 MB
+2024-11-07 22:03:14,345 - INFO - DBNStore loaded
+2024-11-07 22:03:14,345 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,346 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,346 - ERROR - Error processing file xnas-itch-20241004.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,346 - INFO - Processing file: xnas-itch-20241002.mbp-10.dbn
+2024-11-07 22:03:14,346 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,347 - INFO - File size: 817.05 MB
+2024-11-07 22:03:14,347 - INFO - DBNStore loaded
+2024-11-07 22:03:14,347 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,347 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,348 - ERROR - Error processing file xnas-itch-20241002.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,348 - INFO - Processing file: xnas-itch-20241009.mbp-10.dbn
+2024-11-07 22:03:14,348 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,348 - INFO - File size: 835.66 MB
+2024-11-07 22:03:14,348 - INFO - DBNStore loaded
+2024-11-07 22:03:14,348 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,348 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,349 - ERROR - Error processing file xnas-itch-20241009.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,349 - INFO - Processing file: xnas-itch-20240920.mbp-10.dbn
+2024-11-07 22:03:14,349 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,349 - INFO - File size: 863.24 MB
+2024-11-07 22:03:14,349 - INFO - DBNStore loaded
+2024-11-07 22:03:14,349 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,349 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,349 - ERROR - Error processing file xnas-itch-20240920.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,349 - INFO - Processing file: xnas-itch-20240830.mbp-10.dbn
+2024-11-07 22:03:14,349 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,350 - INFO - File size: 872.80 MB
+2024-11-07 22:03:14,350 - INFO - DBNStore loaded
+2024-11-07 22:03:14,350 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,350 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,350 - ERROR - Error processing file xnas-itch-20240830.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,350 - INFO - Processing file: xnas-itch-20240926.mbp-10.dbn
+2024-11-07 22:03:14,350 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,350 - INFO - File size: 884.90 MB
+2024-11-07 22:03:14,350 - INFO - DBNStore loaded
+2024-11-07 22:03:14,350 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,351 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,351 - ERROR - Error processing file xnas-itch-20240926.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,351 - INFO - Processing file: xnas-itch-20240924.mbp-10.dbn
+2024-11-07 22:03:14,351 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,351 - INFO - File size: 887.10 MB
+2024-11-07 22:03:14,351 - INFO - DBNStore loaded
+2024-11-07 22:03:14,351 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,351 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,352 - ERROR - Error processing file xnas-itch-20240924.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,352 - INFO - Processing file: xnas-itch-20240821.mbp-10.dbn
+2024-11-07 22:03:14,352 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,352 - INFO - File size: 903.48 MB
+2024-11-07 22:03:14,352 - INFO - DBNStore loaded
+2024-11-07 22:03:14,352 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,352 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,353 - ERROR - Error processing file xnas-itch-20240821.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,353 - INFO - Processing file: xnas-itch-20240816.mbp-10.dbn
+2024-11-07 22:03:14,353 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,353 - INFO - File size: 903.84 MB
+2024-11-07 22:03:14,353 - INFO - DBNStore loaded
+2024-11-07 22:03:14,353 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,353 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,354 - ERROR - Error processing file xnas-itch-20240816.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,354 - INFO - Processing file: xnas-itch-20241007.mbp-10.dbn
+2024-11-07 22:03:14,354 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,354 - INFO - File size: 911.06 MB
+2024-11-07 22:03:14,354 - INFO - DBNStore loaded
+2024-11-07 22:03:14,354 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,354 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,355 - ERROR - Error processing file xnas-itch-20241007.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,355 - INFO - Processing file: xnas-itch-20240812.mbp-10.dbn
+2024-11-07 22:03:14,355 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,355 - INFO - File size: 913.23 MB
+2024-11-07 22:03:14,355 - INFO - DBNStore loaded
+2024-11-07 22:03:14,355 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,355 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,355 - ERROR - Error processing file xnas-itch-20240812.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,355 - INFO - Processing file: xnas-itch-20240814.mbp-10.dbn
+2024-11-07 22:03:14,356 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,356 - INFO - File size: 923.51 MB
+2024-11-07 22:03:14,356 - INFO - DBNStore loaded
+2024-11-07 22:03:14,356 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,356 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,356 - ERROR - Error processing file xnas-itch-20240814.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,356 - INFO - Processing file: xnas-itch-20240923.mbp-10.dbn
+2024-11-07 22:03:14,357 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,357 - INFO - File size: 938.75 MB
+2024-11-07 22:03:14,357 - INFO - DBNStore loaded
+2024-11-07 22:03:14,357 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,357 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,357 - ERROR - Error processing file xnas-itch-20240923.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,357 - INFO - Processing file: xnas-itch-20240723.mbp-10.dbn
+2024-11-07 22:03:14,358 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,358 - INFO - File size: 943.47 MB
+2024-11-07 22:03:14,358 - INFO - DBNStore loaded
+2024-11-07 22:03:14,358 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,358 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,358 - ERROR - Error processing file xnas-itch-20240723.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,358 - INFO - Processing file: xnas-itch-20240826.mbp-10.dbn
+2024-11-07 22:03:14,358 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,358 - INFO - File size: 945.43 MB
+2024-11-07 22:03:14,358 - INFO - DBNStore loaded
+2024-11-07 22:03:14,359 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,359 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,359 - ERROR - Error processing file xnas-itch-20240826.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,359 - INFO - Processing file: xnas-itch-20240828.mbp-10.dbn
+2024-11-07 22:03:14,359 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,359 - INFO - File size: 949.08 MB
+2024-11-07 22:03:14,359 - INFO - DBNStore loaded
+2024-11-07 22:03:14,359 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,359 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,360 - ERROR - Error processing file xnas-itch-20240828.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,360 - INFO - Processing file: xnas-itch-20241017.mbp-10.dbn
+2024-11-07 22:03:14,360 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,360 - INFO - File size: 958.45 MB
+2024-11-07 22:03:14,360 - INFO - DBNStore loaded
+2024-11-07 22:03:14,360 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,360 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,360 - ERROR - Error processing file xnas-itch-20241017.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,360 - INFO - Processing file: xnas-itch-20240916.mbp-10.dbn
+2024-11-07 22:03:14,360 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,361 - INFO - File size: 968.33 MB
+2024-11-07 22:03:14,361 - INFO - DBNStore loaded
+2024-11-07 22:03:14,361 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,361 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,361 - ERROR - Error processing file xnas-itch-20240916.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,361 - INFO - Processing file: xnas-itch-20240919.mbp-10.dbn
+2024-11-07 22:03:14,362 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,362 - INFO - File size: 982.53 MB
+2024-11-07 22:03:14,362 - INFO - DBNStore loaded
+2024-11-07 22:03:14,362 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,362 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,363 - ERROR - Error processing file xnas-itch-20240919.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,363 - INFO - Processing file: xnas-itch-20240729.mbp-10.dbn
+2024-11-07 22:03:14,363 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,363 - INFO - File size: 1023.23 MB
+2024-11-07 22:03:14,363 - INFO - DBNStore loaded
+2024-11-07 22:03:14,363 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,363 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,364 - ERROR - Error processing file xnas-itch-20240729.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,364 - INFO - Processing file: xnas-itch-20240913.mbp-10.dbn
+2024-11-07 22:03:14,364 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,364 - INFO - File size: 1025.95 MB
+2024-11-07 22:03:14,364 - INFO - DBNStore loaded
+2024-11-07 22:03:14,364 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,364 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,365 - ERROR - Error processing file xnas-itch-20240913.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,365 - INFO - Processing file: xnas-itch-20240904.mbp-10.dbn
+2024-11-07 22:03:14,365 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,365 - INFO - File size: 1053.69 MB
+2024-11-07 22:03:14,365 - INFO - DBNStore loaded
+2024-11-07 22:03:14,365 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,365 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,365 - ERROR - Error processing file xnas-itch-20240904.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,365 - INFO - Processing file: xnas-itch-20240724.mbp-10.dbn
+2024-11-07 22:03:14,366 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,366 - INFO - File size: 1064.57 MB
+2024-11-07 22:03:14,366 - INFO - DBNStore loaded
+2024-11-07 22:03:14,366 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,366 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,366 - ERROR - Error processing file xnas-itch-20240724.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,367 - INFO - Processing file: xnas-itch-20241015.mbp-10.dbn
+2024-11-07 22:03:14,367 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,367 - INFO - File size: 1070.91 MB
+2024-11-07 22:03:14,367 - INFO - DBNStore loaded
+2024-11-07 22:03:14,367 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,367 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,367 - ERROR - Error processing file xnas-itch-20241015.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,367 - INFO - Processing file: xnas-itch-20240722.mbp-10.dbn
+2024-11-07 22:03:14,367 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,367 - INFO - File size: 1075.12 MB
+2024-11-07 22:03:14,368 - INFO - DBNStore loaded
+2024-11-07 22:03:14,368 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,368 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,368 - ERROR - Error processing file xnas-itch-20240722.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,368 - INFO - Processing file: xnas-itch-20240910.mbp-10.dbn
+2024-11-07 22:03:14,368 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,368 - INFO - File size: 1085.15 MB
+2024-11-07 22:03:14,368 - INFO - DBNStore loaded
+2024-11-07 22:03:14,368 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,368 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,369 - ERROR - Error processing file xnas-itch-20240910.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,369 - INFO - Processing file: xnas-itch-20240909.mbp-10.dbn
+2024-11-07 22:03:14,369 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,369 - INFO - File size: 1107.99 MB
+2024-11-07 22:03:14,369 - INFO - DBNStore loaded
+2024-11-07 22:03:14,369 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,369 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,369 - ERROR - Error processing file xnas-itch-20240909.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,369 - INFO - Processing file: xnas-itch-20240903.mbp-10.dbn
+2024-11-07 22:03:14,370 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,370 - INFO - File size: 1119.74 MB
+2024-11-07 22:03:14,370 - INFO - DBNStore loaded
+2024-11-07 22:03:14,370 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,370 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,370 - ERROR - Error processing file xnas-itch-20240903.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,370 - INFO - Processing file: xnas-itch-20240912.mbp-10.dbn
+2024-11-07 22:03:14,370 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,370 - INFO - File size: 1151.50 MB
+2024-11-07 22:03:14,371 - INFO - DBNStore loaded
+2024-11-07 22:03:14,371 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,371 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,371 - ERROR - Error processing file xnas-itch-20240912.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,372 - INFO - Processing file: xnas-itch-20240829.mbp-10.dbn
+2024-11-07 22:03:14,372 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,372 - INFO - File size: 1152.76 MB
+2024-11-07 22:03:14,372 - INFO - DBNStore loaded
+2024-11-07 22:03:14,372 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,372 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,373 - ERROR - Error processing file xnas-itch-20240829.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,373 - INFO - Processing file: xnas-itch-20241001.mbp-10.dbn
+2024-11-07 22:03:14,373 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,373 - INFO - File size: 1159.27 MB
+2024-11-07 22:03:14,373 - INFO - DBNStore loaded
+2024-11-07 22:03:14,373 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,373 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,373 - ERROR - Error processing file xnas-itch-20241001.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,374 - INFO - Processing file: xnas-itch-20240917.mbp-10.dbn
+2024-11-07 22:03:14,374 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,374 - INFO - File size: 1161.67 MB
+2024-11-07 22:03:14,374 - INFO - DBNStore loaded
+2024-11-07 22:03:14,374 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,374 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,374 - ERROR - Error processing file xnas-itch-20240917.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,374 - INFO - Processing file: xnas-itch-20240730.mbp-10.dbn
+2024-11-07 22:03:14,374 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,374 - INFO - File size: 1166.38 MB
+2024-11-07 22:03:14,375 - INFO - DBNStore loaded
+2024-11-07 22:03:14,375 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,375 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,375 - ERROR - Error processing file xnas-itch-20240730.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,375 - INFO - Processing file: xnas-itch-20240809.mbp-10.dbn
+2024-11-07 22:03:14,375 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,376 - INFO - File size: 1171.58 MB
+2024-11-07 22:03:14,376 - INFO - DBNStore loaded
+2024-11-07 22:03:14,376 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,376 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,376 - ERROR - Error processing file xnas-itch-20240809.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,376 - INFO - Processing file: xnas-itch-20240731.mbp-10.dbn
+2024-11-07 22:03:14,376 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,377 - INFO - File size: 1182.39 MB
+2024-11-07 22:03:14,377 - INFO - DBNStore loaded
+2024-11-07 22:03:14,377 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,377 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,377 - ERROR - Error processing file xnas-itch-20240731.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,377 - INFO - Processing file: xnas-itch-20240823.mbp-10.dbn
+2024-11-07 22:03:14,377 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,378 - INFO - File size: 1193.55 MB
+2024-11-07 22:03:14,378 - INFO - DBNStore loaded
+2024-11-07 22:03:14,378 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,378 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,378 - ERROR - Error processing file xnas-itch-20240823.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,378 - INFO - Processing file: xnas-itch-20240822.mbp-10.dbn
+2024-11-07 22:03:14,379 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,379 - INFO - File size: 1197.60 MB
+2024-11-07 22:03:14,379 - INFO - DBNStore loaded
+2024-11-07 22:03:14,379 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,379 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,379 - ERROR - Error processing file xnas-itch-20240822.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,379 - INFO - Processing file: xnas-itch-20240905.mbp-10.dbn
+2024-11-07 22:03:14,379 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,380 - INFO - File size: 1225.78 MB
+2024-11-07 22:03:14,380 - INFO - DBNStore loaded
+2024-11-07 22:03:14,380 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,380 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,380 - ERROR - Error processing file xnas-itch-20240905.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,380 - INFO - Processing file: xnas-itch-20240726.mbp-10.dbn
+2024-11-07 22:03:14,380 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,380 - INFO - File size: 1301.38 MB
+2024-11-07 22:03:14,381 - INFO - DBNStore loaded
+2024-11-07 22:03:14,381 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,381 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,381 - ERROR - Error processing file xnas-itch-20240726.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,381 - INFO - Processing file: xnas-itch-20240911.mbp-10.dbn
+2024-11-07 22:03:14,381 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,381 - INFO - File size: 1329.03 MB
+2024-11-07 22:03:14,381 - INFO - DBNStore loaded
+2024-11-07 22:03:14,381 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,381 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,382 - ERROR - Error processing file xnas-itch-20240911.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,382 - INFO - Processing file: xnas-itch-20240808.mbp-10.dbn
+2024-11-07 22:03:14,382 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,382 - INFO - File size: 1331.46 MB
+2024-11-07 22:03:14,382 - INFO - DBNStore loaded
+2024-11-07 22:03:14,382 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,382 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,383 - ERROR - Error processing file xnas-itch-20240808.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,383 - INFO - Processing file: xnas-itch-20240906.mbp-10.dbn
+2024-11-07 22:03:14,383 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,383 - INFO - File size: 1335.67 MB
+2024-11-07 22:03:14,383 - INFO - DBNStore loaded
+2024-11-07 22:03:14,383 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,383 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,383 - ERROR - Error processing file xnas-itch-20240906.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,383 - INFO - Processing file: xnas-itch-20240918.mbp-10.dbn
+2024-11-07 22:03:14,384 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,384 - INFO - File size: 1434.91 MB
+2024-11-07 22:03:14,384 - INFO - DBNStore loaded
+2024-11-07 22:03:14,384 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,384 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,384 - ERROR - Error processing file xnas-itch-20240918.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,384 - INFO - Processing file: xnas-itch-20240807.mbp-10.dbn
+2024-11-07 22:03:14,384 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,384 - INFO - File size: 1472.57 MB
+2024-11-07 22:03:14,385 - INFO - DBNStore loaded
+2024-11-07 22:03:14,385 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,385 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,385 - ERROR - Error processing file xnas-itch-20240807.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,385 - INFO - Processing file: xnas-itch-20240801.mbp-10.dbn
+2024-11-07 22:03:14,385 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,385 - INFO - File size: 1508.59 MB
+2024-11-07 22:03:14,385 - INFO - DBNStore loaded
+2024-11-07 22:03:14,385 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,385 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,386 - ERROR - Error processing file xnas-itch-20240801.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,386 - INFO - Processing file: xnas-itch-20240725.mbp-10.dbn
+2024-11-07 22:03:14,386 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,386 - INFO - File size: 1537.91 MB
+2024-11-07 22:03:14,386 - INFO - DBNStore loaded
+2024-11-07 22:03:14,386 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,386 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,386 - ERROR - Error processing file xnas-itch-20240725.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,386 - INFO - Processing file: xnas-itch-20240802.mbp-10.dbn
+2024-11-07 22:03:14,386 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,387 - INFO - File size: 1714.11 MB
+2024-11-07 22:03:14,387 - INFO - DBNStore loaded
+2024-11-07 22:03:14,387 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,387 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,387 - ERROR - Error processing file xnas-itch-20240802.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,387 - INFO - Processing file: xnas-itch-20240806.mbp-10.dbn
+2024-11-07 22:03:14,387 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,387 - INFO - File size: 1716.90 MB
+2024-11-07 22:03:14,387 - INFO - DBNStore loaded
+2024-11-07 22:03:14,387 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,388 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,388 - ERROR - Error processing file xnas-itch-20240806.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,388 - INFO - Processing file: xnas-itch-20240805.mbp-10.dbn
+2024-11-07 22:03:14,388 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,388 - INFO - File size: 2181.35 MB
+2024-11-07 22:03:14,388 - INFO - DBNStore loaded
+2024-11-07 22:03:14,388 - INFO - Memory usage: 168.57 MB
+2024-11-07 22:03:14,388 - INFO - Number of unique symbols: 3
+2024-11-07 22:03:14,389 - ERROR - Error processing file xnas-itch-20240805.mbp-10.dbn: to_csv() got an unexpected keyword argument 'mode'
+2024-11-07 22:03:14,389 - INFO - shutting down event loop in databento_live
+2024-11-07 22:04:12,365 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:04:12,365 - INFO - Memory usage: 171.91 MB
+2024-11-07 22:04:12,365 - INFO - File size: 626.05 MB
+2024-11-07 22:04:12,365 - INFO - DBNStore loaded
+2024-11-07 22:04:12,365 - INFO - Memory usage: 171.91 MB
+2024-11-07 22:04:12,365 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:07,944 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:11:07,944 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,944 - INFO - File size: 626.05 MB
+2024-11-07 22:11:07,944 - ERROR - Error processing file xnas-itch-20241014.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,944 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 22:11:07,944 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,944 - INFO - File size: 672.86 MB
+2024-11-07 22:11:07,944 - ERROR - Error processing file xnas-itch-20241011.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,945 - INFO - Processing file: xnas-itch-20241018.mbp-10.dbn
+2024-11-07 22:11:07,945 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,945 - INFO - File size: 705.14 MB
+2024-11-07 22:11:07,945 - ERROR - Error processing file xnas-itch-20241018.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,945 - INFO - Processing file: xnas-itch-20240819.mbp-10.dbn
+2024-11-07 22:11:07,945 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,945 - INFO - File size: 713.74 MB
+2024-11-07 22:11:07,945 - ERROR - Error processing file xnas-itch-20240819.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,945 - INFO - Processing file: xnas-itch-20241008.mbp-10.dbn
+2024-11-07 22:11:07,945 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,945 - INFO - File size: 717.02 MB
+2024-11-07 22:11:07,945 - ERROR - Error processing file xnas-itch-20241008.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,945 - INFO - Processing file: xnas-itch-20241003.mbp-10.dbn
+2024-11-07 22:11:07,945 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,945 - INFO - File size: 722.11 MB
+2024-11-07 22:11:07,946 - ERROR - Error processing file xnas-itch-20241003.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,946 - INFO - Processing file: xnas-itch-20240925.mbp-10.dbn
+2024-11-07 22:11:07,946 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,946 - INFO - File size: 723.33 MB
+2024-11-07 22:11:07,946 - ERROR - Error processing file xnas-itch-20240925.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,946 - INFO - Processing file: xnas-itch-20240815.mbp-10.dbn
+2024-11-07 22:11:07,946 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,946 - INFO - File size: 744.63 MB
+2024-11-07 22:11:07,946 - ERROR - Error processing file xnas-itch-20240815.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,946 - INFO - Processing file: xnas-itch-20240813.mbp-10.dbn
+2024-11-07 22:11:07,946 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,946 - INFO - File size: 755.26 MB
+2024-11-07 22:11:07,947 - ERROR - Error processing file xnas-itch-20240813.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,947 - INFO - Processing file: xnas-itch-20240820.mbp-10.dbn
+2024-11-07 22:11:07,947 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,947 - INFO - File size: 758.51 MB
+2024-11-07 22:11:07,947 - ERROR - Error processing file xnas-itch-20240820.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,947 - INFO - Processing file: xnas-itch-20240930.mbp-10.dbn
+2024-11-07 22:11:07,947 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,947 - INFO - File size: 772.20 MB
+2024-11-07 22:11:07,947 - ERROR - Error processing file xnas-itch-20240930.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,947 - INFO - Processing file: xnas-itch-20241010.mbp-10.dbn
+2024-11-07 22:11:07,947 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,947 - INFO - File size: 775.76 MB
+2024-11-07 22:11:07,947 - ERROR - Error processing file xnas-itch-20241010.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,947 - INFO - Processing file: xnas-itch-20241021.mbp-10.dbn
+2024-11-07 22:11:07,948 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,948 - INFO - File size: 787.84 MB
+2024-11-07 22:11:07,948 - ERROR - Error processing file xnas-itch-20241021.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,948 - INFO - Processing file: xnas-itch-20240827.mbp-10.dbn
+2024-11-07 22:11:07,948 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,948 - INFO - File size: 788.50 MB
+2024-11-07 22:11:07,948 - ERROR - Error processing file xnas-itch-20240827.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,948 - INFO - Processing file: xnas-itch-20240927.mbp-10.dbn
+2024-11-07 22:11:07,948 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,948 - INFO - File size: 789.95 MB
+2024-11-07 22:11:07,948 - ERROR - Error processing file xnas-itch-20240927.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,948 - INFO - Processing file: xnas-itch-20241016.mbp-10.dbn
+2024-11-07 22:11:07,948 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,948 - INFO - File size: 796.32 MB
+2024-11-07 22:11:07,948 - ERROR - Error processing file xnas-itch-20241016.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,948 - INFO - Processing file: xnas-itch-20241004.mbp-10.dbn
+2024-11-07 22:11:07,949 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,949 - INFO - File size: 799.12 MB
+2024-11-07 22:11:07,949 - ERROR - Error processing file xnas-itch-20241004.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,949 - INFO - Processing file: xnas-itch-20241002.mbp-10.dbn
+2024-11-07 22:11:07,949 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,949 - INFO - File size: 817.05 MB
+2024-11-07 22:11:07,949 - ERROR - Error processing file xnas-itch-20241002.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,949 - INFO - Processing file: xnas-itch-20241009.mbp-10.dbn
+2024-11-07 22:11:07,949 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,949 - INFO - File size: 835.66 MB
+2024-11-07 22:11:07,949 - ERROR - Error processing file xnas-itch-20241009.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,949 - INFO - Processing file: xnas-itch-20240920.mbp-10.dbn
+2024-11-07 22:11:07,949 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,949 - INFO - File size: 863.24 MB
+2024-11-07 22:11:07,949 - ERROR - Error processing file xnas-itch-20240920.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,949 - INFO - Processing file: xnas-itch-20240830.mbp-10.dbn
+2024-11-07 22:11:07,949 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,950 - INFO - File size: 872.80 MB
+2024-11-07 22:11:07,950 - ERROR - Error processing file xnas-itch-20240830.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,950 - INFO - Processing file: xnas-itch-20240926.mbp-10.dbn
+2024-11-07 22:11:07,950 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,950 - INFO - File size: 884.90 MB
+2024-11-07 22:11:07,950 - ERROR - Error processing file xnas-itch-20240926.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,950 - INFO - Processing file: xnas-itch-20240924.mbp-10.dbn
+2024-11-07 22:11:07,950 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,950 - INFO - File size: 887.10 MB
+2024-11-07 22:11:07,950 - ERROR - Error processing file xnas-itch-20240924.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,950 - INFO - Processing file: xnas-itch-20240821.mbp-10.dbn
+2024-11-07 22:11:07,950 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,950 - INFO - File size: 903.48 MB
+2024-11-07 22:11:07,950 - ERROR - Error processing file xnas-itch-20240821.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,950 - INFO - Processing file: xnas-itch-20240816.mbp-10.dbn
+2024-11-07 22:11:07,950 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,951 - INFO - File size: 903.84 MB
+2024-11-07 22:11:07,951 - ERROR - Error processing file xnas-itch-20240816.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,951 - INFO - Processing file: xnas-itch-20241007.mbp-10.dbn
+2024-11-07 22:11:07,951 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,951 - INFO - File size: 911.06 MB
+2024-11-07 22:11:07,951 - ERROR - Error processing file xnas-itch-20241007.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,951 - INFO - Processing file: xnas-itch-20240812.mbp-10.dbn
+2024-11-07 22:11:07,951 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,951 - INFO - File size: 913.23 MB
+2024-11-07 22:11:07,951 - ERROR - Error processing file xnas-itch-20240812.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,951 - INFO - Processing file: xnas-itch-20240814.mbp-10.dbn
+2024-11-07 22:11:07,951 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,951 - INFO - File size: 923.51 MB
+2024-11-07 22:11:07,951 - ERROR - Error processing file xnas-itch-20240814.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,951 - INFO - Processing file: xnas-itch-20240923.mbp-10.dbn
+2024-11-07 22:11:07,951 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,951 - INFO - File size: 938.75 MB
+2024-11-07 22:11:07,952 - ERROR - Error processing file xnas-itch-20240923.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,952 - INFO - Processing file: xnas-itch-20240723.mbp-10.dbn
+2024-11-07 22:11:07,952 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,952 - INFO - File size: 943.47 MB
+2024-11-07 22:11:07,952 - ERROR - Error processing file xnas-itch-20240723.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,952 - INFO - Processing file: xnas-itch-20240826.mbp-10.dbn
+2024-11-07 22:11:07,952 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,952 - INFO - File size: 945.43 MB
+2024-11-07 22:11:07,952 - ERROR - Error processing file xnas-itch-20240826.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,952 - INFO - Processing file: xnas-itch-20240828.mbp-10.dbn
+2024-11-07 22:11:07,952 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,952 - INFO - File size: 949.08 MB
+2024-11-07 22:11:07,952 - ERROR - Error processing file xnas-itch-20240828.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,952 - INFO - Processing file: xnas-itch-20241017.mbp-10.dbn
+2024-11-07 22:11:07,952 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,952 - INFO - File size: 958.45 MB
+2024-11-07 22:11:07,952 - ERROR - Error processing file xnas-itch-20241017.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,953 - INFO - Processing file: xnas-itch-20240916.mbp-10.dbn
+2024-11-07 22:11:07,953 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,953 - INFO - File size: 968.33 MB
+2024-11-07 22:11:07,953 - ERROR - Error processing file xnas-itch-20240916.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,953 - INFO - Processing file: xnas-itch-20240919.mbp-10.dbn
+2024-11-07 22:11:07,953 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,953 - INFO - File size: 982.53 MB
+2024-11-07 22:11:07,953 - ERROR - Error processing file xnas-itch-20240919.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,953 - INFO - Processing file: xnas-itch-20240729.mbp-10.dbn
+2024-11-07 22:11:07,953 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,953 - INFO - File size: 1023.23 MB
+2024-11-07 22:11:07,953 - ERROR - Error processing file xnas-itch-20240729.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,953 - INFO - Processing file: xnas-itch-20240913.mbp-10.dbn
+2024-11-07 22:11:07,954 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,954 - INFO - File size: 1025.95 MB
+2024-11-07 22:11:07,954 - ERROR - Error processing file xnas-itch-20240913.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,954 - INFO - Processing file: xnas-itch-20240904.mbp-10.dbn
+2024-11-07 22:11:07,954 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,954 - INFO - File size: 1053.69 MB
+2024-11-07 22:11:07,954 - ERROR - Error processing file xnas-itch-20240904.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,954 - INFO - Processing file: xnas-itch-20240724.mbp-10.dbn
+2024-11-07 22:11:07,954 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,954 - INFO - File size: 1064.57 MB
+2024-11-07 22:11:07,954 - ERROR - Error processing file xnas-itch-20240724.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,954 - INFO - Processing file: xnas-itch-20241015.mbp-10.dbn
+2024-11-07 22:11:07,954 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,954 - INFO - File size: 1070.91 MB
+2024-11-07 22:11:07,955 - ERROR - Error processing file xnas-itch-20241015.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,955 - INFO - Processing file: xnas-itch-20240722.mbp-10.dbn
+2024-11-07 22:11:07,955 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,955 - INFO - File size: 1075.12 MB
+2024-11-07 22:11:07,955 - ERROR - Error processing file xnas-itch-20240722.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,955 - INFO - Processing file: xnas-itch-20240910.mbp-10.dbn
+2024-11-07 22:11:07,955 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,955 - INFO - File size: 1085.15 MB
+2024-11-07 22:11:07,955 - ERROR - Error processing file xnas-itch-20240910.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,955 - INFO - Processing file: xnas-itch-20240909.mbp-10.dbn
+2024-11-07 22:11:07,955 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,955 - INFO - File size: 1107.99 MB
+2024-11-07 22:11:07,955 - ERROR - Error processing file xnas-itch-20240909.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,956 - INFO - Processing file: xnas-itch-20240903.mbp-10.dbn
+2024-11-07 22:11:07,956 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,956 - INFO - File size: 1119.74 MB
+2024-11-07 22:11:07,956 - ERROR - Error processing file xnas-itch-20240903.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,956 - INFO - Processing file: xnas-itch-20240912.mbp-10.dbn
+2024-11-07 22:11:07,956 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,956 - INFO - File size: 1151.50 MB
+2024-11-07 22:11:07,956 - ERROR - Error processing file xnas-itch-20240912.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,956 - INFO - Processing file: xnas-itch-20240829.mbp-10.dbn
+2024-11-07 22:11:07,956 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,956 - INFO - File size: 1152.76 MB
+2024-11-07 22:11:07,956 - ERROR - Error processing file xnas-itch-20240829.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,956 - INFO - Processing file: xnas-itch-20241001.mbp-10.dbn
+2024-11-07 22:11:07,956 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,956 - INFO - File size: 1159.27 MB
+2024-11-07 22:11:07,956 - ERROR - Error processing file xnas-itch-20241001.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,957 - INFO - Processing file: xnas-itch-20240917.mbp-10.dbn
+2024-11-07 22:11:07,957 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,957 - INFO - File size: 1161.67 MB
+2024-11-07 22:11:07,957 - ERROR - Error processing file xnas-itch-20240917.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,957 - INFO - Processing file: xnas-itch-20240730.mbp-10.dbn
+2024-11-07 22:11:07,957 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,957 - INFO - File size: 1166.38 MB
+2024-11-07 22:11:07,957 - ERROR - Error processing file xnas-itch-20240730.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,957 - INFO - Processing file: xnas-itch-20240809.mbp-10.dbn
+2024-11-07 22:11:07,957 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,957 - INFO - File size: 1171.58 MB
+2024-11-07 22:11:07,957 - ERROR - Error processing file xnas-itch-20240809.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,957 - INFO - Processing file: xnas-itch-20240731.mbp-10.dbn
+2024-11-07 22:11:07,957 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,957 - INFO - File size: 1182.39 MB
+2024-11-07 22:11:07,957 - ERROR - Error processing file xnas-itch-20240731.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,957 - INFO - Processing file: xnas-itch-20240823.mbp-10.dbn
+2024-11-07 22:11:07,958 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,958 - INFO - File size: 1193.55 MB
+2024-11-07 22:11:07,958 - ERROR - Error processing file xnas-itch-20240823.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,958 - INFO - Processing file: xnas-itch-20240822.mbp-10.dbn
+2024-11-07 22:11:07,958 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,958 - INFO - File size: 1197.60 MB
+2024-11-07 22:11:07,958 - ERROR - Error processing file xnas-itch-20240822.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,958 - INFO - Processing file: xnas-itch-20240905.mbp-10.dbn
+2024-11-07 22:11:07,958 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,958 - INFO - File size: 1225.78 MB
+2024-11-07 22:11:07,958 - ERROR - Error processing file xnas-itch-20240905.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,958 - INFO - Processing file: xnas-itch-20240726.mbp-10.dbn
+2024-11-07 22:11:07,958 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,958 - INFO - File size: 1301.38 MB
+2024-11-07 22:11:07,958 - ERROR - Error processing file xnas-itch-20240726.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,958 - INFO - Processing file: xnas-itch-20240911.mbp-10.dbn
+2024-11-07 22:11:07,958 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,959 - INFO - File size: 1329.03 MB
+2024-11-07 22:11:07,959 - ERROR - Error processing file xnas-itch-20240911.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,959 - INFO - Processing file: xnas-itch-20240808.mbp-10.dbn
+2024-11-07 22:11:07,959 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,959 - INFO - File size: 1331.46 MB
+2024-11-07 22:11:07,959 - ERROR - Error processing file xnas-itch-20240808.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,959 - INFO - Processing file: xnas-itch-20240906.mbp-10.dbn
+2024-11-07 22:11:07,959 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,959 - INFO - File size: 1335.67 MB
+2024-11-07 22:11:07,959 - ERROR - Error processing file xnas-itch-20240906.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,959 - INFO - Processing file: xnas-itch-20240918.mbp-10.dbn
+2024-11-07 22:11:07,959 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,959 - INFO - File size: 1434.91 MB
+2024-11-07 22:11:07,959 - ERROR - Error processing file xnas-itch-20240918.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,959 - INFO - Processing file: xnas-itch-20240807.mbp-10.dbn
+2024-11-07 22:11:07,959 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,959 - INFO - File size: 1472.57 MB
+2024-11-07 22:11:07,960 - ERROR - Error processing file xnas-itch-20240807.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,960 - INFO - Processing file: xnas-itch-20240801.mbp-10.dbn
+2024-11-07 22:11:07,960 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,960 - INFO - File size: 1508.59 MB
+2024-11-07 22:11:07,960 - ERROR - Error processing file xnas-itch-20240801.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,960 - INFO - Processing file: xnas-itch-20240725.mbp-10.dbn
+2024-11-07 22:11:07,960 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,960 - INFO - File size: 1537.91 MB
+2024-11-07 22:11:07,960 - ERROR - Error processing file xnas-itch-20240725.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,960 - INFO - Processing file: xnas-itch-20240802.mbp-10.dbn
+2024-11-07 22:11:07,960 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,960 - INFO - File size: 1714.11 MB
+2024-11-07 22:11:07,960 - ERROR - Error processing file xnas-itch-20240802.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,960 - INFO - Processing file: xnas-itch-20240806.mbp-10.dbn
+2024-11-07 22:11:07,960 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,960 - INFO - File size: 1716.90 MB
+2024-11-07 22:11:07,960 - ERROR - Error processing file xnas-itch-20240806.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,961 - INFO - Processing file: xnas-itch-20240805.mbp-10.dbn
+2024-11-07 22:11:07,961 - INFO - Memory usage: 165.30 MB
+2024-11-07 22:11:07,961 - INFO - File size: 2181.35 MB
+2024-11-07 22:11:07,961 - ERROR - Error processing file xnas-itch-20240805.mbp-10.dbn: from_file() got an unexpected keyword argument 'verbose'
+2024-11-07 22:11:07,961 - INFO - shutting down event loop in databento_live
+2024-11-07 22:11:19,795 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:11:19,795 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,795 - INFO - File size: 626.05 MB
+2024-11-07 22:11:19,797 - INFO - DBNStore loaded
+2024-11-07 22:11:19,797 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,797 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,800 - ERROR - Error processing file xnas-itch-20241014.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,800 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 22:11:19,800 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,800 - INFO - File size: 672.86 MB
+2024-11-07 22:11:19,801 - INFO - DBNStore loaded
+2024-11-07 22:11:19,801 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,801 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,801 - ERROR - Error processing file xnas-itch-20241011.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,801 - INFO - Processing file: xnas-itch-20241018.mbp-10.dbn
+2024-11-07 22:11:19,801 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,801 - INFO - File size: 705.14 MB
+2024-11-07 22:11:19,802 - INFO - DBNStore loaded
+2024-11-07 22:11:19,802 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,802 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,802 - ERROR - Error processing file xnas-itch-20241018.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,802 - INFO - Processing file: xnas-itch-20240819.mbp-10.dbn
+2024-11-07 22:11:19,803 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,803 - INFO - File size: 713.74 MB
+2024-11-07 22:11:19,803 - INFO - DBNStore loaded
+2024-11-07 22:11:19,803 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,803 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,804 - ERROR - Error processing file xnas-itch-20240819.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,804 - INFO - Processing file: xnas-itch-20241008.mbp-10.dbn
+2024-11-07 22:11:19,804 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,804 - INFO - File size: 717.02 MB
+2024-11-07 22:11:19,805 - INFO - DBNStore loaded
+2024-11-07 22:11:19,805 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,805 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,805 - ERROR - Error processing file xnas-itch-20241008.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,805 - INFO - Processing file: xnas-itch-20241003.mbp-10.dbn
+2024-11-07 22:11:19,805 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,805 - INFO - File size: 722.11 MB
+2024-11-07 22:11:19,806 - INFO - DBNStore loaded
+2024-11-07 22:11:19,806 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,806 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,806 - ERROR - Error processing file xnas-itch-20241003.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,806 - INFO - Processing file: xnas-itch-20240925.mbp-10.dbn
+2024-11-07 22:11:19,806 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,807 - INFO - File size: 723.33 MB
+2024-11-07 22:11:19,807 - INFO - DBNStore loaded
+2024-11-07 22:11:19,807 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,807 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,808 - ERROR - Error processing file xnas-itch-20240925.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,808 - INFO - Processing file: xnas-itch-20240815.mbp-10.dbn
+2024-11-07 22:11:19,808 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,808 - INFO - File size: 744.63 MB
+2024-11-07 22:11:19,809 - INFO - DBNStore loaded
+2024-11-07 22:11:19,809 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,809 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,810 - ERROR - Error processing file xnas-itch-20240815.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,810 - INFO - Processing file: xnas-itch-20240813.mbp-10.dbn
+2024-11-07 22:11:19,810 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,810 - INFO - File size: 755.26 MB
+2024-11-07 22:11:19,810 - INFO - DBNStore loaded
+2024-11-07 22:11:19,811 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,811 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,811 - ERROR - Error processing file xnas-itch-20240813.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,811 - INFO - Processing file: xnas-itch-20240820.mbp-10.dbn
+2024-11-07 22:11:19,811 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,812 - INFO - File size: 758.51 MB
+2024-11-07 22:11:19,812 - INFO - DBNStore loaded
+2024-11-07 22:11:19,812 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,812 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,813 - ERROR - Error processing file xnas-itch-20240820.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,813 - INFO - Processing file: xnas-itch-20240930.mbp-10.dbn
+2024-11-07 22:11:19,813 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,813 - INFO - File size: 772.20 MB
+2024-11-07 22:11:19,814 - INFO - DBNStore loaded
+2024-11-07 22:11:19,814 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,814 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,814 - ERROR - Error processing file xnas-itch-20240930.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,814 - INFO - Processing file: xnas-itch-20241010.mbp-10.dbn
+2024-11-07 22:11:19,814 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,814 - INFO - File size: 775.76 MB
+2024-11-07 22:11:19,815 - INFO - DBNStore loaded
+2024-11-07 22:11:19,815 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,815 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,815 - ERROR - Error processing file xnas-itch-20241010.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,815 - INFO - Processing file: xnas-itch-20241021.mbp-10.dbn
+2024-11-07 22:11:19,816 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,816 - INFO - File size: 787.84 MB
+2024-11-07 22:11:19,816 - INFO - DBNStore loaded
+2024-11-07 22:11:19,816 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,816 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,817 - ERROR - Error processing file xnas-itch-20241021.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,817 - INFO - Processing file: xnas-itch-20240827.mbp-10.dbn
+2024-11-07 22:11:19,817 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,817 - INFO - File size: 788.50 MB
+2024-11-07 22:11:19,818 - INFO - DBNStore loaded
+2024-11-07 22:11:19,818 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,818 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,819 - ERROR - Error processing file xnas-itch-20240827.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,819 - INFO - Processing file: xnas-itch-20240927.mbp-10.dbn
+2024-11-07 22:11:19,819 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,819 - INFO - File size: 789.95 MB
+2024-11-07 22:11:19,820 - INFO - DBNStore loaded
+2024-11-07 22:11:19,820 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,820 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,821 - ERROR - Error processing file xnas-itch-20240927.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,821 - INFO - Processing file: xnas-itch-20241016.mbp-10.dbn
+2024-11-07 22:11:19,821 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,821 - INFO - File size: 796.32 MB
+2024-11-07 22:11:19,822 - INFO - DBNStore loaded
+2024-11-07 22:11:19,822 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,822 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,822 - ERROR - Error processing file xnas-itch-20241016.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,822 - INFO - Processing file: xnas-itch-20241004.mbp-10.dbn
+2024-11-07 22:11:19,822 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,822 - INFO - File size: 799.12 MB
+2024-11-07 22:11:19,823 - INFO - DBNStore loaded
+2024-11-07 22:11:19,823 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,823 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,823 - ERROR - Error processing file xnas-itch-20241004.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,824 - INFO - Processing file: xnas-itch-20241002.mbp-10.dbn
+2024-11-07 22:11:19,824 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,824 - INFO - File size: 817.05 MB
+2024-11-07 22:11:19,824 - INFO - DBNStore loaded
+2024-11-07 22:11:19,824 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,824 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,825 - ERROR - Error processing file xnas-itch-20241002.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,825 - INFO - Processing file: xnas-itch-20241009.mbp-10.dbn
+2024-11-07 22:11:19,825 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,825 - INFO - File size: 835.66 MB
+2024-11-07 22:11:19,825 - INFO - DBNStore loaded
+2024-11-07 22:11:19,826 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,826 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,826 - ERROR - Error processing file xnas-itch-20241009.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,826 - INFO - Processing file: xnas-itch-20240920.mbp-10.dbn
+2024-11-07 22:11:19,826 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,826 - INFO - File size: 863.24 MB
+2024-11-07 22:11:19,827 - INFO - DBNStore loaded
+2024-11-07 22:11:19,827 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,827 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,828 - ERROR - Error processing file xnas-itch-20240920.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,828 - INFO - Processing file: xnas-itch-20240830.mbp-10.dbn
+2024-11-07 22:11:19,828 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,828 - INFO - File size: 872.80 MB
+2024-11-07 22:11:19,828 - INFO - DBNStore loaded
+2024-11-07 22:11:19,829 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,829 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,829 - ERROR - Error processing file xnas-itch-20240830.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,829 - INFO - Processing file: xnas-itch-20240926.mbp-10.dbn
+2024-11-07 22:11:19,829 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,829 - INFO - File size: 884.90 MB
+2024-11-07 22:11:19,830 - INFO - DBNStore loaded
+2024-11-07 22:11:19,830 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,830 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,830 - ERROR - Error processing file xnas-itch-20240926.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,830 - INFO - Processing file: xnas-itch-20240924.mbp-10.dbn
+2024-11-07 22:11:19,830 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,830 - INFO - File size: 887.10 MB
+2024-11-07 22:11:19,831 - INFO - DBNStore loaded
+2024-11-07 22:11:19,831 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,831 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,831 - ERROR - Error processing file xnas-itch-20240924.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,831 - INFO - Processing file: xnas-itch-20240821.mbp-10.dbn
+2024-11-07 22:11:19,831 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,831 - INFO - File size: 903.48 MB
+2024-11-07 22:11:19,832 - INFO - DBNStore loaded
+2024-11-07 22:11:19,832 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,832 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,833 - ERROR - Error processing file xnas-itch-20240821.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,833 - INFO - Processing file: xnas-itch-20240816.mbp-10.dbn
+2024-11-07 22:11:19,833 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,833 - INFO - File size: 903.84 MB
+2024-11-07 22:11:19,834 - INFO - DBNStore loaded
+2024-11-07 22:11:19,834 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,834 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,834 - ERROR - Error processing file xnas-itch-20240816.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,834 - INFO - Processing file: xnas-itch-20241007.mbp-10.dbn
+2024-11-07 22:11:19,834 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,834 - INFO - File size: 911.06 MB
+2024-11-07 22:11:19,835 - INFO - DBNStore loaded
+2024-11-07 22:11:19,835 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,836 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,836 - ERROR - Error processing file xnas-itch-20241007.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,836 - INFO - Processing file: xnas-itch-20240812.mbp-10.dbn
+2024-11-07 22:11:19,837 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,837 - INFO - File size: 913.23 MB
+2024-11-07 22:11:19,837 - INFO - DBNStore loaded
+2024-11-07 22:11:19,837 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,837 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,838 - ERROR - Error processing file xnas-itch-20240812.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,838 - INFO - Processing file: xnas-itch-20240814.mbp-10.dbn
+2024-11-07 22:11:19,838 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,838 - INFO - File size: 923.51 MB
+2024-11-07 22:11:19,838 - INFO - DBNStore loaded
+2024-11-07 22:11:19,839 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,839 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,839 - ERROR - Error processing file xnas-itch-20240814.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,839 - INFO - Processing file: xnas-itch-20240923.mbp-10.dbn
+2024-11-07 22:11:19,839 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,839 - INFO - File size: 938.75 MB
+2024-11-07 22:11:19,840 - INFO - DBNStore loaded
+2024-11-07 22:11:19,840 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,840 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,841 - ERROR - Error processing file xnas-itch-20240923.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,841 - INFO - Processing file: xnas-itch-20240723.mbp-10.dbn
+2024-11-07 22:11:19,841 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,841 - INFO - File size: 943.47 MB
+2024-11-07 22:11:19,841 - INFO - DBNStore loaded
+2024-11-07 22:11:19,842 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,842 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,842 - ERROR - Error processing file xnas-itch-20240723.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,842 - INFO - Processing file: xnas-itch-20240826.mbp-10.dbn
+2024-11-07 22:11:19,842 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,842 - INFO - File size: 945.43 MB
+2024-11-07 22:11:19,843 - INFO - DBNStore loaded
+2024-11-07 22:11:19,843 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,843 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,843 - ERROR - Error processing file xnas-itch-20240826.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,843 - INFO - Processing file: xnas-itch-20240828.mbp-10.dbn
+2024-11-07 22:11:19,844 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,844 - INFO - File size: 949.08 MB
+2024-11-07 22:11:19,844 - INFO - DBNStore loaded
+2024-11-07 22:11:19,844 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,845 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,845 - ERROR - Error processing file xnas-itch-20240828.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,845 - INFO - Processing file: xnas-itch-20241017.mbp-10.dbn
+2024-11-07 22:11:19,845 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,845 - INFO - File size: 958.45 MB
+2024-11-07 22:11:19,846 - INFO - DBNStore loaded
+2024-11-07 22:11:19,846 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,846 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,846 - ERROR - Error processing file xnas-itch-20241017.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,847 - INFO - Processing file: xnas-itch-20240916.mbp-10.dbn
+2024-11-07 22:11:19,847 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,847 - INFO - File size: 968.33 MB
+2024-11-07 22:11:19,847 - INFO - DBNStore loaded
+2024-11-07 22:11:19,847 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,847 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,848 - ERROR - Error processing file xnas-itch-20240916.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,848 - INFO - Processing file: xnas-itch-20240919.mbp-10.dbn
+2024-11-07 22:11:19,848 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,848 - INFO - File size: 982.53 MB
+2024-11-07 22:11:19,849 - INFO - DBNStore loaded
+2024-11-07 22:11:19,849 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,849 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,849 - ERROR - Error processing file xnas-itch-20240919.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,849 - INFO - Processing file: xnas-itch-20240729.mbp-10.dbn
+2024-11-07 22:11:19,850 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,850 - INFO - File size: 1023.23 MB
+2024-11-07 22:11:19,850 - INFO - DBNStore loaded
+2024-11-07 22:11:19,851 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,851 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,851 - ERROR - Error processing file xnas-itch-20240729.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,851 - INFO - Processing file: xnas-itch-20240913.mbp-10.dbn
+2024-11-07 22:11:19,851 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,851 - INFO - File size: 1025.95 MB
+2024-11-07 22:11:19,852 - INFO - DBNStore loaded
+2024-11-07 22:11:19,852 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,852 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,852 - ERROR - Error processing file xnas-itch-20240913.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,852 - INFO - Processing file: xnas-itch-20240904.mbp-10.dbn
+2024-11-07 22:11:19,852 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,853 - INFO - File size: 1053.69 MB
+2024-11-07 22:11:19,853 - INFO - DBNStore loaded
+2024-11-07 22:11:19,853 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,853 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,854 - ERROR - Error processing file xnas-itch-20240904.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,854 - INFO - Processing file: xnas-itch-20240724.mbp-10.dbn
+2024-11-07 22:11:19,854 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,854 - INFO - File size: 1064.57 MB
+2024-11-07 22:11:19,855 - INFO - DBNStore loaded
+2024-11-07 22:11:19,855 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,855 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,855 - ERROR - Error processing file xnas-itch-20240724.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,855 - INFO - Processing file: xnas-itch-20241015.mbp-10.dbn
+2024-11-07 22:11:19,856 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,856 - INFO - File size: 1070.91 MB
+2024-11-07 22:11:19,856 - INFO - DBNStore loaded
+2024-11-07 22:11:19,856 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,856 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,857 - ERROR - Error processing file xnas-itch-20241015.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,857 - INFO - Processing file: xnas-itch-20240722.mbp-10.dbn
+2024-11-07 22:11:19,857 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,857 - INFO - File size: 1075.12 MB
+2024-11-07 22:11:19,857 - INFO - DBNStore loaded
+2024-11-07 22:11:19,857 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,858 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,858 - ERROR - Error processing file xnas-itch-20240722.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,858 - INFO - Processing file: xnas-itch-20240910.mbp-10.dbn
+2024-11-07 22:11:19,858 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,858 - INFO - File size: 1085.15 MB
+2024-11-07 22:11:19,859 - INFO - DBNStore loaded
+2024-11-07 22:11:19,859 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,859 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,859 - ERROR - Error processing file xnas-itch-20240910.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,859 - INFO - Processing file: xnas-itch-20240909.mbp-10.dbn
+2024-11-07 22:11:19,859 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,859 - INFO - File size: 1107.99 MB
+2024-11-07 22:11:19,860 - INFO - DBNStore loaded
+2024-11-07 22:11:19,860 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,860 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,860 - ERROR - Error processing file xnas-itch-20240909.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,860 - INFO - Processing file: xnas-itch-20240903.mbp-10.dbn
+2024-11-07 22:11:19,860 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,860 - INFO - File size: 1119.74 MB
+2024-11-07 22:11:19,861 - INFO - DBNStore loaded
+2024-11-07 22:11:19,861 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,861 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,861 - ERROR - Error processing file xnas-itch-20240903.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,861 - INFO - Processing file: xnas-itch-20240912.mbp-10.dbn
+2024-11-07 22:11:19,862 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,862 - INFO - File size: 1151.50 MB
+2024-11-07 22:11:19,862 - INFO - DBNStore loaded
+2024-11-07 22:11:19,862 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,862 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,863 - ERROR - Error processing file xnas-itch-20240912.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,863 - INFO - Processing file: xnas-itch-20240829.mbp-10.dbn
+2024-11-07 22:11:19,863 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,863 - INFO - File size: 1152.76 MB
+2024-11-07 22:11:19,864 - INFO - DBNStore loaded
+2024-11-07 22:11:19,864 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,864 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,865 - ERROR - Error processing file xnas-itch-20240829.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,865 - INFO - Processing file: xnas-itch-20241001.mbp-10.dbn
+2024-11-07 22:11:19,865 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,865 - INFO - File size: 1159.27 MB
+2024-11-07 22:11:19,865 - INFO - DBNStore loaded
+2024-11-07 22:11:19,866 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,866 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,866 - ERROR - Error processing file xnas-itch-20241001.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,866 - INFO - Processing file: xnas-itch-20240917.mbp-10.dbn
+2024-11-07 22:11:19,866 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,866 - INFO - File size: 1161.67 MB
+2024-11-07 22:11:19,867 - INFO - DBNStore loaded
+2024-11-07 22:11:19,867 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,867 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,867 - ERROR - Error processing file xnas-itch-20240917.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,868 - INFO - Processing file: xnas-itch-20240730.mbp-10.dbn
+2024-11-07 22:11:19,868 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,868 - INFO - File size: 1166.38 MB
+2024-11-07 22:11:19,868 - INFO - DBNStore loaded
+2024-11-07 22:11:19,868 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,869 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,869 - ERROR - Error processing file xnas-itch-20240730.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,869 - INFO - Processing file: xnas-itch-20240809.mbp-10.dbn
+2024-11-07 22:11:19,869 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,869 - INFO - File size: 1171.58 MB
+2024-11-07 22:11:19,870 - INFO - DBNStore loaded
+2024-11-07 22:11:19,870 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,870 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,870 - ERROR - Error processing file xnas-itch-20240809.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,870 - INFO - Processing file: xnas-itch-20240731.mbp-10.dbn
+2024-11-07 22:11:19,871 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,871 - INFO - File size: 1182.39 MB
+2024-11-07 22:11:19,871 - INFO - DBNStore loaded
+2024-11-07 22:11:19,871 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,871 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,872 - ERROR - Error processing file xnas-itch-20240731.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,872 - INFO - Processing file: xnas-itch-20240823.mbp-10.dbn
+2024-11-07 22:11:19,872 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,872 - INFO - File size: 1193.55 MB
+2024-11-07 22:11:19,873 - INFO - DBNStore loaded
+2024-11-07 22:11:19,873 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,873 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,874 - ERROR - Error processing file xnas-itch-20240823.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,874 - INFO - Processing file: xnas-itch-20240822.mbp-10.dbn
+2024-11-07 22:11:19,874 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,874 - INFO - File size: 1197.60 MB
+2024-11-07 22:11:19,874 - INFO - DBNStore loaded
+2024-11-07 22:11:19,874 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,875 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,875 - ERROR - Error processing file xnas-itch-20240822.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,875 - INFO - Processing file: xnas-itch-20240905.mbp-10.dbn
+2024-11-07 22:11:19,875 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,875 - INFO - File size: 1225.78 MB
+2024-11-07 22:11:19,876 - INFO - DBNStore loaded
+2024-11-07 22:11:19,876 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,876 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,876 - ERROR - Error processing file xnas-itch-20240905.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,876 - INFO - Processing file: xnas-itch-20240726.mbp-10.dbn
+2024-11-07 22:11:19,876 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,876 - INFO - File size: 1301.38 MB
+2024-11-07 22:11:19,877 - INFO - DBNStore loaded
+2024-11-07 22:11:19,877 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,877 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,877 - ERROR - Error processing file xnas-itch-20240726.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,877 - INFO - Processing file: xnas-itch-20240911.mbp-10.dbn
+2024-11-07 22:11:19,877 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,878 - INFO - File size: 1329.03 MB
+2024-11-07 22:11:19,878 - INFO - DBNStore loaded
+2024-11-07 22:11:19,878 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,878 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,878 - ERROR - Error processing file xnas-itch-20240911.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,879 - INFO - Processing file: xnas-itch-20240808.mbp-10.dbn
+2024-11-07 22:11:19,879 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,879 - INFO - File size: 1331.46 MB
+2024-11-07 22:11:19,879 - INFO - DBNStore loaded
+2024-11-07 22:11:19,879 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,879 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,880 - ERROR - Error processing file xnas-itch-20240808.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,880 - INFO - Processing file: xnas-itch-20240906.mbp-10.dbn
+2024-11-07 22:11:19,880 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,880 - INFO - File size: 1335.67 MB
+2024-11-07 22:11:19,881 - INFO - DBNStore loaded
+2024-11-07 22:11:19,881 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,881 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,881 - ERROR - Error processing file xnas-itch-20240906.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,881 - INFO - Processing file: xnas-itch-20240918.mbp-10.dbn
+2024-11-07 22:11:19,881 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,881 - INFO - File size: 1434.91 MB
+2024-11-07 22:11:19,882 - INFO - DBNStore loaded
+2024-11-07 22:11:19,882 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,882 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,883 - ERROR - Error processing file xnas-itch-20240918.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,883 - INFO - Processing file: xnas-itch-20240807.mbp-10.dbn
+2024-11-07 22:11:19,883 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,883 - INFO - File size: 1472.57 MB
+2024-11-07 22:11:19,883 - INFO - DBNStore loaded
+2024-11-07 22:11:19,884 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,884 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,884 - ERROR - Error processing file xnas-itch-20240807.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,884 - INFO - Processing file: xnas-itch-20240801.mbp-10.dbn
+2024-11-07 22:11:19,884 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,884 - INFO - File size: 1508.59 MB
+2024-11-07 22:11:19,885 - INFO - DBNStore loaded
+2024-11-07 22:11:19,885 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,885 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,886 - ERROR - Error processing file xnas-itch-20240801.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,886 - INFO - Processing file: xnas-itch-20240725.mbp-10.dbn
+2024-11-07 22:11:19,886 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,886 - INFO - File size: 1537.91 MB
+2024-11-07 22:11:19,887 - INFO - DBNStore loaded
+2024-11-07 22:11:19,887 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,887 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,887 - ERROR - Error processing file xnas-itch-20240725.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,887 - INFO - Processing file: xnas-itch-20240802.mbp-10.dbn
+2024-11-07 22:11:19,888 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,888 - INFO - File size: 1714.11 MB
+2024-11-07 22:11:19,888 - INFO - DBNStore loaded
+2024-11-07 22:11:19,888 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,888 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,889 - ERROR - Error processing file xnas-itch-20240802.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,889 - INFO - Processing file: xnas-itch-20240806.mbp-10.dbn
+2024-11-07 22:11:19,889 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,889 - INFO - File size: 1716.90 MB
+2024-11-07 22:11:19,889 - INFO - DBNStore loaded
+2024-11-07 22:11:19,890 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,890 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,890 - ERROR - Error processing file xnas-itch-20240806.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,890 - INFO - Processing file: xnas-itch-20240805.mbp-10.dbn
+2024-11-07 22:11:19,890 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,890 - INFO - File size: 2181.35 MB
+2024-11-07 22:11:19,891 - INFO - DBNStore loaded
+2024-11-07 22:11:19,891 - INFO - Memory usage: 169.61 MB
+2024-11-07 22:11:19,891 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:19,892 - ERROR - Error processing file xnas-itch-20240805.mbp-10.dbn: 'DBNStore' object has no attribute 'batch'
+2024-11-07 22:11:19,892 - INFO - shutting down event loop in databento_live
+2024-11-07 22:11:44,651 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:11:44,651 - INFO - Memory usage: 169.55 MB
+2024-11-07 22:11:44,651 - INFO - File size: 626.05 MB
+2024-11-07 22:11:44,651 - INFO - DBNStore loaded
+2024-11-07 22:11:44,651 - INFO - Memory usage: 169.55 MB
+2024-11-07 22:11:44,651 - INFO - Number of unique symbols: 3
+2024-11-07 22:11:45,938 - INFO - shutting down event loop in databento_live
+2024-11-07 22:15:37,078 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:15:37,078 - INFO - Memory usage: 161.88 MB
+2024-11-07 22:15:37,078 - INFO - File size: 626.05 MB
+2024-11-07 22:15:37,079 - INFO - DBNStore loaded
+2024-11-07 22:15:37,079 - INFO - Memory usage: 161.88 MB
+2024-11-07 22:15:37,079 - INFO - Number of unique symbols: 3
+2024-11-07 22:15:38,695 - INFO - shutting down event loop in databento_live
+2024-11-07 22:16:04,143 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:16:04,144 - INFO - Memory usage: 167.80 MB
+2024-11-07 22:16:04,144 - INFO - File size: 626.05 MB
+2024-11-07 22:16:04,144 - INFO - DBNStore loaded
+2024-11-07 22:16:04,144 - INFO - Memory usage: 167.80 MB
+2024-11-07 22:16:04,144 - INFO - Number of unique symbols: 3
+2024-11-07 22:16:13,541 - INFO - shutting down event loop in databento_live
+2024-11-07 22:17:53,914 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-07 22:17:53,915 - INFO - Memory usage: 163.71 MB
+2024-11-07 22:17:53,915 - INFO - File size: 626.05 MB
+2024-11-07 22:17:53,915 - INFO - DBNStore loaded
+2024-11-07 22:17:53,915 - INFO - Memory usage: 163.71 MB
+2024-11-07 22:17:53,916 - INFO - Number of unique symbols: 3
+2024-11-07 23:02:11,063 - INFO - Processing file: xnas-itch-20241011.mbp-10.dbn
+2024-11-07 23:02:11,085 - INFO - Memory usage: 5754.25 MB
+2024-11-07 23:02:11,087 - INFO - File size: 672.86 MB
+2024-11-07 23:02:11,093 - INFO - DBNStore loaded
+2024-11-07 23:02:11,093 - INFO - Memory usage: 5754.25 MB
+2024-11-07 23:02:11,093 - INFO - Number of unique symbols: 3
