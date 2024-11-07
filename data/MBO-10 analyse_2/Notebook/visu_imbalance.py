@@ -19,12 +19,12 @@ def processing(file, output):
     df = pd.read_csv(file)
     df = df[df['symbol'] == actif]
     df = df[df['depth'] == limite]
-    df['ts_event'] = pd.to_datetime(df['ts_event'])
+    df['ts_event'] = pd.to_datetime(df['ts_event'], errors='coerce')
     df = df[(df['ts_event'].dt.hour >= 14) & (df['ts_event'].dt.hour < 19)]
     df = df[df['side'].isin(['A','B'])]
 
     df_ = df[['ts_event','action', 'side', 'size', 'price',f'bid_px_0{limite}', f'ask_px_0{limite}', f'bid_sz_0{limite}', f'ask_sz_0{limite}',f'bid_ct_0{limite}', f'ask_ct_0{limite}',f'bid_px_0{limite+1}', f'ask_px_0{limite+1}', f'bid_sz_0{limite+1}', f'ask_sz_0{limite+1}',f'bid_ct_0{limite+1}', f'ask_ct_0{limite+1}']]
-    df_['ts_event'] = pd.to_datetime(df_['ts_event'])
+    df_['ts_event'] = pd.to_datetime(df_['ts_event'], errors='coerce')
     df_['time_diff'] = df_['ts_event'].diff().dt.total_seconds()
 
     df_['price_same'] = np.where(df['side'] == 'A', df[f'ask_px_0{limite}'],df[f'bid_px_0{limite}'])
@@ -37,7 +37,7 @@ def processing(file, output):
     df_['diff_price'] = df_['price'].diff()
     df_['Mean_price_diff'] = df_['diff_price'].rolling(window=10).mean().shift(1)
     df_['imbalance'] = (df_[f'ask_sz_0{limite}']-df_[f'bid_sz_0{limite}'])/(df_[f'ask_sz_0{limite}']+df_[f'bid_sz_0{limite}'])
-    df_['ts_event'] = pd.to_datetime(df_['ts_event'])
+    df_['ts_event'] = pd.to_datetime(df_['ts_event'], errors='coerce')
     df_['time_diff'] = df_['ts_event'].diff().dt.total_seconds()
     df_['indice'] = range(len(df_))
     df_[f'bid_sz_0{limite}_diff'] = df_[f'bid_sz_0{limite}'].diff()
@@ -230,7 +230,7 @@ def processing(file, output):
     df__ = pd.concat(standardized_series_list, axis=1).T.reset_index(drop=True)
 
     #df__['ts_diff'] = pd.to_datetime(df__['ts_event']).diff().dt.total_seconds()
-    df__['price_middle'] = (df__['ask_px_00']-df__['bid_px_00'])/2
+    df__['price_middle'] = (df__['ask_px_00']+df__['bid_px_00'])/2
     df__['price_same'] = np.where(df__['side'] == 'A', df__[f'ask_px_0{limite}'],df__[f'bid_px_0{limite}'])
     df__['price_opposite'] = np.where(df__['side'] == 'A', df__[f'bid_px_0{limite}'], df__[f'ask_px_0{limite}'])
     df__['size_same'] = np.where(df__['side'] == 'A', df__[f'ask_sz_0{limite}'],df__[f'bid_sz_0{limite}'])
@@ -273,17 +273,7 @@ def processing(file, output):
     df__ = df__[df__['time_diff']>0]
     df__ = df__[df__['time_diff'] != np.nan]
     df_final = df__[df__['status'] != 'NOK']
-    df__['Mean_price_diff'] = df__['diff_price'].rolling(window=50).mean().shift(1)
-    df__['imbalance'] = (df__[f'ask_sz_0{limite}']-df__[f'bid_sz_0{limite}'])/(df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'])
+    df__['Mean_price_diff'] = df__['diff_price'].shift(-50) - df__['diff_price']#df__['diff_price'].rolling(window=50).mean().shift(1)
+    df__['imbalance'] = -(df__[f'ask_sz_0{limite}']-df__[f'bid_sz_0{limite}'])/(df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'])
     #df__['imbalance'] = (df__['size_same']-df__['size_opposite'])/(df__['size_same']+df__['size_opposite'])
     df__.to_csv(output+file[-29:], index = False)
-
-# df_final = df__
-
-# df_trades = df_final[101:]#[df_final['action'] =='T']
-# imb = df_trades ['imbalance'].to_numpy()
-# price = df_trades ['Mean_price_diff'].to_numpy()#/df_trades ['time_diff'].to_numpy()
-# indices_trie = np.argsort(imb)
-
-# imb_trie = imb[indices_trie]
-# price_trie = price[indices_trie]
