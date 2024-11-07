@@ -19,6 +19,7 @@ def extract_zst_files(directory: str) -> None:
     # Define the output directory
     output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/"
     
+    
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
@@ -38,4 +39,4 @@ def extract_zst_files(directory: str) -> None:
                 dctx.copy_stream(compressed_file, output_file)
 
 # Example usage
-extract_zst_files("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/download/XNAS-20241022-7YKWN9689U")
+extract_zst_files("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/download/DBEQ-20241022-MYAHGPS79Q")

@@ -20,7 +20,7 @@ def convert_dbn_to_csv(directory: str) -> None:
         raise FileNotFoundError(f"The directory {directory} does not exist.")
     
     # Define the output directory
-    output_directory = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/csv/"
+    output_directory = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
     
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_directory):
@@ -28,7 +28,6 @@ def convert_dbn_to_csv(directory: str) -> None:
     
     # Get the list of .dbn files in the directory
     dbn_files = [file_name for file_name in os.listdir(directory) if file_name.endswith(".dbn")]
-    dbn_files = ['dbeq-basic-20241014.mbp-10.dbn']
     
     # Iterate over all .dbn files in the directory with progress bar
     for file_name in tqdm(dbn_files, desc="Converting .dbn files to CSV"):
@@ -57,6 +56,6 @@ def convert_dbn_to_csv(directory: str) -> None:
             df.filter(pl.col("symbol") == symbol).write_csv(output_file_path)
 
 # Example usage
-convert_dbn_to_csv("/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/")
+convert_dbn_to_csv("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn")
 
 # important : error  33/64 afer that disk usage is 100%
