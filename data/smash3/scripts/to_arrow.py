@@ -1,6 +1,5 @@
 import os
-# import polars as pl
-import pandas as pd
+import polars as pl
 import databento as db
 from tqdm import tqdm
 import psutil

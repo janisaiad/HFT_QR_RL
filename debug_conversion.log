@@ -2736,3 +2736,17 @@
 2024-11-07 23:02:11,093 - INFO - Memory usage: 5754.25 MB
 2024-11-07 23:02:11,093 - INFO - Number of unique symbols: 3
 2024-11-07 23:59:40,903 - INFO - shutting down event loop in databento_live
+2024-11-08 00:23:44,345 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-08 00:23:44,346 - INFO - Memory usage: 143.55 MB
+2024-11-08 00:23:44,346 - INFO - File size: 626.05 MB
+2024-11-08 00:23:44,347 - INFO - DBNStore loaded
+2024-11-08 00:23:44,347 - INFO - Memory usage: 143.55 MB
+2024-11-08 00:23:44,347 - INFO - Number of unique symbols: 3
+2024-11-08 00:24:29,943 - INFO - shutting down event loop in databento_live
+2024-11-08 00:28:27,724 - INFO - Processing file: xnas-itch-20241014.mbp-10.dbn
+2024-11-08 00:28:27,724 - INFO - Memory usage: 143.42 MB
+2024-11-08 00:28:27,724 - INFO - File size: 626.05 MB
+2024-11-08 00:28:27,725 - INFO - DBNStore loaded
+2024-11-08 00:28:27,725 - INFO - Memory usage: 143.42 MB
+2024-11-08 00:28:27,725 - INFO - Number of unique symbols: 3
+2024-11-08 00:28:36,277 - INFO - shutting down event loop in databento_live
