@@ -2,60 +2,86 @@ import os
 import polars as pl
 import databento as db
 from tqdm import tqdm
+import psutil
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='debug_conversion.log'
+)
+
+def log_memory_usage():
+    """Log current memory usage"""
+    process = psutil.Process(os.getpid())
+    mem = process.memory_info().rss / 1024 / 1024  # in MB
+    logging.info(f"Memory usage: {mem:.2f} MB")
 
 def convert_dbn_to_csv(directory: str) -> None:
-    """
-    Function to convert all .dbn files in a specified directory to CSV files,
-    and organize them into folders based on the 'symbol' value in the dataframe.
-    Uses polars for improved performance and memory efficiency.
-
-    Args:
-    directory (str): Directory where the .dbn files are located.
-
-    Returns:
-    None
-    """
-    # Check if the directory exists
-    if not os.path.exists(directory):
-        raise FileNotFoundError(f"The directory {directory} does not exist.")
-    
-    # Define the output directory
-    output_directory = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
-    
-    # Create the output directory if it doesn't exist
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
-    
-    # Get the list of .dbn files in the directory
-    dbn_files = [file_name for file_name in os.listdir(directory) if file_name.endswith(".dbn")]
-    
-    # Iterate over all .dbn files in the directory with progress bar
-    for file_name in tqdm(dbn_files, desc="Converting .dbn files to CSV"):
-        file_path = os.path.join(directory, file_name)
-        # Read the .dbn file using databento
-        store = db.DBNStore.from_file(file_path)
-        df = store.to_df()
+    try:
+        if not os.path.exists(directory):
+            raise FileNotFoundError(f"The directory {directory} does not exist.")
         
-        # Convert pandas DataFrame to polars DataFrame
-        df = pl.from_pandas(df)
+        output_directory = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
         
-        # Extract the date from the original file name
-        date_str = file_name.split("itch-")[1].split(".")[0]
+        dbn_files = [f for f in os.listdir(directory) if f.endswith(".dbn")]
         
-        # Group and write by symbol using polars
-        for symbol in df["symbol"].unique():
-            # Create a folder for the symbol if it doesn't exist
-            symbol_folder = os.path.join(output_directory, symbol)
-            if not os.path.exists(symbol_folder):
-                os.makedirs(symbol_folder)
-            
-            # Define the output CSV file path
-            output_file_path = os.path.join(symbol_folder, f"{date_str}.csv")
-            
-            # Filter data for this symbol and write to CSV
-            df.filter(pl.col("symbol") == symbol).write_csv(output_file_path)
+        for file_name in tqdm(dbn_files, desc="Converting .dbn files to CSV"):
+            try:
+                logging.info(f"Processing file: {file_name}")
+                log_memory_usage()
+                
+                file_path = os.path.join(directory, file_name)
+                
+                # Log file size
+                file_size = os.path.getsize(file_path) / (1024 * 1024)  # MB
+                logging.info(f"File size: {file_size:.2f} MB")
+                
+                # Read the file in chunks if possible
+                store = db.DBNStore.from_file(file_path)
+                logging.info("DBNStore loaded")
+                log_memory_usage()
+                
+                df = store.to_df()
+                logging.info("Converted to pandas DataFrame")
+                log_memory_usage()
+                
+                df = pl.from_pandas(df)
+                logging.info("Converted to polars DataFrame")
+                log_memory_usage()
+                
+                date_str = file_name.split("itch-")[1].split(".")[0]
+                unique_symbols = df["symbol"].unique()
+                logging.info(f"Number of unique symbols: {len(unique_symbols)}")
+                
+                for symbol in unique_symbols:
+                    symbol_folder = os.path.join(output_directory, symbol)
+                    if not os.path.exists(symbol_folder):
+                        os.makedirs(symbol_folder)
+                    
+                    output_file_path = os.path.join(symbol_folder, f"{date_str}.csv")
+                    
+                    # Write symbol data
+                    symbol_df = df.filter(pl.col("symbol") == symbol)
+                    symbol_df.write_csv(output_file_path)
+                    
+                # Explicitly clean up
+                del df
+                del store
+                
+            except Exception as e:
+                logging.error(f"Error processing file {file_name}: {str(e)}")
+                continue
+                
+    except Exception as e:
+        logging.error(f"Fatal error: {str(e)}")
+        raise
 
-# Example usage
-convert_dbn_to_csv("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn")
-
-# important : error  33/64 afer that disk usage is 100%
+if __name__ == "__main__":
+    try:
+        convert_dbn_to_csv("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn/NASDAQ")
+    except Exception as e:
+        logging.error(f"Script failed: {str(e)}")
