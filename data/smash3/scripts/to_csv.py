@@ -1,12 +1,18 @@
 import os
-# import polars as pl
-import pandas as pd
+import polars as pl
+# import pandas as pd
 import databento as db
 from tqdm import tqdm
 import psutil
 import logging
 import sys
 from datetime import datetime
+
+pathGPUCSV = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
+pathINFOCSV = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
+pathGPUDBN = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn/NASDAQ"
+pathINFODBN = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/NASDAQ"
+
 
 # Configure logging
 logging.basicConfig(
@@ -27,7 +33,7 @@ def convert_dbn_to_csv(directory: str) -> None:
         if not os.path.exists(directory):
             raise FileNotFoundError(f"The directory {directory} does not exist.")
         
-        output_directory = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
+        output_directory = pathINFOCSV
         if not os.path.exists(output_directory):
             os.makedirs(output_directory)
         
@@ -98,7 +104,7 @@ def convert_dbn_to_csv(directory: str) -> None:
 if __name__ == "__main__":
     try:
         print("Starting DBN to CSV conversion process...")
-        convert_dbn_to_csv("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn/NASDAQ")
+        convert_dbn_to_csv(pathINFODBN)
         print("\nConversion completed successfully!")
     except Exception as e:
         logging.error(f"Script failed: {str(e)}")
