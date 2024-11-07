@@ -2735,3 +2735,4 @@
 2024-11-07 23:02:11,093 - INFO - DBNStore loaded
 2024-11-07 23:02:11,093 - INFO - Memory usage: 5754.25 MB
 2024-11-07 23:02:11,093 - INFO - Number of unique symbols: 3
+2024-11-07 23:59:40,903 - INFO - shutting down event loop in databento_live
