@@ -14,7 +14,7 @@ from collections import Counter
 
 def processing(file, output):
     import pandas as pd
-    actif = 'GOOGL'
+    actif = 'LCID'
     limite = 0
     df = pd.read_csv(file)
     df = df[df['symbol'] == actif]
