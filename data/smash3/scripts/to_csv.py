@@ -8,10 +8,10 @@ import logging
 import sys
 from datetime import datetime
 
-pathGPUCSV = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
-pathINFOCSV = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/csv/NASDAQ"
-pathGPUDBN = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn/NASDAQ"
-pathINFODBN = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/NASDAQ"
+pathGPUCSV = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO"
+pathINFOCSV = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/csv/CHICAGO"
+pathGPUDBN = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/dbn/CHICAGO"
+pathINFODBN = "/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/data/smash3/data/dbn/CHICAGO"
 
 
 # Configure logging
@@ -33,7 +33,7 @@ def convert_dbn_to_csv(directory: str) -> None:
         if not os.path.exists(directory):
             raise FileNotFoundError(f"The directory {directory} does not exist.")
         
-        output_directory = pathINFOCSV
+        output_directory = pathGPUCSV
         if not os.path.exists(output_directory):
             os.makedirs(output_directory)
         
@@ -62,7 +62,7 @@ def convert_dbn_to_csv(directory: str) -> None:
                 logging.info("DBNStore loaded")
                 log_memory_usage()
 
-                date_str = file_name.split("itch-")[1].split(".")[0]
+                date_str = file_name.split("basic-")[1].split(".")[0]
                 
                 # Get unique symbols from metadata
                 symbols = store.metadata.symbols
@@ -76,14 +76,11 @@ def convert_dbn_to_csv(directory: str) -> None:
                         if not os.path.exists(symbol_folder):
                             os.makedirs(symbol_folder)
                         
-                        output_file_path = os.path.join(symbol_folder, f"{date_str}.csv")
+                        output_file_path = os.path.join(symbol_folder, f"{date_str}.parquet")
                         
                         # Filter and write data for this symbol using to_csv
-                        store.to_csv(
-                            path=output_file_path,
-                            pretty_ts=True,
-                            pretty_px=True,
-                            map_symbols=True
+                        store.to_parquet(
+                            path=output_file_path
                         )
                         pbar.update(1)
                 
@@ -104,7 +101,7 @@ def convert_dbn_to_csv(directory: str) -> None:
 if __name__ == "__main__":
     try:
         print("Starting DBN to CSV conversion process...")
-        convert_dbn_to_csv(pathINFODBN)
+        convert_dbn_to_csv(pathGPUDBN)
         print("\nConversion completed successfully!")
     except Exception as e:
         logging.error(f"Script failed: {str(e)}")
