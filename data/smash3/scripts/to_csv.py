@@ -62,7 +62,7 @@ def convert_dbn_to_csv(directory: str) -> None:
                 logging.info("DBNStore loaded")
                 log_memory_usage()
 
-                date_str = file_name.split("basic-")[1].split(".")[0]
+                date_str = file_name.split("itch-")[1].split(".")[0]
                 
                 # Get unique symbols from metadata
                 symbols = store.metadata.symbols
