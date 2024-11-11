@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="janis.aiad@serapias.polytechnique.fr:22 password (6)" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="janis.aiad@serapias.polytechnique.fr:22 password">
         <serverdata>
@@ -34,6 +34,13 @@
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="janis.aiad@serapias.polytechnique.fr:22 password (6)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
@@ -80,5 +87,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

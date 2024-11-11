@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.9.18 (sftp://janis.aiad@serapias.polytechnique.fr:22/usr/bin/python3)" project-jdk-type="Python SDK" />
+  <component name="Black">
+    <option name="sdkName" value="Remote Python 3.9.18 (sftp://janis.aiad@serapias.polytechnique.fr:22/usr/bin/python3)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.9.18 (sftp://janis.aiad@serapias.polytechnique.fr:22/users/eleves-a/2022/janis.aiad/3A/EAP1/HFT_QR_RL/HFT_QR_RL/.venv/bin/python)" project-jdk-type="Python SDK" />
 </project>

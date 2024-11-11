@@ -10,7 +10,7 @@ models/QR/modified/Data/Intens_val_qr.csv
 former/qr/Data/Intens_val_qr.csv
 models/QR/modified/Data/Intens_val_qr.csv
 models/QR/modified/Data/Intens_val_qr.csv
-
+.idea/*
 
 data/Data_order_book_premiere_analyse/Visualisation_data.ipynb
 
@@ -1284,3 +1284,9 @@ data/smash3/data/csv/CHICAGO/LCID/20241016.parquet
 data/smash3/data/csv/CHICAGO/LCID/20241017.parquet
 data/smash3/data/csv/CHICAGO/LCID/20241018.parquet
 data/smash3/data/csv/CHICAGO/LCID/20241021.parquet
+.idea/deployment.xml
+.idea/misc.xml
+.idea/own_work.iml
+.idea/deployment.xml
+.idea/misc.xml
+.idea/own_work.iml
