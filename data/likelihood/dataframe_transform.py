@@ -4,45 +4,57 @@ from tqdm import tqdm
 
 
 def transform_dataframe(df): # polars df
-    # Convert to pandas for datetime operations
-    pdf = df.to_pandas()
+    # Convert ts_event from datetime string to nanosecond timestamp
+    df = df.with_columns([
+        pl.col('ts_event').str.strptime(pl.Datetime).dt.timestamp().mul(1e9).alias('ts_event')
+    ])
+    
+    # Sort by timestamp 
+    df = df.sort('ts_event')
     
     # Calculate time differences between events
-    pdf['ts_event'] = pd.to_datetime(pdf['ts_event'])
-    pdf = pdf.sort_values('ts_event')
+    df = df.with_columns([
+        pl.col('ts_event').diff().fill_null(0).alias('time_diff')
+    ])
     
-    # Get time differences for each type of event
-    bid_times = pdf[pdf['side'] == 'B']['ts_event']
-    ask_times = pdf[pdf['side'] == 'A']['ts_event'] 
-    trade_times = pdf[pdf['action'] == 'T']['ts_event']
+    # Convert size columns to numeric
+    df = df.with_columns([
+        pl.col('ask_sz_00').cast(pl.Float64),
+        pl.col('bid_sz_00').cast(pl.Float64),
+        pl.col('size').cast(pl.Float64),
+        pl.col('price').cast(pl.Float64),
+        pl.col('price_same').cast(pl.Float64),
+        pl.col('price_opposite').cast(pl.Float64),
+        pl.col('size_same').cast(pl.Float64), 
+        pl.col('size_opposite').cast(pl.Float64),
+        pl.col('nb_ppl_same').cast(pl.Float64),
+        pl.col('nb_ppl_opposite').cast(pl.Float64),
+        pl.col('diff_price').cast(pl.Float64),
+        pl.col('Mean_price_diff').cast(pl.Float64),
+        pl.col('imbalance').cast(pl.Float64),
+        pl.col('indice').cast(pl.Float64),
+        pl.col('bid_sz_00_diff').cast(pl.Float64),
+        pl.col('ask_sz_00_diff').cast(pl.Float64),
+        pl.col('price_middle').cast(pl.Float64)
+    ])
     
-    # Calculate delta times between each event type and next event
-    bid_deltas = []
-    ask_deltas = []
-    trade_deltas = []
-    
-    for i in range(len(pdf)-1):
-        curr_time = pdf.iloc[i]['ts_event']
-        next_time = pdf.iloc[i+1]['ts_event']
-        delta = (next_time - curr_time).total_seconds()
+    # Calculate deltas for each event type and add as new columns
+    df = df.with_columns([
+        pl.when(pl.col('side') == 'B')
+        .then(pl.col('time_diff'))
+        .otherwise(None)
+        .alias('bid_deltas'),
         
-        if pdf.iloc[i]['side'] == 'B':
-            bid_deltas.append(delta)
-        elif pdf.iloc[i]['side'] == 'A':
-            ask_deltas.append(delta)
-        elif pdf.iloc[i]['action'] == 'T':
-            trade_deltas.append(delta)
-            
-    # Calculate imbalance
-    pdf['imbalance'] = -(pdf['ask_sz_00'] - pdf['bid_sz_00'])/(pdf['ask_sz_00'] + pdf['bid_sz_00'])
-    
-    # Create output dataframe
-    out_df = pl.DataFrame({
-        'time': pdf['ts_event'],
-        'bid_deltas': bid_deltas + [0], # Add 0 for last row
-        'ask_deltas': ask_deltas + [0],
-        'trade_deltas': trade_deltas + [0],
-        'imbalance': pdf['imbalance']
-    })
+        pl.when(pl.col('side') == 'A') 
+        .then(pl.col('time_diff'))
+        .otherwise(None)
+        .alias('ask_deltas'),
+        
+        pl.when(pl.col('action') == 'T')
+        .then(pl.col('time_diff')) 
+        .otherwise(None)
+        .alias('trade_deltas')
+    ])
+    out_df = df.clone()
     
     return out_df
