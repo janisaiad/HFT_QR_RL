@@ -18,7 +18,7 @@ def process_parquet_files(folder_path: str, alpha: float = 0.95):
     Note: Time is in nanoseconds using Databento MBP10 format
     """
     # Get list of parquet files
-    files = glob.glob(os.path.join(folder_path, "*.parquet"))
+    files = glob.glob(os.path.join(folder_path, "*PL.parquet"))
     
     for file in tqdm(files):
         # Read parquet file
@@ -74,5 +74,5 @@ def process_parquet_files(folder_path: str, alpha: float = 0.95):
         df.write_parquet(output_path)
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO/LCID"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID"
     process_parquet_files(data_folder)

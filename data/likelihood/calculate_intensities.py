@@ -13,14 +13,6 @@ def dico_queue_size(sizes, dic):
             dic[sizes[i]] = [[], [], []]
     return dic
 
-def compute_means(dico):
-    sums = 0
-    means = 0
-    keys = np.array(list(dico.keys()))
-    for i in range (len(keys)):
-        means = means+keys[i]*len(dico[keys[i]][0])+keys[i]*len(dico[keys[i]][1])+keys[i]*len(dico[keys[i]][2])
-        sums = sums+len(dico[keys[i]][0])+len(dico[keys[i]][1])+len(dico[keys[i]][2])
-    return means/sums
 
 def filtrage(dico, nombre_bins, threshold=100):
     dico_p = dict(reversed(list(dico.items())))
@@ -67,7 +59,7 @@ def process_data(files_parquet):
     
     for f in tqdm(files_parquet):
         df = pd.read_parquet(f)
-        print(df.head(4))
+        
         df['time_diff'] = df['time_diff']*1.0
         sizes = np.unique(np.array((np.unique(df['bid_sz_00'].to_numpy())).tolist() + (np.unique(df['ask_sz_00'].to_numpy())).tolist()))
         sizes.sort()
@@ -89,7 +81,7 @@ def process_data(files_parquet):
     return dic, average_event_size
 
 def calculate_intensities(dic, average_event_size, threshold_trade=1000, threshold=100):
-    average_sizes = compute_means(dic)
+    
     intensities = dict(sorted(dic.items()))
     intensities = filtrage(intensities, 30, threshold=100)
     
@@ -147,10 +139,10 @@ def plot_intensities(sizes_add, Add, quarter_add, sizes_cancel, Cancel, quarter_
     plt.close()
 
 if __name__ == "__main__":
-    files_parquet = glob.glob(os.path.join("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO/LCID_filtered", "20240827_filtered.parquet"))
+    files_parquet = glob.glob(os.path.join("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered", "*PL.parquet"))
     
     dic, average_event_size = process_data(files_parquet)
-    print(dic)
+    
     
     results = calculate_intensities(dic, average_event_size)
     plot_intensities(*results)
