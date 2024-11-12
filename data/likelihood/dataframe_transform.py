@@ -37,23 +37,22 @@ def transform_dataframe(df): # polars df
         pl.col('ask_sz_00_diff').cast(pl.Float64),
         pl.col('price_middle').cast(pl.Float64)
     ])
-    
     # Calculate deltas for each event type and add as new columns
     df = df.with_columns([
-        pl.when(pl.col('side') == 'B')
-        .then(pl.col('time_diff'))
-        .otherwise(None)
-        .alias('bid_deltas'),
-        
-        pl.when(pl.col('side') == 'A') 
-        .then(pl.col('time_diff'))
-        .otherwise(None)
-        .alias('ask_deltas'),
-        
         pl.when(pl.col('action') == 'T')
-        .then(pl.col('time_diff')) 
+        .then(pl.col('time_diff'))
         .otherwise(None)
-        .alias('trade_deltas')
+        .alias('trade_deltas'),
+        
+        pl.when(pl.col('action') == 'A')
+        .then(pl.col('time_diff'))
+        .otherwise(None)
+        .alias('add_deltas'),
+        
+        pl.when(pl.col('action') == 'C')
+        .then(pl.col('time_diff'))
+        .otherwise(None)
+        .alias('cancel_deltas')
     ])
     out_df = df.clone()
     
