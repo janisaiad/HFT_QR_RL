@@ -1290,3 +1290,5 @@ data/smash3/data/csv/CHICAGO/LCID/20241021.parquet
 .idea/deployment.xml
 .idea/misc.xml
 .idea/own_work.iml
+
+data/smash3/data/csv/CHICAGO/LCID/*filtered.parquet
