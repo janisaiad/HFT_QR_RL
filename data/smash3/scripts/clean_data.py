@@ -249,7 +249,6 @@ def processing(file, output):
             standardized_series_list.append(item)
         else:
             raise ValueError("DAAAAAAIIIMMMM")
-
     df__ = pd.concat(standardized_series_list, axis=1).T.reset_index(drop=True) # on concatene les séries
 
     
@@ -301,7 +300,7 @@ def processing(file, output):
     df_final = df__[df__['status'] != 'NOK']
     df__['Mean_price_diff'] = df__['diff_price'].shift(-50) - df__['diff_price']#df__['diff_price'].rolling(window=50).mean().shift(1)
     
-    df__ = df__[df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'] != 0]
+    # df__ = df__[df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'] != 0]
     df__['imbalance'] = -(df__[f'ask_sz_0{limite}']-df__[f'bid_sz_0{limite}'])/(df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'])
     
     
@@ -310,7 +309,14 @@ def processing(file, output):
 
 
 if __name__ == "__main__":
-    files = glob.glob(os.path.join('/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO/LCID', '*.parquet'))
+    files = glob.glob(os.path.join('/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC', '*.parquet'))
+    error_count = 0    
     for file in tqdm(files):
-        output_path = os.path.join('/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO/LCID', os.path.basename(file)[:-8] + '_filtered.parquet')
-        processing(file, output_path)
+        output_path = os.path.join('/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered', os.path.basename(file)[:-8] + '_filtered.parquet')
+       
+        try:
+            processing(file, output_path)
+        except Exception as e:
+            error_count += 1
+            print(f"Error processing file {file}: {e}")
+    print(f"Total number of errors: {error_count}")
