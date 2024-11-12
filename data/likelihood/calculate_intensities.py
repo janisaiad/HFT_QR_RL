@@ -7,8 +7,6 @@ import glob
 import os
 matplotlib.use('Agg')
 
-files_parquet = glob.glob(os.path.join("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered", "filtered.parquet"))
-
 def dico_queue_size(sizes, dic):
     for i in range (len(sizes)):
         if sizes[i] not in dic:
@@ -63,97 +61,96 @@ def remove_nan_from_dico(dico):
         cleaned_dico[key] = cleaned_value_lists
     return cleaned_dico
 
-dic = {}
-
-average_event_size = []
-for f in tqdm(files_parquet):
-    df = pd.read_parquet(f)
-    print(df.head(4))
-    df['time_diff'] = df['time_diff']*1.0 # pour le modif en float c'est un timedelta là
-    sizes = np.unique(np.array((np.unique(df['bid_sz_00'].to_numpy())).tolist() + (np.unique(df['ask_sz_00'].to_numpy())).tolist()))
-    sizes.sort()
-    dic = dico_queue_size(sizes, dic)  # Add, Cancel, Trade
+def process_data(files_parquet):
+    dic = {}
+    average_event_size = []
     
-    for row in df.itertuples():
-        average_event_size.append(row.size)
-        if row.side == 'A':
-            taille = row.ask_sz_00
-        elif row.side == 'B':
-            taille = row.bid_sz_00
-        if row.action == 'A':
-            dic[taille][0].append(row.time_diff)
-        elif row.action == 'C':
-            dic[taille][1].append(row.time_diff)
-        elif row.action == 'T':
-            dic[taille][2].append(row.time_diff)
+    for f in tqdm(files_parquet):
+        df = pd.read_parquet(f)
+        print(df.head(4))
+        df['time_diff'] = df['time_diff']*1.0
+        sizes = np.unique(np.array((np.unique(df['bid_sz_00'].to_numpy())).tolist() + (np.unique(df['ask_sz_00'].to_numpy())).tolist()))
+        sizes.sort()
+        dic = dico_queue_size(sizes, dic)
+        
+        for row in df.itertuples():
+            average_event_size.append(row.size)
+            if row.side == 'A':
+                taille = row.ask_sz_00
+            elif row.side == 'B':
+                taille = row.bid_sz_00
+            if row.action == 'A':
+                dic[taille][0].append(row.time_diff)
+            elif row.action == 'C':
+                dic[taille][1].append(row.time_diff)
+            elif row.action == 'T':
+                dic[taille][2].append(row.time_diff)
+                
+    return dic, average_event_size
 
-print(dic)
-            
-Add = []
-Cancel = []
-Trade = []
-sizes_add = []
-sizes_cancel = []
-sizes_trade = []
-
-#dic = remove_nan_from_dico(dic)
-average_sizes = compute_means(dic)
-intensities = dict(sorted(dic.items()))
-intensities = filtrage(intensities, 30, threshold=100)
-
-threshold_trade = 1000
-threshold = 100
-
-quarter_add = []
-quarter_cancel = []
-quarter_trade = []
-
-for i in intensities:
-    tab = np.concatenate((intensities[i][0], intensities[i][1], intensities[i][2]))
-    if (len(intensities[i][0])>threshold):
+def calculate_intensities(dic, average_event_size, threshold_trade=1000, threshold=100):
+    average_sizes = compute_means(dic)
+    intensities = dict(sorted(dic.items()))
+    intensities = filtrage(intensities, 30, threshold=100)
+    
+    Add, Cancel, Trade = [], [], []
+    sizes_add, sizes_cancel, sizes_trade = [], [], []
+    quarter_add, quarter_cancel, quarter_trade = [], [], []
+    
+    for i in intensities:
+        tab = np.concatenate((intensities[i][0], intensities[i][1], intensities[i][2]))
+        if (len(intensities[i][0])>threshold):
             Add.append(1/np.mean(tab)*len(intensities[i][0])/len(tab))
             quarter_add.append(np.var(tab)*1/np.mean(tab)*len(intensities[i][0])/len(tab)*1/np.sqrt(len(tab)))
             sizes_add.append(i)
-    if len(intensities[i][1])!=0:
-        if (len(intensities[i][1])>threshold):
-            Cancel.append(1/np.mean(tab)*len(intensities[i][1])/len(tab))
-            quarter_cancel.append(np.var(tab)*1/np.mean(tab)*len(intensities[i][1])/len(tab)*1/np.sqrt(len(tab)))
-            sizes_cancel.append(i)
-    if len(intensities[i][2])!=0:
-        if (len(intensities[i][2])>threshold_trade):
-            Trade.append(1/np.mean(tab)*len(intensities[i][2])/len(tab))
-            quarter_trade.append(np.var(tab)*1/np.mean(tab)*len(intensities[i][2])/len(tab)*1/np.sqrt(len(tab)))
-            sizes_trade.append(i)
+        if len(intensities[i][1])!=0:
+            if (len(intensities[i][1])>threshold):
+                Cancel.append(1/np.mean(tab)*len(intensities[i][1])/len(tab))
+                quarter_cancel.append(np.var(tab)*1/np.mean(tab)*len(intensities[i][1])/len(tab)*1/np.sqrt(len(tab)))
+                sizes_cancel.append(i)
+        if len(intensities[i][2])!=0:
+            if (len(intensities[i][2])>threshold_trade):
+                Trade.append(1/np.mean(tab)*len(intensities[i][2])/len(tab))
+                quarter_trade.append(np.var(tab)*1/np.mean(tab)*len(intensities[i][2])/len(tab)*1/np.sqrt(len(tab)))
+                sizes_trade.append(i)
+                
+    return sizes_add, Add, quarter_add, sizes_cancel, Cancel, quarter_cancel, sizes_trade, Trade, quarter_trade, np.mean(average_event_size)
 
+def plot_intensities(sizes_add, Add, quarter_add, sizes_cancel, Cancel, quarter_cancel, 
+                    sizes_trade, Trade, quarter_trade, mean_event_size):
+    plt.figure(figsize=(10, 6))
+    
+    plt.plot(sizes_add/mean_event_size, Add, color='blue', label='Add')
+    plt.fill_between(sizes_add/mean_event_size,
+                    np.array(Add) - 1.96*np.array(quarter_add),
+                    np.array(Add) + 1.96*np.array(quarter_add),
+                    color='blue', alpha=0.2)
+                    
+    plt.plot(sizes_cancel/mean_event_size, Cancel, color='green', label='Cancel')
+    plt.fill_between(sizes_cancel/mean_event_size,
+                    np.array(Cancel) - 1.96*np.array(quarter_cancel),
+                    np.array(Cancel) + 1.96*np.array(quarter_cancel),
+                    color='green', alpha=0.2)
+                    
+    plt.plot(sizes_trade/mean_event_size, Trade, color='red', label='Trade')
+    plt.fill_between(sizes_trade/mean_event_size,
+                    np.array(Trade) - 1.96*np.array(quarter_trade),
+                    np.array(Trade) + 1.96*np.array(quarter_trade),
+                    color='red', alpha=0.2)
+                    
+    plt.title("Intensité par Queue size avec intervalles d'incertitude")
+    plt.xlabel('Size (par Mean Event Size)')
+    plt.ylabel('Intensity (num par sec)')
+    plt.legend()
+    
+    plt.savefig('intensity_plot.png')
+    plt.close()
 
-
-plt.figure(figsize=(10, 6))
-
-# Plot Add data with confidence intervals
-plt.plot(sizes_add/np.mean(average_event_size), Add, color='blue', label='Add')
-plt.fill_between(sizes_add/np.mean(average_event_size), 
-                np.array(Add) - 1.96*np.array(quarter_add),
-                np.array(Add) + 1.96*np.array(quarter_add),
-                color='blue', alpha=0.2)
-
-# Plot Cancel data with confidence intervals 
-plt.plot(sizes_cancel/np.mean(average_event_size), Cancel, color='green', label='Cancel')
-plt.fill_between(sizes_cancel/np.mean(average_event_size),
-                np.array(Cancel) - 1.96*np.array(quarter_cancel),
-                np.array(Cancel) + 1.96*np.array(quarter_cancel), 
-                color='green', alpha=0.2)
-
-# Plot Trade data with confidence intervals
-plt.plot(sizes_trade/np.mean(average_event_size), Trade, color='red', label='Trade')
-plt.fill_between(sizes_trade/np.mean(average_event_size),
-                np.array(Trade) - 1.96*np.array(quarter_trade),
-                np.array(Trade) + 1.96*np.array(quarter_trade),
-                color='red', alpha=0.2)
-
-plt.title("Intensité par Queue size avec intervalles d'incertitude")
-plt.xlabel('Size (par Mean Event Size)')
-plt.ylabel('Intensity (num par sec)')
-plt.legend()
-
-plt.savefig('intensity_plot.png')
-plt.close()
+if __name__ == "__main__":
+    files_parquet = glob.glob(os.path.join("/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO/LCID_filtered", "20240827_filtered.parquet"))
+    
+    dic, average_event_size = process_data(files_parquet)
+    print(dic)
+    
+    results = calculate_intensities(dic, average_event_size)
+    plot_intensities(*results)
