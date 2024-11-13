@@ -10,7 +10,7 @@ from dataframe_transform import transform_dataframe
 from datetime import datetime
 import logging
 
-def process_parquet_files(folder_path: str, alpha: float = 0.98):
+def process_parquet_files(folder_path: str, alpha_add: float = 0.998, alpha_cancel: float = 0.995, alpha_trade: float = 0.98):
     """
     Process parquet files from a folder, transform dataframes and identify outliers based on time delta quantiles.
     Creates plots showing price movements and rare events using both matplotlib and plotly.
@@ -103,7 +103,7 @@ def process_parquet_files(folder_path: str, alpha: float = 0.98):
         for stat, value in stats.items():
             logging.info(f"{stat}: {value}")
             print(f"{stat}: {value}")
-        logging.info(f"Alpha: {alpha}")
+        logging.info(f"Alpha_add: {alpha_add}, Alpha_cancel: {alpha_cancel}, Alpha_trade: {alpha_trade}")
 
         # Convert deltas to seconds
         df = df.with_columns([
@@ -125,6 +125,7 @@ def process_parquet_files(folder_path: str, alpha: float = 0.98):
         file_date = os.path.basename(file).split('_')[0]
         outliers_file = os.path.join(txt_dir, f"{stock}_{file_date}_outliers.txt")
         
+        dic_alpha = {"A": alpha_add, "C": alpha_cancel, "T": alpha_trade}
         with open(outliers_file, 'w') as f:
             for col, (action, delta_col, title) in enumerate(event_types):
                 # Filter dataframe for this action
@@ -147,7 +148,7 @@ def process_parquet_files(folder_path: str, alpha: float = 0.98):
                     # Calculate threshold for this bucket
                     if len(bucket_df) > 0:
                         bucket_threshold = bucket_df.select(
-                            pl.col(delta_col).quantile(1-alpha)
+                            pl.col(delta_col).quantile(1-dic_alpha[action])
                         ).item()
                         
                         # Get outliers for this bucket
@@ -176,7 +177,7 @@ def process_parquet_files(folder_path: str, alpha: float = 0.98):
         
         plot_path = os.path.join(plot_output_dir,
                                 f"{stock}_{file_date}_imbalance_buckets.png")
-        # plt.savefig(plot_path)
+        plt.savefig(plot_path)
         plt.close()
         
         output_path = os.path.join(os.path.dirname(file), 
