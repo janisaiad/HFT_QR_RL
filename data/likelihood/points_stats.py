@@ -31,27 +31,24 @@ def analyze_point_distribution(points_file: str, eps: float = 0.1, min_samples: 
             lines = f.readlines()
             for line in lines:
                 if line.startswith('Action:'):
-                    # Parse action and bucket from header line
-                    # Format is like: 'Action: Cancel, Bucket: [0.00, 0.25]\n'
                     parts = line.strip().split(',')
                     action = parts[0].split(':')[1].strip()
                     bucket = parts[1].split('[')[1].split(']')[0].strip()
                     current_action = action
                     current_bucket = bucket
                     
-                    # Initialize dict for this category if needed
                     if current_action not in points_by_category:
                         points_by_category[current_action] = {}
                     if current_bucket not in points_by_category[current_action]:
                         points_by_category[current_action][current_bucket] = []
                         
                 elif line.strip() and current_action and current_bucket:
-                    # Parse points for current category
-                    # Format is like: '1.722866426877076e+24,1.722866431512645e+24,...\n'
                     try:
-                        if ',' in line:  # Only process lines with comma-separated values
-                            line_points = [float(x) for x in line.strip().split(',') if x]
-                            points_by_category[current_action][current_bucket].extend(line_points)
+                        if ',' in line:
+                            timestamp, quantile = line.strip().split(',')
+                            points_by_category[current_action][current_bucket].append(
+                                (float(timestamp), float(quantile))
+                            )
                     except ValueError as e:
                         logging.warning(f"Could not parse line: {line}. Error: {e}")
                         
@@ -71,81 +68,88 @@ def analyze_point_distribution(points_file: str, eps: float = 0.1, min_samples: 
     plot_dir = f"/home/janis/3A/EA/HFT_QR_RL/data/likelihood/metrics_plots/{stock}/{file_date}"
     os.makedirs(plot_dir, exist_ok=True)
 
-    # Calculate metrics for each action/bucket combination
+    # Sample sizes to analyze
+    sample_sizes = [10, 20, 50, 100, 200, 500, 1000]
+
+    # Calculate metrics for each action/bucket combination and sample size
     metrics = {}
     for action in tqdm(points_by_category):
         metrics[action] = {}
         
         for bucket in points_by_category[action]:
-            points = np.array(points_by_category[action][bucket])
-            
-            if len(points) == 0:
-                continue
-                
-            # Normalize points for analysis
-            points_norm = (points - np.min(points)) / (np.max(points) - np.min(points)) if len(points) > 1 else points
-            
+            points_data = points_by_category[action][bucket]
             metrics[action][bucket] = {}
-            category_metrics = metrics[action][bucket]
             
-            # Basic statistics
-            category_metrics['n_points'] = len(points)
-            category_metrics['mean'] = float(np.mean(points))
-            category_metrics['std'] = float(np.std(points))
-            category_metrics['min'] = float(np.min(points))
-            category_metrics['max'] = float(np.max(points))
+            # Sort by quantile (already sorted but just to be sure)
+            points_data.sort(key=lambda x: x[1], reverse=True)
             
-            if len(points) > 1:
+            for n_points in sample_sizes:
+                if n_points > len(points_data):
+                    break
+                    
+                # Extract timestamps for this sample size
+                points = np.array([p[0] for p in points_data[:n_points]])
+                
+                metrics[action][bucket][f'n_{n_points}'] = {}
+                sample_metrics = metrics[action][bucket][f'n_{n_points}']
+                
+                # Normalize points for analysis
+                points_norm = (points - np.min(points)) / (np.max(points) - np.min(points))
+                
+                # Basic statistics
+                sample_metrics['n_points'] = n_points
+                sample_metrics['mean'] = float(np.mean(points))
+                sample_metrics['std'] = float(np.std(points))
+                sample_metrics['min'] = float(np.min(points))
+                sample_metrics['max'] = float(np.max(points))
+                
                 # KS test against uniform
                 ks_stat, ks_pval = kstest(points_norm, 'uniform')
-                category_metrics['ks_statistic'] = float(ks_stat)
-                category_metrics['ks_pvalue'] = float(ks_pval)
+                sample_metrics['ks_statistic'] = float(ks_stat)
+                sample_metrics['ks_pvalue'] = float(ks_pval)
                 
                 # Clustering analysis
                 clustering = DBSCAN(eps=eps, min_samples=min_samples).fit(points_norm.reshape(-1,1))
                 n_clusters = len(set(clustering.labels_)) - (1 if -1 in clustering.labels_ else 0)
-                category_metrics['n_clusters'] = int(n_clusters)
-                category_metrics['noise_points'] = int(np.sum(clustering.labels_ == -1))
+                sample_metrics['n_clusters'] = int(n_clusters)
+                sample_metrics['noise_points'] = int(np.sum(clustering.labels_ == -1))
                 
                 # Distribution entropy
                 hist, _ = np.histogram(points_norm, bins=50, density=True)
-                category_metrics['entropy'] = float(entropy(hist + 1e-10))
+                sample_metrics['entropy'] = float(entropy(hist + 1e-10))
                 
                 # Nearest neighbor stats
                 dists = pdist(points_norm.reshape(-1,1))
-                category_metrics['mean_nearest_neighbor'] = float(np.mean(dists))
-                category_metrics['max_nearest_neighbor'] = float(np.max(dists))
+                sample_metrics['mean_nearest_neighbor'] = float(np.mean(dists))
+                sample_metrics['max_nearest_neighbor'] = float(np.max(dists))
                 
                 # Gap analysis
                 gaps = np.diff(np.sort(points_norm))
-                category_metrics['max_gap'] = float(np.max(gaps))
-                category_metrics['mean_gap'] = float(np.mean(gaps))
-                category_metrics['gap_std'] = float(np.std(gaps))
+                sample_metrics['max_gap'] = float(np.max(gaps))
+                sample_metrics['mean_gap'] = float(np.mean(gaps))
+                sample_metrics['gap_std'] = float(np.std(gaps))
                 
                 # CDF discrepancy
                 sorted_points = np.sort(points_norm)
-                uniform_cdf = np.linspace(0, 1, len(points))
-                empirical_cdf = np.arange(1, len(points) + 1) / len(points)
-                category_metrics['discrepancy'] = float(np.sqrt(np.mean((empirical_cdf - uniform_cdf) ** 2)))
+                uniform_cdf = np.linspace(0, 1, n_points)
+                empirical_cdf = np.arange(1, n_points + 1) / n_points
+                sample_metrics['discrepancy'] = float(np.sqrt(np.mean((empirical_cdf - uniform_cdf) ** 2)))
                 
-            # Generate plots
-            plt.figure(figsize=(10,6))
-            sorted_points = np.sort(points)
-            ecdf = np.arange(1, len(points) + 1) / len(points)
-            plt.step(sorted_points, ecdf)
-            plt.title(f'Empirical CDF - {action} - Bucket {bucket}')
-            plt.xlabel('Value')
-            plt.ylabel('Cumulative Probability')
-            plt.grid(True, alpha=0.3)
-            plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_distribution.png'))
-            plt.close()
-            
-            if len(points) > 1:
+                # Generate plots
+                plt.figure(figsize=(10,6))
+                plt.step(sorted_points, empirical_cdf)
+                plt.title(f'Empirical CDF - {action} - Bucket {bucket} - N={n_points}')
+                plt.xlabel('Value')
+                plt.ylabel('Cumulative Probability')
+                plt.grid(True, alpha=0.3)
+                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_n{n_points}_distribution.png'))
+                plt.close()
+                
                 plt.figure(figsize=(10,6))
                 plt.scatter(points_norm, np.zeros_like(points_norm), c=clustering.labels_)
-                plt.title(f'DBSCAN Clustering - {action} - Bucket {bucket}')
+                plt.title(f'DBSCAN Clustering - {action} - Bucket {bucket} - N={n_points}')
                 plt.xlabel('Normalized Value')
-                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_clusters.png'))
+                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_n{n_points}_clusters.png'))
                 plt.close()
     
     return metrics

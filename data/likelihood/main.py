@@ -10,7 +10,7 @@ from dataframe_transform import transform_dataframe
 from datetime import datetime
 import logging
 
-def process_parquet_files(folder_path: str, alpha_add: float = 0.998, alpha_cancel: float = 0.995, alpha_trade: float = 0.98):
+def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cancel: float = 0.98, alpha_trade: float = 0.95):
     """
     Process parquet files from a folder, transform dataframes and identify outliers based on time delta quantiles.
     Creates plots showing price movements and rare events using both matplotlib and plotly.
@@ -145,23 +145,36 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.998, alpha_canc
                         (pl.col('imbalance') < imbalance_bins[row+1])
                     )
                     
-                    # Calculate threshold for this bucket
+                    # Calculate threshold and get points with quantiles
                     if len(bucket_df) > 0:
-                        bucket_threshold = bucket_df.select(
-                            pl.col(delta_col).quantile(1-dic_alpha[action])
-                        ).item()
+                        # Sort points by delta values
+                        sorted_df = bucket_df.sort(delta_col)
+                        n_points = len(sorted_df)
                         
-                        # Get outliers for this bucket
-                        outliers = bucket_df.filter(pl.col(delta_col) < bucket_threshold)
+                        # Calculate quantiles for each point
+                        quantiles = [1 - (i+1)/n_points for i in range(n_points)]
+                        points_with_quantiles = list(zip(
+                            sorted_df['ts_event'].to_list(),
+                            quantiles
+                        ))
                         
-                        # Plot outliers
-                        ax.scatter(outliers['ts_event'], outliers['price'], 
-                                 color='red', alpha=0.8, s=20)
+                        # Get points with quantiles above alpha threshold
+                        outliers = [(point, q) for point, q in points_with_quantiles 
+                                  if q >= dic_alpha[action]]
                         
-                        # Write outliers to text file
-                        outlier_times = outliers['ts_event'].to_list()
-                        f.write(f"Action: {title}, Bucket: [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]\n")
-                        f.write(','.join(map(str, outlier_times)) + '\n\n')
+                        if outliers:
+                            outlier_points = [point for point, _ in outliers]
+                            outlier_df = bucket_df.filter(pl.col('ts_event').is_in(outlier_points))
+                            
+                            # Plot outliers
+                            ax.scatter(outlier_df['ts_event'], outlier_df['price'], 
+                                     color='red', alpha=0.8, s=20)
+                            
+                            # Write outliers with quantiles to text file
+                            f.write(f"Action: {title}, Bucket: [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]\n")
+                            for point, quantile in outliers:
+                                f.write(f"{point},{quantile:.6f}\n")
+                            f.write("\n")
                     
                     # Set title and labels
                     ax.set_title(f'{title} Events - Imbalance [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]')
@@ -186,5 +199,5 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.998, alpha_canc
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/GOOGL_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
     process_parquet_files(data_folder)
