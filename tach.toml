@@ -12,6 +12,4 @@ modules = [
     { path = "former.orderbookviz", depends_on = [] },
     { path = "former.qr", depends_on = [] },
     { path = "models.QR", depends_on = [] },
-    { path = "models.QR model I", depends_on = [] },
-    { path = "models.QR-2", depends_on = [] },
 ]

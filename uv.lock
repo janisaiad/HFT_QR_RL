@@ -814,7 +814,6 @@ dependencies = [
     { name = "flask" },
     { name = "flask-cors" },
     { name = "ipykernel" },
-    { name = "kaleido" },
     { name = "matplotlib" },
     { name = "nbformat" },
     { name = "numpy" },
@@ -839,7 +838,6 @@ requires-dist = [
     { name = "flask", specifier = ">=3.0.3" },
     { name = "flask-cors", specifier = ">=5.0.0" },
     { name = "ipykernel", specifier = ">=6.29.5" },
-    { name = "kaleido", specifier = ">=0.2.1.post1" },
     { name = "matplotlib", specifier = ">=3.8.4" },
     { name = "nbformat", specifier = ">=5.10.4" },
     { name = "numpy", specifier = "==1.24.0" },
@@ -1044,14 +1042,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/00/11/b56381fa6c3f4cc5d2cf54a7dbf98ad9aa0b339ef7a601d6053538b079a7/jupyter_core-5.7.2.tar.gz", hash = "sha256:aa5f8d32bbf6b431ac830496da7392035d6f61b4f54872f15c4bd2a9c3f536d9", size = 87629 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c9/fb/108ecd1fe961941959ad0ee4e12ee7b8b1477247f30b1fdfd83ceaf017f0/jupyter_core-5.7.2-py3-none-any.whl", hash = "sha256:4f7315d2f6b4bcf2e3e7cb6e46772eba760ae459cd1f59d29eb57b0a01bd7409", size = 28965 },
-]
-
-[[package]]
-name = "kaleido"
-version = "0.2.1.post1"
-source = { registry = "https://pypi.org/simple" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/86/4b/d668e288b694661d2fbfc2b972db69cf1f30f8b8a91be14dcf9f000cab16/kaleido-0.2.1.post1-py2.py3-none-manylinux2014_armv7l.whl", hash = "sha256:d313940896c24447fc12c74f60d46ea826195fc991f58569a6e73864d53e5c20", size = 71653137 },
 ]
 
 [[package]]
