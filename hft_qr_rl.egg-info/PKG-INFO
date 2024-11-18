@@ -196,6 +196,35 @@ Contributions to this project are welcome. Please follow these steps to contribu
 - Before submitting a Pull Request, make sure your code is well-commented and follows the project's style conventions.
 - For technical discussions or questions, contact janis.aiad@polytechnique.edu.
 
+
+### Cholesky
+
+Using a CPU/GPU cluster named `cholesky`, we can run the experiments in parallel.
+
+To run the experiments on the cluster, use the `submit_job.sh` script.
+
+3. Job submission:
+   ```
+   sbatch submit_job.sh
+   ```
+
+4. To display and verify the job status:
+   ```
+   squeue -u $USER
+   ```
+
+5. To cancel a job:
+   ```
+   scancel <job_id>
+   ```
+
+
+
+For more information about the cluster, see [here](https://www.idris.fr/cholesky/).
+For docs information, see [here](https://meso-ipp.gitlab.labos.polytechnique.fr/user_doc/cholesky/).
+
+- 2024-11-17: Initial commit
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
