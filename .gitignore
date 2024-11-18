@@ -15,8 +15,8 @@ models/QR/modified/Data/Intens_val_qr.csv
 data/Data_order_book_premiere_analyse/Visualisation_data.ipynb
 data/likelihood/metrics_plots/*
 data/likelihood/results/*
-
-
+data/likelihood/distribution_plots/*
+data/likelihood/distribution_parquets/*
 data/MBO-10 analyse/CSV_dezippés_
 data/MBO-10 analyse/DBEQ-20241008-TX6EVQRQXS
 data/MBO-10 analyse/Données_dezippées

@@ -199,5 +199,5 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered"
     process_parquet_files(data_folder)
