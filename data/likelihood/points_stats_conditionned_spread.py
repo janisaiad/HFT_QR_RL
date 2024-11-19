@@ -175,7 +175,7 @@ if __name__ == "__main__":
     
     # Process all txt files for both spread types
     for spread_type in ['zero_spread', 'nonzero_spread']:
-        txt_files = glob.glob(os.path.join(txt_dir, f"GOOGL_*_{spread_type}_outliers.txt"))
+        txt_files = glob.glob(os.path.join(txt_dir, f"KHC_*_{spread_type}_outliers.txt"))
         
         for txt_file in tqdm(txt_files):
             logging.info(f"Processing {spread_type} file: {txt_file}")
