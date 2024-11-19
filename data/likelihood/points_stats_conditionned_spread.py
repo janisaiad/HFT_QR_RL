@@ -10,12 +10,13 @@ from datetime import datetime
 import logging
 from tqdm import tqdm
 
-def analyze_point_distribution(points_file: str, eps: float = 0.1, min_samples: int = 5) -> dict:
+def analyze_point_distribution(points_file: str, spread_type: str, eps: float = 0.1, min_samples: int = 5) -> dict:
     """
     Analyze a 1D point distribution to measure how it deviates from uniform.
     
     Args:
         points_file: Path to txt file containing points grouped by action and bucket
+        spread_type: Either 'zero_spread' or 'nonzero_spread'
         eps: Distance threshold for DBSCAN clustering
         min_samples: Minimum samples per cluster for DBSCAN
         
@@ -64,8 +65,8 @@ def analyze_point_distribution(points_file: str, eps: float = 0.1, min_samples: 
     stock = filename.split('_')[0]
     file_date = filename.split('_')[1]
     
-    # Create output directories
-    plot_dir = f"/home/janis/3A/EA/HFT_QR_RL/data/likelihood/metrics_plots/{stock}/{file_date}"
+    # Create output directories with spread type
+    plot_dir = f"/home/janis/3A/EA/HFT_QR_RL/data/likelihood/metrics_plots/{stock}/{file_date}/{spread_type}"
     os.makedirs(plot_dir, exist_ok=True)
 
     # Sample sizes to analyze
@@ -135,21 +136,21 @@ def analyze_point_distribution(points_file: str, eps: float = 0.1, min_samples: 
                 empirical_cdf = np.arange(1, n_points + 1) / n_points
                 sample_metrics['discrepancy'] = float(np.sqrt(np.mean((empirical_cdf - uniform_cdf) ** 2)))
                 
-                # Generate plots
+                # Generate plots with spread type in filename
                 plt.figure(figsize=(10,6))
                 plt.step(sorted_points, empirical_cdf)
-                plt.title(f'Empirical CDF - {action} - Bucket {bucket} - N={n_points}')
+                plt.title(f'Empirical CDF - {action} - Bucket {bucket} - N={n_points} ({spread_type})')
                 plt.xlabel('Value')
                 plt.ylabel('Cumulative Probability')
                 plt.grid(True, alpha=0.3)
-                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_n{n_points}_distribution.png'))
+                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_distribution.png'))
                 plt.close()
                 
                 plt.figure(figsize=(10,6))
                 plt.scatter(points_norm, np.zeros_like(points_norm), c=clustering.labels_)
-                plt.title(f'DBSCAN Clustering - {action} - Bucket {bucket} - N={n_points}')
+                plt.title(f'DBSCAN Clustering - {action} - Bucket {bucket} - N={n_points} ({spread_type})')
                 plt.xlabel('Normalized Value')
-                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{action}_{bucket}_n{n_points}_clusters.png'))
+                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_clusters.png'))
                 plt.close()
     
     return metrics
@@ -171,25 +172,27 @@ if __name__ == "__main__":
         format='%(asctime)s - %(message)s'
     )
     
-    # Process all txt files
-    txt_files = glob.glob(os.path.join(txt_dir, "KHC_*_outliers.txt"))
-    
-    for txt_file in tqdm(txt_files):
-        logging.info(f"Processing file: {txt_file}")
+    # Process all txt files for both spread types
+    for spread_type in ['zero_spread', 'nonzero_spread']:
+        txt_files = glob.glob(os.path.join(txt_dir, f"GOOGL_*_{spread_type}_outliers.txt"))
         
-        filename = os.path.basename(txt_file)
-        stock_date = filename.replace("_outliers.txt", "")
-        
-        try:
-            metrics = analyze_point_distribution(txt_file)
+        for txt_file in tqdm(txt_files):
+            logging.info(f"Processing {spread_type} file: {txt_file}")
             
-            output_file = os.path.join(results_dir, f"{stock_date}_metrics.json")
-            with open(output_file, "w") as f:
-                json.dump(metrics, f, indent=4)
+            filename = os.path.basename(txt_file)
+            stock_date = '_'.join(filename.split('_')[:2])  # Get stock and date
+            
+            try:
+                metrics = analyze_point_distribution(txt_file, spread_type)
                 
-            logging.info(f"Successfully processed {filename}")
-            logging.info(f"Metrics saved to {output_file}")
-            
-        except Exception as e:
-            logging.error(f"Error processing {filename}: {str(e)}")
-            continue
+                # Include spread type in output filename
+                output_file = os.path.join(results_dir, f"{stock_date}_{spread_type}_metrics.json")
+                with open(output_file, "w") as f:
+                    json.dump(metrics, f, indent=4)
+                    
+                logging.info(f"Successfully processed {filename}")
+                logging.info(f"Metrics saved to {output_file}")
+                
+            except Exception as e:
+                logging.error(f"Error processing {filename}: {str(e)}")
+                continue
