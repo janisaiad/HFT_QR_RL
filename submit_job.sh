@@ -2,34 +2,35 @@
 
 #===============================================================================
 # Script de soumission SLURM générique
-# Auteur: [Votre nom]
-# Date: [Date]
+# Auteur: [Janis AIAD]
+# Date: [2024-11-20]
 #===============================================================================
 
 #===============================================================================
 # PARAMÈTRES SLURM OBLIGATOIRES
 #===============================================================================
-#SBATCH --partition=cpu_shared        # Partition à utiliser
-#SBATCH --time=24:00:00              # Temps maximum d'exécution (format: jours-hh:mm:ss)
-#SBATCH --account=YourAccountProject  # Nom du projet/compte
+#SBATCH --partition=gpu_v100         # Partition à utiliser
+#SBATCH --time=00:30:00              # Temps maximum d'exécution (format: jours-hh:mm:ss)
+#SBATCH --account=lobib              # Nom du projet/compte
 
 #===============================================================================
 # RESSOURCES DEMANDÉES
 #===============================================================================
 #SBATCH --nodes=1                     # Nombre de nœuds
-#SBATCH --ntasks=4                    # Nombre total de tâches (processus MPI)
-#SBATCH --cpus-per-task=4            # Nombre de threads par tâche (pour OpenMP)
-#SBATCH --mem=16G                     # Mémoire totale par nœud
-##SBATCH --gres=gpu:1                # Décommenter pour demander 1 GPU
+#SBATCH --ntasks=1                    # Nombre total de tâches (processus MPI)
+#SBATCH --cpus-per-task=1            # Nombre de threads par tâche (pour OpenMP)
+#SBATCH --mem=4096                     # Mémoire totale par nœud
+#SBATCH --gres=gpu:1                  # Décommenter pour demander 1 GPU
+
 
 #===============================================================================
 # PARAMÈTRES DE SORTIE
 #===============================================================================
-#SBATCH --job-name=job_test          # Nom du job
+#SBATCH --job-name=job_test_gpu        # Nom du job
 #SBATCH --output=logs/%j_%x.out      # Fichier de sortie (%j = JobID, %x = nom du job)
 #SBATCH --error=logs/%j_%x.err       # Fichier d'erreur
 #SBATCH --mail-type=BEGIN,END,FAIL   # Notifications par email
-#SBATCH --mail-user=your@email.com   # Adresse email
+#SBATCH --mail-user=janis.aiad@polytechnique.edu  # Adresse email
 
 #===============================================================================
 # CONFIGURATION DE L'ENVIRONNEMENT
@@ -41,9 +42,33 @@
 mkdir -p logs
 
 # Charger les modules nécessaires
+export UV_LINK_MODE=symlink
+source ~/.bashrc
+echo $UV_LINK_MODE
+
+
+uv --link-mode=copysync
+module spider python
+module spider cuda
 module purge                          # Nettoyer l'environnement
-module load python/3.9                # Charger Python 3.9
-# module load cuda/11.7                # Décommenter pour CUDA si GPU
+module load python/3.10               # Charger Python 3.10
+module load cuda/11.7                # Décommenter pour CUDA si GPU
+
+VENV_DIR="$SLURM_SUBMIT_DIR/.venv"
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+uv venv $VENV_DIR
+source $VENV_DIR/bin/activate
+uv sync
+uv pip install -e .
+uv cache prune
+
+
+
+uv run tests/test_env.py
+source .venv/bin/activate
+
+
 
 # Configuration des variables d'environnement
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -69,10 +94,12 @@ echo "======================================"
 cd $SLURM_SUBMIT_DIR
 
 # Exécuter le programme principal
-python3 main.py
+python3 tests/gpu_cholesky.py
 
 # Ou pour un programme MPI
 # srun python3 main.py
+
+
 
 #===============================================================================
 # FIN DU JOB

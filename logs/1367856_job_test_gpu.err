@@ -1,0 +1,35 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"python/3.10"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "python/3.10"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"cuda/11.7"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "cuda/11.7"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+System glibc version (`2.17') is too old; checking alternatives
+downloading uv 0.5.3 x86_64-unknown-linux-musl-static
+Using CPython 3.10.15
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 178 packages in 8ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Prepared 1 package in 3.17s
+slurmstepd: error: *** JOB 1367856 ON cholesky-gpu05 CANCELLED AT 2024-11-20T00:14:00 ***
