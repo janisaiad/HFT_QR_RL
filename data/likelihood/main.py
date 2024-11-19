@@ -10,11 +10,12 @@ from dataframe_transform import transform_dataframe
 from datetime import datetime
 import logging
 
-def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cancel: float = 0.98, alpha_trade: float = 0.95):
+def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cancel: float = 0.98, alpha_trade: float = 0.985):
     """
     Process parquet files from a folder, transform dataframes and identify outliers based on time delta quantiles.
     Creates plots showing price movements and rare events using both matplotlib and plotly.
     Logs processing details and summary statistics.
+    Separates analysis by zero vs non-zero price differences.
     
     Args:
         folder_path: Path to folder containing parquet files
@@ -42,162 +43,146 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
     txt_dir = "/home/janis/3A/EA/HFT_QR_RL/data/likelihood/txt"
     os.makedirs(plot_output_dir, exist_ok=True)
     
-    schema = {
-        'ts_event': pl.String,
-        'action': pl.Utf8,
-        'side': pl.Utf8, 
-        'size': pl.Int64,
-        'price': pl.Float64,
-        'bid_px_00': pl.Float64,
-        'ask_px_00': pl.Float64,
-        'bid_sz_00': pl.Int64,
-        'ask_sz_00': pl.Int64,
-        'bid_ct_00': pl.Int64,
-        'ask_ct_00': pl.Int64,
-        'bid_px_01': pl.Float64,
-        'ask_px_01': pl.Float64,
-        'bid_sz_01': pl.Int64,
-        'ask_sz_01': pl.Int64,
-        'bid_ct_01': pl.Int64,
-        'ask_ct_01': pl.Int64,
-        'time_diff': pl.Float64,
-        'price_same': pl.Float64,
-        'price_opposite': pl.Float64,
-        'size_same': pl.Int64,
-        'size_opposite': pl.Int64,
-        'nb_ppl_same': pl.Int64,
-        'nb_ppl_opposite': pl.Int64,
-        'diff_price': pl.Float64,
-        'Mean_price_diff': pl.Float64,
-        'imbalance': pl.Float64,
-        'indice': pl.Int64,
-        'bid_sz_00_diff': pl.Int64,
-        'ask_sz_00_diff': pl.Int64,
-        'status': pl.Utf8,
-        'new_limite': pl.Utf8,
-        'price_middle': pl.Float64
-    }
     for file in tqdm(files):
         logging.info(f"Processing file: {file}")
         logging.info(f"Current time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-        df = pl.read_parquet(file, schema=schema)
+        df = pl.read_parquet(file)
         df = transform_dataframe(df)
         
-        # Calculate summary statistics
-        stats = {
-            "total_rows": len(df),
-            "num_trades": len(df.filter(pl.col("action") == "T")),
-            "num_bid_updates": len(df.filter(pl.col("side") == "B")),
-            "num_ask_updates": len(df.filter(pl.col("side") == "A")),
-            "avg_trade_size": df.filter(pl.col("action") == "T")["size"].mean(),
-            "max_price": df["price"].max(),
-            "min_price": df["price"].min(),
-            "avg_price": df["price"].mean(),
-            "price_volatility": df["price"].std(),
-            "avg_bid_ask_spread": (df["ask_px_00"] - df["bid_px_00"]).mean()
-        }
-        
-        # Log statistics
-        logging.info("Summary Statistics:")
-        for stat, value in stats.items():
-            logging.info(f"{stat}: {value}")
-            print(f"{stat}: {value}")
-        logging.info(f"Alpha_add: {alpha_add}, Alpha_cancel: {alpha_cancel}, Alpha_trade: {alpha_trade}")
-
-        # Convert deltas to seconds
+        # Shift imbalance down by one row
         df = df.with_columns([
-            pl.col('add_deltas').truediv(1e9).alias('add_deltas_sec'),
-            pl.col('cancel_deltas').truediv(1e9).alias('cancel_deltas_sec'),
-            pl.col('trade_deltas').truediv(1e9).alias('trade_deltas_sec')
+            pl.col('imbalance').shift(1).alias('imbalance')
         ])
+        
+        # Split into zero and non-zero price difference dataframes
+        df_zero = df.filter(pl.col("diff_price") == 0)
+        df_nonzero = df.filter(pl.col("diff_price") != 0)
+        
+        # Calculate percentage split
+        total_rows = len(df)
+        zero_pct = len(df_zero) / total_rows * 100
+        nonzero_pct = len(df_nonzero) / total_rows * 100
+        
+        logging.info(f"Data split:")
+        logging.info(f"Zero price difference: {zero_pct:.2f}%")
+        logging.info(f"Non-zero price difference: {nonzero_pct:.2f}%")
+        print(f"Zero price difference: {zero_pct:.2f}%")
+        print(f"Non-zero price difference: {nonzero_pct:.2f}%")
 
-        # Create imbalance buckets
-        imbalance_bins = np.linspace(-1, 1, 9)  # 8 buckets
-        
-        # Create figure with 24 subplots (3 event types x 8 imbalance buckets)
-        fig, axes = plt.subplots(8, 3, figsize=(20, 40))
-        event_types = [('A', 'add_deltas_sec', 'Add'), 
-                      ('C', 'cancel_deltas_sec', 'Cancel'),
-                      ('T', 'trade_deltas_sec', 'Trade')]
-        
-        # Create text file for outliers
-        file_date = os.path.basename(file).split('_')[0]
-        outliers_file = os.path.join(txt_dir, f"{stock}_{file_date}_outliers.txt")
-        
-        dic_alpha = {"A": alpha_add, "C": alpha_cancel, "T": alpha_trade}
-        with open(outliers_file, 'w') as f:
-            for col, (action, delta_col, title) in enumerate(event_types):
-                # Filter dataframe for this action
-                action_df = df.filter(pl.col('action') == action)
-                
-                for row in range(8):
-                    ax = axes[row, col]
-                    
-                    # Plot price and bid-ask for all data points
-                    ax.plot(action_df['ts_event'], action_df['price'], color='blue', alpha=0.7)
-                    ax.plot(action_df['ts_event'], action_df['bid_px_00'], color='green', alpha=0.3)
-                    ax.plot(action_df['ts_event'], action_df['ask_px_00'], color='red', alpha=0.3)
-                    
-                    # Filter for current imbalance bucket
-                    bucket_df = action_df.filter(
-                        (pl.col('imbalance') >= imbalance_bins[row]) & 
-                        (pl.col('imbalance') < imbalance_bins[row+1])
-                    )
-                    
-                    # Calculate threshold and get points with quantiles
-                    if len(bucket_df) > 0:
-                        # Sort points by delta values
-                        sorted_df = bucket_df.sort(delta_col)
-                        n_points = len(sorted_df)
-                        
-                        # Calculate quantiles for each point
-                        quantiles = [1 - (i+1)/n_points for i in range(n_points)]
-                        points_with_quantiles = list(zip(
-                            sorted_df['ts_event'].to_list(),
-                            quantiles
-                        ))
-                        
-                        # Get points with quantiles above alpha threshold
-                        outliers = [(point, q) for point, q in points_with_quantiles 
-                                  if q >= dic_alpha[action]]
-                        
-                        if outliers:
-                            outlier_points = [point for point, _ in outliers]
-                            outlier_df = bucket_df.filter(pl.col('ts_event').is_in(outlier_points))
-                            
-                            # Plot outliers
-                            ax.scatter(outlier_df['ts_event'], outlier_df['price'], 
-                                     color='red', alpha=0.8, s=20)
-                            
-                            # Write outliers with quantiles to text file
-                            f.write(f"Action: {title}, Bucket: [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]\n")
-                            for point, quantile in outliers:
-                                f.write(f"{point},{quantile:.6f}\n")
-                            f.write("\n")
-                    
-                    # Set title and labels
-                    ax.set_title(f'{title} Events - Imbalance [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]')
-                    if row == 7:  # Bottom row
-                        ax.set_xlabel('Time')
-                    if col == 0:  # First column
-                        ax.set_ylabel('Price')
-                    
-                    # Rotate x-axis labels
-                    ax.tick_params(axis='x', rotation=45)
+        # Process each dataset separately
+        for df_type, df_subset in [("zero_spread", df_zero), ("nonzero_spread", df_nonzero)]:
+            # Calculate summary statistics
+            stats = {
+                "total_rows": len(df_subset),
+                "num_trades": len(df_subset.filter(pl.col("action") == "T")),
+                "num_bid_updates": len(df_subset.filter(pl.col("side") == "B")),
+                "num_ask_updates": len(df_subset.filter(pl.col("side") == "A")),
+                "avg_trade_size": df_subset.filter(pl.col("action") == "T")["size"].mean(),
+                "max_price": df_subset["price"].max(),
+                "min_price": df_subset["price"].min(),
+                "avg_price": df_subset["price"].mean(),
+                "price_volatility": df_subset["price"].std(),
+                "avg_bid_ask_spread": (df_subset["ask_px_00"] - df_subset["bid_px_00"]).mean()
+            }
+            
+            # Log statistics
+            logging.info(f"\nSummary Statistics for {df_type}:")
+            for stat, value in stats.items():
+                logging.info(f"{stat}: {value}")
+                print(f"{df_type} - {stat}: {value}")
+            logging.info(f"Alpha_add: {alpha_add}, Alpha_cancel: {alpha_cancel}, Alpha_trade: {alpha_trade}")
 
-        plt.tight_layout()
-        
-        plot_path = os.path.join(plot_output_dir,
-                                f"{stock}_{file_date}_imbalance_buckets.png")
-        plt.savefig(plot_path)
-        plt.close()
-        
-        output_path = os.path.join(os.path.dirname(file), 
-                                 f"{stock}_{file_date}_transformed.parquet")
-        # df.write_parquet(output_path)
+            # Convert deltas to seconds
+            df_subset = df_subset.with_columns([
+                pl.col('add_deltas').truediv(1e9).alias('add_deltas_sec'),
+                pl.col('cancel_deltas').truediv(1e9).alias('cancel_deltas_sec'),
+                pl.col('trade_deltas').truediv(1e9).alias('trade_deltas_sec')
+            ])
+
+            # Create imbalance buckets
+            imbalance_bins = np.linspace(-1, 1, 9)  # 8 buckets
+            
+            # Create figure with 24 subplots (3 event types x 8 imbalance buckets)
+            fig, axes = plt.subplots(8, 3, figsize=(20, 40))
+            event_types = [('A', 'add_deltas_sec', 'Add'), 
+                          ('C', 'cancel_deltas_sec', 'Cancel'),
+                          ('T', 'trade_deltas_sec', 'Trade')]
+            
+            # Create text file for outliers
+            file_date = os.path.basename(file).split('_')[0]
+            outliers_file = os.path.join(txt_dir, f"{stock}_{file_date}_{df_type}_outliers.txt")
+            
+            dic_alpha = {"A": alpha_add, "C": alpha_cancel, "T": alpha_trade}
+            with open(outliers_file, 'w') as f:
+                for col, (action, delta_col, title) in enumerate(event_types):
+                    # Filter dataframe for this action
+                    action_df = df_subset.filter(pl.col('action') == action)
+                    
+                    for row in range(8):
+                        ax = axes[row, col]
+                        
+                        # Plot price and bid-ask for all data points
+                        ax.plot(action_df['ts_event'], action_df['price'], color='blue', alpha=0.7)
+                        ax.plot(action_df['ts_event'], action_df['bid_px_00'], color='green', alpha=0.3)
+                        ax.plot(action_df['ts_event'], action_df['ask_px_00'], color='red', alpha=0.3)
+                        
+                        # Filter for current imbalance bucket
+                        bucket_df = action_df.filter(
+                            (pl.col('imbalance') >= imbalance_bins[row]) & 
+                            (pl.col('imbalance') < imbalance_bins[row+1])
+                        )
+                        
+                        # Calculate threshold and get points with quantiles
+                        if len(bucket_df) > 0:
+                            # Sort points by delta values
+                            sorted_df = bucket_df.sort(delta_col)
+                            n_points = len(sorted_df)
+                            
+                            # Calculate quantiles for each point
+                            quantiles = [1 - (i+1)/n_points for i in range(n_points)]
+                            points_with_quantiles = list(zip(
+                                sorted_df['ts_event'].to_list(),
+                                quantiles
+                            ))
+                            
+                            # Get points with quantiles above alpha threshold
+                            outliers = [(point, q) for point, q in points_with_quantiles 
+                                      if q >= dic_alpha[action]]
+                            
+                            if outliers:
+                                outlier_points = [point for point, _ in outliers]
+                                outlier_df = bucket_df.filter(pl.col('ts_event').is_in(outlier_points))
+                                
+                                # Plot outliers
+                                ax.scatter(outlier_df['ts_event'], outlier_df['price'], 
+                                         color='red', alpha=0.8, s=20)
+                                
+                                # Write outliers with quantiles to text file
+                                f.write(f"Action: {title}, Bucket: [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]\n")
+                                for point, quantile in outliers:
+                                    f.write(f"{point},{quantile:.6f}\n")
+                                f.write("\n")
+                        
+                        # Set title and labels
+                        ax.set_title(f'{title} Events - Imbalance [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]')
+                        if row == 7:  # Bottom row
+                            ax.set_xlabel('Time')
+                        if col == 0:  # First column
+                            ax.set_ylabel('Price')
+                        
+                        # Rotate x-axis labels
+                        ax.tick_params(axis='x', rotation=45)
+
+            plt.tight_layout()
+            
+            plot_path = os.path.join(plot_output_dir,
+                                    f"{stock}_{file_date}_{df_type}_imbalance_buckets.png")
+            plt.savefig(plot_path)
+            plt.close()
+
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/GOOGL_filtered"
     process_parquet_files(data_folder)
