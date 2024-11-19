@@ -56,7 +56,12 @@ def analyze_forward_price_differences(points_file: str, spread_type: str) -> dic
     logging.info(f"Reading parquet file: {parquet_path}")
     df = pl.read_parquet(parquet_path)
     
-    # Calculate true price differences (50 events ahead)
+    # Calculate mid price and true price differences (50 events ahead)
+    df = df.with_columns([
+        ((pl.col("bid_px_00") + pl.col("ask_px_00"))/2).alias("mid_price"),
+        ((pl.col("bid_sz_00") - pl.col("ask_sz_00"))/(pl.col("bid_sz_00") + pl.col("ask_sz_00"))).alias("imbalance")
+    ])
+    
     df = df.with_columns([
         (pl.col("mid_price").shift(-50) - pl.col("mid_price")).alias("true_price_diff_50")
     ])
