@@ -4,8 +4,7 @@ from tqdm import tqdm
 import glob
 import os
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+from scipy.stats import gaussian_kde
 from dataframe_transform import transform_dataframe
 from datetime import datetime
 import logging
@@ -13,13 +12,15 @@ import logging
 def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cancel: float = 0.98, alpha_trade: float = 0.985):
     """
     Process parquet files from a folder, transform dataframes and identify outliers based on time delta quantiles.
-    Creates plots showing price movements and rare events using both matplotlib and plotly.
+    Creates plots showing price movements, rare events and event distributions using matplotlib.
     Logs processing details and summary statistics.
     Separates analysis by zero vs non-zero price differences.
     
     Args:
         folder_path: Path to folder containing parquet files
-        alpha: Quantile threshold for identifying outliers (default 0.95 if not specified in log)
+        alpha_add: Quantile threshold for identifying add outliers
+        alpha_cancel: Quantile threshold for identifying cancel outliers 
+        alpha_trade: Quantile threshold for identifying trade outliers
         
     Note: Time is in nanoseconds using Databento MBP10 format
     """
@@ -29,7 +30,7 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
     # Get current date
     current_date = datetime.now().strftime('%Y%m%d')
     
-    # Setup logging - one log file for all processing
+    # Setup logging
     log_dir = "/home/janis/3A/EA/HFT_QR_RL/data/likelihood/logs"
     os.makedirs(log_dir, exist_ok=True)
     logging.basicConfig(
@@ -67,8 +68,6 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
         logging.info(f"Data split:")
         logging.info(f"Zero price difference: {zero_pct:.2f}%")
         logging.info(f"Non-zero price difference: {nonzero_pct:.2f}%")
-        print(f"Zero price difference: {zero_pct:.2f}%")
-        print(f"Non-zero price difference: {nonzero_pct:.2f}%")
 
         # Process each dataset separately
         for df_type, df_subset in [("zero_spread", df_zero), ("nonzero_spread", df_nonzero)]:
@@ -90,7 +89,6 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
             logging.info(f"\nSummary Statistics for {df_type}:")
             for stat, value in stats.items():
                 logging.info(f"{stat}: {value}")
-                print(f"{df_type} - {stat}: {value}")
             logging.info(f"Alpha_add: {alpha_add}, Alpha_cancel: {alpha_cancel}, Alpha_trade: {alpha_trade}")
 
             # Convert deltas to seconds
@@ -163,6 +161,29 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
                                 for point, quantile in outliers:
                                     f.write(f"{point},{quantile:.6f}\n")
                                 f.write("\n")
+                            
+                            # Add KDE plot of event distribution
+                            try:
+                                events = bucket_df['ts_event'].to_numpy()
+                                kde = gaussian_kde(events, bw_method='scott')
+                                x_range = np.linspace(events.min(), events.max(), 200)
+                                density = kde(x_range)
+                                
+                                # Get price range for this bucket
+                                price_min = bucket_df['price'].min()
+                                price_max = bucket_df['price'].max()
+                                price_range = price_max - price_min
+                                
+                                # Normalize density to [0,1] and scale to price range
+                                density_norm = density / density.max()  # Normalize to [0,1]
+                                density_scaled = density_norm * price_range + price_min
+                                
+                                # Plot normalized density curve
+                                ax.plot(x_range, density_scaled, color='purple', alpha=0.4, 
+                                      label='Event Distribution')
+                                
+                            except Exception as e:
+                                logging.warning(f"KDE failed for {action} bucket {row}: {e}")
                         
                         # Set title and labels
                         ax.set_title(f'{title} Events - Imbalance [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]')
@@ -177,12 +198,12 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
             plt.tight_layout()
             
             plot_path = os.path.join(plot_output_dir,
-                                    f"{stock}_{file_date}_{df_type}_imbalance_buckets.png")
+                                    f"{stock}_{file_date}_{df_type}_imbalance_buckets_with_event_dist.png")
             plt.savefig(plot_path)
             plt.close()
 
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/GOOGL_filtered"
     process_parquet_files(data_folder)
