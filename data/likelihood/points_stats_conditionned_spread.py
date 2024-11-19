@@ -172,7 +172,7 @@ if __name__ == "__main__":
     )
     
     # Process all txt files
-    txt_files = glob.glob(os.path.join(txt_dir, "*_*_outliers.txt"))
+    txt_files = glob.glob(os.path.join(txt_dir, "KHC_*_outliers.txt"))
     
     for txt_file in tqdm(txt_files):
         logging.info(f"Processing file: {txt_file}")
