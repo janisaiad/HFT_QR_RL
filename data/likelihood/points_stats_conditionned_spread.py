@@ -121,6 +121,7 @@ def analyze_point_distribution(points_file: str, spread_type: str, eps: float = 
                 
                 # Nearest neighbor stats
                 dists = pdist(points_norm.reshape(-1,1))
+                
                 sample_metrics['mean_nearest_neighbor'] = float(np.mean(dists))
                 sample_metrics['max_nearest_neighbor'] = float(np.max(dists))
                 
