@@ -2,7 +2,7 @@ Metadata-Version: 2.1
 Name: hft-qr-rl
 Version: 0.1.0
 Summary: Application de l'apprentissage par renforcement pour le contrôle optimal des files d'attente QR réactives dans le trading haute fréquence
-Requires-Python: >=3.9
+Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: databento>=0.23.1
@@ -14,7 +14,7 @@ Requires-Dist: nbformat>=5.10.4
 Requires-Dist: numpy==1.24.0
 Requires-Dist: pandas>=2.0.3
 Requires-Dist: plotly>=5.24.1
-Requires-Dist: polars==1.6.0
+Requires-Dist: polars==1.8
 Requires-Dist: psutil>=6.1.0
 Requires-Dist: pyarrow>=18.0.0
 Requires-Dist: pygwalker>=0.4.9.13
