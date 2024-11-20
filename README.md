@@ -4,6 +4,17 @@
 
 This project aims to apply reinforcement learning techniques to optimize the control of reactive QR (Quick Response) queues in a high-frequency trading context. It combines advanced concepts of machine learning, queueing theory, and optimization to improve resource management and performance of trading systems.
 
+
+### GPU Support
+
+This project uses the `polars` library, which supports GPU acceleration. Install cudf manually to use GPU.
+// For RTX4060  with cudf/cuml :: 
+Successfully installed MarkupSafe-3.0.2 cachetools-5.5.0 click-8.1.7 cloudpickle-3.1.0 cuda-python-12.6.2.post1 cudf-cu12-24.10.1 cuml-cu12-24.10.0 cupy-cuda12x-13.3.0 cuvs-cu12-24.10.0 dask-2024.9.0 dask-cuda-24.10.0 dask-cudf-cu12-24.10.1 dask-expr-1.1.14 distributed-2024.9.0 distributed-ucxx-cu12-0.40.0 fastrlock-0.8.2 fsspec-2024.10.0 jinja2-3.1.4 joblib-1.4.2 libcudf-cu12-24.10.1 libucx-cu12-1.17.0 libucxx-cu12-0.40.0 llvmlite-0.43.0 locket-1.0.0 markdown-it-py-3.0.0 mdurl-0.1.2 msgpack-1.1.0 numba-0.60.0 numpy-2.0.2 nvidia-cublas-cu12-12.6.3.3 nvidia-cufft-cu12-11.3.0.4 nvidia-curand-cu12-10.3.7.77 nvidia-cusolver-cu12-11.7.1.2 nvidia-cusparse-cu12-12.5.4.2 nvidia-nvjitlink-cu12-12.6.77 nvtx-0.2.10 pandas-2.2.2 partd-1.4.2 psutil-6.1.0 pyarrow-17.0.0 pygments-2.18.0 pylibcudf-cu12-24.10.1 pylibraft-cu12-24.10.0 pynvjitlink-cu12-0.4.0 pynvml-11.4.1 python-dateutil-2.9.0.post0 pytz-2024.2 pyyaml-6.0.2 raft-dask-cu12-24.10.0 rapids-dask-dependency-24.10.0 rich-13.9.4 rmm-cu12-24.10.0 scipy-1.14.1 six-1.16.0 sortedcontainers-2.4.0 tblib-3.0.0 toolz-1.0.0 tornado-6.4.1 treelite-4.3.0 typing_extensions-4.12.2 tzdata-2024.2 ucx-py-cu12-0.40.0 ucxx-cu12-0.40.0 zict-3.0.0
+
+worked :
+uv pip install --index-url https://pypi.org/simple --extra-index-url https://pypi.nvidia.com --index-strategy unsafe-best-match cudf-cu12
+
+
 ### New Libraries
 
 - **NumPy**: Utilisé pour le calcul numérique et le traitement des données.
