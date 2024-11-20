@@ -1,0 +1,315 @@
+Error while loading conda entry point: conda-libmamba-solver (libarchive.so.20: cannot open shared object file: No such file or directory)
+error: unexpected argument '--link-mode' found
+
+Usage: uv [OPTIONS] <COMMAND>
+
+For more information, try '--help'.
+Lmod has detected the following error: The following module(s) are unknown:
+"python/3.10"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "python/3.10"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"cuda/11.7"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "cuda/11.7"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+System glibc version (`2.17') is too old; checking alternatives
+downloading uv 0.5.3 x86_64-unknown-linux-musl-static
+Using CPython 3.10.15
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 178 packages in 9ms
+Prepared 1 package in 2.20s
+Installed 173 packages in 18.40s
+ + aiohappyeyeballs==2.4.3
+ + aiohttp==3.10.10
+ + aiosignal==1.3.1
+ + annotated-types==0.7.0
+ + anyio==4.6.2.post1
+ + anywidget==0.9.13
+ + appdirs==1.4.4
+ + argon2-cffi==23.1.0
+ + argon2-cffi-bindings==21.2.0
+ + arrow==1.3.0
+ + astor==0.8.1
+ + asttokens==2.4.1
+ + async-lru==2.0.4
+ + async-timeout==4.0.3
+ + attrs==24.2.0
+ + babel==2.16.0
+ + backoff==2.2.1
+ + beautifulsoup4==4.12.3
+ + bleach==6.2.0
+ + blinker==1.8.2
+ + cachetools==5.5.0
+ + certifi==2024.8.30
+ + cffi==1.17.1
+ + charset-normalizer==3.4.0
+ + click==8.1.7
+ + comm==0.2.2
+ + contourpy==1.2.1
+ + cycler==0.12.1
+ + databento==0.23.1
+ + databento-dbn==0.13.0
+ + dateutils==0.6.12
+ + debugpy==1.8.7
+ + decorator==5.1.1
+ + defusedxml==0.7.1
+ + duckdb==1.1.3
+ + exceptiongroup==1.2.2
+ + executing==2.1.0
+ + fastjsonschema==2.20.0
+ + flask==3.0.3
+ + flask-cors==5.0.0
+ + fonttools==4.54.1
+ + fqdn==1.5.1
+ + frozenlist==1.5.0
+ + gitdb==4.0.11
+ + gitpython==3.1.43
+ + greenlet==3.1.1
+ + gw-dsl-parser==0.1.49.1
+ + h11==0.14.0
+ + hft-qr-rl==0.1.0 (from file:///mnt/beegfs/project/lobib/repos/HFT_QR_RL)
+ + httpcore==1.0.7
+ + httpx==0.27.2
+ + idna==3.10
+ + importlib-resources==6.4.5
+ + iniconfig==2.0.0
+ + ipykernel==6.29.5
+ + ipylab==1.0.0
+ + ipython==8.18.1
+ + ipywidgets==8.1.5
+ + isoduration==20.11.0
+ + itsdangerous==2.2.0
+ + jedi==0.19.1
+ + jinja2==3.1.4
+ + joblib==1.4.2
+ + json5==0.9.28
+ + jsonpointer==3.0.0
+ + jsonschema==4.23.0
+ + jsonschema-specifications==2024.10.1
+ + jupyter-client==8.6.3
+ + jupyter-core==5.7.2
+ + jupyter-events==0.10.0
+ + jupyter-lsp==2.2.5
+ + jupyter-server==2.14.2
+ + jupyter-server-terminals==0.5.3
+ + jupyterlab==4.2.6
+ + jupyterlab-pygments==0.3.0
+ + jupyterlab-server==2.27.3
+ + jupyterlab-widgets==3.0.13
+ + kanaries-track==0.0.5
+ + kiwisolver==1.4.7
+ + markdown-it-py==3.0.0
+ + markupsafe==3.0.2
+ + matplotlib==3.8.4
+ + matplotlib-inline==0.1.7
+ + mdurl==0.1.2
+ + mistune==3.0.2
+ + monotonic==1.6
+ + multidict==6.1.0
+ + nbclient==0.10.0
+ + nbconvert==7.16.4
+ + nbformat==5.10.4
+ + nest-asyncio==1.6.0
+ + networkx==3.2.1
+ + notebook==7.2.2
+ + notebook-shim==0.2.4
+ + numpy==1.24.0
+ + overrides==7.7.0
+ + packaging==24.1
+ + pandas==2.0.3
+ + pandocfilters==1.5.1
+ + parso==0.8.4
+ + pexpect==4.9.0
+ + pillow==11.0.0
+ + pip==24.3.1
+ + platformdirs==4.3.6
+ + plotly==5.24.1
+ + pluggy==1.5.0
+ + polars==1.2.1
+ + prometheus-client==0.21.0
+ + prompt-toolkit==3.0.48
+ + propcache==0.2.0
+ + psutil==6.1.0
+ + psygnal==0.11.1
+ + ptyprocess==0.7.0
+ + pure-eval==0.2.3
+ + pyarrow==18.0.0
+ + pycparser==2.22
+ + pydantic==2.9.2
+ + pydantic-core==2.23.4
+ + pydot==3.0.2
+ + pygments==2.18.0
+ + pygwalker==0.4.9.13
+ + pyparsing==3.2.0
+ + pytest==8.3.3
+ + python-dateutil==2.9.0.post0
+ + python-json-logger==2.0.7
+ + pytz==2024.2
+ + pyyaml==6.0.2
+ + pyzmq==26.2.0
+ + quickjs==1.19.4
+ + referencing==0.35.1
+ + requests==2.32.3
+ + rfc3339-validator==0.1.4
+ + rfc3986-validator==0.1.1
+ + rich==13.9.3
+ + rpds-py==0.20.1
+ + ruff==0.7.1
+ + scikit-learn==1.5.2
+ + scipy==1.13.1
+ + seaborn==0.12.1
+ + segment-analytics-python==2.2.3
+ + send2trash==1.8.3
+ + setuptools==75.3.0
+ + six==1.16.0
+ + smmap==5.0.1
+ + sniffio==1.3.1
+ + soupsieve==2.6
+ + sqlalchemy==2.0.36
+ + sqlglot==25.31.4
+ + stack-data==0.6.3
+ + tach==0.14.1
+ + tenacity==9.0.0
+ + terminado==0.18.1
+ + threadpoolctl==3.5.0
+ + tinycss2==1.4.0
+ + tomli==2.0.2
+ + tomli-w==1.1.0
+ + tornado==6.4.1
+ + tqdm==4.66.6
+ + traitlets==5.14.3
+ + types-python-dateutil==2.9.0.20241003
+ + typing-extensions==4.12.2
+ + tzdata==2024.2
+ + uri-template==1.3.0
+ + urllib3==2.2.3
+ + wasmtime==25.0.0
+ + wcwidth==0.2.13
+ + webcolors==24.11.1
+ + webencodings==0.5.1
+ + websocket-client==1.8.0
+ + werkzeug==3.1.1
+ + widgetsnbextension==4.0.13
+ + yarl==1.17.1
+ + zstandard==0.23.0
+Audited 1 package in 230ms
+Resolved 3 packages in 71ms
+  × Failed to download and build `cupy==13.3.0`
+  ╰─▶ Build backend failed to build wheel through `build_wheel` (exit status:
+      1)
+
+      [stdout]
+      Generating cache key from header files...
+      Cache key (1610 files matching
+      /mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/_core/include/**):
+      63eb704e1160a79a6f0986e954e813e05dfd79f6
+      Clearing directory:
+      /mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/.data
+
+      -------- Configuring Module: cuda --------
+      command 'clang++' failed: No such file or directory
+      **************************************************
+      *** WARNING: Cannot check compute capability
+      command 'clang++' failed: No such file or directory
+      **************************************************
+
+      ************************************************************
+      * CuPy Configuration Summary                               *
+      ************************************************************
+
+      Build Environment:
+        Include directories:
+      ['/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/_core/include/cupy/_cccl/libcudacxx',
+      '/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/_core/include/cupy/_cccl/thrust',
+      '/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/_core/include/cupy/_cccl/cub',
+      '/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/cupy/_core/include']
+        Library directories: []
+        nvcc command       : (not found)
+        hipcc command      : (not found)
+
+      Environment Variables:
+        CFLAGS          : (none)
+        LDFLAGS         : (none)
+        LIBRARY_PATH    : (none)
+        CUDA_PATH       : (none)
+        NVCC            : (none)
+        HIPCC           : (none)
+        ROCM_HOME       : (none)
+
+      Modules:
+        cuda      : No
+          -> Include files not found: ['cublas_v2.h', 'cuda.h',
+      'cuda_profiler_api.h', 'cuda_runtime.h', 'cufft.h', 'curand.h',
+      'cusparse.h']
+          -> Check your CFLAGS environment variable.
+
+      ERROR: CUDA could not be found on your system.
+
+      HINT: You are trying to build CuPy from source, which is NOT recommended
+      for general use.
+            Please consider using binary packages instead.
+
+      Please refer to the Installation Guide for details:
+      https://docs.cupy.dev/en/stable/install.html
+
+      ************************************************************
+
+
+      [stderr]
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/builds-v0/.tmpNSFWo2/lib/python3.10/site-packages/setuptools/build_meta.py",
+      line 435, in build_wheel
+          return _build(['bdist_wheel'])
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/builds-v0/.tmpNSFWo2/lib/python3.10/site-packages/setuptools/build_meta.py",
+      line 426, in _build
+          return self._build_with_temp_dir(
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/builds-v0/.tmpNSFWo2/lib/python3.10/site-packages/setuptools/build_meta.py",
+      line 407, in _build_with_temp_dir
+          self.run_setup()
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/builds-v0/.tmpNSFWo2/lib/python3.10/site-packages/setuptools/build_meta.py",
+      line 522, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/builds-v0/.tmpNSFWo2/lib/python3.10/site-packages/setuptools/build_meta.py",
+      line 320, in run_setup
+          exec(code, locals())
+        File "<string>", line 95, in <module>
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/install/cupy_builder/cupy_setup_build.py",
+      line 514, in get_ext_modules
+          extensions = make_extensions(ctx, compiler, use_cython)
+        File
+      "/mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv/sdists-v6/pypi/cupy/13.3.0/qyYinsBbSIYlM0noIce9j/src/install/cupy_builder/cupy_setup_build.py",
+      line 363, in make_extensions
+          raise Exception('Your CUDA environment is invalid. '
+      Exception: Your CUDA environment is invalid. Please check above error
+      log.
+
+Pruning cache at: /mnt/beegfs/home/EXT-FORMATION/janis.aiad/.cache/uv
+Removed 20 files (35.8KiB)
+Traceback (most recent call last):
+  File "/mnt/beegfs/project/lobib/repos/HFT_QR_RL/tests/gpu_cholesky.py", line 7, in <module>
+    import cupy as cp
+ModuleNotFoundError: No module named 'cupy'

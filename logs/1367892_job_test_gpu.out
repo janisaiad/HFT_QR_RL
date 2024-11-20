@@ -1,0 +1,60 @@
+symlink
+
+----------------------------------------------------------------------------
+  python-test:
+----------------------------------------------------------------------------
+    Description:
+      Python environment
+
+     Versions:
+        python-test/3.9.16
+        python-test/3.11.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "python-test" module (including how to load the modules) use the module's full name.
+  For example:
+
+     $ module spider python-test/3.9.16
+----------------------------------------------------------------------------
+
+ 
+
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+    Description:
+      
+
+     Versions:
+        cuda/11.4
+        cuda/12.2
+        cuda/12.4
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" module (including how to load the modules) use the module's full name.
+  For example:
+
+     $ module spider cuda/12.4
+----------------------------------------------------------------------------
+
+ 
+
+no checksums to verify
+installing to /mnt/beegfs/home/EXT-FORMATION/janis.aiad/.local/bin
+  uv
+  uvx
+everything's installed!
+QR1 found ! Environment is ready.
+======================================
+Date de début : Wed Nov 20 01:30:08 CET 2024
+Nom du job : job_test_gpu
+ID du job : 1367892
+Nœud(s) utilisé(s) : cholesky-gpu01
+Nombre de nœuds : 1
+Nombre de tâches : 1
+Nombre de CPU par tâche : 1
+======================================
+======================================
+Date de fin : Wed Nov 20 01:30:15 CET 2024
+======================================

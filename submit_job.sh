@@ -61,6 +61,7 @@ uv venv $VENV_DIR
 source $VENV_DIR/bin/activate
 uv sync
 uv pip install -e .
+uv pip install cupy
 uv cache prune
 
 
