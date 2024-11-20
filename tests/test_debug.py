@@ -44,7 +44,7 @@ def test_debug_environment():
             print(f"  {frame}")
             
         # Print variable information
-        print(f"\nLocal variables:")
+        print("\nLocal variables:")
         print(f"  global_var = {global_var}")
         print(f"  local_var = {local_var}")
         print(f"  test_list = {test_list}")

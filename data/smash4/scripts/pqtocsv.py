@@ -17,7 +17,7 @@ sl_types = ["SL", "PL"]
 # Process each CSV file
 for base_dir in tqdm(base_dirs):
     # Create search pattern for CSV files
-    search_pattern = os.path.join(base_dir, f"xnas-itch-*.mbp-10.csv")
+    search_pattern = os.path.join(base_dir, "xnas-itch-*.mbp-10.csv")
     
     # Get list of all matching CSV files
     csv_files = glob.glob(search_pattern)

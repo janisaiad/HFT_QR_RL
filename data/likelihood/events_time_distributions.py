@@ -65,7 +65,7 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
         zero_pct = len(df_zero) / total_rows * 100
         nonzero_pct = len(df_nonzero) / total_rows * 100
         
-        logging.info(f"Data split:")
+        logging.info("Data split:")
         logging.info(f"Zero price difference: {zero_pct:.2f}%")
         logging.info(f"Non-zero price difference: {nonzero_pct:.2f}%")
 

@@ -1,15 +1,10 @@
 import pandas as pd # ca on va devoir bcp l'uiliser
 import numpy as np
-import plotly.graph_objects as go
 import warnings
 warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.max_rows', None)
-from tqdm import tqdm
-import os
-import glob
-from collections import Counter
 
 
 def processing(file, output):

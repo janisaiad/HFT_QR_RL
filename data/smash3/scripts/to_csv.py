@@ -1,11 +1,9 @@
 import os
-import polars as pl
 # import pandas as pd
 import databento as db
 from tqdm import tqdm
 import psutil
 import logging
-import sys
 from datetime import datetime
 
 pathGPUCSV = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/CHICAGO"

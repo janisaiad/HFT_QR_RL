@@ -1,10 +1,8 @@
 import os
-import polars as pl
 import databento as db
 from tqdm import tqdm
 import psutil
 import logging
-import sys
 from datetime import datetime
 
 # Configure logging
