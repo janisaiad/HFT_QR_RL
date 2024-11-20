@@ -13,6 +13,8 @@ Successfully installed MarkupSafe-3.0.2 cachetools-5.5.0 click-8.1.7 cloudpickle
 
 worked :
 uv pip install --index-url https://pypi.org/simple --extra-index-url https://pypi.nvidia.com --index-strategy unsafe-best-match cudf-cu12
+and for timeout 
+UV_HTTP_TIMEOUT=300 uv pip install --index-url https://pypi.org/simple --extra-index-url https://pypi.nvidia.com --index-strategy unsafe-best-match cudf-cu12
 
 
 ### New Libraries
