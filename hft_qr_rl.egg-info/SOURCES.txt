@@ -10,5 +10,6 @@ hft_qr_rl.egg-info/top_level.txt
 models/QR1/QR-1.py
 models/QR1/__init__.py
 models/QR2/__init__.py
+tests/test_cuda.py
 tests/test_debug.py
 tests/test_env.py
