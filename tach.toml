@@ -1,3 +1,4 @@
+interfaces = []
 exclude = [
     ".*__pycache__",
     ".*egg-info",
@@ -8,8 +9,26 @@ source_roots = [
     ".",
 ]
 modules = [
+    { path = "data", depends_on = [] },
+    { path = "data.Data_order_book_premiere_analyse", depends_on = [] },
+    { path = "data.MBO-10 analyse", depends_on = [] },
+    { path = "data.MBO-10 analyse_2", depends_on = [] },
+    { path = "data.MBO10_2DBN", depends_on = [] },
+    { path = "data.deprecated", depends_on = [] },
+    { path = "data.likelihood", depends_on = [] },
+    { path = "data.smash", depends_on = [] },
+    { path = "data.smash2", depends_on = [] },
+    { path = "data.smash3", depends_on = [] },
+    { path = "former", depends_on = [] },
     { path = "former.moujrl", depends_on = [] },
     { path = "former.orderbookviz", depends_on = [] },
     { path = "former.qr", depends_on = [] },
+    { path = "frontend", depends_on = [] },
+    { path = "models", depends_on = [] },
     { path = "models.QR", depends_on = [] },
+    { path = "models.QR-2", depends_on = [] },
+    { path = "models.QR1", depends_on = [] },
+    { path = "models.QR2", depends_on = [] },
+    { path = "notebooks", depends_on = [] },
+    { path = "setup", depends_on = [] },
 ]

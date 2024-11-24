@@ -16,6 +16,7 @@ dependencies = [
    "ruff>=0.8.0",
    "scikit-learn>=1.5.2",
    "seaborn>=0.13.2",
+   "tach>=0.15.1",
    "tqdm>=4.67.0",
 ]
 
