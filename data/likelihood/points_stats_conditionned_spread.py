@@ -144,14 +144,14 @@ def analyze_point_distribution(points_file: str, spread_type: str, eps: float = 
                 plt.xlabel('Value')
                 plt.ylabel('Cumulative Probability')
                 plt.grid(True, alpha=0.3)
-                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_distribution.png'))
+                plt.savefig(os.path.join(plot_dir, f'{stock}_thin_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_distribution.png'))
                 plt.close()
                 
                 plt.figure(figsize=(10,6))
                 plt.scatter(points_norm, np.zeros_like(points_norm), c=clustering.labels_)
                 plt.title(f'DBSCAN Clustering - {action} - Bucket {bucket} - N={n_points} ({spread_type})')
                 plt.xlabel('Normalized Value')
-                plt.savefig(os.path.join(plot_dir, f'{stock}_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_clusters.png'))
+                plt.savefig(os.path.join(plot_dir, f'{stock}_thin_{file_date}_{spread_type}_{action}_{bucket}_n{n_points}_clusters.png'))
                 plt.close()
     
     return metrics
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     
     # Process all txt files for both spread types
     for spread_type in ['zero_spread', 'nonzero_spread']:
-        txt_files = glob.glob(os.path.join(txt_dir, f"KHC_*_{spread_type}_outliers.txt"))
+        txt_files = glob.glob(os.path.join(txt_dir, f"LCID_{spread_type}_outliers_thin.txt"))
         
         for txt_file in tqdm(txt_files):
             logging.info(f"Processing {spread_type} file: {txt_file}")
@@ -187,7 +187,7 @@ if __name__ == "__main__":
                 metrics = analyze_point_distribution(txt_file, spread_type)
                 
                 # Include spread type in output filename
-                output_file = os.path.join(results_dir, f"{stock_date}_{spread_type}_metrics.json")
+                output_file = os.path.join(results_dir, f"thin_{stock_date}_{spread_type}_metrics.json")
                 with open(output_file, "w") as f:
                     json.dump(metrics, f, indent=4)
                     
