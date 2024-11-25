@@ -100,18 +100,18 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
                 pl.col('trade_deltas').truediv(1e9).alias('trade_deltas_sec')
             ])
 
-            # Create imbalance buckets
-            imbalance_bins = np.linspace(-1, 1, 9)  # 8 buckets
+            # Create imbalance buckets every 10% from -1 to 1
+            imbalance_bins = np.linspace(-1, 1, 21)  # 20 buckets of 10% each
             
-            # Create figure with 24 subplots (3 event types x 8 imbalance buckets)
-            fig, axes = plt.subplots(8, 3, figsize=(20, 40))
+            # Create figure with 60 subplots (3 event types x 20 imbalance buckets)
+            fig, axes = plt.subplots(20, 3, figsize=(20, 100))
             event_types = [('A', 'add_deltas_sec', 'Add'), 
                           ('C', 'cancel_deltas_sec', 'Cancel'),
                           ('T', 'trade_deltas_sec', 'Trade')]
             
             # Create text file for outliers
             file_date = os.path.basename(file).split('_')[0]
-            outliers_file = os.path.join(txt_dir, f"{stock}_{file_date}_{df_type}_outliers.txt")
+            outliers_file = os.path.join(txt_dir, f"{stock}_{file_date}_{df_type}_outliers_thin.txt")
             
             dic_alpha = {"A": alpha_add, "C": alpha_cancel, "T": alpha_trade}
             with open(outliers_file, 'w') as f:
@@ -119,7 +119,7 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
                     # Filter dataframe for this action
                     action_df = df_subset.filter(pl.col('action') == action)
                     
-                    for row in range(8):
+                    for row in range(20):
                         ax = axes[row, col]
                         
                         # Plot price and bid-ask for all data points
@@ -166,7 +166,7 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
                         
                         # Set title and labels
                         ax.set_title(f'{title} Events - Imbalance [{imbalance_bins[row]:.2f}, {imbalance_bins[row+1]:.2f}]')
-                        if row == 7:  # Bottom row
+                        if row == 19:  # Bottom row
                             ax.set_xlabel('Time')
                         if col == 0:  # First column
                             ax.set_ylabel('Price')
@@ -177,12 +177,12 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
             plt.tight_layout()
             
             plot_path = os.path.join(plot_output_dir,
-                                    f"{stock}_{file_date}_{df_type}_imbalance_buckets.png")
+                                    f"{stock}_{file_date}_{df_type}_imbalance_buckets_thin.png")
             plt.savefig(plot_path)
             plt.close()
 
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered"
     process_parquet_files(data_folder)
