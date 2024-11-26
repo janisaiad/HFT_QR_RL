@@ -28,7 +28,7 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
     current_date = datetime.now().strftime('%Y%m%d')
     
     # Setup logging - one log file for all processing
-    log_dir = "/home/janis/3A/EA/HFT_QR_RL/data/likelihood/logs"
+    log_dir = "/mnt/beegfs/project/lobib/repos/HFT_QR_RL/data/likelihood/logs"
     os.makedirs(log_dir, exist_ok=True)
     logging.basicConfig(
         filename=os.path.join(log_dir, f"processing_{stock}_{current_date}_{datetime.now().strftime('%H%M%S')}.log"),
@@ -37,8 +37,9 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
     )
 
     files = glob.glob(os.path.join(folder_path, "*PL.parquet"))
-    plot_output_dir = "/home/janis/3A/EA/HFT_QR_RL/data/likelihood/png"
-    txt_dir = "/home/janis/3A/EA/HFT_QR_RL/data/likelihood/txt"
+    plot_output_dir = "/mnt/beegfs/project/lobib/repos/HFT_QR_RL/data/likelihood/png"
+    txt_dir = "/mnt/beegfs/project/lobib/repos/HFT_QR_RL/data/likelihood/txt"
+    os.makedirs(txt_dir, exist_ok=True)
     os.makedirs(plot_output_dir, exist_ok=True)
     
     for file in tqdm(files):
@@ -182,5 +183,5 @@ def process_parquet_files(folder_path: str, alpha_add: float = 0.98, alpha_cance
         logging.info(f"Completed processing file: {file}\n")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
+    data_folder = "/mnt/beegfs/project/lobib/repos/HFT_QR_RL/data/smash3/data/csv/NASDAQ/LCID_filtered"
     process_parquet_files(data_folder)
