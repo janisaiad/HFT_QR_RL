@@ -14,8 +14,8 @@ from collections import Counter
 
 def processing(file, output):
     import pandas as pd
-    actif = 'LCID'
-    limite = 0
+    actif = 'GOOGL'
+    limite = 1
     df = pd.read_csv(file)
     df = df[df['symbol'] == actif]
     df = df[df['depth'] == limite]
@@ -23,7 +23,7 @@ def processing(file, output):
     df = df[(df['ts_event'].dt.hour >= 14) & (df['ts_event'].dt.hour < 19)]
     df = df[df['side'].isin(['A','B'])]
 
-    df_ = df[['ts_event','action', 'side', 'size', 'price',f'bid_px_0{limite}', f'ask_px_0{limite}', f'bid_sz_0{limite}', f'ask_sz_0{limite}',f'bid_ct_0{limite}', f'ask_ct_0{limite}',f'bid_px_0{limite+1}', f'ask_px_0{limite+1}', f'bid_sz_0{limite+1}', f'ask_sz_0{limite+1}',f'bid_ct_0{limite+1}', f'ask_ct_0{limite+1}']]
+    df_ = df[['ts_event','action', 'side', 'size', 'price',f'bid_px_0{limite}', f'ask_px_0{limite}', f'bid_sz_0{limite}', f'ask_sz_0{limite}',f'bid_ct_0{limite}', f'ask_ct_0{limite}',f'bid_px_0{limite+1}', f'ask_px_0{limite+1}', f'bid_sz_0{limite+1}', f'ask_sz_0{limite+1}',f'bid_ct_0{limite+1}', f'ask_ct_0{limite+1}', f'bid_px_00', f'ask_px_00', f'bid_sz_00', f'ask_sz_00',f'bid_ct_00', f'ask_ct_00']]
     df_['ts_event'] = pd.to_datetime(df_['ts_event'], errors='coerce')
     df_['time_diff'] = df_['ts_event'].diff().dt.total_seconds()
 
@@ -273,7 +273,7 @@ def processing(file, output):
     df__ = df__[df__['time_diff']>0]
     df__ = df__[df__['time_diff'] != np.nan]
     df_final = df__[df__['status'] != 'NOK']
-    df__['Mean_price_diff'] = df__['diff_price'].shift(-50) - df__['diff_price']#df__['diff_price'].rolling(window=50).mean().shift(1)
+    df__['Mean_price_diff'] = df__['price'].shift(-50) - df__['price']#df__['diff_price'].rolling(window=50).mean().shift(1)
     df__['imbalance'] = -(df__[f'ask_sz_0{limite}']-df__[f'bid_sz_0{limite}'])/(df__[f'ask_sz_0{limite}']+df__[f'bid_sz_0{limite}'])
     #df__['imbalance'] = (df__['size_same']-df__['size_opposite'])/(df__['size_same']+df__['size_opposite'])
     df__.to_csv(output+file[-29:], index = False)
