@@ -211,5 +211,5 @@ def analyze_normalized_intensities(folder_path: str, alpha_add: float = 0.98, al
             logging.info(f"Graphiques sauvegardés: {plot_path_ts}, {plot_path_kde}, {plot_path_mix}")
 
 if __name__ == "__main__":
-    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/KHC_filtered"
+    data_folder = "/home/janis/3A/EA/HFT_QR_RL/data/smash3/data/csv/NASDAQ/GOOGL_filtered"
     analyze_normalized_intensities(data_folder)
