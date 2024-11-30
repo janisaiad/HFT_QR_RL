@@ -313,14 +313,99 @@
     \end{aligned}$$
 
     \subsubsection{Modèle II^{\text{b}}}
-    Modèle suivant...
+
+    \paragraph{Modélisation des interactions bid-ask}
+    Pour capturer les interactions complexes entre les files d'attente bid et ask, nous introduisons une classification des tailles de files d'attente. Soit $m$ et $l$ deux entiers qui définissent les seuils de classification. Nous définissons la fonction $S_{m,l}(x)$ qui associe à chaque taille de file d'attente $x$ l'une des quatre catégories suivantes :
+
+    \begin{equation*}
+    S_{m,l}(x) = \begin{cases}
+    Q_0 & \text{si } x = 0 \text{ (vide)}\\
+    Q_- & \text{si } 0 < x \leq m \text{ (petite)}\\
+    \bar{Q} & \text{si } m < x \leq l \text{ (moyenne)}\\
+    Q_+ & \text{si } x > l \text{ (grande)}
+    \end{cases}
+    \end{equation*}
+
+    Les seuils $m$ et $l$ sont choisis comme les quantiles à 33\% (inférieur et supérieur respectivement) de $q_{\pm1}$ conditionnellement aux valeurs positives.
+
+    \paragraph{Adaptation du comportement des participants}
+    Dans ce modèle, les participants du marché à $Q_{\pm1}$ ajustent leur comportement non seulement en fonction de la taille de leur file cible, mais aussi en fonction de la taille de la file opposée. Ainsi :
+
+    \begin{itemize}
+        \item Les taux $\lambda^L_{\pm1}$ et $\lambda^C_{\pm1}$ sont modélisés comme des fonctions de $q_{\pm1}$ et $S_{m,l}(q_{\mp1})$
+        \item Pour $q_{\pm1} > 0$, l'intensité des ordres de marché $\lambda^M_{\text{buy/sell}}$ est une fonction de $q_{\pm1}$ et $S_{m,l}(q_{\mp1})$
+        \item Le régime de changement à $Q_{\pm2}$ est maintenu : $\lambda^L_{\pm2}$ et $\lambda^C_{\pm2}$ sont des fonctions de $\mathbb{1}_{q_{\pm1}>0}$ et $q_{\pm2}$
+        \item Quand $q_{\pm1} = 0$, l'intensité des ordres de marché $\lambda^M_{\text{buy/sell}}$ est modélisée comme une fonction de $q_{\pm2}$
+    \end{itemize}
+
+    \paragraph{Réduction dimensionnelle}
+    Sous ces hypothèses, le problème de dimension $2K$ se réduit à l'étude d'un processus de Markov à saut en temps continu de dimension 4 : $(Q_{-2}, Q_{-1}, Q_1, Q_2)$. Une caractéristique importante de ce modèle est que les files $Q_{\pm2}$ n'influencent pas la dynamique à $Q_{\pm1}$. Par conséquent :
+
+    \begin{itemize}
+        \item L'étude peut se concentrer sur le processus tridimensionnel $(Q_{-1}, Q_1, Q_2)$
+        \item Si l'on s'intéresse uniquement à la dynamique à $Q_{\pm1}$, le processus bidimensionnel $(Q_{-1}, Q_1)$ est suffisant
+    \end{itemize}
+
+    \paragraph{Alternatives de modélisation}
+    D'autres choix de spécification des fonctions d'intensité à $Q_{\pm1}$ sont possibles, notamment :
+    \begin{itemize}
+        \item Fonctions du déséquilibre bid/ask de premier niveau, défini comme $\frac{q_1-q_{-1}}{q_1+q_{-1}}$
+        \item Fonctions de la taille du spread
+    \end{itemize}
+
     \subsection{Modélisation de la dynamique des prix via le Modèle Queue Reactive}
 
     Pour l'instant nous avons supposé que le prix ne variait pas selon le temps, les queues étant à des valeurs fixes. Ce modèle n'étant pas réaliste, il nous faut modéliser la dynamique des prix pour capter l'évolution du marché. 
     \subsubsection{Évolution des prix selon le LOB}
     Lors de notre modélisation, nous n'avons pas pris en compte ce qui arrivait lorsque certaines queues devenaient nulles. Prenons l'exemple de $Q_1$, qui correspond à l'offre la plus intéressante pour un acheteur. Si cette queue venait à être vide, alors les acheteurs se concentraient sur la nouvelle meilleure offre, c'est à dire $Q_2$. Alors, le prix $p_{\text{mid}}$ augmenterait et la première queue serait augmentée d'un tick afin de matcher le nouveau $p_{\text{mid}}$.
 
+    \subsection{Évolution du prix de référence et dynamique du carnet d'ordres}
 
+    Dans cette section, nous introduisons une évolution plus réaliste du prix de référence $p_{\text{ref}}$ en interaction avec la dynamique du carnet d'ordres. Cette modélisation enrichit notre compréhension des mécanismes de formation des prix.
+
+    \subsubsection{Construction du modèle dynamique}
+
+    Considérons $\delta$ la valeur du tick. Notre approche suppose que $p_{\text{ref}}$ évolue avec une probabilité $\theta$ lors d'une modification du prix médian $p_{\text{mid}}$. Plus précisément, lorsque $p_{\text{mid}}$ augmente ou diminue, $p_{\text{ref}}$ suit ce mouvement avec une probabilité $\theta$, à condition que $q_{\pm1}=0$ à cet instant.
+
+    Les changements de $p_{\text{ref}}$ peuvent être déclenchés par trois types d'événements :
+
+    \begin{itemize}
+        \item L'insertion d'un ordre limite d'achat dans le spread bid-ask lorsque $Q_1$ est vide, ou l'insertion d'un ordre limite de vente dans le spread bid-ask lorsque $Q_{-1}$ est vide
+        \item L'annulation du dernier ordre limite dans l'une des meilleures files d'attente
+        \item Un ordre de marché qui consomme le dernier ordre limite dans l'une des meilleures files d'attente
+    \end{itemize}
+
+    Lors d'un changement de $p_{\text{ref}}$, la valeur de $q_i$ bascule immédiatement vers celle de son voisin (droit si $p_{\text{ref}}$ augmente, gauche s'il diminue). Ainsi, $q_{\pm1}$ devient nul lorsque $p_{\text{ref}}$ diminue/augmente. Notre modélisation conserve l'historique du carnet jusqu'au troisième niveau. Par conséquent, la valeur de $q_{\pm3}$ lors d'une variation de $p_{\text{ref}}$ est tirée selon sa mesure invariante.
+
+    \paragraph{Normalisation des files d'attente}
+    Une attention particulière doit être portée au processus de basculement des files : les tailles moyennes des événements diffèrent selon les files. Ainsi, lorsque $q_i$ devient $q_j$, sa nouvelle valeur doit être renormalisée par le rapport des tailles moyennes des événements entre $Q_i$ et $Q_j$.
+
+    \paragraph{Intégration de l'information externe}
+    Pour prendre en compte l'information externe, nous introduisons une probabilité $\theta_{\text{reinit}}$ de réinitialisation complète du carnet d'ordres. Lors d'un changement de $p_{\text{ref}}$, avec cette probabilité, l'état du carnet est retiré selon sa distribution invariante autour du nouveau prix de référence. Ce paramètre $\theta_{\text{reinit}}$ peut être interprété comme le pourcentage de changements de prix dus à une information exogène.
+
+    \paragraph{Formalisation mathématique}
+    Sous ces hypothèses, la dynamique de marché est modélisée par un processus de Markov de dimension $(2K+1)$ :
+    $$\tilde{X}(t) := (X(t), p_{\text{ref}}(t))$$
+    dans l'espace d'états dénombrable $\tilde{\Omega} = \mathbb{N}^{2K} \times \delta\mathbb{N}$, où :
+    $$X(t) = (q_{-K}(t), ..., q_{-1}(t), q_1(t), ..., q_K(t))$$
+    représente les volumes disponibles aux différents niveaux.
+
+    \subsubsection{Volatilité mécanique maximale}
+
+    Un cas particulièrement intéressant est celui où $\theta_{\text{reinit}}=0$. Dans cette configuration, le Modèle III devient un "modèle purement dirigé par le carnet d'ordres" puisque les fluctuations de prix sont entièrement générées par la dynamique du LOB.
+
+    Nos simulations révèlent que dans ce cadre, la volatilité maximale atteignable (lorsque $\theta=1$), que nous appelons volatilité mécanique maximale, est significativement inférieure à la volatilité empirique. Cette observation suggère que la dynamique endogène du carnet d'ordres seule pourrait être insuffisante pour reproduire la volatilité du marché.
+
+    Une analyse plus approfondie montre que :
+    \begin{itemize}
+        \item Le modèle approxime correctement la fréquence moyenne des changements de prix
+        \item La faible valeur de la volatilité mécanique est principalement due au fort comportement de retour à la moyenne du prix dans ce modèle purement dirigé par le carnet d'ordres
+        \item Ce phénomène s'explique par le déséquilibre bid-ask souvent inversé immédiatement après un changement de $p_{\text{ref}}$
+    \end{itemize}
+
+    Le ratio de retour à la moyenne $\eta$, défini par :
+    $$\eta = \frac{N_c}{2N_a}$$
+    où $N_c$ est le nombre de continuations du $p_{\text{ref}}$ estimé (mouvements consécutifs dans la même direction) et $N_a$ le nombre d'alternances (mouvements consécutifs en directions opposées), illustre bien ce comportement. Les simulations montrent que $\eta = 0.08$ lorsque $\theta = 1$ et $\theta_{\text{reinit}} = 0$, une valeur nettement inférieure au ratio empirique de $0.39$.
 
     \newpage
     \vspace*{5cm}
