@@ -202,7 +202,7 @@
         \item \textbf{High Frequency (HF)} : Ordre de la seconde, de la milliseconde, voire de la microseconde. Ici, les traders HF (hedge funds, EHT) cherhceh des modèles pour réaliser des stratégies de trading optimal.
     \end{itemize}
     \\
-    Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT et LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés. 
+    Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT et LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés.
 
     Les interactions entre les acheteurs et les vendeurs se font de manière algorithmique, selon l'ordre d'arrivée des ordres dans les files d'attente de l'offre et de la demande. Ce processus est géré par le \textbf{Market Order Book}, souvent appelé le carnet d'ordres, qui liste tous les ordres d'achat et de vente. Ces modifications sont de trois natures principales :
 
@@ -407,18 +407,84 @@
     $$\eta = \frac{N_c}{2N_a}$$
     où $N_c$ est le nombre de continuations du $p_{\text{ref}}$ estimé (mouvements consécutifs dans la même direction) et $N_a$ le nombre d'alternances (mouvements consécutifs en directions opposées), illustre bien ce comportement. Les simulations montrent que $\eta = 0.08$ lorsque $\theta = 1$ et $\theta_{\text{reinit}} = 0$, une valeur nettement inférieure au ratio empirique de $0.39$.
 
-    \newpage
-    \vspace*{5cm}
-    \section{Impact des News dans le cadre du Queue Reactive Model}
-    \vspace*{2cm}
+    \subsection{Hypothèses et attentes théoriques}
 
-    \subsection{Caractérisation des événements extrêmes}
+    Au vu du modèle Queue Reactive et de la revue de littérature, plusieurs hypothèses et prédictions émergent quant à l'impact des news sur la dynamique du carnet d'ordres :
 
-    \subsection{Visualisation des News}
+    \subsubsection{Impact sur les intensités de flux d'ordres}
 
-    \subsection{Facteur discriminant pour les News??}
+    Dans le cadre du modèle Queue Reactive, nous nous attendons à observer :
 
+    \begin{itemize}
+        \item \textbf{Modification des intensités $\lambda$ :}
+        \begin{itemize}
+            \item Une augmentation des intensités d'arrivée d'ordres ($\lambda^L$) immédiatement après une news
+            \item Une modification des intensités d'annulation ($\lambda^C$) reflétant le repositionnement des acteurs
+            \item Une variation des intensités d'ordres de marché ($\lambda^M$) selon la nature de l'information
+        \end{itemize}
+        
+        \item \textbf{Asymétrie des réactions :}
+        \begin{itemize}
+            \item Des effets plus marqués sur les intensités du côté du carnet directement concerné par la news
+            \item Une asymétrie entre news positives et négatives, particulièrement visible dans les intensités d'annulation
+        \end{itemize}
+    \end{itemize}
 
+    \subsubsection{Effets sur la structure du carnet}
+
+    Le modèle suggère plusieurs impacts sur l'organisation des queues :
+
+    \begin{itemize}
+        \item \textbf{Déformation des queues :}
+        \begin{itemize}
+            \item Modification temporaire des ratios $q_1/q_{-1}$ reflétant les nouvelles anticipations
+            \item Réorganisation des queues secondaires ($q_{\pm2}$, $q_{\pm3}$) en réaction aux mouvements des meilleures limites
+        \end{itemize}
+        
+        \item \textbf{Dynamique des prix :}
+        \begin{itemize}
+            \item Augmentation de la probabilité de changement de $p_{\text{ref}}$ après une news significative
+            \item Modification du ratio de retour à la moyenne $\eta$ pendant la période d'absorption de l'information
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection{Comportements stratégiques attendus}
+
+    En combinant le modèle avec les résultats de la littérature, nous anticipons :
+
+    \begin{itemize}
+        \item \textbf{Phase initiale :}
+        \begin{itemize}
+            \item Une augmentation immédiate des annulations d'ordres limites
+            \item Un afflux d'ordres au marché des traders informés cherchant une exécution rapide
+        \end{itemize}
+        
+        \item \textbf{Phase d'ajustement :}
+        \begin{itemize}
+            \item Un repositionnement progressif via des ordres limites
+            \item Une normalisation graduelle des intensités vers leurs niveaux d'équilibre
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection{Implications pour la liquidité}
+
+    Les effets combinés devraient se traduire par :
+
+    \begin{itemize}
+        \item \textbf{Court terme :}
+        \begin{itemize}
+            \item Une détérioration temporaire de la liquidité (augmentation du spread, diminution de la profondeur)
+            \item Une augmentation de la volatilité des prix
+        \end{itemize}
+        
+        \item \textbf{Moyen terme :}
+        \begin{itemize}
+            \item Un retour progressif à l'équilibre avec des niveaux de liquidité normalisés
+            \item Une possible amélioration de l'efficience informationnelle du marché
+        \end{itemize}
+    \end{itemize}
+
+    Ces hypothèses serviront de guide pour l'analyse empirique qui suit, permettant de confronter les prédictions théoriques aux observations du marché.
 
     \newpage
     \vspace*{5cm}
