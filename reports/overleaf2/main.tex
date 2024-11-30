@@ -1,0 +1,367 @@
+    % Document Class
+    \documentclass[12pt,a4paper]{article}
+
+    % Packages essentiels
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage[french]{babel}
+    \usepackage{lmodern}
+
+    % Packages mathématiques
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{mathtools}
+
+    % Packages pour les graphiques et figures
+    \usepackage{graphicx}
+    \usepackage{pgfplots}
+    \pgfplotsset{compat=1.18}
+    \usepackage{float}
+    \usepackage{subcaption}
+
+    % Mise en page et design
+    \usepackage[hmargin=2.5cm,vmargin=2cm]{geometry}
+    \usepackage{fancyhdr}
+    \usepackage{enumitem}
+    \usepackage{xcolor}
+    \usepackage{titlesec}
+    \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+    % Configuration des en-têtes et pieds de page
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\slshape\nouppercase{\leftmark}}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+
+    % Définition des environnements mathématiques
+    \newtheorem{theorem}{Théorème}[section]
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{lemma}[theorem]{Lemme}
+    \newtheorem{corollary}[theorem]{Corollaire}
+    \theoremstyle{definition}
+    \newtheorem{definition}[theorem]{Définition}
+    \newtheorem{example}[theorem]{Exemple}
+    \theoremstyle{remark}
+    \newtheorem{remark}[theorem]{Remarque}
+
+    % Configuration des titres de sections
+    \titleformat{\section}
+    {\normalfont\Large\bfseries}{\thesection}{1em}{}
+    \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+    % Informations du document
+    \title{\huge\textbf{Impact des news dans les Limit Order Book}}
+    \author{LAFERTE Edouard \and AIAD Janis}
+    \date{Juin 2024}
+
+    \begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{2cm}
+            
+            \includegraphics[width=0.4\textwidth]{École_polytechnique_signature.png}
+            
+            \vspace{2cm}
+            
+            {\huge\bfseries Impact des news dans les\\[0.4cm] 
+            Limit Order Book\par}
+            
+            \vspace{2cm}
+            
+            {\Large\textsc{Mémoire de Recherche}\par}
+            \vspace{1.5cm}
+            
+            {\large
+            \begin{tabular}{c}
+                \textbf{LAFERTE Edouard}\\[0.2cm]
+                \textbf{AIAD Janis}
+            \end{tabular}\par}
+            
+            \vspace{1.5cm}
+            
+            {\large Sous la direction de\par}
+            \vspace{0.4cm}
+            {\large\textbf{LEHALLE Charles-Albert}\par}
+            
+            \vfill
+            
+            {\large Département de Mathématiques Appliquées\\
+            École Polytechnique\\[0.4cm]
+            Juin 2024\par}
+        \end{center}
+    \end{titlepage}
+
+    % Page blanche après la page de titre
+    \newpage
+    \null
+    \thispagestyle{empty}
+    \newpage
+
+    \begin{abstract}
+    \thispagestyle{empty}
+    \vspace*{1cm}
+    \begin{center}
+        \Large\textbf{Résumé}
+    \end{center}
+    \vspace{1cm}
+
+    Ce mémoire étudie l'impact des nouvelles (news) sur la dynamique des Limit Order Books dans les marchés financiers à haute fréquence. Nous analysons comment les événements d'actualité influencent la microstructure du marché et modifient les comportements des acteurs. Notre approche combine une modélisation mathématique rigoureuse via le modèle Queue Reactive avec une analyse empirique des données de marché.
+
+    \vspace{1cm}
+    \textbf{Mots-clés :} Limit Order Book, Trading Haute Fréquence, Modèle Queue Reactive, Impact des News, Microstructure de Marché
+
+    \vspace{2cm}
+    \begin{center}
+        \Large\textbf{Abstract}
+    \end{center}
+    \vspace{1cm}
+
+    This thesis investigates the impact of news on the dynamics of Limit Order Books in high-frequency financial markets. We analyze how news events influence market microstructure and modify market participants' behavior. Our approach combines rigorous mathematical modeling through the Queue Reactive model with empirical market data analysis.
+
+    \vspace{1cm}
+    \textbf{Keywords:} Limit Order Book, High-Frequency Trading, Queue Reactive Model, News Impact, Market Microstructure
+    \end{abstract}
+
+    \newpage
+    \tableofcontents
+    \thispagestyle{empty}
+
+    \newpage
+    \setcounter{page}{1}
+
+    \section{Market Book Order}
+    \vspace*{2cm}
+    \subsection{Présentation des marchés hautes fréquences (HF)}
+
+
+    L'électronification des marchés financiers à la fin du dernier siècle a été un tournant majeur dans le fonctionnement des marchés. L'adoption massive de la technologie et des systèmes électroniques a drastiquement réduit le temps d'exécution des transactions à l'ordre de la dizaine de microseconde, créant une toute nouvelle structure à l'échelle microéconomique. Ce changement s'est naturellement accompagné d'une intensification  du nombre de trades effectués chaque jour (cf.Figure), entraînant une réduction significative du temps moyen entre deux trades.
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=1.0\textwidth,
+                height=0.5\textwidth,
+                xlabel={Année},
+                ylabel={Options ADV (en millions)},
+                xmin=1973, xmax=2025,
+                ymin=0, ymax=45,
+                xtick={1975, 1980, 1990, 2000, 2010, 2020},
+                ytick={0, 10, 20, 30, 40, 45},
+                legend pos=south east,
+                ymajorgrids=true,
+                grid=both,
+                grid style=dashed,
+                tick label style={font=\footnotesize},
+                xlabel style={yshift=-3pt},
+                ylabel style={yshift=-5pt},
+                xtick align=outside,
+                ytick align=outside,
+                tick style={major tick length=6pt, thick},
+                axis line style={thick},
+                enlargelimits=false,
+                clip mode=individual,
+                label style={font=\small},
+                every tick/.style={color=black, thick},
+                xticklabels={1975, 1980, 1990, 2000, 2010, 2020}, % On force l'affichage des années comme texte statique
+                scaled ticks=false,
+                yticklabel style={/pgf/number format/fixed}
+            ]
+            
+            \addplot[
+                color=blue,
+                mark=*]
+                coordinates {
+                (1975, 1)
+                (1980, 2)
+                (1985, 3)
+                (1990, 4)
+                (1995, 6)
+                (2000, 8)
+                (2005, 10)
+                (2010, 15)
+                (2015, 20)
+                (2020, 35)
+                (2023, 45)
+            };
+            \addlegendentry{Volume tradé journalier}
+
+            \end{axis}
+        \end{tikzpicture}
+        
+        \vspace{1em}
+        \textbf{\large Volume de trades d'Options ADV (expiration de 1 mois) de 1975 à 2023}
+    \end{center}
+    Cette redifinition de l'échelle temporelle à amener les traders à distinguer distinguer différents niveaux de fréquence de trading. On peut classer les trades en trois catégories principales :
+
+    \begin{itemize}
+        \item \textbf{Low Frequency (LF)} : Durée de l'ordre de plusieurs mois, voire plusieurs années. Il s'agit généralement de transactions à long terme, réalisées par des investisseurs qui cherchent à maximiser leurs profits sur des échéances étendues, souvent basées sur des analyses fondamentales et la prévision de tendances économiques générales réalisé par les banques et hedge funds.
+
+        \item \textbf{Mid Frequency (MF)} : De l'ordre de la journée, l'heure, voire la minute. Les traders à fréquence moyenne cherchent à profiter des opportunités à court terme en enlevant la non continuité temporelle des marchés visible dans les transactions à haute fréquence. 
+
+        \item \textbf{High Frequency (HF)} : Ordre de la seconde, de la milliseconde, voire de la microseconde. Ici, les traders HF (hedge funds, EHT) cherhceh des modèles pour réaliser des stratégies de trading optimal.
+    \end{itemize}
+    \\
+    Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT et LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés. 
+
+    Les interactions entre les acheteurs et les vendeurs se font de manière algorithmique, selon l'ordre d'arrivée des ordres dans les files d'attente de l'offre et de la demande. Ce processus est géré par le \textbf{Market Order Book}, souvent appelé le carnet d'ordres, qui liste tous les ordres d'achat et de vente. Ces modifications sont de trois natures principales :
+
+    \begin{itemize}
+        \item \textbf{Limit Order} : Il s'agit d'un ajout d'une proposition d'achat ou de vente à un prix déterminé. 
+
+        \item \textbf{Market Order} : Cet ordre vise à acheter ou vendre immédiatement au meilleur prix disponible sur le marché. 
+
+        \item \textbf{Cancellation} : L'annulation d'un ordre consiste à retirer une proposition d'achat ou de vente précédemment inscrite dans le carnet d'ordres.
+    \end{itemize}
+
+    La microstructure de marché créé via ces intéractions entre acheteurs et vendeurs est la base de la formation des prix et leur variation au cours du temps.
+
+    \subsection{Processus de formation des prix}
+    Queue + graphes des queues explication nouvelle limite+ des données
+
+    \subsection{L'imbalance, la clé des modèles hautes fréquences}
+    Imbalance et autres bails
+    \newpage
+    \vspace*{5cm}
+    \section{Modèle Queue Reactive}
+    \vspace*{2cm}
+
+    \subsection{Modélisation Queue Reactive sans variations de prix}
+    Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
+    \\
+    \\
+    L'étude des Order Book des marchés HFT a amené à une modélisation par file permettant une explication fine du processus de création des prix. Prenons l'exemple d'un prix fixe appelé middle price $p_{\text{mid}}$. L'offre et la demande orbitent autour de ce prix avec une offre qui se trouve toujours au dessus du prix et une demande toujours en dessous dans un marché sans arbitrage. La loi international des marchés financier n'autorise à l'acheteur et au vendeur que certains prix séparés par une distance appelée $\textbf{un tick}$. Dans le modèle QR, les acheteurs et les vendeurs sont ainsi modélisés comme des queues à une distance plus ou moins proche du prix $p_{\text{mid}}$, qui est en pratique le prix du marché. Ces queues permettent au vendeurs de choisir le meilleur prix et à l'acheteur acheter au prix le plus bas. Prenons l'exemple d'un actif fictif à 100\$ avec un tick de 0.1\$. Les acheteurs seront répartis dans les queues $Q_{-1},Q_{-2},...$ avec un nombre qui décroît plus la queue est éloignée. Il y aura ainsi 90 acheteurs à $Q_{-1}$ avec un prix de 99.9\$, 10 à $Q_{-2}$ avec un prix de 99.8\$, ect... Le même modèle sera utiliser pour les vendeurs eux répartis dans les $Q_{1},Q_2,...$. Les queues sont réactualisées à chaque instant en consommant ce qui est consommable et en ajoutant un nombre aléatoire de demandes et d'offres, en suivant une loi de poisson de paramètre $\lambda^{Q_\pm i}$. En plus de cette évolution de l'offre et la demande, on rajoute un troisième phénomène: les cancellation. Ainsi, à tout instant, l'acheteur et le vendeur peut annuler sa demande ou son offre. Ainsi le carnet d'offre et de demande est une chaîne de markov, dont l'état à l'instant $t_{i+1}$ ne dépend que de celui à l'instant $t_i$.
+    \subsubsection {Modélisation générale}
+    On modélise le carnet d'ordre par un vecteur $Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))$ qui évolue dans le temps selon un processus de Markov. L'élément $Q_{\pm i}(t)$ correspond à la disponibilité de l'offre ou de la demande à $p_{\mid}\pm i\text{tick}$ au temps $t$.
+    Trois modifications aboutissent à un changement de $Q$:
+    \begin{itemize}
+        \item \textbf{Limit order}: insertion d'une demande d'achat "bid" $(i<0)$ où d'une demande de vente "ask" $(i>0)$.
+        \item \textbf{Cancellation order}: suppression d'une demande ou d'un ask sans trade.
+        \item \textbf{Market Order}: suppression d'une demande ou d'un ask avec trade.
+    \end{itemize}
+    À la date $t$, la queue $Q_{\pm}$ peut donc soit augmenter (Limit order) soit diminuer (Cancellation, Market order).
+    On note alors $\mathcal Q$, la matrice de passage que l'on modélise comme suit:
+    $$\begin{aligned}
+    \mathcal Q_{p,p+e_i} &= f_i(q) \\
+    \mathcal Q_{p,p-e_i} &= g_i(q) \\
+    \mathcal Q_{p,p} &= 1 - \sum_{p \neq q} \mathcal Q_{p,q} \\
+    \mathcal Q_{p,q} &= 0, \ \text{sinon}
+    \end{aligned}$$
+    avec $e_i$ les vecteurs canoniques de $\mathbb{R}^{2K}$.
+    \\
+    \\
+    Concrètement, on a une probabilité $f_i(q)$ d'augmenter via un Limit order et $g_i(q)$ de diminuer via un market order ou une cancellation. On suppose par la suite que :
+    $$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant qu'on a une plus grande chance de diminuer que d'augmenter à partir d'une certaine queue. On peut rapprocher cela de l'idée que au délà d'un certain prix la demande et l'offre ne sont plus du tout intéressante et finissent par disparaître. On suppose aussi:$$\exists H>0, \sum_if_i(q)\leq H$$ ce qui revient à dire que l'on ne peut pas ajouter une infinité d'actions à chaque étape.
+    \\
+    \\
+    \textbf{On ne s’intéressera qu'a des actifs avec un tcik size petit $\approx 1.2$ tick.} La raison de ce coix réside dans la modélisation choisie: on suppose que les Market-order sont constamment satisfaits. Cela revient à dire que l'actif est bien solvable, donc que l'offre et la demande sont nombreuses et donc que la concurrence est élevée, d'où un spread bid-ask faible. On a donc pas à ce soucier de problème de solvabilité.
+
+    \subsubsection{Modèle I}
+
+    Le premier modèle que nous allons utiliser est le plus basique, en supposant que les queues $Q_{\pm }$ sont indépendantes. Ainsi, en isolant chacune des queues, il est possible de les paramétrer.
+    \\
+    \\
+    La loi de Poisson a été introduite en 1838 par Denis Poisson, dans son ouvrage Recherches sur la probabilité des jugements en matière criminelle et en matière civile. Le sujet principal de cet ouvrage consiste en certaines variables aléatoires qui dénombrent, entre autres choses, le nombre d'occurrences (parfois appelées « arrivées ») qui prennent place pendant un laps de temps donné. C'est donc une loi tout à fait naturelle à choisir pour notre modélisation.
+    \\
+    \\
+    Prenons la $Q_{-1}$ et sa queue opposée $Q_1$. Toutes deux sont influencées par les cancellation, l'ajout d'une offre ou d'une demande (Limit order) ou la consommation d'une offre ou d'une demande (Market order). 
+    \\
+    \\
+    Dans ce premier modèle $Q_i$ et $Q_{-i}$ suivent la même dynamique. La $Q_{\pm 1}$ correspond donc au prix le plus bas de vente (resp. le plus haut d'achat), et est composée de différentes offres (resp. demandes). Il est donc naturel d'appliquer la loi de poisson ici. En nommant $q_1(n)$ le nombre de changements effectués sur la queue $Q_1$ de taille $n$, on a:
+    $$q_1(n)\sim\mathcal{P}(\frac{1}{\lambda^{q_1}_n})$$ où $\frac{1}{\lambda^{q_1}_n}$ est l'espérance de $q_1(n)$, qui correspond au temps moyen entre deux changements (Limit order, Market order, Cancellation)  de $q_1(n)$. Afin de trouver un estimateur de ce $\lambda^{q_1}_n$, on se place dans le cadre d'une étude où l'on accès à l'évolution de $q_1(n)$, ainsi qu'aux temps $\Delta_1(n)^{i}$ entre chaques changements de $q_1(n)$. En notant $N_1(n)$ le nombre de changements, on a donc naturellement un estimateur:
+    $$\frac{1}{\hat{\lambda^{q_1}_n}} = \frac{1}{N_1(n)}\sum_{i=1}^{N_1(n)}\Delta_1(n)_i$$
+    ou encore:
+    $$\hat{\lambda^{q_1}_n} = \frac{1}{\frac{1}{N_1(n)}\sum_{i=1}^{N_1(n)}\Delta_1(n)_i}$$
+    On suppose alors que le nombre d'ajout de Limit order, Market order et  Cancellation order suivent également des loi de Poisson de paramètres $\lambda^{q_1}_n(L)$, $\lambda^{q_1}_n(O)$ et  $\lambda^{q_1}_n(C)$. Ainsi, on a:
+    $$\frac{1}{\hat{\lambda^{q_1}_n}} = \frac{1}{N_1(n)}\sum_{i=1}^{N_1(n)}\Delta_1(n)_i(\mathbb{I}_{i\in L}+\mathbb{I}_{i\in O}+\mathbb{I}_{i\in C})$$
+    où $\mathbb{I}_{i\in L}$ vaut 1 si le changement en $i$ est l'ajout d'une limite order, $\mathbb{I}_{i\in O}$ si c'est un Market order, ect...
+
+    On a aussi en conditionnant:
+    $$\frac{1}{{\lambda^{q_1}_n}}=\frac{1}{{\lambda^{q_1}_n(L)}}\mathbb{P}(i\in L)+\frac{1}{{\lambda^{q_1}_n(O)}}\mathbb{P}(i\in O)+\frac{1}{{\lambda^{q_1}_n(C)}}\mathbb{P}(i\in C)$$
+    en identifiant termes à termes, on a donc:
+    $$\frac{1}{\hat{\lambda^{q_1}_n(L)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^L(n)}{N_1(n)}$$
+    $$\frac{1}{\hat{\lambda^{q_1}_n(O)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^O(n)}{N_1(n)}$$
+    $$\frac{1}{\hat{\lambda^{q_1}_n(C)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^C(n)}{N_1(n)}$$
+    On a ainsi estimer tous les paramètres de notre modèle avec suffisamment de données.
+
+    \subsubsection{Modèle $\text{II}^{a}$}
+
+    Le modèle I ne distinguait par les différents types de market order: les \textit{buy} ou les \textit{sell}. Ce nouveau modèle fait la distinction entre les deux en séparant les queues $Q_i$ et $Q_{-i}$ qui sont déormais distinctes. $Q_1$ évoluera alors comme suit:
+    $$q_1(n)\sim\mathcal{P}(\frac{1}{\lambda^{q_1}_n})$$
+    et $Q_{-1}$ évoluera selon:
+    $$q_{-1}(n)\sim\mathcal{P}(\frac{1}{\lambda^{q_{-1}}_n})$$
+    on a alors pour $Q_1$:
+    $$\frac{1}{\hat{\lambda^{q_1}_n}} = \frac{1}{N_1(n)}\sum_{i=1}^{N_1(n)}\Delta_1(n)_i(\mathbb{I}_{i\in L}+\mathbb{I}_{i\in O}+\mathbb{I}_{i\in C})$$
+    où $\mathbb{I}_{i\in L}$ vaut 1 si le changement en $i$ est l'ajout d'une limite order, $\mathbb{I}_{i\in O}$ si c'est un Market order, ect...
+
+    On a la encore en conditionnant:
+    $$\frac{1}{{\lambda^{q_1}_n}}=\frac{1}{{\lambda^{q_1}_n(L)}}\mathbb{P}(i\in L)+\frac{1}{{\lambda^{q_1}_n(O)}}\mathbb{P}(i\in O)+\frac{1}{{\lambda^{q_1}_n(C)}}\mathbb{P}(i\in C)$$
+    en identifiant termes à termes, on a donc:
+    $$\frac{1}{\hat{\lambda^{q_1}_n(L)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^L(n)}{N_1(n)}$$
+    $$\frac{1}{\hat{\lambda^{q_1}_n(O)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^O(n)}{N_1(n)}$$
+    $$\frac{1}{\hat{\lambda^{q_1}_n(C)}}=\frac{1}{\hat{\lambda^{q_1}_n}}\frac{N_1^C(n)}{N_1(n)}$$
+    On a les mêmes estimations pour $Q_{-1}$.
+    Le processus d'évolution de $Q_\pm2$ lui change profondément, en ajoutant une dépendance à $Q_\pm1$.
+    Désormais, un acheteur n’achètera à la queue $Q_2$ que si c'est le meilleur bid (de même pour le vendeur). Ainsi, il n'y aura de market order, buy ou sell que si la queue 1 (ou -1 selon la sell ou le ask) est vide. 
+    L'estimation est là encore relativement simple, il suffit en effet de conditionner au fait que la seconde queue est la meilleure. Les processus de buy, de sell, de cancellation ou de limit order étant encore des processus de poissons, il suffit d'estimer le temps moyen entre chacune de leurs réalisations.
+    \\
+    \\
+    Formulé mathématiquement, on a:
+    $$\begin{aligned}
+    f_i(q) &= \lambda_i^L(q_i)\\
+    g_i(q) &= \lambda_i^C(q_i)+\lambda_i^{\text{buy}}(q_i)\textbf{1}_{i>0}\textbf{1}_{\text{bestask}(q)=i}+\lambda_i^{\text{sell}}(q_i)\textbf{1}_{i<0}\textbf{1}_{\text{bestbid}(q)=i}
+    \end{aligned}$$
+
+    \subsubsection{Modèle II^{\text{b}}}
+    Modèle suivant...
+    \subsection{Modélisation de la dynamique des prix via le Modèle Queue Reactive}
+
+    Pour l'instant nous avons supposé que le prix ne variait pas selon le temps, les queues étant à des valeurs fixes. Ce modèle n'étant pas réaliste, il nous faut modéliser la dynamique des prix pour capter l'évolution du marché. 
+    \subsubsection{Évolution des prix selon le LOB}
+    Lors de notre modélisation, nous n'avons pas pris en compte ce qui arrivait lorsque certaines queues devenaient nulles. Prenons l'exemple de $Q_1$, qui correspond à l'offre la plus intéressante pour un acheteur. Si cette queue venait à être vide, alors les acheteurs se concentraient sur la nouvelle meilleure offre, c'est à dire $Q_2$. Alors, le prix $p_{\text{mid}}$ augmenterait et la première queue serait augmentée d'un tick afin de matcher le nouveau $p_{\text{mid}}$.
+
+
+
+    \newpage
+    \vspace*{5cm}
+    \section{Impact des News dans le cadre du Queue Reactive Model}
+    \vspace*{2cm}
+
+    \subsection{Caractérisation des événements extrêmes}
+
+    \subsection{Visualisation des News}
+
+    \subsection{Facteur discriminant pour les News??}
+
+
+
+    \newpage
+    \vspace*{5cm}
+    \section*{Appendice}
+    \addcontentsline{toc}{section}{Appendice}
+    \vspace*{2cm}
+    \subsection*{Preuves}
+    \addcontentsline{toc}{subsection}{Graphes supplémentaires}
+
+
+    \newpage
+    \vspace*{5cm}
+    \section*{Conclusion}
+    \vspace*{2cm}
+    c Finito ouuuuu
+    \newpage
+    \vspace*{5cm}
+    \section*{Bibliography}
+
+    \addcontentsline{toc}{section}{Bibliography}
+    Charles-Albert Lehalle, Othmane Mounjid, Mathieu Rosenbaum (2021) \textit{Optimal Liquidity-Based Trading Tactics}, Stochastic Systems 11(4):368-390 
+    \\
+    Charles-Albert Lehalle, and Othmane Mounjid (2018) \textit{Limit Order Strategic Placement
+    with Adverse Selection Risk
+    and the Role of Latency}, CFM
+    \\
+    Charles-Albert Lehalle, Mathieu Rosenbaum and Weibing Huang (2014) \textit{Simulating and analyzing order book data: The queue-reactive model}, CFM
+
+
+
+    \end{document}
