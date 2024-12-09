@@ -3,7 +3,7 @@
 
     % Packages essentiels
     \usepackage[utf8]{inputenc}
-    \usepackage[T1]{fontenc}
+    \usepackage[T1]{fontenc} 
     \usepackage[french]{babel}
     \usepackage{lmodern}
 
@@ -27,7 +27,6 @@
     \usepackage{xcolor}
     \usepackage{titlesec}
     \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
-    \documentclass{article}
     \usepackage{pgfplots}
     \usepgfplotslibrary{fillbetween}
     \usepackage{caption}
@@ -616,15 +615,56 @@ Rajouter les graphes de heatmap+étude de la première limite par rapport à la 
 \subsection{Modélisation Queue Reactive sans variations de prix}
 \subsection{Modélisation Queue Reactive avec variations de prix}
 \subsubsection{Modèle théorique}
-sans param exogène
+Dans un premier temps, nous étudierons le modèle sans paramètres exogènes.
 \subsubsection{Nécessité de paramètres exogènes}
-\subsection{Modélisation des événments rares dans le QR}
-\subsubsection{Densité}
-mq que la densité est uniforme On conditionne tout par la taille de queue qui doit etre inférieru à un event size pour less trades et les cancels, les add sont a traiter à aprt
-$$p(event rare) = p(nouvelle limite)*probabilité(de fairer un théta qui génère un nouveau barquet BOOk)$$
-$$p(nouvelle limite) = p(nouvelle limite|trade)p(trade)+p(nouvelle limite|add)p(add)+p(nouvelle limite|trade)p(cancel)$$
-$$p(cancel)= 1-[p(trade)+p(add)]$$
-$$p(add)= p(intensité du add soit la plus forte)$$
+\subsection{Modélisation des événements rares dans le QR}
+\subsubsection{Densité et démonstration}
+
+Soit $\Omega$ l'espace des événements rares. La densité de ces événements suit une distribution uniforme conditionnée par la taille de la queue $q$. Pour les trades et les cancels, cette taille doit être inférieure à un event size $s$ donné. Les adds nécessitent un traitement particulier que nous détaillerons.
+
+\begin{theorem}[Probabilité d'un événement rare]
+La probabilité d'un événement rare se décompose comme suit:
+\begin{equation}
+    p(event\ rare) = p(nouvelle\ limite) \cdot p(\theta\ générant\ nouveau\ LOB)
+\end{equation}
+où $\theta$ représente les paramètres du modèle.
+\end{theorem}
+
+\begin{proof}
+Décomposons $p(nouvelle\ limite)$ selon les types d'événements possibles:
+
+\begin{equation}
+    p(nouvelle\ limite) = \sum_{e \in \{trade,add,cancel\}} p(nouvelle\ limite|e)p(e)
+\end{equation}
+
+Par conservation des probabilités:
+\begin{equation}
+    p(cancel) = 1-[p(trade)+p(add)]
+\end{equation}
+
+Pour calculer $p(add)$, considérons une famille infinie de processus de Poisson $\{N_i(t)\}_{i\in\mathbb{N}}$ d'intensités respectives $\{\lambda_i\}_{i\in\mathbb{N}}$. 
+
+Soit $T_i$ le temps d'attente jusqu'au prochain événement du processus $i$. Par définition:
+\begin{equation}
+    T_{min} = \min_{i\in\mathbb{N}}(T_i)
+\end{equation}
+
+\begin{lemma}[Probabilité d'ajout]
+Pour un quantile $\alpha \in (0,1)$ fixé:
+\begin{equation}
+    p(add) = p(T_i = T_{min}|i \in \text{quantile}_\alpha(\lambda)) = \alpha
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Soit $W_N$ une fenêtre glissante de taille fixe $N$ événements, se déplaçant au cours du temps jusqu'au temps $t_N$ du $N$-ième événement. Pour $i \in \text{quantile}_\alpha(\lambda)$:
+\begin{align*}
+    p(T_i = T_{min}) &= \lim_{N\to\infty} \frac{\text{Nombre d'événements de }i\text{ dans }W_N}{\text{Nombre total d'événements dans }W_N} \\
+    &= \frac{\lambda_i}{\sum_j \lambda_j} = \alpha
+\end{align*}
+par définition du quantile et propriétés des processus de Poisson.
+\end{proof}
+\end{proof}
 \subsubsection{Causes des events rares}
 News \& size?
 \subsection{J'ai pas sup mais c'est à mettre dans les parties d'avant}

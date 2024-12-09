@@ -27,6 +27,11 @@
     \usepackage{xcolor}
     \usepackage{titlesec}
     \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+    \documentclass{article}
+    \usepackage{pgfplots}
+    \usepgfplotslibrary{fillbetween}
+    \usepackage{caption}
+    \pgfplotsset{compat=1.18}
 
     % Configuration des en-têtes et pieds de page
     \pagestyle{fancy}
@@ -130,18 +135,18 @@
 
     \newpage
     \setcounter{page}{1}
-
+    \vspace*{3cm}
     \section{Market Book Order}
     \vspace*{2cm}
     \subsection{Présentation des marchés hautes fréquences (HF)}
 
 
-    L'électronification des marchés financiers à la fin du dernier siècle a été un tournant majeur dans le fonctionnement des marchés. L'adoption massive de la technologie et des systèmes électroniques a drastiquement réduit le temps d'exécution des transactions à l'ordre de la dizaine de microseconde, créant une toute nouvelle structure à l'échelle microéconomique. Ce changement s'est naturellement accompagné d'une intensification  du nombre de trades effectués chaque jour (cf.Figure), entraînant une réduction significative du temps moyen entre deux trades.
+    L'électronification des marchés financiers à la fin du dernier siècle a été un tournant majeur dans le fonctionnement des marchés. L'adoption massive de la technologie et des systèmes électroniques a drastiquement réduit le temps d'exécution des transactions à l'ordre de la dizaine de microsecondes, créant une toute nouvelle structure à l'échelle microéconomique. Ce changement s'est naturellement accompagné d'une intensification  du nombre de trades effectués chaque jour (cf.Figure), entraînant une réduction significative du temps moyen entre deux trades.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                width=1.0\textwidth,
-                height=0.5\textwidth,
+                width=0.9\textwidth,
+                height=0.4\textwidth,
                 xlabel={Année},
                 ylabel={Options ADV (en millions)},
                 xmin=1973, xmax=2025,
@@ -203,7 +208,8 @@
     \end{itemize}
     \\
     Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT et LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés.
-
+    \\
+    \\
     Les interactions entre les acheteurs et les vendeurs se font de manière algorithmique, selon l'ordre d'arrivée des ordres dans les files d'attente de l'offre et de la demande. Ce processus est géré par le \textbf{Market Order Book}, souvent appelé le carnet d'ordres, qui liste tous les ordres d'achat et de vente. Ces modifications sont de trois natures principales :
 
     \begin{itemize}
@@ -214,47 +220,483 @@
         \item \textbf{Cancellation} : L'annulation d'un ordre consiste à retirer une proposition d'achat ou de vente précédemment inscrite dans le carnet d'ordres.
     \end{itemize}
 
-    La microstructure de marché créé via ces intéractions entre acheteurs et vendeurs est la base de la formation des prix et leur variation au cours du temps.
+    La microstructure de marché créée via ces interactions entre acheteurs et vendeurs est la base de la formation des prix et leur variation au cours du temps.
 
     \subsection{Processus de formation des prix}
-    Queue + graphes des queues explication nouvelle limite+ des données
+    \subsubsection{Le Market Book Order}
+    À l'échelle haute fréquence, les mouvements des prix découlent en grande partie des interactions entre l'offre et la demande. De chaque côté (bid et ask), les acteurs font des offres plus ou moins proches du prix de référence $p_{ref}$. Ce prix $p_{ref}$ ne peut prendre que des valeurs multiple d'une grandeur appelée \textbf{tick}. 
+    
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            % Axis
+            \begin{axis}[
+                width=12cm,
+                height=5cm,
+                axis x line=middle,
+                axis y line=left,
+                ymin=0,
+                ymax=300,
+                xmin=-5,
+                xmax=5,
+                xtick={-4,-3,-2,-1,0,1,2,3},
+                xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
+                xlabel={Price ticks},
+                ylabel={Taille de la file d'attente},
+                ymajorgrids,
+                tick label style={font=\footnotesize},
+                xlabel style={below},
+                ylabel style={above}
+            ]
+    
+            % Bid side
+            \addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+            {(-4,260) (-3,250) (-2,200) (-1,100)};
+    
+            % Ask side
+            \addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+            {(0,89) (1,175) (2,198) (3,220)};
+    
+            % Reference price line
+            \draw[thick, dashed] (axis cs:-0.5,-0.5) -- (axis cs:-0.5,220);
+            \node[anchor=south] at (axis cs:-0.5,230) {$p_{ref}$};
+    
+            % Annotations for sides
+            \node[above] at (axis cs:-2.5,250) {\textbf{Bid Side}};
+            \node[above] at (axis cs:1.5,250) {\textbf{Ask Side}};
+    
+            % One tick annotation
+            \draw[<->] (axis cs:-0.2,-10) -- (axis cs:0.2,-10);
+            \node[below] at (axis cs:0,-10) {One Tick};
+    
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Limit order book théorique}
+    \end{figure}
+Ainsi, la différence bid-ask ne peut prendre que des valeurs entières de ticks et sont situés à une distance proche de $p_{ref} = \frac{p_{bid}+p_{ask}}{2}$. À chaque instant, de nouveaux acteurs peuvent s'ajouter sur un prix, qui sera alors modélisée comme une file d'attente, dont l'ordre est défini par l'ordre d'arrivée. Le graphique ci-dessus est une représentation  théorique des tailles de file d'attente d'un actif. On voit que les tailles sont de plus en plus grande, et théoriquement devraient augmenter jusqu'à 0 et $+\infty$, un acheteur ou un vendeur ayant plus intérêt à se mettre le plus loin de $p_{ref}$, pour augmenter ses bénéfices. Cela n'est pas observer en pratique, vu que se placer dans une queue est payant et l'on a donc une limite à partir de laquelle l’espérance des gains devient plus faible que le coût d'entrée.
 
-    \subsection{L'imbalance, la clé des modèles hautes fréquences}
-    Imbalance et autres bails
-    \newpage
-    \vspace*{5cm}
-    \section{Modèle Queue Reactive}
-    \vspace*{2cm}
 
-    \subsection{Modélisation Queue Reactive sans variations de prix}
-    Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
-    \\
-    \\
-    L'étude des Order Book des marchés HFT a amené à une modélisation par file permettant une explication fine du processus de création des prix. Prenons l'exemple d'un prix fixe appelé middle price $p_{\text{mid}}$. L'offre et la demande orbitent autour de ce prix avec une offre qui se trouve toujours au dessus du prix et une demande toujours en dessous dans un marché sans arbitrage. La loi international des marchés financier n'autorise à l'acheteur et au vendeur que certains prix séparés par une distance appelée $\textbf{un tick}$. Dans le modèle QR, les acheteurs et les vendeurs sont ainsi modélisés comme des queues à une distance plus ou moins proche du prix $p_{\text{mid}}$, qui est en pratique le prix du marché. Ces queues permettent au vendeurs de choisir le meilleur prix et à l'acheteur acheter au prix le plus bas. Prenons l'exemple d'un actif fictif à 100\$ avec un tick de 0.1\$. Les acheteurs seront répartis dans les queues $Q_{-1},Q_{-2},...$ avec un nombre qui décroît plus la queue est éloignée. Il y aura ainsi 90 acheteurs à $Q_{-1}$ avec un prix de 99.9\$, 10 à $Q_{-2}$ avec un prix de 99.8\$, ect... Le même modèle sera utiliser pour les vendeurs eux répartis dans les $Q_{1},Q_2,...$. Les queues sont réactualisées à chaque instant en consommant ce qui est consommable et en ajoutant un nombre aléatoire de demandes et d'offres, en suivant une loi de poisson de paramètre $\lambda^{Q_\pm i}$. En plus de cette évolution de l'offre et la demande, on rajoute un troisième phénomène: les cancellation. Ainsi, à tout instant, l'acheteur et le vendeur peut annuler sa demande ou son offre. Ainsi le carnet d'offre et de demande est une chaîne de markov, dont l'état à l'instant $t_{i+1}$ ne dépend que de celui à l'instant $t_i$.
-    \subsubsection {Modélisation générale}
-    On modélise le carnet d'ordre par un vecteur $Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))$ qui évolue dans le temps selon un processus de Markov. L'élément $Q_{\pm i}(t)$ correspond à la disponibilité de l'offre ou de la demande à $p_{\mid}\pm i\text{tick}$ au temps $t$.
-    Trois modifications aboutissent à un changement de $Q$:
-    \begin{itemize}
-        \item \textbf{Limit order}: insertion d'une demande d'achat "bid" $(i<0)$ où d'une demande de vente "ask" $(i>0)$.
-        \item \textbf{Cancellation order}: suppression d'une demande ou d'un ask sans trade.
-        \item \textbf{Market Order}: suppression d'une demande ou d'un ask avec trade.
+\hspace*{-2.5cm}
+\begin{tikzpicture}[
+    every node/.style={align=center},
+    node distance=2cm and 4cm,
+    >={Stealth}
+]
+
+\node (orderbook) {};
+\begin{axis}[
+    at={(0,0)},
+    anchor=west,
+    width=10cm,
+    height=7cm,
+    axis x line=middle,
+    axis y line=left,
+    ymin=0, ymax=300,
+    xmin=-5, xmax=4,
+    xtick={-4,-3,-2,-1,0,1,2,3},
+    xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
+    xlabel={},
+    ylabel={Taille de la file d'attente},
+    ymajorgrids,
+    tick label style={font=\footnotesize},
+    xlabel style={below},
+    ylabel style={above},
+    title={État à $t_k$},
+    at={(0,0)}
+]
+\addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+{(-4,130) (-3,100) (-2,50) (-1,10)};
+\addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+{(0,175) (1,198) (2,220) (3,230)};
+\draw[thick, dashed] (axis cs:-0.5,-10) -- (axis cs:-0.5,250)
+    node[pos=0.95, above] {$p_{ref}$};
+\end{axis}
+
+\node[below right=of orderbook, yshift=6.5cm, xshift=10cm] (cancel) {\textbf{}};
+\begin{axis}[
+    at={(cancel.east)},
+    anchor=west,
+    width=9cm,
+    height=6.5cm,
+    axis x line=middle,
+    axis y line=left,
+    ymin=0, ymax=300,
+    xmin=-5, xmax=4,
+    xtick={-4,-3,-2,-1,0,1,2,3},
+    xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
+    xlabel={},
+    ymajorgrids,
+    tick label style={font=\footnotesize},
+    xlabel style={below},
+    ylabel style={above},
+    title = {Add de 20 à l'Ask}
+]
+\addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+{(-4,130) (-3,100) (-2,50) (-1,30)};
+\addplot[ybar, fill=blue!10, draw=none, bar width=0.7] coordinates
+{(-1,10)};
+\addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+{(0,175) (1,198) (2,220) (3,230)};
+\draw[thick, dashed] (axis cs:-0.5,-10) -- (axis cs:-0.5,250)
+    node[pos=0.95, above] {$p_{ref}$};
+\end{axis}
+
+\node[below right=of orderbook, yshift=0cm, xshift=10cm] (add) {\textbf{}};
+\begin{axis}[
+    at={(add.east)},
+    anchor=west,
+    width=9cm,
+    height=6.5cm,
+    axis x line=middle,
+    axis y line=left,
+    ymin=0, ymax=300,
+    xmin=-5, xmax=4,
+    xtick={-4,-3,-2,-1,0,1,2,3},
+    xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
+    xlabel={},
+    ymajorgrids,
+    tick label style={font=\footnotesize},
+    xlabel style={below},
+    ylabel style={above},
+    title={Cancel de 10 au Bid}
+]
+\addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+{(-4,130) (-3,100) (-2,50) (-1,10)};
+\addplot[ybar, fill=blue!10, draw=none, bar width=0.7] coordinates
+{(-1,10)};
+\addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+{(0,175) (1,198) (2,220) (3,230)};
+\draw[thick, dashed] (axis cs:-1,-10) -- (axis cs:-1,250)
+    node[pos=0.95, above] {$p_{ref}$};
+\end{axis}
+
+\node[below right=of orderbook, yshift=-6.5cm, xshift=10cm] (order) {\textbf{}};
+\begin{axis}[
+    at={(order.east)},
+    anchor=west,
+    width=9cm,
+    height=6.5cm,
+    axis x line=middle,
+    axis y line=left,
+    ymin=0, ymax=300,
+    xmin=-5, xmax=4,
+    xtick={-4,-3,-2,-1,0,1,2,3},
+    xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
+    xlabel={},
+    ymajorgrids,
+    tick label style={font=\footnotesize},
+    xlabel style={below},
+    ylabel style={above},
+    title={Order de 60 au Bid}
+]
+\addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+{(-4,130) (-3,100) };
+\addplot[ybar, fill=blue!10, draw=none, bar width=0.7] coordinates
+{(-2,50) (-1,10)};
+\addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+{(0,175) (1,198) (2,220) (3,230)};
+\draw[thick, dashed] (axis cs:-1.5,-10) -- (axis cs:-1.5,250)
+    node[pos=0.95, above] {$p_{ref}$};
+\end{axis}
+\draw[dashed, thick] (9,-9) -- (9,9);
+\node at (4,10) {\textbf{Market order Book à $t_k$}};
+\node at (13,10) {\textbf{Market order Book à $t_{k+1}$}};
+\node at (8,-10) {\textbf{Évolutions possibles du Market Book Order}};
+\end{tikzpicture}
+On a représenté ci-dessus l'évolution du MBO suite à un Add, Cancel ou un Order. ON voit bien que l'on peut avoir une évolution du prix de référence dans le cas où l'on vient à épuiser une limite où lorsqu'une nouvelle est créée. C'est cette dynamique du prix de référence qu'il faut capter afin de bien comprendre le processus de formation des prix à l'échelle microéconomique. Pour cela on utilisera plusieurs bases de données.
+
+
+\subsubsection{Données utilisées}
+Dans la suite de notre étude, nous étudierons tout particulièrement les actif GOOGL, LCID, et KHC. Ces actifs correspondent respectivement à Google, Lucid Group Inc (constructeur américain de véhicules électriques de luxe) et The Kraft Heinz Company (multinationale américaine spécialisée dans l'agroalimentaire).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Actif}& \textbf{Nb Timestamps} & \textbf{Nb Add} & \textbf{Nb Cancel} & \textbf{Nb Order}\\ \hline
+GOOGL  & 86386103         & 81146187        & 6448095    & 173980437  \\ 
+\hline
+LCID       & 2101840         & 1975378         & 522436  & 4599687  \\
+\hline
+KHC   & 6300128   & 5982598 & 909555 & 13192289                   
+\\ \hline
+\end{tabular}
+\caption{Tableau des données du Nasdaq sur 65 jours du 28 juillet au 4 novembre}
+\label{tab:exemple}
+\end{table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Actif}& \textbf{Nb/Jour Actions}& \textbf{Pct Add} & \textbf{Pct Cancel} & \textbf{Pct Order}\\ \hline
+GOOGL & 2676622 & 49,65\%  & 46,64\%     & 3,70\%    \\ 
+\hline
+LCID  & 70764   & 45,69\%  & 42,94\%    &11,35\%    \\
+\hline
+KHC  & 202958   & 47,75\%  & 45,34\%  & 6,89\%                     
+\\ \hline
+\end{tabular}
+\caption{Tableau des données du Nasdaq moyennées sur 65 jours}
+\label{tab:exemple}
+\end{table}
+Les données sont issus de la base de données Databento et ne concernent que la bourse du Nasdaq. On voit tout d'abord qu ces certains actifs sont plus tradés que d'autres notamment GOOGL par rapport au deux autres.
+\\
+\\
+Les données sont sous format de dataframe par journée comprenant toutes les modifications apportées au MBO des trois actifs étudiés. Ce MBO comprend alors:
+\begin{itemize}
+    \item ts\_recv: timestamp du serveur 
+    \item ts\_event: timestamp de l’événement     
+    \item rtype: type d’événement     
+    \item publisher\_id: id du publisher du MBO (2 pour Nasdaq,...)
+    \item instrument\_id: id de l'actif sur les marchés
+    \item action: Add(A), Cancel(C), Trade(T)
+    \item side: Ask(A), Bid(B)
+    \item depth: limite considéree
+    \item price: prix
+    \item size: taille de l'action réalisée
+    \item ts\_in\_delta: temps entre le serveur et l'action
+    \item sequence: id de l'action propre à l'actif sur les marchés
+    \item bid\_px\_0x: prix à la limite x côté bid
+    \item ask\_px\_0x: prix à la limite x côté ask
+    \item bid\_sz\_0x: taille de la file d'attente à la limite x côté bid
+    \item ask\_sz\_0x: taille de la file d'attente à la limite x côté ask
+    \item symbol: symbole de l'actif
+\end{itemize}
+
+
+Nous avons dans un premier temps triées ces données, qui étaient très dégradées. Pour commencer afin de s'enlever les comportements particuliers de l'ouverture et de la fermeture des marchés, nous avons choisi de ne sélectionner que les données à $\pm1.5$h de la fermeture/ouverture de la bourse du Nasdaq. Par la suite nous avons réalisé un traitement systématique des données, afin d'enlever les occurrences inutiles.
+\\
+\\
+Pour commencer, nous avons observé que plusieurs actions avaient lieu au même timestamp, ce qui n'est bien sûr pas réaliste. Afin de régler ce problème, nous avons observé les suites d'action que cela concernait:
+\begin{itemize}
+\item Séquences de Trades terminées par un Cancel sans épuisement de limite: Ces actions correspondent probablement à un Trade agressif de type iceberg, qui est découpé en plus petit trades, dans ce cas, nous avons concaténer les trades pour n'een faire qu'un seul dont la taille est la somme de tous les trades réalisées. On observe que cette suite d'action fini souvent par un Cancel (mais pas tout le temps);
+\item Séquences de Trades terminées par un Cancel avec épuisement de limite: Dans ce cas, l'ordre de trade agressif épuise la limite. Nous avons donc comme précédement concaténer les trades avant et après épuisement de la limite tout en marquant le passage d'une nouvelle limite. Le Cancel correspond ici probablement à l'annulation des trades qui devaient avoir lieu sur la limite épuisée;
+\item Séquences de Trades et de Cancel terminées par un Cancel sans épuisement de limite: On observe également des séquences de trades agressifs qui ne se terminent pas par un Cancel. Nous l'avons traité comme précédemment en regroupant les trades en un seul;
+\item Séquences de Trades et de Cancel terminées par un Cancel avec épuisement de limite: Même traitement que précédemment;
+\item Séquences de Trades et de Cancel non terminées par un Cancel sans épuisement de limite: Même traitement que précédement.
+\end{itemize}
+Ces observations pourraient être expliquées par le fait qu'un trade agressif de taille $N$ décomposé en $m$ petits trades est process par paquets d'une dizaine de trades suivi d'un cancel par exemple.
+\\
+\\
+Afin de vérifier que notre dataframe était bien nettoyé, l'on regarde si la size de l'action à l'instant $t_k$ est en accord avec la tailles des queues aux instants $t_k$ et $t_{k+1}$. Nous devrons alors avoir un marqueur positif à l’exception des timestamps correspondant à l'apparition ou la disparition d'une limite. Pour cela, l'on sélectionne la limite $N$ que l'on veut étudier tout en prenant soin de prendre en compte les tailles des queues $N-1$ et $N+1$ en compte pour l'apparition des nouvelles limites. Nous avons alors nos données totalement nettoyées par limite. 
+\\
+\\
+Avec les données obtenues, on peut dans un premier temps tracer les limites et l'évolution du prix en fonction du temps. Le graphique obtenu nous montre bien que les trades n'ont pas lieu à intervalle de temps régulier, et semblent plus fréquent dans les zones où les prix varient beaucoup.
+On peut également s'intéresser à la taille moyenne des queues sizes, afin d'observer la décroissance de la taille des queues annoncée précédemment. On observe bien que les tailles moyenne de queues commencent par augmenter puis diminuent de part et d'autre du bid-ask. On a donc bien le comportement attendu.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Prix&limit.png}
+    \caption{Évolution du prix de GOOGL avec le bid-ask le 2024-07-25 entre $16:02:00$ et $16:03:00$. Les points noirs correspondent aux trades, les tracés correspondent aux limites de -9 à +9}
+    \label{fig:graph}
+\end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            % Axis
+            \begin{axis}[
+                width=16cm,
+                height=8cm,
+                axis x line=middle,
+                axis y line=left,
+                ymin=0,
+                ymax=400,
+                xmin=-11,
+                xmax=11,
+                xtick={-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9},
+                xticklabels={$P_{-10}$, $P_{-9}$, $P_{-8}$, $P_{-7}$, $P_{-6}$, $P_{-5}$,$P_{-4}$,$P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$,$P_5$,$P_6$,$P_7$,$P_8$, $P_9$, $P_{10}$},
+                xlabel={Price ticks},
+                ylabel={Taille de la file d'attente},
+                ymajorgrids,
+                tick label style={font=\footnotesize},
+                xlabel style={below},
+                ylabel style={above}
+            ]
+    
+            % Bid side
+            \addplot[ybar, fill=blue!60, draw=none, bar width=0.7] coordinates
+            {(-1,151.1224671373919 ) (-2,219.53969758685668) (-3,295.5069691067028) (-4,335.0593228757234) (-5,338.5736082586511)  (-6,331.6095311018006) (-7,322.0771596238568) (-8,312.9499932179665) (-9,307.58115194730084) (-10,303.5522045138593)};
+    
+            % Ask side
+            \addplot[ybar, fill=blue!40, draw=none, bar width=0.7] coordinates
+            {(0,138.55837238255106) (1,192.0643778858309) (2,243.8878344941788) (3,283.3784230990515) (4,303.12025200927195)  (5,296.46381873364055) (6,282.8737240826732) (7,280.2261308977849) (8,274.74242139270194) (9,271.95192471085596)};
+    
+            % Reference price line
+            \draw[thick, dashed] (axis cs:-0.5,-0.5) -- (axis cs:-0.5,220);
+            \node[anchor=south] at (axis cs:-0.5,230) {$p_{ref}$};
+    
+            % Annotations for sides
+            \node[above] at (axis cs:-6,350) {\textbf{Bid Side}};
+            \node[above] at (axis cs:5,350) {\textbf{Ask Side}};
+    
+            % One tick annotation
+            \draw[<->] (axis cs:-0.2,-10) -- (axis cs:0.2,-10);
+            \node[below] at (axis cs:0,-10) {One Tick};
+    
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Taille moyenne des files d'attente du Limit order book de GOOGL le 2024-07-25}
+    \end{figure}
+\\
+\\
+Nous allons maintenant étudier une des grandeurs caractéristique de la haute fréquence, qui permet de capter la majeur partie des mouvements de prix en suivant le MBO: l'imbalance.
+
+
+
+
+\subsection{L'imbalance, la clé des modèles hautes fréquences}
+
+L'étude de la première limite du MBO (Bouchaud et al., 2004 et Besson et al., 2016) permet de comprendre comment leur taille respectives influent sur le prochain mouvement de prix. Malheureusement, cette prédiction n'est pas assez précise pour être rentable sur le long terme, et il st donc nécessaire d'avoir une étude plus fine du processus de formation des prix. Cependant, l'étude de la première limite nous permet de sortir une première information capitale de l'order book: l'imbalance. 
+$$\text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}$$
+Cette première donnée permet de capter les mouvements prix moyen. En effet, lorsque l'imbalance est négatif, le déséquilibre entre l'offre et la demande aura pour conséquence de faire évoluer les prix vers le bas, et inversement. 
+\begin{figure}[h!]
+    \centering
+    % Première figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Imbalance.png}
+        \caption{Imbalance en fonction du Delta tick}
+        \label{fig:imbalance}
+    \end{subfigure}
+    \hfill
+    % Deuxième figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{densité_Imbalance.png}
+        \caption{Courbe de distribution de l'imbalance}
+        \label{fig:densite_imbalance}
+    \end{subfigure}
+    \caption{Imbalance des trades de KHC avec avec intervalle de confiance à 95\%}
+    \label{fig:comparison}
+\end{figure}
+\\
+En traçant l'imbalance en fonction du $\Delta_p$, on observe une relation linéaire entre ces deux valeurs, qui nous conforte donc sur nos observations précédentes. On remarque aussi que l'imbalance n'a pas une densité uniforme, ce qui revient à dire que le market book order est plus souvent déséquilibré qu'équilibré, ce qui permet d'avoir des mouvements de prix. Nous verrons par la suite d'autre observations sur l'imbalance notamment en fonction de l'intensité des trades.
+\\
+\\
+L'étude de l'imbalance peut aussi se porter sur les add et les cancels, qui ont des comportements similaires, n'étant pas des orders.
+\begin{figure}[h!]
+    \centering
+    % Première figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{densité_add.png}
+        \caption{Add}
+        \label{fig:imbalance}
+    \end{subfigure}
+    \hfill
+    % Deuxième figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{densité_cancel.png}
+        \caption{Cancel}
+        \label{fig:densite_imbalance}
+    \end{subfigure}
+    \caption{Courbes de distribution de l'imbalance des add et cancel de KHC avec intervalle de confiance à 95\%}
+    \label{fig:comparison}
+\end{figure}
+\\
+On observe un comportement inversé aux trades: ici, on aura tendance à s'ajouter ou à se retirer lorsqu'il ne se passe rien en prévision d'un trade aux imbalances extrêmes. Une étude aux limites supérieur nous montre que le comportement de l'imbalance est relativement similaire, avec une distribution qui devient de plus en plus uniforme au fur et mesure que l'on s'enfonce dans les limites.
+\\
+\\
+Rajouter les graphes de heatmap+étude de la première limite par rapport à la seconde???
+
+
+
+
+
+
+
+
+
+\newpage
+\vspace*{3cm}
+\section{Modèle Queue Reactive}
+\vspace*{2cm}
+
+\subsection{Modélisation Queue Reactive sans variations de prix}
+\subsection{Modélisation Queue Reactive avec variations de prix}
+\subsubsection{Modèle théorique}
+Dans un premier temps, nous étudierons le modèle sans paramètres exogènes.
+\subsubsection{Nécessité de paramètres exogènes}
+\subsection{Modélisation des événements rares dans le QR}
+\subsubsection{Densité et démonstration}
+
+Soit $\Omega$ l'espace des événements rares. La densité de ces événements suit une distribution uniforme conditionnée par la taille de la queue $q$. Pour les trades et les cancels, cette taille doit être inférieure à un event size $s$ donné. Les adds nécessitent un traitement particulier que nous détaillerons.
+
+\begin{theorem}[Probabilité d'un événement rare]
+La probabilité d'un événement rare se décompose comme suit:
+\begin{equation}
+    p(event\ rare) = p(nouvelle\ limite) \cdot p(\theta\ générant\ nouveau\ LOB)
+\end{equation}
+où $\theta$ représente les paramètres du modèle.
+\end{theorem}
+
+\begin{proof}
+Décomposons $p(nouvelle\ limite)$ selon les types d'événements possibles:
+
+\begin{equation}
+    p(nouvelle\ limite) = \sum_{e \in \{trade,add,cancel\}} p(nouvelle\ limite|e)p(e)
+\end{equation}
+
+Par conservation des probabilités:
+\begin{equation}
+    p(cancel) = 1-[p(trade)+p(add)]
+\end{equation}
+
+Pour calculer $p(add)$, considérons une famille infinie de processus de Poisson $\{N_i(t)\}_{i\in\mathbb{N}}$ d'intensités respectives $\{\lambda_i\}_{i\in\mathbb{N}}$. 
+
+Soit $T_i$ le temps d'attente jusqu'au prochain événement du processus $i$. Par définition:
+\begin{equation}
+    T_{min} = \min_{i\in\mathbb{N}}(T_i)
+\end{equation}
+
+\begin{lemma}[Probabilité d'ajout]
+Pour un quantile $\alpha \in (0,1)$ fixé:
+\begin{equation}
+    p(add) = p(T_i = T_{min}|i \in \text{quantile}_\alpha(\lambda)) = \alpha
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Soit $W_N$ une fenêtre glissante de taille fixe $N$ événements, se déplaçant au cours du temps jusqu'au temps $t_N$ du $N$-ième événement. Pour $i \in \text{quantile}_\alpha(\lambda)$:
+\begin{align*}
+    p(T_i = T_{min}) &= \lim_{N\to\infty} \frac{\text{Nombre d'événements de }i\text{ dans }W_N}{\text{Nombre total d'événements dans }W_N} \\
+    &= \frac{\lambda_i}{\sum_j \lambda_j} = \alpha
+\end{align*}
+par définition du quantile et propriétés des processus de Poisson.
+\end{proof}
+\end{proof}
+\subsubsection{Causes des events rares}
+News \& size?
+\subsection{J'ai pas sup mais c'est à mettre dans les parties d'avant}
+Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
+\\
+\\
+L'étude des Order Book des marchés HFT a amené à une modélisation par file permettant une explication fine du processus de création des prix. Prenons l'exemple d'un prix fixe appelé middle price $p_{\text{mid}}$. L'offre et la demande orbitent autour de ce prix avec une offre qui se trouve toujours au dessus du prix et une demande toujours en dessous dans un marché sans arbitrage. La loi international des marchés financier n'autorise à l'acheteur et au vendeur que certains prix séparés par une distance appelée $\textbf{un tick}$. Dans le modèle QR, les acheteurs et les vendeurs sont ainsi modélisés comme des queues à une distance plus ou moins proche du prix $p_{\text{mid}}$, qui est en pratique le prix du marché. Ces queues permettent au vendeurs de choisir le meilleur prix et à l'acheteur acheter au prix le plus bas. Prenons l'exemple d'un actif fictif à 100\$ avec un tick de 0.1\$. Les acheteurs seront répartis dans les queues $Q_{-1},Q_{-2},...$ avec un nombre qui décroît plus la queue est éloignée. Il y aura ainsi 90 acheteurs à $Q_{-1}$ avec un prix de 99.9\$, 10 à $Q_{-2}$ avec un prix de 99.8\$, ect... Le même modèle sera utiliser pour les vendeurs eux répartis dans les $Q_{1},Q_2,...$. Les queues sont réactualisées à chaque instant en consommant ce qui est consommable et en ajoutant un nombre aléatoire de demandes et d'offres, en suivant une loi de poisson de paramètre $\lambda^{Q_\pm i}$. En plus de cette évolution de l'offre et la demande, on rajoute un troisième phénomène: les cancellation. Ainsi, à tout instant, l'acheteur et le vendeur peut annuler sa demande ou son offre. Ainsi le carnet d'offre et de demande est une chaîne de markov, dont l'état à l'instant $t_{i+1}$ ne dépend que de celui à l'instant $t_i$.
+\subsubsection {Modélisation générale}
+On modélise le carnet d'ordre par un vecteur $Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))$ qui évolue dans le temps selon un processus de Markov. L'élément $Q_{\pm i}(t)$ correspond à la disponibilité de l'offre ou de la demande à $p_{\mid}\pm i\text{tick}$ au temps $t$.
+Trois modifications aboutissent à un changement de $Q$:
+\begin{itemize}
+    \item \textbf{Limit order}: insertion d'une demande d'achat "bid" $(i<0)$ où d'une demande de vente "ask" $(i>0)$.
+    \item \textbf{Cancellation order}: suppression d'une demande ou d'un ask sans trade.
+    \item \textbf{Market Order}: suppression d'une demande ou d'un ask avec trade.
     \end{itemize}
-    À la date $t$, la queue $Q_{\pm}$ peut donc soit augmenter (Limit order) soit diminuer (Cancellation, Market order).
-    On note alors $\mathcal Q$, la matrice de passage que l'on modélise comme suit:
-    $$\begin{aligned}
-    \mathcal Q_{p,p+e_i} &= f_i(q) \\
+À la date $t$, la queue $Q_{\pm}$ peut donc soit augmenter (Limit order) soit diminuer (Cancellation, Market order).
+On note alors $\mathcal Q$, la matrice de passage que l'on modélise comme suit:
+$$\begin{aligned}
+\mathcal Q_{p,p+e_i} &= f_i(q) \\
     \mathcal Q_{p,p-e_i} &= g_i(q) \\
     \mathcal Q_{p,p} &= 1 - \sum_{p \neq q} \mathcal Q_{p,q} \\
     \mathcal Q_{p,q} &= 0, \ \text{sinon}
     \end{aligned}$$
-    avec $e_i$ les vecteurs canoniques de $\mathbb{R}^{2K}$.
+avec $e_i$ les vecteurs canoniques de $\mathbb{R}^{2K}$.
     \\
     \\
-    Concrètement, on a une probabilité $f_i(q)$ d'augmenter via un Limit order et $g_i(q)$ de diminuer via un market order ou une cancellation. On suppose par la suite que :
-    $$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant qu'on a une plus grande chance de diminuer que d'augmenter à partir d'une certaine queue. On peut rapprocher cela de l'idée que au délà d'un certain prix la demande et l'offre ne sont plus du tout intéressante et finissent par disparaître. On suppose aussi:$$\exists H>0, \sum_if_i(q)\leq H$$ ce qui revient à dire que l'on ne peut pas ajouter une infinité d'actions à chaque étape.
-    \\
-    \\
-    \textbf{On ne s’intéressera qu'a des actifs avec un tcik size petit $\approx 1.2$ tick.} La raison de ce coix réside dans la modélisation choisie: on suppose que les Market-order sont constamment satisfaits. Cela revient à dire que l'actif est bien solvable, donc que l'offre et la demande sont nombreuses et donc que la concurrence est élevée, d'où un spread bid-ask faible. On a donc pas à ce soucier de problème de solvabilité.
+Concrètement, on a une probabilité $f_i(q)$ d'augmenter via un Limit order et $g_i(q)$ de diminuer via un market order ou une cancellation. On suppose par la suite que :
+$$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant qu'on a une plus grande chance de diminuer que d'augmenter à partir d'une certaine queue. On peut rapprocher cela de l'idée que au délà d'un certain prix la demande et l'offre ne sont plus du tout intéressante et finissent par disparaître. On suppose aussi:$$\exists H>0, \sum_if_i(q)\leq H$$ ce qui revient à dire que l'on ne peut pas ajouter une infinité d'actions à chaque étape.
+\\
+\\
+\textbf{On ne s’intéressera qu'a des actifs avec un tcik size petit $\approx 1.2$ tick.} La raison de ce coix réside dans la modélisation choisie: on suppose que les Market-order sont constamment satisfaits. Cela revient à dire que l'actif est bien solvable, donc que l'offre et la demande sont nombreuses et donc que la concurrence est élevée, d'où un spread bid-ask faible. On a donc pas à ce soucier de problème de solvabilité.
 
     \subsubsection{Modèle I}
 
@@ -486,6 +928,235 @@
 
     Ces hypothèses serviront de guide pour l'analyse empirique qui suit, permettant de confronter les prédictions théoriques aux observations du marché.
 
+    \newpage
+    \vspace*{3cm}
+    \section{Le modèle QR: observation sur les marchés HF
+}
+\subsection{Intensité des événements}
+Nous avons vu que l'intensité des événements dépandant de la taille de la file d'attente de la limite considérée et de 
+l'action effectuée. Nous allons donc vérifier ce résultat sur nos données. 
+\\
+\\
+Pour cela nous parcourons notre dataframe et nous remplissons un dictionnaire
+ dont la clé est la taille de la liste d'attente. À chaque clé, l'on trouve une liste de 3 tableaux correspondant aux temps de Add, Trade et Cancel séparés. Nous agrégeons ensuite les résultats par boxplot pour lisser la courbe.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{ADD_Cancel.png}
+    \caption{Intensité des Add (bleu) et Cancel (vert) en fonction de la taille de queue pour l'actif GOOGL avec intervalle de confiance à 95\% sur la première limite}
+    \label{fig:add_cancel}
+\end{figure}
+\\
+Nous avons choisi de représenter les Cancels et les Add ensemblre, car ils présente des caractéristiques similaires, comme remarqué précedément au niveau de la distribution de l'imbalnce. On observe ici que l’intensité semble dans un premier temps augmenter avant d'attendre un palier vers un vingtaine d'actions par seconde. Ainsi, un acteur aura tendance à être globalement indifférent de la taille de queue si celle-ci est suffisamment grande, avec une légère augmentation en fonction de la taille pour les ajouts (add).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Trades.png}
+    \caption{Intensité des Trades en fonction de la taille de queue pour l'actif GOOGL avec intervalle de confiance à 95\% sur la première limite}
+    \label{fig:trades}
+\end{figure}
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{2ndLim_Intensity.png}
+    \caption{Intensité des Add (bleu) et Cancel (vert) en fonction de la taille de queue pour l'actif GOOGL avec intervalle de confiance à 95\% sur la seconde limite}
+    \label{fig:trades}
+\end{figure}
+
+Pour ce qui est des trades, on remarque un comportement bien différent. L'intensité augment drastiquement lorsque la queue est très petite, qui correspond globalement aux moments où l'imbalance est le plus grand en valeur absolue. On retrouve ici une certaine cohérence avec la densité de l'imbalance des trades. Par ailleurs, l'intensité semble décroître exponentiellement vers une limite par la suite, qui correspond au fait que l'acteur devient de plus en plus indifférent à la taille de queue, avant de remonter dans la taille devient très grande. En effet, un acteur à tout intérêt à consommer de la liquidité 'gratuite', qui correspond aux tailles de queues importantes. 
+\\
+\\
+L'étude sur la seconde limite montre un comportment similaire sur les add et les cancel mais avec ici une intensité plus faible. On a donc tendance à avoir moins d'action sur la seconde limite que sur la première.
+\\
+\\
+Ces résultats étant déjà obtenus dans la littérature (voir C-A.Lehalle, Mathieu Rosenbaum et Weibing Huang, \textit{Simulating and analyzing order book data:
+The queue-reactive model}) nous nous intéressons par la suite au tracé des intensités en fonction de l'imbalance. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{trades_imbalnces_intensity.png}
+    \caption{Intensité des Trades en fonction de l'imbalance pour l'actif GOOGL avec intervalle de confiance à 95\% sur la première limite}
+    \label{fig:trades}
+\end{figure}
+\\
+Pour commencer on observe bien la symétrie de l'imbalance que l'on avait pour les densités. Le fait de ne pas séparer les ask et les bid est donc ici partiellement vérifié ici. Nous observons ici que plus la valeur absolue de l'imbalance est importante plus un acteur aura tendance à réaliser un trade rapidement.  Comme nous l'avons vu précédemment, les trades on plus souvent lieu aux imbalances extrêmes et l'on peut désormais rajouté qu'ils sont réalisé avec une plus grande intensité. Les acteurs cherchent donc à prendre avantage du MBO en se plaçant dans des imbalances extrêmes et en réagissant plus vite dans ces cas, vu que la probabilité d'un delta de prix de même signe que l'imbalance devient plus grande comme remarqué précédement. Afin de vérifié qu'il s'agit d'une observation non propre à notre actif, on trace ci-dessous le même graphe pour KHC (plus gros tick) et LCID (gros tick prix faible).
+\begin{figure}[h!]
+    \centering
+    % Première figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ImbalancefcttradesKHC.png}
+        \caption{KHC}
+        \label{fig:imbalance}
+    \end{subfigure}
+    \hfill
+    % Deuxième figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{KHC_Trades_ints_imb.png}
+        \caption{LCID}
+        \label{fig:densite_imbalance}
+    \end{subfigure}
+    \caption{Intensité des Trades en fonction de l'imbalance pour l'actif KHC (gauche) et LCID (droite) avec intervalle de confiance à 95\% sur la première limite}
+    \label{fig:comparison}
+\end{figure}
+\\
+\\
+On voit bien un comportement similaire, qui semble tout de même plus marqué plus le tick est gros, par exemple pour LCID, gros tick prix faible, qui fit donc mieux le QR, on voit que l'intensité augmente énormément lorsque l'on s'approche des bornes de l'imbalance, ce qui signifie que les acteurs deviennent beacuoup plus réactif proche des imbalances extrêmes.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{ADD_CANCEL_INTENSITY_IMBALANCE_GOOGL.png}
+    \caption{Intensité des Add (bleue) et Cancel (vert) en fonction de l'imbalance pour l'actif GOOGL avec intervalle de confiance à 95\% sur la seconde limite}
+    \label{fig:trades}
+\end{figure}
+\\
+\\
+Pour ce qui est des add et des cancel, l'observation est moins flagrante et l'on tend plus vers une intensité qui reste constante quelque soit l'imabalance, mis à part pour des imbalance extrêmes, où les ajouts semblent être moins rapide pour des imbalances proche de -1, qui correspondent au cas où la quantité d'ask est très grande devant le bid. En effet, lorsque l'order est très déséquilibré, il y a moins d'intérêt à s'ajouté sur une file d'attente, car l'on a 'déjà dévoilé son jeu'. On remarque cependant, que l'intensité augment pour les add, proche de l'imabalance 1, ce qui casse la symétrie bid-ask précédement observé. Les acteurs auraien une préférence pour l'offre sur cette actif, ce qui notemment expliquerait l'augmentation globale du prix de l'actif sur la durée d'étude. On peut tout de même tracer les même graphes sur les autres actifs, qui sont plus concluants et qui conservent mieux la symétrie.
+\begin{figure}[h!]
+    \centering
+    % Première figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imbalnce fctIntensitéADD:Cancel.png}
+        \caption{KHC}
+        \label{fig:imbalance}
+    \end{subfigure}
+    \hfill
+    % Deuxième figure
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ADD_CANCEL_INTENSITY_IMBALNCE_LCID.png}
+        \caption{LCID}
+        \label{fig:densite_imbalance}
+    \end{subfigure}
+    \caption{Intensité des Add (bleu) et des Cancel (vert) en fonction de l'imbalance pour l'actif KHC (gauche) et LCID (droite) avec intervalle de confiance à 95\% sur la première limite}
+    \label{fig:comparison}
+\end{figure}
+Là encore, les résultats sont plus concluants: on a une conservation de symétrie et un comportement plus prononcé sur les extrêmités, avec une augmentation de l'intensité comme vue sur les trades précédemment.
+\\
+\\
+L'observation sur les limites supérieur donne des résultats similaires à ceux de la première limite, avec une augmentation moins prononcée que pour la première limite.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{DErnierGraph_LCID_INTENSITYxImbalance.png}
+    \caption{Intensité des Add (bleue) et Cancel (vert) en fonction de l'imbalance pour l'actif LCID avec intervalle de confiance à 95\% sur la seconde limite}
+    \label{fig:trades}
+\end{figure}
+
+
+\subsection{Densité des News}
+Nous allons désormais nous intéresser à la localisation des événements caractérisés comme rares. On caractérise la rareté d'un événement par sa faible intensité. Plus un événement à une intensité faible, plus il sera rare. Ainsi dans le modèle QR, nous avons précédemment montré que ces événements étaient localisés uniformément sur la simulation. Afin de ne pas être biaisé par les effets d'ouverture et de fermeture des marchés, nous nous plaçons à une heure de chaque limite. Nous nous plaçons sur une seule journée, où nous prenons les événements les 5\% les plus rares. Ceux-ci sont donc théoriquement localisés uniformément sur la journée.
+\\
+\\
+Précisons la caractéristique d'événement rares. On commence par regroupé les événements par imbalance. Nous calculons ensuite l'intensité de chaque événement dans chaque bucket d'imbalance normalisée par bucket d'imbalance. Après avoir calculé cela, 
+nous avons une série de valeurs normalisées et l'on peut enlever la dépendance à l'imbalance. On sélectionne donc parmi ces valeurs les 5\% les plus faibles, qui sont donc les plus rares au sens du QR. On note cette ensemble $\mathcal{R}$. Afin de calculer la probabilité $p(t)$ d'un événement rare, nous parcourons tout nos événements avec sliding window de 5 minutes et nous calculons la probabilité d'un événement rare sur la sliding window de 5 minutes au jour $j$ noté $S_t^j$:
+$$\hat{p}(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^j\}}$$
+On devrait donc avoir une droite proche de $5\%$ tout les jours. Cependant, après quelques tracés seulement on observe que cette probabilité n'est pas du tout uniforme certain jour.
+\begin{figure}[h!]
+    \centering
+    % Premier graphique
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe3.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 10 novembre 2024.}
+        \label{fig:graphe3}
+    \end{subfigure}
+    \hfill
+    % Deuxième graphique
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe3Prix.png}
+        \caption{Prix de l'actif GOOGL le 10 novembre 2024.}
+        \label{fig:graphe3Prix}
+    \end{subfigure}
+
+    \caption{Analyse de l'actif GOOGL le 10 novembre 2024 : $\hat{p}(S_t^j)$ et évolution des prix.}
+    \label{fig:comparison}
+\end{figure}
+\\
+Les graphes de probabilité sont en effet très différents: d'un côté la probabilité oscille autour de 0.05, de l'autre elle possède un nette pic à 18:00:00 (heure française des marchés américain). La probabilité n'est pas uniforme dans le second cas. Cela se voit directement sur le graphe des prix, qui semble relativement normale pour la première journée, là où il possède un pic à 18:00:00 le 20 septembre.On en conclue donc que les évènements extrêmes ne sont pas uniformes (tout les jours) et sont pas toujours causées par le MBO. On semble tout de même avoir différents régimes comme vu précédemment.
+\begin{figure}[h!]
+    \centering
+    % Premier graphique
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe_1.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 20 septembre 2024.}
+        \label{fig:graphe1}
+    \end{subfigure}
+    \hfill
+    % Deuxième graphique
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe_1_prix.png}
+        \caption{Prix de l'actif GOOGL le 20 septembre  2024.}
+        \label{fig:graphe2}
+    \end{subfigure}
+
+    \caption{Analyse de l'actif GOOGL le 20 septembre  2024 : $\hat{p}(S_t^j)$ et évolution des prix.}
+    \label{fig:side_by_side}
+\end{figure}
+\\
+\\
+Pour une étude plus approfondie, nous sélectionnons les jours $j$ où les probabilité $p_{max} = \underset{t\in \mathcal{T}}{\max}\ \hat{p}(S_t^j)$ sont les plus importantes.  Nous présentons ici les 6 jours avec la probabilité la plus importante.
+\\
+\\
+\begin{figure}[h!]
+    \centering
+    % Première ligne
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe_1.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 20 septembre 2024: Plainte collective au Royaume-Uni pour pratiques monopolistiques, risque de perte de consommateur importante.}
+        \label{fig:trades1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe4.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 25 juillet 2024: Publication des résultats financiers du deuxième trimestre 2024, suivie de l'annonce d'un nouveau modèle pour ChatGPT.}
+        \label{fig:trades2}
+    \end{subfigure}
+
+    % Deuxième ligne
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe5.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 17 novembre 2024: Lancement de l'IA Gemini, Présentation des smartphones Pixel 9, Amende record en Russie.}
+        \label{fig:trades3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe6.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 29 août 2024: Annonce d'une brèche de sécurité dans Google Chrome.}
+        \label{fig:trades4}
+    \end{subfigure}
+
+    % Troisième ligne
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graphe7.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 18 septembre 2024: Annonce du Cut des taux de FED.}
+        \label{fig:trades5}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Grpahe7.png}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL le 5 août 2024: Perte du Procès contre la justice américaine pour pratiques anticoncurrentielles, amende importante.}
+        \label{fig:trades6}
+    \end{subfigure}
+
+    \caption{Comparaison des $\hat{p}(S_t^j)$ de GOOGL sur différents événements en 2024.}
+    \label{fig:comparison}
+\end{figure}
+
+Il est alors facile de comprendre ce qu'il se passe en réalité: ces jours correspondent à l'annonce de nouvelles importante concernant Google. Nous avons donc une corrélation directe entre événements rares et news extérieurs. \textbf{Il n'est donc pas possible de capter l'intégralité des mouvements de prix dans le MBO!} Il y a par conséquent une nécessité d'apporter des facteurs exogènes qui viennent incorporer ces événements dans la modélisation de l'order book.
+
+
+
+
+    
+    
     \newpage
     \vspace*{5cm}
     \section*{Appendice}
