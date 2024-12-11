@@ -603,372 +603,6 @@ Rajouter les graphes de heatmap+étude de la première limite par rapport à la 
 \newpage
 \section{Modèle Queue Reactive}
 
-\subsection{Modélisation Queue Reactive sans variations de prix}
-
-Le modèle Queue Reactive (QR) est un modèle de microstructure de marché qui décrit la dynamique du carnet d'ordres limites. Dans sa version la plus simple, sans variations de prix, il modélise l'évolution des queues d'ordres à un niveau de prix donné.
-
-Les principales caractéristiques de ce modèle sont :
-
-\begin{itemize}
-    \item Les arrivées d'ordres (ajouts, annulations, transactions) suivent des processus de Poisson
-    \item Les intensités des processus dépendent de l'état du carnet d'ordres
-    \item Le modèle capture les interactions entre les différents types d'ordres
-\end{itemize}
-
-Plus formellement, soit $q_t$ la taille de la queue au temps $t$. L'évolution de $q_t$ est décrite par :
-
-\begin{equation}
-    dq_t = dN_t^a - dN_t^c - dN_t^m
-\end{equation}
-
-où $N_t^a$, $N_t^c$ et $N_t^m$ sont respectivement les processus de Poisson pour les ajouts, annulations et transactions.
-
-\subsection{Modélisation Queue Reactive avec variations de prix}
-
-\subsubsection{Modèle théorique}
-
-Dans cette version plus complexe, le modèle intègre les variations de prix. Les intensités des processus dépendent alors non seulement de la taille des queues, mais aussi des déséquilibres entre l'offre et la demande.
-
-Le modèle s'enrichit des éléments suivants :
-
-\begin{itemize}
-    \item Introduction d'un processus de saut pour modéliser les changements de prix
-    \item Prise en compte des déséquilibres entre les meilleures limites
-    \item Modélisation de la propagation des ordres entre niveaux de prix
-\end{itemize}
-
-L'évolution du prix $p_t$ est donnée par :
-
-\begin{equation}
-    dp_t = \delta(dN_t^+ - dN_t^-)
-\end{equation}
-
-où $\delta$ est le tick minimum et $N_t^+$, $N_t^-$ sont les processus de saut à la hausse et à la baisse.
-
-\subsubsection{Nécessité de paramètres exogènes}
-
-Le modèle de base peut être enrichi par des paramètres exogènes pour mieux capturer la réalité des marchés :
-
-\begin{itemize}
-    \item Volatilité du marché global
-    \item Volume d'échange moyen
-    \item Saisonnalité intra-journalière
-    \item Événements macroéconomiques
-\end{itemize}
-
-Ces paramètres permettent d'améliorer significativement la capacité prédictive du modèle.
-
-
-\subsection{Modélisation des événements rares et variations de prix}
-
-Les variations de prix dans le modèle QR sont déclenchées par des événements rares, spécifiquement lorsqu'une limite se vide. Le mécanisme est le suivant :
-
-\begin{itemize}
-    \item Lorsqu'une limite se vide, un tirage de Bernoulli de paramètre $\theta$ détermine la variation du prix de référence $p_{ref}$
-    \item Avec probabilité $\theta$, le prix varie dans le sens de la limite consommée
-    \item Avec probabilité $1-\theta$, le prix reste stable et la limite consommée est reconstituée
-\end{itemize}
-
-\subsubsection{Processus de reconstitution des limites}
-
-La reconstitution d'une limite suit un processus en deux étapes :
-
-\begin{enumerate}
-    \item Un tirage de Bernoulli de paramètre $\theta_{bis}$ est effectué
-    \item Si le tirage vaut 1, le carnet d'ordres complet est réinitialisé selon sa loi invariante
-    \item Sinon, seule la limite consommée est reconstituée selon la loi invariante marginale de la queue dans le contexte global du carnet
-\end{enumerate}
-
-Plus formellement, soit $\pi$ la loi invariante du carnet d'ordres complet et $\pi_i$ la loi marginale de la queue $i$. Le processus de reconstitution peut s'écrire :
-
-\begin{equation}
-    LOB_{t+} = \begin{cases}
-        \sim \pi & \text{si } B(\theta_{bis}) = 1 \\
-        (LOB_t^{-i}, Q_i \sim \pi_i) & \text{si } B(\theta_{bis}) = 0
-    \end{cases}
-\end{equation}
-
-où $LOB_t^{-i}$ représente le carnet d'ordres au temps $t$ privé de la queue $i$, et $Q_i \sim \pi_i$ une nouvelle queue tirée selon la loi marginale.
-
-
-
-\subsubsection{Causes et implications des événements rares}
-
-Les événements rares dans le modèle QR constituent des éléments fondamentaux pour la reconstruction de la volatilité historique des prix. L'analyse de leur chaîne causale révèle une interaction complexe entre facteurs exogènes et endogènes du marché, formalisée par le processus stochastique $\{X_t\}_{t\geq 0}$ qui caractérise l'évolution du carnet d'ordres.
-
-Au niveau macroéconomique, ces événements trouvent leur origine dans les annonces publiques majeures, générant un processus de saut $N_t$ dont l'intensité $\lambda(t)$ varie selon l'importance de l'information. La dynamique des prix peut alors s'écrire sous la forme:
-
-\begin{equation}
-dP_t = \mu_t dt + \sigma_t dW_t + \sum_{i=1}^{N_t} J_i
-\end{equation}
-
-où $J_i$ représente l'amplitude des sauts associés aux événements rares.
-
-Dans le cadre spécifique du modèle QR, un événement rare se décompose en une séquence de sauts (jumps) et de réinitialisations (resets). Le processus de jump-reset peut être formalisé par:
-
-\begin{equation}
-LOB_{t+} = \Phi(\theta, LOB_t) \circ \Psi(\theta_{bis}, \pi)
-\end{equation}
-
-où $\Phi$ représente l'opérateur de saut et $\Psi$ l'opérateur de reset, avec $\pi$ la mesure invariante du carnet d'ordres.
-
-La microstructure du marché amplifie ces événements via le mécanisme de $\textit{order flow toxicity}$, mesuré par le ratio $\text{VPIN}$ (Volume-synchronized Probability of Informed Trading). Les déséquilibres dans le carnet d'ordres, quantifiés par l'imbalance ratio $\eta_t = \frac{V_t^{bid} - V_t^{ask}}{V_t^{bid} + V_t^{ask}}$, peuvent déclencher des cascades d'annulations.
-
-La reconstruction de la volatilité historique $\hat{\sigma}_t$ s'appuie principalement sur ces événements rares, permettant une estimation robuste via:
-
-\begin{equation}
-\hat{\sigma}_t^2 = \frac{1}{T}\sum_{i=1}^{N_t} (J_i)^2 + \frac{1}{T}\int_0^T \sigma_s^2 ds
-\end{equation}
-
-Cette décomposition capture ainsi la contribution des sauts discrets et de la volatilité continue dans la dynamique des prix.
-
-
-
-
-\subsection{L'autre test}
-
-On va commencer par caractériser mathématiquement un évent rare. Nous disposons d'un carnet d'ordre caractérisé par la taille des queues à chaque évent. On peut ainsi tirer de ces données trois caractéristiques principales, qui nous permettent de construire le vecteur d'état $\eta_{t\in \{t_1,t_2,\dots,t_n\}}$ avec $\{t_1,t_2,\dots,t_n\}\in [0,T_f]^n$ les temps des évents:
-$$\eta_t = (\text{Imb}_t, \Delta_t, {A_t})$$
-avec $\text{Imb}_t$, l'imbalance à la date $t$, $\Delta_t$ le temps entre l'évent $t$ et le suivant et $A_t\in \{A,C,T\}$ l'action réalisée à la date $t$. Nous séléctionnons dans ces vecteurs ceux qui sont des trades. Nous avons donc la famille de taille $n_T$ de vecteurs de deux dimensions $\eta_t^T = (\text{Imb}_t, \Delta_t)$.
-Ce vecteur nous permet de construire la statistique de test et de caractériser complètement les évents rares.
-\\
-\\
-Pour cela, on note $\mathcal I= \{\mathcal I^1,\dots,\mathcal I^m\}$, des buckets de taille $\frac{2}{m}$ de l'intervalle $[-1,1]$. Sachant que la distribution des intensités n'est pas la même en fonction de l'imbalance (cf. Partie III), nous normalisons les $\Delta_t$ par les $\mu_i^n = \frac{1}{\#\{j\in \mathcal I^i\}}\sum_{j\in \mathcal I^i}^n\Delta_{t_i}$, qui correspondent à la moyenne de temps par bucket d'imbalance.
-On note la famille $\tilde \eta_t^T = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^n\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)$, qui correspond aux vecteurs moyennés par bucket d'imbalance.
-Nous obtenons alors la valeur $\Delta_T^{n_T}(\alpha)$ qui correspond au quantile d'ordre $1-\alpha$ de la famille: les $\alpha\% \ \Delta_t$ les plus petits de notre série.
-\begin{proposition}[Convergence du quantile]
-La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$:
-$$T_f\underset{n\to +\infty}{\to}+\infty \ \text{p.s}$$
-$$\frac{n_T}{n}\underset{n\to +\infty}{\to}C^{ste} \ \text{p.s}$$
-et
-$$\Delta_T^{n_T}(\alpha)\underset{n\to +\infty}{\to}\Delta_T(\alpha) \ \text{p.s}$$
-\end{proposition}
-\textit{Démonstration}
-On commence par remarquer que $\eta_t^T$ est presque une chaîne de Markov, au détail près que les $\mu_i^n$, ne dépendent de 
-$n$.  Pour transformer cette chaîne en chaîne de Markov, on considère le modèle QR défini précédement que l'on prolonge sur $(t_i)_{i\in\mathbb{N}}$, en conservant nos événements sur les $n$ premiers instants. On à donc ici défini une chaîne irréductible positive dont la restriction aux $n$ premières valeurs sont les mêmes que notre famille de départ. Ce n'est toujours pas un chaîne de Markov, vu que les $\mu_i^n$, dépendre de $T_f$ (et donc de $n$). Commençons donc par montrer que l'on peut remplacer les $\mu_i^n$ par $\mu_i^{\infty}$ quand $n$ tend vers $+\infty$.
-\\
-\\
-Pour cela il faut montrer que:
-$$ \ \forall i,  \mathbb{P}\left(\forall M \in \mathbb{N}, \text{Imb}_{t_i\in\{t_1,\dots,t_M\}}\notin \mathcal{I}^{i}\right) = 0$$
-\\
-Ce résultat est direct par construction de notre chaîne qui est désormais irréductible positive. On a donc une probabilité non nulle d'appartenir à un bucket d'imbalance, c'est-à-dire que:
-
-$$\mu_i^n = \frac{n}{\#\{j\in \mathcal I^i\}}\frac{1}{n}\sum_{j}^n\mathbb{I}_{j\in \mathcal I^i}\Delta_{t_i}\underset{n\to+\infty}{\to}\mu_i^{\infty}$$
-via la loi forte des grand nombre. Ainsi, on peut montrer notre résultat sur la famille:
-$$\eta_t^{\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^n\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t}}, A_t\right)$$
-Notre chaîne est donc maintenant une chaîne de Markov recurrente positive et l'on peut donc utiliser le théorème ergotique pour montrer que:
-$$\frac{1}{n}\sum_{i=1}^n\mathbb{I}_{A_t=T} = \frac{n^T}{n} \underset{n\to+\infty}{\to} C^{ste}$$
-ce qui est le premier résultat voulu. Le second résultat découle directement du théorème ergodique en utilisant le fait que $\Delta_T^n$ peut s'écrire comme une somme d'indicatrice. 
-\\
-\\
-Notre famille sera désormais: 
-$\tilde \eta_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)=\left(\text{Imb}_t, \tilde{\Delta_t}\right)$
-\begin{definition}[Événement rare]
-On défini un événement rare une événement à la date $t$ tel que $\tilde{\Delta_t}<\Delta_T(\alpha)$.
-    
-\end{definition}
-
-
-Nous allons maintenant énoncé le résultat principal: l'uniformité des événements rares.
-\begin{theorem}[Uniformité des événements rares]
-\\
-\\
-Soit un Order book d'un modèle QR de temps $T_f\in \mathbb{R}$, caractérisé par son vecteur d'état $\tilde \eta_{t_i\in [t_1,\dots,T_f]}$.
-\\
-$\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ est indépendante du temps quand $n\to\infty$. C'est à dire que les événements rares sont uniforméments repartis dans l'intervalle de temps.
-
-\end{theorem}
-\textit{Démonstration} On commence par montrer que $\mathbb{P}\left(\tilde\eta_t^{T,\infty}\in q_{\alpha}\right)$ est indépendante du temps quand $n\to+\infty$. La Preuve réside dans la définition de l'événement rare. Vu que $\Delta_T(\alpha)$ ne dépend plus de $n$, on peut écrire cette probabilité comme une somme d'indicatrice ne dépendant que de notre chaîne de Markov. Ainsi, on a nécessairement convergence vers une constante d'après le théorème érgotique. On repasse à $\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ en utilisant la convergence des $\mu_i^n$.
-\\
-\\
-Ainsi, on a montrer que modèle QR générait de manière uniforme les événements que l'on a caractérisé comme rares. On devrait donc avoir une densité qui tend vers la densité uniforme. 
-\\
-\\
-On énonce maintenant le corollaire que l'on utilisera par la suite. Pour cela on nomme $(S^\gamma_{k})_{k\in \mathbb{N}}$, une sliding window de durée $\gamma$.
-\begin{corollary}[Stationnarité de la probabilité d'une Slinding Window] 
-\\
-\\
-Soit $\gamma \in \mathbb{R}$, $(S^\gamma_{k})_{k\in \mathbb{N}}$ une slinding window de durée $\gamma$ et $(\tilde\eta_{t_{i\in \mathbb{N}}})$ notre vecteur d'état. On note $\mathcal{R}(\alpha)$ les évents rares et $e$ les événements:
-$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}$$
-\end{corollary}
-\textit{Démonstration} Il suffit de considérer le QR restreint à chaque $S^{\gamma}_k$. On a donc via le théorème précédent:
-$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}(k)$$
-La propriété de Markov assure que $C^{ste}(k) = C^{ste}$
-\\
-\\
-On crée notre test en utilisant une sliding-window $S_t^{\gamma,j}$, où $j$ correspond à la journée considérée:
-$$\hat p(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t^{\gamma,j}\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^{\gamma,i}\}}$$
-\\
-\\
-
-\subsection{Test statistique sur sliding window temporelle}
-
-
-\subsection{Preuve d'un test statistique avec intervalles de confiance asymptotiques et non asymptotiques}
-
-Dans cette section, nous construisons un test statistique basé sur les développements précédents afin de déterminer l'uniformité des événements rares dans le carnet d'ordres. Nous présenterons à la fois des intervalles de confiance asymptotiques et non asymptotiques.
-
-\subsubsection{Hypothèses du test}
-
-Nous considérons les hypothèses suivantes :
-
-\begin{itemize}
-    \item \textbf{Hypothèse nulle ($H_0$)} : Les événements rares sont distribués uniformément dans le temps.
-    \item \textbf{Hypothèse alternative ($H_A$)} : Les événements rares ne sont pas distribués uniformément, indiquant une agrégation temporelle.
-\end{itemize}
-
-\subsubsection{Définition de la statistique de test}
-
-Nous définissons la statistique de test basée sur la proportion d'événements rares dans une fenêtre glissante de durée $\gamma$ :
-
-$$
-\hat{p}(S_k^{\gamma}) = \frac{\#\{e \in \mathcal{R} \cap S_k^{\gamma}\}}{\frac{1}{N} \sum_{i=1, i \neq j}^N \#\{e \in S_k^{\gamma, i}\}}
-$$
-
-où :
-\begin{itemize}
-    \item $S_k^{\gamma}$ est une fenêtre glissante de durée $\gamma$.
-    \item $\mathcal{R}$ est l'ensemble des événements rares.
-    \item $N$ est le nombre total de fenêtres considérées.
-\end{itemize}
-
-\subsubsection{Construction de l'intervalle de confiance asymptotique}
-
-Sous l'hypothèse $H_0$, grâce au théorème ergodique, la proportion $\hat{p}(S_k^{\gamma})$ converge vers une constante $C^{ste}$ lorsque $n \to \infty$. En appliquant le théorème central limite, nous approximons la distribution asymptotique de $\hat{p}(S_k^{\gamma})$ par une distribution normale :
-
-$$
-\hat{p}(S_k^{\gamma}) \approx \mathcal{N}\left(C^{ste}, \frac{C^{ste}(1 - C^{ste})}{n \gamma^2}\right)
-$$
-
-Ainsi, un intervalle de confiance asymptotique à $1 - \alpha$ niveau de confiance est donné par :
-
-$$
-IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
-$$
-
-où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
-
-\subsubsection{Construction de l'intervalle de confiance non asymptotique}
-
-Pour les intervalles de confiance non asymptotiques, nous utilisons l'inégalité de Hoeffding, qui fournit une borne sur la probabilité que la proportion observée s'écarte de la proportion attendue indépendamment de la taille de l'échantillon. Sous $H_0$, la probabilité que la proportion réelle diffère de la proportion observée par plus de $\epsilon$ est bornée par :
-
-$$
-\mathbb{P}\left( \left| \hat{p}(S_k^{\gamma}) - C^{ste} \right| \geq \epsilon \right) \leq 2 \exp(-2 n \gamma^2 \epsilon^2)
-$$
-
-Pour obtenir un intervalle de confiance non asymptotique à un niveau de confiance $1 - \alpha$, nous résolvons l'inégalité suivante :
-
-$$
-2 \exp(-2 n \gamma^2 \epsilon^2) \leq \alpha
-$$
-
-Ce qui implique :
-
-$$
-\epsilon = \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}
-$$
-
-Ainsi, l'intervalle de confiance non asymptotique est donné par :
-
-$$
-IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
-$$
-
-\subsubsection{Justification des intervalles de confiance}
-
-\paragraph{Asymptotique} L'intervalle de confiance asymptotique repose sur l'application du théorème central limite, qui justifie l'approximation de la distribution de $\hat{p}(S_k^{\gamma})$ par une distribution normale lorsque la taille de l'échantillon $n$ tend vers l'infini.
-
-\paragraph{Non asymptotique} L'intervalle de confiance non asymptotique utilise l'inégalité de Hoeffding, qui fournit une borne stricte sur la déviation de la proportion observée par rapport à la proportion attendue, indépendamment de la taille de l'échantillon.
-
-\subsubsection{Preuve de la convergence}
-
-\begin{proposition}[Convergence du quantile]
-La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$ :
-$$
-T_f \xrightarrow{n \to +\infty} +\infty \quad \text{p.s.}
-$$
-$$
-\frac{n_T}{n} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
-$$
-et
-$$
-\Delta_T^{n_T}(\alpha) \xrightarrow{n \to +\infty} \Delta_T(\alpha) \quad \text{p.s.}
-$$
-\end{proposition}
-
-\textit{Démonstration}
-
-1. **Chaîne de Markov et Ergodicité :** 
-   La famille de vecteurs $\tilde{\eta}_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m \mu_i^{\infty} \mathbb{I}_{\text{Imb}_t \in \mathcal{I}^{i}}}\right)$ forme une chaîne de Markov récurrente positive grâce à l'ergodicité. Cela garantit que les moyennes temporelles convergent vers les moyennes d'invariant.
-
-2. **Application du Théorème Ergodique :** 
-   Par le théorème ergodique, pour une fonction indicatrice $\mathbb{I}_{A_t = T}$, nous avons :
-   $$
-   \frac{1}{n} \sum_{i=1}^n \mathbb{I}_{A_t = T} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
-   $$
-   
-   De plus, les quantiles des $\Delta_t$ normalisés convergent également vers des constantes $\Delta_T(\alpha)$.
-
-3. **Uniformité des Événements Rares :**
-   Le théorème ergodique assure que la probabilité $\mathbb{P}\left(\tilde{\eta}_t^{T,\infty} \in q_{\alpha}\right)$ devient indépendante du temps à mesure que $n \to +\infty$, ce qui implique une répartition uniforme des événements rares dans le temps.
-
-Ainsi, la proposition est validée.
-
-\subsubsection{Construction de l'intervalle de confiance}
-
-À partir de la convergence du quantile et de l'uniformité des événements rares, nous pouvons établir les intervalles de confiance suivants :
-
-\paragraph{Intervalle de confiance asymptotique}
-
-En utilisant le théorème central limite, pour $n$ grand, la statistique de test suit une distribution normale. L'intervalle de confiance est alors :
-
-$$
-IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
-$$
-
-où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
-
-\paragraph{Intervalle de confiance non asymptotique}
-
-En appliquant l'inégalité de Hoeffding, nous obtenons un intervalle de confiance non asymptotique :
-
-$$
-IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
-$$
-
-Cet intervalle garantit que la probabilité que la proportion réelle $p$ se trouve en dehors de cet intervalle est au plus $\alpha$.
-
-\subsubsection{Conclusion du test statistique}
-
-Le test statistique se déroule comme suit :
-
-\begin{enumerate}
-    \item \textbf{Calcul de la statistique de test :} Calculer $\hat{p}(S_k^{\gamma})$ pour chaque fenêtre glissante $S_k^{\gamma}$.
-    \item \textbf{Construction des intervalles de confiance :} Construire les intervalles de confiance asymptotiques et non asymptotiques correspondants.
-    \item \textbf{Décision :} Comparer $\hat{p}(S_k^{\gamma})$ avec les intervalles de confiance.
-    \begin{itemize}
-        \item Si $\hat{p}(S_k^{\gamma})$ est en dehors de l'intervalle de confiance, rejeter $H_0$ en faveur de $H_A$.
-        \item Sinon, ne pas rejeter $H_0$.
-    \end{itemize}
-    \item \textbf{Interprétation :} Une proportion significativement différente de $C^{ste}$ indique une non-uniformité des événements rares, suggérant une agrégation temporelle.
-\end{enumerate}
-
-Cette approche permet d'évaluer rigoureusement l'uniformité des événements rares dans le temps, en utilisant des fondements théoriques solides issus du théorème ergodique et des inégalités de concentration.
-
-% Fin de la preuve
-
-\subsection{J'ai pas sup mais c'est à mettre dans les parties d'avant}
-Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
-\\
-\\
-L'étude des Order Book des marchés HFT a amené à une modélisation par file permettant une explication fine du processus de création des prix. Prenons l'exemple d'un prix fixe appelé middle price $p_{\text{mid}}$. L'offre et la demande orbitent autour de ce prix avec une offre qui se trouve toujours au dessus du prix et une demande toujours en dessous dans un marché sans arbitrage. La loi international des marchés financier n'autorise à l'acheteur et au vendeur que certains prix séparés par une distance appelée $\textbf{un tick}$. Dans le modèle QR, les acheteurs et les vendeurs sont ainsi modélisés comme des queues à une distance plus ou moins proche du prix $p_{\text{mid}}$, qui est en pratique le prix du marché. Ces queues permettent au vendeurs de choisir le meilleur prix et à l'acheteur acheter au prix le plus bas. Prenons l'exemple d'un actif fictif à 100\$ avec un tick de 0.1\$. Les acheteurs seront répartis dans les queues $Q_{-1},Q_{-2},...$ avec un nombre qui décroît plus la queue est éloignée. Il y aura ainsi 90 acheteurs à $Q_{-1}$ avec un prix de 99.9\$, 10 à $Q_{-2}$ avec un prix de 99.8\$, ect... Le même modèle sera utiliser pour les vendeurs eux répartis dans les $Q_{1},Q_2,...$. Les queues sont réactualisées à chaque instant en consommant ce qui est consommable et en ajoutant un nombre aléatoire de demandes et d'offres, en suivant une loi de poisson de paramètre $\lambda^{Q_\pm i}$. En plus de cette évolution de l'offre et la demande, on rajoute un troisième phénomène: les cancellation. Ainsi, à tout instant, l'acheteur et le vendeur peut annuler sa demande ou son offre. Ainsi le carnet d'offre et de demande est une chaîne de markov, dont l'état à l'instant $t_{i+1}$ ne dépend que de celui à l'instant $t_i$.
-
-
-
-
-
-
-
 \subsubsection {Modélisation générale}
 On modélise le carnet d'ordre par un vecteur $Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))$ qui évolue dans le temps selon un processus de Markov. L'élément $Q_{\pm i}(t)$ correspond à la disponibilité de l'offre ou de la demande à $p_{\mid}\pm i\text{tick}$ au temps $t$.
 Trois modifications aboutissent à un changement de $Q$:
@@ -1145,6 +779,358 @@ $$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant 
     $$\eta = \frac{N_c}{2N_a}$$
     où $N_c$ est le nombre de continuations du $p_{\text{ref}}$ estimé (mouvements consécutifs dans la même direction) et $N_a$ le nombre d'alternances (mouvements consécutifs en directions opposées), illustre bien ce comportement. Les simulations montrent que $\eta = 0.08$ lorsque $\theta = 1$ et $\theta_{\text{reinit}} = 0$, une valeur nettement inférieure au ratio empirique de $0.39$.
 
+
+\subsection{Modélisation des variations de prix et reconstruction de la volatilité}
+
+Les variations de prix dans le modèle QR sont déclenchées par des événements rares, spécifiquement lorsqu'une limite se vide. Le mécanisme est le suivant :
+
+\begin{itemize}
+    \item Lorsqu'une limite se vide, un tirage de Bernoulli de paramètre $\theta$ détermine la variation du prix de référence $p_{ref}$
+    \item Avec probabilité $\theta$, le prix varie dans le sens de la limite consommée
+    \item Avec probabilité $1-\theta$, le prix reste stable et la limite consommée est reconstituée
+\end{itemize}
+
+\subsubsection{Processus de reconstitution des limites}
+
+La reconstitution d'une limite suit un processus en deux étapes :
+
+\begin{enumerate}
+    \item Un tirage de Bernoulli de paramètre $\theta_{bis}$ est effectué
+    \item Si le tirage vaut 1, le carnet d'ordres complet est réinitialisé selon sa loi invariante
+    \item Sinon, seule la limite consommée est reconstituée selon la loi invariante marginale de la queue dans le contexte global du carnet
+\end{enumerate}
+
+Plus formellement, soit $\pi$ la loi invariante du carnet d'ordres complet et $\pi_i$ la loi marginale de la queue $i$. Le processus de reconstitution peut s'écrire :
+
+\begin{equation}
+    LOB_{t+} = \begin{cases}
+        \sim \pi & \text{si } B(\theta_{bis}) = 1 \\
+        (LOB_t^{-i}, Q_i \sim \pi_i) & \text{si } B(\theta_{bis}) = 0
+    \end{cases}
+\end{equation}
+
+où $LOB_t^{-i}$ représente le carnet d'ordres au temps $t$ privé de la queue $i$, et $Q_i \sim \pi_i$ une nouvelle queue tirée selon la loi marginale.
+
+
+
+\subsubsection{Causes et implications des événements rares}
+
+Les événements rares dans le modèle QR constituent des éléments fondamentaux pour la reconstruction de la volatilité historique des prix. L'analyse de leur chaîne causale révèle une interaction complexe entre facteurs exogènes et endogènes du marché, formalisée par le processus stochastique $\{X_t\}_{t\geq 0}$ qui caractérise l'évolution du carnet d'ordres.
+
+Au niveau macroéconomique dans des modèles type Black-Scholes-Merton, ces événements trouvent leur origine dans les annonces publiques majeures, générant un processus de saut $N_t$ dont l'intensité $\lambda(t)$ varie selon l'importance de l'information. La dynamique des prix peut alors s'écrire sous la forme:
+
+\begin{equation}
+dP_t = \mu_t dt + \sigma_t dW_t + \sum_{i=1}^{N_t} J_i
+\end{equation}
+
+où $J_i$ représente l'amplitude des sauts associés aux événements rares.
+
+
+La reconstruction de la volatilité historique $\hat{\sigma}_t$ s'appuie principalement sur ces événements rares, permettant une estimation robuste via:
+
+\begin{equation}
+\hat{\sigma}_t^2 = \frac{1}{T}\sum_{i=1}^{N_t} (J_i)^2 + \frac{1}{T}\int_0^T \sigma_s^2 ds
+\end{equation}
+
+
+Dans le cadre spécifique du modèle QR, on définit un événement rare en le décomposant en une séquence de sauts (jumps) et de réinitialisations (resets). Le processus de jump-reset peut être formalisé par:
+
+\begin{equation}
+LOB_{t+} = \Phi(\theta, LOB_t) \circ \Psi(\theta_{bis}, \pi)
+\end{equation}
+
+où $\Phi$ représente l'opérateur de saut et $\Psi$ l'opérateur de reset, avec $\pi$ la mesure invariante du carnet d'ordres.
+
+
+
+Cette décomposition capture ainsi la contribution des sauts discrets et de la volatilité continue dans la dynamique des prix.
+
+
+
+
+\subsection{L'autre test}
+
+On va commencer par caractériser mathématiquement un évent rare. Nous disposons d'un carnet d'ordre caractérisé par la taille des queues à chaque évent. On peut ainsi tirer de ces données trois caractéristiques principales, qui nous permettent de construire le vecteur d'état $\eta_{t\in \{t_1,t_2,\dots,t_n\}}$ avec $\{t_1,t_2,\dots,t_n\}\in [0,T_f]^n$ les temps des évents:
+$$\eta_t = (\text{Imb}_t, \Delta_t, {A_t})$$
+avec $\text{Imb}_t$, l'imbalance à la date $t$, $\Delta_t$ le temps entre l'évent $t$ et le suivant et $A_t\in \{A,C,T\}$ l'action réalisée à la date $t$. Nous séléctionnons dans ces vecteurs ceux qui sont des trades. Nous avons donc la famille de taille $n_T$ de vecteurs de deux dimensions $\eta_t^T = (\text{Imb}_t, \Delta_t)$.
+Ce vecteur nous permet de construire la statistique de test et de caractériser complètement les évents rares.
+\\
+\\
+Pour cela, on note $\mathcal I= \{\mathcal I^1,\dots,\mathcal I^m\}$, des buckets de taille $\frac{2}{m}$ de l'intervalle $[-1,1]$. Sachant que la distribution des intensités n'est pas la même en fonction de l'imbalance (cf. Partie III), nous normalisons les $\Delta_t$ par les $\mu_i^n = \frac{1}{\#\{j\in \mathcal I^i\}}\sum_{j\in \mathcal I^i}^n\Delta_{t_i}$, qui correspondent à la moyenne de temps par bucket d'imbalance.
+On note la famille $\tilde \eta_t^T = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^n\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)$, qui correspond aux vecteurs moyennés par bucket d'imbalance.
+Nous obtenons alors la valeur $\Delta_T^{n_T}(\alpha)$ qui correspond au quantile d'ordre $1-\alpha$ de la famille: les $\alpha\% \ \Delta_t$ les plus petits de notre série.
+\begin{proposition}[Convergence du quantile]
+La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$:
+$$T_f\underset{n\to +\infty}{\to}+\infty \ \text{p.s}$$
+$$\frac{n_T}{n}\underset{n\to +\infty}{\to}C^{ste} \ \text{p.s}$$
+et
+$$\Delta_T^{n_T}(\alpha)\underset{n\to +\infty}{\to}\Delta_T(\alpha) \ \text{p.s}$$
+\end{proposition}
+\textit{Démonstration}
+On commence par remarquer que $\eta_t^T$ est presque une chaîne de Markov, au détail près que les $\mu_i^n$, ne dépendent de 
+$n$.  Pour transformer cette chaîne en chaîne de Markov, on considère le modèle QR défini précédement que l'on prolonge sur $(t_i)_{i\in\mathbb{N}}$, en conservant nos événements sur les $n$ premiers instants. On à donc ici défini une chaîne irréductible positive dont la restriction aux $n$ premières valeurs sont les mêmes que notre famille de départ. Ce n'est toujours pas un chaîne de Markov, vu que les $\mu_i^n$, dépendre de $T_f$ (et donc de $n$). Commençons donc par montrer que l'on peut remplacer les $\mu_i^n$ par $\mu_i^{\infty}$ quand $n$ tend vers $+\infty$.
+\\
+\\
+Pour cela il faut montrer que:
+$$ \ \forall i,  \mathbb{P}\left(\forall M \in \mathbb{N}, \text{Imb}_{t_i\in\{t_1,\dots,t_M\}}\notin \mathcal{I}^{i}\right) = 0$$
+\\
+Ce résultat est direct par construction de notre chaîne qui est désormais irréductible positive. On a donc une probabilité non nulle d'appartenir à un bucket d'imbalance, c'est-à-dire que:
+
+$$\mu_i^n = \frac{n}{\#\{j\in \mathcal I^i\}}\frac{1}{n}\sum_{j}^n\mathbb{I}_{j\in \mathcal I^i}\Delta_{t_i}\underset{n\to+\infty}{\to}\mu_i^{\infty}$$
+via la loi forte des grand nombre. Ainsi, on peut montrer notre résultat sur la famille:
+$$\eta_t^{\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^n\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t}}, A_t\right)$$
+Notre chaîne est donc maintenant une chaîne de Markov recurrente positive et l'on peut donc utiliser le théorème ergotique pour montrer que:
+$$\frac{1}{n}\sum_{i=1}^n\mathbb{I}_{A_t=T} = \frac{n^T}{n} \underset{n\to+\infty}{\to} C^{ste}$$
+ce qui est le premier résultat voulu. Le second résultat découle directement du théorème ergodique en utilisant le fait que $\Delta_T^n$ peut s'écrire comme une somme d'indicatrice. 
+\\
+\\
+Notre famille sera désormais: 
+$\tilde \eta_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)=\left(\text{Imb}_t, \tilde{\Delta_t}\right)$
+\begin{definition}[Événement rare]
+On défini un événement rare une événement à la date $t$ tel que $\tilde{\Delta_t}<\Delta_T(\alpha)$.
+    
+\end{definition}
+
+
+Nous allons maintenant énoncé le résultat principal: l'uniformité des événements rares.
+\begin{theorem}[Uniformité des événements rares]
+\\
+\\
+Soit un Order book d'un modèle QR de temps $T_f\in \mathbb{R}$, caractérisé par son vecteur d'état $\tilde \eta_{t_i\in [t_1,\dots,T_f]}$.
+\\
+$\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ est indépendante du temps quand $n\to\infty$. C'est à dire que les événements rares sont uniforméments repartis dans l'intervalle de temps.
+
+\end{theorem}
+\textit{Démonstration} On commence par montrer que $\mathbb{P}\left(\tilde\eta_t^{T,\infty}\in q_{\alpha}\right)$ est indépendante du temps quand $n\to+\infty$. La Preuve réside dans la définition de l'événement rare. Vu que $\Delta_T(\alpha)$ ne dépend plus de $n$, on peut écrire cette probabilité comme une somme d'indicatrice ne dépendant que de notre chaîne de Markov. Ainsi, on a nécessairement convergence vers une constante d'après le théorème érgotique. On repasse à $\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ en utilisant la convergence des $\mu_i^n$.
+\\
+\\
+Ainsi, on a montrer que modèle QR générait de manière uniforme les événements que l'on a caractérisé comme rares. On devrait donc avoir une densité qui tend vers la densité uniforme. 
+\\
+\\
+On énonce maintenant le corollaire que l'on utilisera par la suite. Pour cela on nomme $(S^\gamma_{k})_{k\in \mathbb{N}}$, une sliding window de durée $\gamma$.
+\begin{corollary}[Stationnarité de la probabilité d'une Slinding Window] 
+\\
+\\
+Soit $\gamma \in \mathbb{R}$, $(S^\gamma_{k})_{k\in \mathbb{N}}$ une slinding window de durée $\gamma$ et $(\tilde\eta_{t_{i\in \mathbb{N}}})$ notre vecteur d'état. On note $\mathcal{R}(\alpha)$ les évents rares et $e$ les événements:
+$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}$$
+\end{corollary}
+\textit{Démonstration} Il suffit de considérer le QR restreint à chaque $S^{\gamma}_k$. On a donc via le théorème précédent:
+$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}(k)$$
+La propriété de Markov assure que $C^{ste}(k) = C^{ste}$
+\\
+\\
+On crée notre test en utilisant une sliding-window $S_t^{\gamma,j}$, où $j$ correspond à la journée considérée:
+$$\hat p(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t^{\gamma,j}\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^{\gamma,i}\}}$$
+\\
+\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Test statistique sur sliding window temporelle}
+
+Dans cette section, nous construisons un test statistique basé sur les développements précédents afin de déterminer l'uniformité des événements rares dans le carnet d'ordres. Nous présenterons à la fois des intervalles de confiance asymptotiques et non asymptotiques.
+
+\subsubsection{Hypothèses du test}
+
+Nous considérons les hypothèses suivantes :
+
+\begin{itemize}
+    \item \textbf{Hypothèse nulle ($H_0$)} : Les événements rares sont distribués uniformément dans le temps.
+    \item \textbf{Hypothèse alternative ($H_A$)} : Les événements rares ne sont pas distribués uniformément, indiquant une agrégation temporelle.
+\end{itemize}
+
+\subsubsection{Définition de la statistique de test}
+
+Nous définissons la statistique de test basée sur la proportion d'événements rares dans une fenêtre glissante de durée $\gamma$ :
+
+$$
+\hat{p}(S_k^{\gamma}) = \frac{\#\{e \in \mathcal{R} \cap S_k^{\gamma}\}}{\frac{1}{N} \sum_{i=1, i \neq j}^N \#\{e \in S_k^{\gamma, i}\}}
+$$
+
+où :
+\begin{itemize}
+    \item $S_k^{\gamma}$ est une fenêtre glissante de durée $\gamma$.
+    \item $\mathcal{R}$ est l'ensemble des événements rares.
+    \item $N$ est le nombre total de fenêtres considérées.
+\end{itemize}
+
+\subsubsection{Construction de l'intervalle de confiance asymptotique}
+
+Sous l'hypothèse $H_0$, grâce au théorème ergodique, la proportion $\hat{p}(S_k^{\gamma})$ converge vers une constante $C^{ste}$ lorsque $n \to \infty$. En appliquant le théorème central limite, nous approximons la distribution asymptotique de $\hat{p}(S_k^{\gamma})$ par une distribution normale :
+
+$$
+\hat{p}(S_k^{\gamma}) \approx \mathcal{N}\left(C^{ste}, \frac{C^{ste}(1 - C^{ste})}{n \gamma^2}\right)
+$$
+
+Ainsi, un intervalle de confiance asymptotique à $1 - \alpha$ niveau de confiance est donné par :
+
+$$
+IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
+$$
+
+où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
+
+\subsubsection{Construction de l'intervalle de confiance non asymptotique}
+
+Pour les intervalles de confiance non asymptotiques, nous utilisons l'inégalité de Hoeffding, qui fournit une borne sur la probabilité que la proportion observée s'écarte de la proportion attendue indépendamment de la taille de l'échantillon. Sous $H_0$, la probabilité que la proportion réelle diffère de la proportion observée par plus de $\epsilon$ est bornée par :
+
+$$
+\mathbb{P}\left( \left| \hat{p}(S_k^{\gamma}) - C^{ste} \right| \geq \epsilon \right) \leq 2 \exp(-2 n \gamma^2 \epsilon^2)
+$$
+
+Pour obtenir un intervalle de confiance non asymptotique à un niveau de confiance $1 - \alpha$, nous résolvons l'inégalité suivante :
+
+$$
+2 \exp(-2 n \gamma^2 \epsilon^2) \leq \alpha
+$$
+
+Ce qui implique :
+
+$$
+\epsilon = \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}
+$$
+
+Ainsi, l'intervalle de confiance non asymptotique est donné par :
+
+$$
+IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
+$$
+
+\subsubsection{Justification des intervalles de confiance}
+
+\paragraph{Asymptotique} L'intervalle de confiance asymptotique repose sur l'application du théorème central limite, qui justifie l'approximation de la distribution de $\hat{p}(S_k^{\gamma})$ par une distribution normale lorsque la taille de l'échantillon $n$ tend vers l'infini.
+
+\paragraph{Non asymptotique} L'intervalle de confiance non asymptotique utilise l'inégalité de Hoeffding, qui fournit une borne stricte sur la déviation de la proportion observée par rapport à la proportion attendue, indépendamment de la taille de l'échantillon.
+
+\subsubsection{Preuve de la convergence}
+
+\begin{proposition}[Convergence du quantile]
+La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$ :
+$$
+T_f \xrightarrow{n \to +\infty} +\infty \quad \text{p.s.}
+$$
+$$
+\frac{n_T}{n} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
+$$
+et
+$$
+\Delta_T^{n_T}(\alpha) \xrightarrow{n \to +\infty} \Delta_T(\alpha) \quad \text{p.s.}
+$$
+\end{proposition}
+
+\textit{Démonstration}
+
+1. **Chaîne de Markov et Ergodicité :** 
+   La famille de vecteurs $\tilde{\eta}_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m \mu_i^{\infty} \mathbb{I}_{\text{Imb}_t \in \mathcal{I}^{i}}}\right)$ forme une chaîne de Markov récurrente positive grâce à l'ergodicité. Cela garantit que les moyennes temporelles convergent vers les moyennes d'invariant.
+
+2. **Application du Théorème Ergodique :** 
+   Par le théorème ergodique, pour une fonction indicatrice $\mathbb{I}_{A_t = T}$, nous avons :
+   $$
+   \frac{1}{n} \sum_{i=1}^n \mathbb{I}_{A_t = T} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
+   $$
+   
+   De plus, les quantiles des $\Delta_t$ normalisés convergent également vers des constantes $\Delta_T(\alpha)$.
+
+3. **Uniformité des Événements Rares :**
+   Le théorème ergodique assure que la probabilité $\mathbb{P}\left(\tilde{\eta}_t^{T,\infty} \in q_{\alpha}\right)$ devient indépendante du temps à mesure que $n \to +\infty$, ce qui implique une répartition uniforme des événements rares dans le temps.
+
+Ainsi, la proposition est validée.
+
+\subsubsection{Construction de l'intervalle de confiance}
+
+À partir de la convergence du quantile et de l'uniformité des événements rares, nous pouvons établir les intervalles de confiance suivants :
+
+\paragraph{Intervalle de confiance asymptotique}
+
+En utilisant le théorème central limite, pour $n$ grand, la statistique de test suit une distribution normale. L'intervalle de confiance est alors :
+
+$$
+IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
+$$
+
+où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
+
+\paragraph{Intervalle de confiance non asymptotique}
+
+En appliquant l'inégalité de Hoeffding, nous obtenons un intervalle de confiance non asymptotique :
+
+$$
+IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
+$$
+
+Cet intervalle garantit que la probabilité que la proportion réelle $p$ se trouve en dehors de cet intervalle est au plus $\alpha$.
+
+\subsubsection{Conclusion du test statistique}
+
+Le test statistique se déroule comme suit :
+
+\begin{enumerate}
+    \item \textbf{Calcul de la statistique de test :} Calculer $\hat{p}(S_k^{\gamma})$ pour chaque fenêtre glissante $S_k^{\gamma}$.
+    \item \textbf{Construction des intervalles de confiance :} Construire les intervalles de confiance asymptotiques et non asymptotiques correspondants.
+    \item \textbf{Décision :} Comparer $\hat{p}(S_k^{\gamma})$ avec les intervalles de confiance.
+    \begin{itemize}
+        \item Si $\hat{p}(S_k^{\gamma})$ est en dehors de l'intervalle de confiance, rejeter $H_0$ en faveur de $H_A$.
+        \item Sinon, ne pas rejeter $H_0$.
+    \end{itemize}
+    \item \textbf{Interprétation :} Une proportion significativement différente de $C^{ste}$ indique une non-uniformité des événements rares, suggérant une agrégation temporelle.
+\end{enumerate}
+
+Cette approche permet d'évaluer rigoureusement l'uniformité des événements rares dans le temps, en utilisant des fondements théoriques solides issus du théorème ergodique et des inégalités de concentration.
+
+% Fin de la preuve
+
+
+
+
+
+
+
+
+
+\newpage
+
     \subsection{Hypothèses et attentes théoriques}
 
     Au vu du modèle Queue Reactive et de la revue de littérature, plusieurs hypothèses et prédictions émergent quant à l'impact des news sur la dynamique du carnet d'ordres :
@@ -1225,7 +1211,6 @@ $$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant 
     Ces hypothèses serviront de guide pour l'analyse empirique qui suit, permettant de confronter les prédictions théoriques aux observations du marché.
 
     \newpage
-    \vspace*{2cm}
     \section{Le modèle QR: observation sur les marchés HF
 }
 \subsection{Intensité des événements}
@@ -1448,7 +1433,7 @@ Pour une étude plus approfondie, nous sélectionnons les jours $j$ où les prob
 
 Il est alors facile de comprendre ce qu'il se passe en réalité: ces jours correspondent à l'annonce de nouvelles importante concernant Google. Nous avons donc une corrélation directe entre événements rares et news extérieurs. \textbf{Il n'est donc pas possible de capter l'intégralité des mouvements de prix dans le MBO!} Il y a par conséquent une nécessité d'apporter des facteurs exogènes qui viennent incorporer ces événements dans la modélisation de l'order book.
 
-
+\newpage
 
 
     
@@ -1456,7 +1441,6 @@ Il est alors facile de comprendre ce qu'il se passe en réalité: ces jours corr
     \newpage
     \section*{Appendice}
     \addcontentsline{toc}{section}{Appendice}
-    \vspace*{2cm}
     \subsection*{Preuves}
     \subsection*{Preuve de la distribution uniforme des événements rares}
     \addcontentsline{toc}{subsection}{Preuve de la distribution uniforme des événements rares}
@@ -1559,7 +1543,7 @@ Il est alors facile de comprendre ce qu'il se passe en réalité: ces jours corr
     où $D_{\text{critique}}(\alpha)$ est la valeur critique déterminée par le niveau de signification $\alpha$.
 
     \end{corollary}
-
+\newpage
     \subsection{Estimation dynamique du paramètre $\theta$}
 
 \begin{proposition}[Estimation de $\theta$ par maximum de vraisemblance conditionnel]
@@ -1772,12 +1756,8 @@ où $\hat{\theta}_{-i}$ est l'estimateur calculé sans l'observation $i$.
 
 
     \newpage
-    \vspace*{5cm}
     \section*{Conclusion}
-    \vspace*{2cm}
-    c Finito ouuuuu
     \newpage
-    \vspace*{5cm}
     \section*{Bibliography}
 
     \addcontentsline{toc}{section}{Bibliography}
