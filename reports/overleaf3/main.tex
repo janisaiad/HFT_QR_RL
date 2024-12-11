@@ -3,7 +3,7 @@
 
     % Packages essentiels
     \usepackage[utf8]{inputenc}
-    \usepackage[T1]{fontenc} 
+    \usepackage[T1]{fontenc}
     \usepackage[french]{babel}
     \usepackage{lmodern}
 
@@ -27,6 +27,7 @@
     \usepackage{xcolor}
     \usepackage{titlesec}
     \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+    \documentclass{article}
     \usepackage{pgfplots}
     \usepgfplotslibrary{fillbetween}
     \usepackage{caption}
@@ -140,7 +141,7 @@
     \subsection{Présentation des marchés hautes fréquences (HF)}
 
 
-    L'électronification des marchés financiers à la fin du dernier siècle a été un tournant majeur dans le fonctionnement des marchés. L'adoption massive de la technologie et des systèmes électroniques a drastiquement réduit le temps d'exécution des transactions à l'ordre de la dizaine de microsecondes, créant une toute nouvelle structure à l'échelle microéconomique. Ce changement s'est naturellement accompagné d'une intensification  du nombre de trades effectués chaque jour (cf.Figure), entraînant une réduction significative du temps moyen entre deux trades.
+    L'électronification des marchés financiers à la fin du dernier siècle a été un tournant majeur dans le fonctionnement des marchés. L'adoption massive de la technologie et des systèmes électroniques s'est accompagné d'une intensification  du nombre de trades effectués chaque jour (cf.Figure) et a eu pour conséquence de drastiquement réduire le temps d'exécution des ordres de marchés qui sont -aujourd'hui d'une fréquence de l'ordre de la dizaine de microsecondes - créant ainsi une toute nouvelle structure à l'échelle microéconomique. 
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -196,34 +197,34 @@
         \vspace{1em}
         \textbf{\large Volume de trades d'Options ADV (expiration de 1 mois) de 1975 à 2023}
     \end{center}
-    Cette redifinition de l'échelle temporelle à amener les traders à distinguer distinguer différents niveaux de fréquence de trading. On peut classer les trades en trois catégories principales :
+    Cette redéfinition de l'échelle temporelle à amener les traders à distinguer différents niveaux dans les fréquences de trading. On peut trouver trois catégories principales de type de trading:
 
     \begin{itemize}
         \item \textbf{Low Frequency (LF)} : Durée de l'ordre de plusieurs mois, voire plusieurs années. Il s'agit généralement de transactions à long terme, réalisées par des investisseurs qui cherchent à maximiser leurs profits sur des échéances étendues, souvent basées sur des analyses fondamentales et la prévision de tendances économiques générales réalisé par les banques et hedge funds.
 
-        \item \textbf{Mid Frequency (MF)} : De l'ordre de la journée, l'heure, voire la minute. Les traders à fréquence moyenne cherchent à profiter des opportunités à court terme en enlevant la non continuité temporelle des marchés visible dans les transactions à haute fréquence. 
+        \item \textbf{Mid Frequency (MF)} : De l'ordre de la journée, l'heure, voire la minute. Les traders à fréquence moyenne cherchent à profiter des opportunités à court terme en enlevant la non continuité temporelle des marchés visible dans les transactions hautes fréquences. 
 
-        \item \textbf{High Frequency (HF)} : Ordre de la seconde, de la milliseconde, voire de la microseconde. Ici, les traders HF (hedge funds, EHT) cherhceh des modèles pour réaliser des stratégies de trading optimal.
+        \item \textbf{High Frequency (HF)} : Ordre de la seconde, de la milliseconde, voire de la microseconde. Ici, les traders HF (hedge funds, EHT) cherchent des modèles pour réaliser des stratégies de trading optimal, où pour exploiter l'arbitrage des marchés.
     \end{itemize}
     \\
-    Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT et LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés.
+    Les comportements des marchés sont très différents en fonction de ces échelles de fréquence, notamment entre le HFT et le MFT/LFT. Ces différences sont principalement liées à la manière dont l'offre et la demande s'ajustent sur les échelles de temps. En particulier, en HF le temps n'est plus continu et il est nécessaire de prendre en compte cette discontinuité pour avoir une modélisation réaliste des marchés. Les modélisation sont donc fondamentalement différentes: les modèles browniens sont utilisés en grande majorité en MLF/LFT en supposant que le cours de l'actif est continu, là où des modèles de chaînes de Markov modélisant l'offre et la demande sont préférés en HFT.
     \\
     \\
-    Les interactions entre les acheteurs et les vendeurs se font de manière algorithmique, selon l'ordre d'arrivée des ordres dans les files d'attente de l'offre et de la demande. Ce processus est géré par le \textbf{Market Order Book}, souvent appelé le carnet d'ordres, qui liste tous les ordres d'achat et de vente. Ces modifications sont de trois natures principales :
+    Les interactions entre les acheteurs et les vendeurs se font de manière algorithmique, selon l'ordre d'arrivée des ordres dans les files d'attente de l'offre et de la demande. Ce processus est géré par le \textbf{Market Order Book}, le carnet d'ordres, qui liste et exécute tous les ordres envoyés par les différents acteurs du marché. Ces modifications sont de trois natures principales :
 
     \begin{itemize}
-        \item \textbf{Limit Order} : Il s'agit d'un ajout d'une proposition d'achat ou de vente à un prix déterminé. 
+        \item \textbf{Limit Order} : ajout d'une proposition d'achat ou de vente à un prix déterminé. 
 
-        \item \textbf{Market Order} : Cet ordre vise à acheter ou vendre immédiatement au meilleur prix disponible sur le marché. 
+        \item \textbf{Market Order} : Achat ou vente immédiat au meilleur prix disponible sur le marché. 
 
-        \item \textbf{Cancellation} : L'annulation d'un ordre consiste à retirer une proposition d'achat ou de vente précédemment inscrite dans le carnet d'ordres.
+        \item \textbf{Cancellation} : Retrait d'une proposition d'achat ou de vente précédemment inscrite dans le carnet d'ordres.
     \end{itemize}
 
-    La microstructure de marché créée via ces interactions entre acheteurs et vendeurs est la base de la formation des prix et leur variation au cours du temps.
+    La microstructure de marché créée via ces interactions entre acheteurs et vendeurs est à la base du processus de formation des prix et entraîne leurs variations au cours du temps.
 
     \subsection{Processus de formation des prix}
     \subsubsection{Le Market Book Order}
-    À l'échelle haute fréquence, les mouvements des prix découlent en grande partie des interactions entre l'offre et la demande. De chaque côté (bid et ask), les acteurs font des offres plus ou moins proches du prix de référence $p_{ref}$. Ce prix $p_{ref}$ ne peut prendre que des valeurs multiple d'une grandeur appelée \textbf{tick}. 
+    À l'échelle haute fréquence, les mouvements des prix découlent en grande partie des interactions entre l'offre et la demande. De chaque côté (bid et ask), les acteurs font des offres plus ou moins proches du prix de référence $p_{ref}$. L'une des caractéristiques principales de la HF est que les prix ne peuvent prendre que des valeurs multiples d'une grandeur appelée \textbf{tick}. 
     
     \begin{figure}[h!]
         \centering
@@ -231,7 +232,7 @@
             % Axis
             \begin{axis}[
                 width=12cm,
-                height=5cm,
+                height=4.5cm,
                 axis x line=middle,
                 axis y line=left,
                 ymin=0,
@@ -241,7 +242,7 @@
                 xtick={-4,-3,-2,-1,0,1,2,3},
                 xticklabels={$P_{-4}$, $P_{-3}$, $P_{-2}$, $P_{-1}$, $P_1$, $P_2$, $P_3$, $P_4$},
                 xlabel={Price ticks},
-                ylabel={Taille de la file d'attente},
+                ylabel={Taille de la file},
                 ymajorgrids,
                 tick label style={font=\footnotesize},
                 xlabel style={below},
@@ -272,7 +273,7 @@
         \end{tikzpicture}
         \caption{Limit order book théorique}
     \end{figure}
-Ainsi, la différence bid-ask ne peut prendre que des valeurs entières de ticks et sont situés à une distance proche de $p_{ref} = \frac{p_{bid}+p_{ask}}{2}$. À chaque instant, de nouveaux acteurs peuvent s'ajouter sur un prix, qui sera alors modélisée comme une file d'attente, dont l'ordre est défini par l'ordre d'arrivée. Le graphique ci-dessus est une représentation  théorique des tailles de file d'attente d'un actif. On voit que les tailles sont de plus en plus grande, et théoriquement devraient augmenter jusqu'à 0 et $+\infty$, un acheteur ou un vendeur ayant plus intérêt à se mettre le plus loin de $p_{ref}$, pour augmenter ses bénéfices. Cela n'est pas observer en pratique, vu que se placer dans une queue est payant et l'on a donc une limite à partir de laquelle l’espérance des gains devient plus faible que le coût d'entrée.
+Ainsi, la différence bid-ask ne peut prendre que des valeurs entières de ticks et sont situés à une distance plus ou moins proche de $p_{ref} = \frac{p_{bid}+p_{ask}}{2}$. À chaque instant, de nouveaux acteurs peuvent s'ajouter sur un prix, qui sera alors modélisée comme une file d'attente, dont l'ordre est défini par l'ordre d'arrivée. Le graphique ci-dessus est une représentation  théorique des tailles de file d'attente d'un actif. On voit que les tailles sont de plus en plus grande, et théoriquement devraient augmenter de 0 jusqu'à $+\infty$, un acheteur ou un vendeur ayant plus intérêt à se mettre le plus loin de $p_{ref}$, pour augmenter ses bénéfices. Cela n'est pas observé en pratique, vu que se placer dans une queue est payant et l'on a donc une limite à partir de laquelle l’espérance des gains devient plus faible que le coût d'entrée.
 
 
 \hspace*{-2.5cm}
@@ -402,11 +403,11 @@ Ainsi, la différence bid-ask ne peut prendre que des valeurs entières de ticks
 \node at (13,10) {\textbf{Market order Book à $t_{k+1}$}};
 \node at (8,-10) {\textbf{Évolutions possibles du Market Book Order}};
 \end{tikzpicture}
-On a représenté ci-dessus l'évolution du MBO suite à un Add, Cancel ou un Order. ON voit bien que l'on peut avoir une évolution du prix de référence dans le cas où l'on vient à épuiser une limite où lorsqu'une nouvelle est créée. C'est cette dynamique du prix de référence qu'il faut capter afin de bien comprendre le processus de formation des prix à l'échelle microéconomique. Pour cela on utilisera plusieurs bases de données.
+On a représenté ci-dessus l'évolution du MBO suite à un Add, Cancel ou un Order. On voit bien que l'on peut avoir une évolution du prix de référence dans le cas où l'on vient à épuiser une limite où lorsqu'une nouvelle est créée. C'est cette dynamique du prix de référence qu'il faut capter afin de bien modéliser l'évolution des prix en haute fréquence pour l'entraînement de stratégies de trading. Pour bien comprendre l'évolution et les interactions entre l'offre et la demande, nous utiliserons des données brutes de carnets d'ordre dans toute notre étude. Nous commencerons par exploiter simplement les données avant d'étudier les modélisation des carnets d'ordres en HF.
 
 
 \subsubsection{Données utilisées}
-Dans la suite de notre étude, nous étudierons tout particulièrement les actif GOOGL, LCID, et KHC. Ces actifs correspondent respectivement à Google, Lucid Group Inc (constructeur américain de véhicules électriques de luxe) et The Kraft Heinz Company (multinationale américaine spécialisée dans l'agroalimentaire).
+Dans la suite de notre étude, nous étudierons tout particulièrement les actifs GOOGL, LCID, et KHC. Ces actifs correspondent respectivement à Google, Lucid Group Inc (constructeur américain de véhicules électriques de luxe) et The Kraft Heinz Company (multinationale américaine spécialisée dans l'agroalimentaire).
 
 \begin{table}[h!]
 \centering
@@ -438,7 +439,7 @@ KHC  & 202958   & 47,75\%  & 45,34\%  & 6,89\%
 \caption{Tableau des données du Nasdaq moyennées sur 65 jours}
 \label{tab:exemple}
 \end{table}
-Les données sont issus de la base de données Databento et ne concernent que la bourse du Nasdaq. On voit tout d'abord qu ces certains actifs sont plus tradés que d'autres notamment GOOGL par rapport au deux autres.
+Les données sont issus de la base de données Databento et ne concernent que la bourse du Nasdaq. On voit tout d'abord que certains actifs sont plus tradés que d'autres notamment GOOGL par rapport au deux autres. Les estimations seront donc naturellement plus précise pour cet actif.
 \\
 \\
 Les données sont sous format de dataframe par journée comprenant toutes les modifications apportées au MBO des trois actifs étudiés. Ce MBO comprend alors:
@@ -463,13 +464,13 @@ Les données sont sous format de dataframe par journée comprenant toutes les mo
 \end{itemize}
 
 
-Nous avons dans un premier temps triées ces données, qui étaient très dégradées. Pour commencer afin de s'enlever les comportements particuliers de l'ouverture et de la fermeture des marchés, nous avons choisi de ne sélectionner que les données à $\pm1.5$h de la fermeture/ouverture de la bourse du Nasdaq. Par la suite nous avons réalisé un traitement systématique des données, afin d'enlever les occurrences inutiles.
+Nous avons dans un premier temps trier ces données, qui étaient très dégradées. Pour commencer, afin de s'enlever les comportements particuliers de l'ouverture et de la fermeture des marchés, nous avons choisi de ne sélectionner que les données à $\pm1.5$h de la fermeture/ouverture de la bourse du Nasdaq. Par la suite nous avons réalisé un traitement systématique des données, afin d'enlever les occurrences inutiles.
 \\
 \\
-Pour commencer, nous avons observé que plusieurs actions avaient lieu au même timestamp, ce qui n'est bien sûr pas réaliste. Afin de régler ce problème, nous avons observé les suites d'action que cela concernait:
+Dès le début de notre étude, nous avons observé que plusieurs actions avaient lieu au même timestamp, ce qui n'est bien sûr pas réaliste. Afin de régler ce problème, nous avons observé les suites d'actions que cela concernait:
 \begin{itemize}
-\item Séquences de Trades terminées par un Cancel sans épuisement de limite: Ces actions correspondent probablement à un Trade agressif de type iceberg, qui est découpé en plus petit trades, dans ce cas, nous avons concaténer les trades pour n'een faire qu'un seul dont la taille est la somme de tous les trades réalisées. On observe que cette suite d'action fini souvent par un Cancel (mais pas tout le temps);
-\item Séquences de Trades terminées par un Cancel avec épuisement de limite: Dans ce cas, l'ordre de trade agressif épuise la limite. Nous avons donc comme précédement concaténer les trades avant et après épuisement de la limite tout en marquant le passage d'une nouvelle limite. Le Cancel correspond ici probablement à l'annulation des trades qui devaient avoir lieu sur la limite épuisée;
+\item Séquences de Trades terminées par un Cancel sans épuisement de limite: Ces actions correspondent probablement à un Trade agressif de type iceberg, qui est découpé en plus petit trades. Dans ce cas, nous avons concaténé les trades pour n'en faire qu'un seul dont la taille est la somme de tous les trades réalisés. On observe que cette suite d'actions finie souvent par un Cancel (mais pas tout le temps);
+\item Séquences de Trades terminées par un Cancel avec épuisement de limite: Dans ce cas, l'ordre de trade agressif épuise la limite. Nous avons donc comme précédément concaténé les trades avant et après épuisement de la limite tout en marquant le passage d'une nouvelle limite. Le Cancel correspond ici probablement à l'annulation des trades qui devaient avoir lieu sur la limite épuisée;
 \item Séquences de Trades et de Cancel terminées par un Cancel sans épuisement de limite: On observe également des séquences de trades agressifs qui ne se terminent pas par un Cancel. Nous l'avons traité comme précédemment en regroupant les trades en un seul;
 \item Séquences de Trades et de Cancel terminées par un Cancel avec épuisement de limite: Même traitement que précédemment;
 \item Séquences de Trades et de Cancel non terminées par un Cancel sans épuisement de limite: Même traitement que précédement.
@@ -477,7 +478,7 @@ Pour commencer, nous avons observé que plusieurs actions avaient lieu au même 
 Ces observations pourraient être expliquées par le fait qu'un trade agressif de taille $N$ décomposé en $m$ petits trades est process par paquets d'une dizaine de trades suivi d'un cancel par exemple.
 \\
 \\
-Afin de vérifier que notre dataframe était bien nettoyé, l'on regarde si la size de l'action à l'instant $t_k$ est en accord avec la tailles des queues aux instants $t_k$ et $t_{k+1}$. Nous devrons alors avoir un marqueur positif à l’exception des timestamps correspondant à l'apparition ou la disparition d'une limite. Pour cela, l'on sélectionne la limite $N$ que l'on veut étudier tout en prenant soin de prendre en compte les tailles des queues $N-1$ et $N+1$ en compte pour l'apparition des nouvelles limites. Nous avons alors nos données totalement nettoyées par limite. 
+Afin de vérifier que notre dataframe était bien nettoyé, nous regardons si la size de l'action à l'instant $t_k$ est en accord avec la tailles des queues aux instants $t_k$ et $t_{k+1}$. Nous devrions alors avoir un marqueur positif à l’exception des timestamps correspondant à l'apparition ou la disparition d'une limite. Pour cela, l'on sélectionne la limite $N$ que l'on veut étudier tout en prenant soin de prendre en compte les tailles des queues $N-1$ et $N+1$ en compte pour l'apparition des nouvelles limites. Nous avons alors nos données totalement nettoyées par limite. 
 \\
 \\
 Avec les données obtenues, on peut dans un premier temps tracer les limites et l'évolution du prix en fonction du temps. Le graphique obtenu nous montre bien que les trades n'ont pas lieu à intervalle de temps régulier, et semblent plus fréquent dans les zones où les prix varient beaucoup.
@@ -540,14 +541,11 @@ On peut également s'intéresser à la taille moyenne des queues sizes, afin d'o
 \\
 Nous allons maintenant étudier une des grandeurs caractéristique de la haute fréquence, qui permet de capter la majeur partie des mouvements de prix en suivant le MBO: l'imbalance.
 
-
-
-
 \subsection{L'imbalance, la clé des modèles hautes fréquences}
 
-L'étude de la première limite du MBO (Bouchaud et al., 2004 et Besson et al., 2016) permet de comprendre comment leur taille respectives influent sur le prochain mouvement de prix. Malheureusement, cette prédiction n'est pas assez précise pour être rentable sur le long terme, et il st donc nécessaire d'avoir une étude plus fine du processus de formation des prix. Cependant, l'étude de la première limite nous permet de sortir une première information capitale de l'order book: l'imbalance. 
+L'étude de la première limite du MBO (Bouchaud et al., 2004 et Besson et al., 2016) permet de comprendre comment la taille de la première limite du bid et de l'ask influent sur le prochain mouvement de prix. Malheureusement, cette prédiction n'est pas assez précise pour être rentable sur le long terme, et il est donc nécessaire d'avoir une étude plus fine du processus de formation des prix. Cependant, l'étude de la première limite nous permet de sortir une première information capitale de l'order book, l'imbalance que l'on défini par:
 $$\text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}$$
-Cette première donnée permet de capter les mouvements prix moyen. En effet, lorsque l'imbalance est négatif, le déséquilibre entre l'offre et la demande aura pour conséquence de faire évoluer les prix vers le bas, et inversement. 
+Cette première donnée permet de capter les mouvements de prix moyen. En effet, lorsque l'imbalance est négatif, le déséquilibre entre l'offre et la demande aura pour conséquence de faire évoluer les prix vers le bas, et inversement. 
 \begin{figure}[h!]
     \centering
     % Première figure
@@ -569,7 +567,7 @@ Cette première donnée permet de capter les mouvements prix moyen. En effet, lo
     \label{fig:comparison}
 \end{figure}
 \\
-En traçant l'imbalance en fonction du $\Delta_p$, on observe une relation linéaire entre ces deux valeurs, qui nous conforte donc sur nos observations précédentes. On remarque aussi que l'imbalance n'a pas une densité uniforme, ce qui revient à dire que le market book order est plus souvent déséquilibré qu'équilibré, ce qui permet d'avoir des mouvements de prix. Nous verrons par la suite d'autre observations sur l'imbalance notamment en fonction de l'intensité des trades.
+En traçant l'imbalance en fonction du $\Delta_p$, on observe une relation linéaire entre ces deux valeurs, qui nous conforte donc sur nos observations précédentes. On remarque aussi que l'imbalance n'a pas une densité uniforme, ce qui revient à dire que le market book order est plus souvent déséquilibré qu'équilibré, ce qui permet d'avoir des mouvements de prix. Nous verrons par la suite d'autres observations sur l'imbalance notamment en fonction de l'intensité des trades.
 \\
 \\
 L'étude de l'imbalance peut aussi se porter sur les add et les cancels, qui ont des comportements similaires, n'étant pas des orders.
@@ -594,7 +592,7 @@ L'étude de l'imbalance peut aussi se porter sur les add et les cancels, qui ont
     \label{fig:comparison}
 \end{figure}
 \\
-On observe un comportement inversé aux trades: ici, on aura tendance à s'ajouter ou à se retirer lorsqu'il ne se passe rien en prévision d'un trade aux imbalances extrêmes. Une étude aux limites supérieur nous montre que le comportement de l'imbalance est relativement similaire, avec une distribution qui devient de plus en plus uniforme au fur et mesure que l'on s'enfonce dans les limites.
+On observe ici un comportement inversé aux trades: un acteur aura tendance à s'ajouter ou à se retirer lorsqu'il ne se passe rien en prévision d'un trade aux imbalances extrêmes. Une étude aux limites supérieures nous montre que le comportement de l'imbalance est relativement similaire, avec une distribution qui devient de plus en plus uniforme au fur et mesure que l'on s'enfonce dans les limites.
 \\
 \\
 Rajouter les graphes de heatmap+étude de la première limite par rapport à la seconde???
@@ -602,76 +600,218 @@ Rajouter les graphes de heatmap+étude de la première limite par rapport à la 
 
 
 
-
-
-
-
-
 \newpage
-\vspace*{3cm}
 \section{Modèle Queue Reactive}
-\vspace*{2cm}
 
 \subsection{Modélisation Queue Reactive sans variations de prix}
+
+Le modèle Queue Reactive (QR) est un modèle de microstructure de marché qui décrit la dynamique du carnet d'ordres limites. Dans sa version la plus simple, sans variations de prix, il modélise l'évolution des queues d'ordres à un niveau de prix donné.
+
+Les principales caractéristiques de ce modèle sont :
+
+\begin{itemize}
+    \item Les arrivées d'ordres (ajouts, annulations, transactions) suivent des processus de Poisson
+    \item Les intensités des processus dépendent de l'état du carnet d'ordres
+    \item Le modèle capture les interactions entre les différents types d'ordres
+\end{itemize}
+
+Plus formellement, soit $q_t$ la taille de la queue au temps $t$. L'évolution de $q_t$ est décrite par :
+
+\begin{equation}
+    dq_t = dN_t^a - dN_t^c - dN_t^m
+\end{equation}
+
+où $N_t^a$, $N_t^c$ et $N_t^m$ sont respectivement les processus de Poisson pour les ajouts, annulations et transactions.
+
 \subsection{Modélisation Queue Reactive avec variations de prix}
+
 \subsubsection{Modèle théorique}
-Dans un premier temps, nous étudierons le modèle sans paramètres exogènes.
+
+Dans cette version plus complexe, le modèle intègre les variations de prix. Les intensités des processus dépendent alors non seulement de la taille des queues, mais aussi des déséquilibres entre l'offre et la demande.
+
+Le modèle s'enrichit des éléments suivants :
+
+\begin{itemize}
+    \item Introduction d'un processus de saut pour modéliser les changements de prix
+    \item Prise en compte des déséquilibres entre les meilleures limites
+    \item Modélisation de la propagation des ordres entre niveaux de prix
+\end{itemize}
+
+L'évolution du prix $p_t$ est donnée par :
+
+\begin{equation}
+    dp_t = \delta(dN_t^+ - dN_t^-)
+\end{equation}
+
+où $\delta$ est le tick minimum et $N_t^+$, $N_t^-$ sont les processus de saut à la hausse et à la baisse.
+
 \subsubsection{Nécessité de paramètres exogènes}
-\subsection{Modélisation des événements rares dans le QR}
-\subsubsection{Densité et démonstration}
 
-Soit $\Omega$ l'espace des événements rares. La densité de ces événements suit une distribution uniforme conditionnée par la taille de la queue $q$. Pour les trades et les cancels, cette taille doit être inférieure à un event size $s$ donné. Les adds nécessitent un traitement particulier que nous détaillerons.
+Le modèle de base peut être enrichi par des paramètres exogènes pour mieux capturer la réalité des marchés :
 
-\begin{theorem}[Probabilité d'un événement rare]
-La probabilité d'un événement rare se décompose comme suit:
+\begin{itemize}
+    \item Volatilité du marché global
+    \item Volume d'échange moyen
+    \item Saisonnalité intra-journalière
+    \item Événements macroéconomiques
+\end{itemize}
+
+Ces paramètres permettent d'améliorer significativement la capacité prédictive du modèle.
+
+
+\subsection{Modélisation des événements rares et variations de prix}
+
+Les variations de prix dans le modèle QR sont déclenchées par des événements rares, spécifiquement lorsqu'une limite se vide. Le mécanisme est le suivant :
+
+\begin{itemize}
+    \item Lorsqu'une limite se vide, un tirage de Bernoulli de paramètre $\theta$ détermine la variation du prix de référence $p_{ref}$
+    \item Avec probabilité $\theta$, le prix varie dans le sens de la limite consommée
+    \item Avec probabilité $1-\theta$, le prix reste stable et la limite consommée est reconstituée
+\end{itemize}
+
+\subsubsection{Processus de reconstitution des limites}
+
+La reconstitution d'une limite suit un processus en deux étapes :
+
+\begin{enumerate}
+    \item Un tirage de Bernoulli de paramètre $\theta_{bis}$ est effectué
+    \item Si le tirage vaut 1, le carnet d'ordres complet est réinitialisé selon sa loi invariante
+    \item Sinon, seule la limite consommée est reconstituée selon la loi invariante marginale de la queue dans le contexte global du carnet
+\end{enumerate}
+
+Plus formellement, soit $\pi$ la loi invariante du carnet d'ordres complet et $\pi_i$ la loi marginale de la queue $i$. Le processus de reconstitution peut s'écrire :
+
 \begin{equation}
-    p(event\ rare) = p(nouvelle\ limite) \cdot p(\theta\ générant\ nouveau\ LOB)
+    LOB_{t+} = \begin{cases}
+        \sim \pi & \text{si } B(\theta_{bis}) = 1 \\
+        (LOB_t^{-i}, Q_i \sim \pi_i) & \text{si } B(\theta_{bis}) = 0
+    \end{cases}
 \end{equation}
-où $\theta$ représente les paramètres du modèle.
+
+où $LOB_t^{-i}$ représente le carnet d'ordres au temps $t$ privé de la queue $i$, et $Q_i \sim \pi_i$ une nouvelle queue tirée selon la loi marginale.
+
+
+
+\subsubsection{Causes et implications des événements rares}
+
+Les événements rares dans le modèle QR constituent des éléments fondamentaux pour la reconstruction de la volatilité historique des prix. L'analyse de leur chaîne causale révèle une interaction complexe entre facteurs exogènes et endogènes du marché, formalisée par le processus stochastique $\{X_t\}_{t\geq 0}$ qui caractérise l'évolution du carnet d'ordres.
+
+Au niveau macroéconomique, ces événements trouvent leur origine dans les annonces publiques majeures, générant un processus de saut $N_t$ dont l'intensité $\lambda(t)$ varie selon l'importance de l'information. La dynamique des prix peut alors s'écrire sous la forme:
+
+\begin{equation}
+dP_t = \mu_t dt + \sigma_t dW_t + \sum_{i=1}^{N_t} J_i
+\end{equation}
+
+où $J_i$ représente l'amplitude des sauts associés aux événements rares.
+
+Dans le cadre spécifique du modèle QR, un événement rare se décompose en une séquence de sauts (jumps) et de réinitialisations (resets). Le processus de jump-reset peut être formalisé par:
+
+\begin{equation}
+LOB_{t+} = \Phi(\theta, LOB_t) \circ \Psi(\theta_{bis}, \pi)
+\end{equation}
+
+où $\Phi$ représente l'opérateur de saut et $\Psi$ l'opérateur de reset, avec $\pi$ la mesure invariante du carnet d'ordres.
+
+La microstructure du marché amplifie ces événements via le mécanisme de $\textit{order flow toxicity}$, mesuré par le ratio $\text{VPIN}$ (Volume-synchronized Probability of Informed Trading). Les déséquilibres dans le carnet d'ordres, quantifiés par l'imbalance ratio $\eta_t = \frac{V_t^{bid} - V_t^{ask}}{V_t^{bid} + V_t^{ask}}$, peuvent déclencher des cascades d'annulations.
+
+La reconstruction de la volatilité historique $\hat{\sigma}_t$ s'appuie principalement sur ces événements rares, permettant une estimation robuste via:
+
+\begin{equation}
+\hat{\sigma}_t^2 = \frac{1}{T}\sum_{i=1}^{N_t} (J_i)^2 + \frac{1}{T}\int_0^T \sigma_s^2 ds
+\end{equation}
+
+Cette décomposition capture ainsi la contribution des sauts discrets et de la volatilité continue dans la dynamique des prix.
+
+
+
+
+\subsection{L'autre test}
+
+On va commencer par caractériser mathématiquement un évent rare. Nous disposons d'un carnet d'ordre caractérisé par la taille des queues à chaque évent. On peut ainsi tirer de ces données trois caractéristiques principales, qui nous permettent de construire le vecteur d'état $\eta_{t\in \{t_1,t_2,\dots,t_n\}}$ avec $\{t_1,t_2,\dots,t_n\}\in [0,T_f]^n$ les temps des évents:
+$$\eta_t = (\text{Imb}_t, \Delta_t, {A_t})$$
+avec $\text{Imb}_t$, l'imbalance à la date $t$, $\Delta_t$ le temps entre l'évent $t$ et le suivant et $A_t\in \{A,C,T\}$ l'action réalisée à la date $t$. Nous séléctionnons dans ces vecteurs ceux qui sont des trades. Nous avons donc la famille de taille $n_T$ de vecteurs de deux dimensions $\eta_t^T = (\text{Imb}_t, \Delta_t)$.
+Ce vecteur nous permet de construire la statistique de test et de caractériser complètement les évents rares.
+\\
+\\
+Pour cela, on note $\mathcal I= \{\mathcal I^1,\dots,\mathcal I^m\}$, des buckets de taille $\frac{2}{m}$ de l'intervalle $[-1,1]$. Sachant que la distribution des intensités n'est pas la même en fonction de l'imbalance (cf. Partie III), nous normalisons les $\Delta_t$ par les $\mu_i^n = \frac{1}{\#\{j\in \mathcal I^i\}}\sum_{j\in \mathcal I^i}^n\Delta_{t_i}$, qui correspondent à la moyenne de temps par bucket d'imbalance.
+On note la famille $\tilde \eta_t^T = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^n\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)$, qui correspond aux vecteurs moyennés par bucket d'imbalance.
+Nous obtenons alors la valeur $\Delta_T^{n_T}(\alpha)$ qui correspond au quantile d'ordre $1-\alpha$ de la famille: les $\alpha\% \ \Delta_t$ les plus petits de notre série.
+\begin{proposition}[Convergence du quantile]
+La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$:
+$$T_f\underset{n\to +\infty}{\to}+\infty \ \text{p.s}$$
+$$\frac{n_T}{n}\underset{n\to +\infty}{\to}C^{ste} \ \text{p.s}$$
+et
+$$\Delta_T^{n_T}(\alpha)\underset{n\to +\infty}{\to}\Delta_T(\alpha) \ \text{p.s}$$
+\end{proposition}
+\textit{Démonstration}
+On commence par remarquer que $\eta_t^T$ est presque une chaîne de Markov, au détail près que les $\mu_i^n$, ne dépendent de 
+$n$.  Pour transformer cette chaîne en chaîne de Markov, on considère le modèle QR défini précédement que l'on prolonge sur $(t_i)_{i\in\mathbb{N}}$, en conservant nos événements sur les $n$ premiers instants. On à donc ici défini une chaîne irréductible positive dont la restriction aux $n$ premières valeurs sont les mêmes que notre famille de départ. Ce n'est toujours pas un chaîne de Markov, vu que les $\mu_i^n$, dépendre de $T_f$ (et donc de $n$). Commençons donc par montrer que l'on peut remplacer les $\mu_i^n$ par $\mu_i^{\infty}$ quand $n$ tend vers $+\infty$.
+\\
+\\
+Pour cela il faut montrer que:
+$$ \ \forall i,  \mathbb{P}\left(\forall M \in \mathbb{N}, \text{Imb}_{t_i\in\{t_1,\dots,t_M\}}\notin \mathcal{I}^{i}\right) = 0$$
+\\
+Ce résultat est direct par construction de notre chaîne qui est désormais irréductible positive. On a donc une probabilité non nulle d'appartenir à un bucket d'imbalance, c'est-à-dire que:
+
+$$\mu_i^n = \frac{n}{\#\{j\in \mathcal I^i\}}\frac{1}{n}\sum_{j}^n\mathbb{I}_{j\in \mathcal I^i}\Delta_{t_i}\underset{n\to+\infty}{\to}\mu_i^{\infty}$$
+via la loi forte des grand nombre. Ainsi, on peut montrer notre résultat sur la famille:
+$$\eta_t^{\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^n\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t}}, A_t\right)$$
+Notre chaîne est donc maintenant une chaîne de Markov recurrente positive et l'on peut donc utiliser le théorème ergotique pour montrer que:
+$$\frac{1}{n}\sum_{i=1}^n\mathbb{I}_{A_t=T} = \frac{n^T}{n} \underset{n\to+\infty}{\to} C^{ste}$$
+ce qui est le premier résultat voulu. Le second résultat découle directement du théorème ergodique en utilisant le fait que $\Delta_T^n$ peut s'écrire comme une somme d'indicatrice. 
+\\
+\\
+Notre famille sera désormais: 
+$\tilde \eta_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m\mu_i^{\infty}\mathbb{I}_{\text{Imb}_t\in\mathcal{I}^{i}}}\right)=\left(\text{Imb}_t, \tilde{\Delta_t}\right)$
+\begin{definition}[Événement rare]
+On défini un événement rare une événement à la date $t$ tel que $\tilde{\Delta_t}<\Delta_T(\alpha)$.
+    
+\end{definition}
+
+
+Nous allons maintenant énoncé le résultat principal: l'uniformité des événements rares.
+\begin{theorem}[Uniformité des événements rares]
+\\
+\\
+Soit un Order book d'un modèle QR de temps $T_f\in \mathbb{R}$, caractérisé par son vecteur d'état $\tilde \eta_{t_i\in [t_1,\dots,T_f]}$.
+\\
+$\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ est indépendante du temps quand $n\to\infty$. C'est à dire que les événements rares sont uniforméments repartis dans l'intervalle de temps.
+
 \end{theorem}
-
-\begin{proof}
-Décomposons $p(nouvelle\ limite)$ selon les types d'événements possibles:
-
-\begin{equation}
-    p(nouvelle\ limite) = \sum_{e \in \{trade,add,cancel\}} p(nouvelle\ limite|e)p(e)
-\end{equation}
-
-Par conservation des probabilités:
-\begin{equation}
-    p(cancel) = 1-[p(trade)+p(add)]
-\end{equation}
-
-Pour calculer $p(add)$, considérons une famille infinie de processus de Poisson $\{N_i(t)\}_{i\in\mathbb{N}}$ d'intensités respectives $\{\lambda_i\}_{i\in\mathbb{N}}$. 
-
-Soit $T_i$ le temps d'attente jusqu'au prochain événement du processus $i$. Par définition:
-\begin{equation}
-    T_{min} = \min_{i\in\mathbb{N}}(T_i)
-\end{equation}
-
-\begin{lemma}[Probabilité d'ajout]
-Pour un quantile $\alpha \in (0,1)$ fixé:
-\begin{equation}
-    p(add) = p(T_i = T_{min}|i \in \text{quantile}_\alpha(\lambda)) = \alpha
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-Soit $W_N$ une fenêtre glissante de taille fixe $N$ événements, se déplaçant au cours du temps jusqu'au temps $t_N$ du $N$-ième événement. Pour $i \in \text{quantile}_\alpha(\lambda)$:
-\begin{align*}
-    p(T_i = T_{min}) &= \lim_{N\to\infty} \frac{\text{Nombre d'événements de }i\text{ dans }W_N}{\text{Nombre total d'événements dans }W_N} \\
-    &= \frac{\lambda_i}{\sum_j \lambda_j} = \alpha
-\end{align*}
-par définition du quantile et propriétés des processus de Poisson.
-\end{proof}
-\end{proof}
-\subsubsection{Causes des events rares}
-News \& size?
+\textit{Démonstration} On commence par montrer que $\mathbb{P}\left(\tilde\eta_t^{T,\infty}\in q_{\alpha}\right)$ est indépendante du temps quand $n\to+\infty$. La Preuve réside dans la définition de l'événement rare. Vu que $\Delta_T(\alpha)$ ne dépend plus de $n$, on peut écrire cette probabilité comme une somme d'indicatrice ne dépendant que de notre chaîne de Markov. Ainsi, on a nécessairement convergence vers une constante d'après le théorème érgotique. On repasse à $\mathbb{P}\left(\tilde\eta_t^T\in q_{\alpha}\right)$ en utilisant la convergence des $\mu_i^n$.
+\\
+\\
+Ainsi, on a montrer que modèle QR générait de manière uniforme les événements que l'on a caractérisé comme rares. On devrait donc avoir une densité qui tend vers la densité uniforme. 
+\\
+\\
+On énonce maintenant le corollaire que l'on utilisera par la suite. Pour cela on nomme $(S^\gamma_{k})_{k\in \mathbb{N}}$, une sliding window de durée $\gamma$.
+\begin{corollary}[Stationnarité de la probabilité d'une Slinding Window] 
+\\
+\\
+Soit $\gamma \in \mathbb{R}$, $(S^\gamma_{k})_{k\in \mathbb{N}}$ une slinding window de durée $\gamma$ et $(\tilde\eta_{t_{i\in \mathbb{N}}})$ notre vecteur d'état. On note $\mathcal{R}(\alpha)$ les évents rares et $e$ les événements:
+$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}$$
+\end{corollary}
+\textit{Démonstration} Il suffit de considérer le QR restreint à chaque $S^{\gamma}_k$. On a donc via le théorème précédent:
+$$\mathbb{P}\left(e\in S^{\gamma}_k \cap \mathcal{R}(\alpha)\right)\underset{\gamma\to+\infty}{\to}C^{ste}(k)$$
+La propriété de Markov assure que $C^{ste}(k) = C^{ste}$
+\\
+\\
+On crée notre test en utilisant une sliding-window $S_t^{\gamma,j}$, où $j$ correspond à la journée considérée:
+$$\hat p(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t^{\gamma,j}\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^{\gamma,i}\}}$$
+\\
+\\
 \subsection{J'ai pas sup mais c'est à mettre dans les parties d'avant}
 Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
 \\
 \\
 L'étude des Order Book des marchés HFT a amené à une modélisation par file permettant une explication fine du processus de création des prix. Prenons l'exemple d'un prix fixe appelé middle price $p_{\text{mid}}$. L'offre et la demande orbitent autour de ce prix avec une offre qui se trouve toujours au dessus du prix et une demande toujours en dessous dans un marché sans arbitrage. La loi international des marchés financier n'autorise à l'acheteur et au vendeur que certains prix séparés par une distance appelée $\textbf{un tick}$. Dans le modèle QR, les acheteurs et les vendeurs sont ainsi modélisés comme des queues à une distance plus ou moins proche du prix $p_{\text{mid}}$, qui est en pratique le prix du marché. Ces queues permettent au vendeurs de choisir le meilleur prix et à l'acheteur acheter au prix le plus bas. Prenons l'exemple d'un actif fictif à 100\$ avec un tick de 0.1\$. Les acheteurs seront répartis dans les queues $Q_{-1},Q_{-2},...$ avec un nombre qui décroît plus la queue est éloignée. Il y aura ainsi 90 acheteurs à $Q_{-1}$ avec un prix de 99.9\$, 10 à $Q_{-2}$ avec un prix de 99.8\$, ect... Le même modèle sera utiliser pour les vendeurs eux répartis dans les $Q_{1},Q_2,...$. Les queues sont réactualisées à chaque instant en consommant ce qui est consommable et en ajoutant un nombre aléatoire de demandes et d'offres, en suivant une loi de poisson de paramètre $\lambda^{Q_\pm i}$. En plus de cette évolution de l'offre et la demande, on rajoute un troisième phénomène: les cancellation. Ainsi, à tout instant, l'acheteur et le vendeur peut annuler sa demande ou son offre. Ainsi le carnet d'offre et de demande est une chaîne de markov, dont l'état à l'instant $t_{i+1}$ ne dépend que de celui à l'instant $t_i$.
+
+
+
+
+
+
+
 \subsubsection {Modélisation générale}
 On modélise le carnet d'ordre par un vecteur $Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))$ qui évolue dans le temps selon un processus de Markov. L'élément $Q_{\pm i}(t)$ correspond à la disponibilité de l'offre ou de la demande à $p_{\mid}\pm i\text{tick}$ au temps $t$.
 Trois modifications aboutissent à un changement de $Q$:
@@ -928,7 +1068,7 @@ $$\exists C>0, \exists i\in [-K,K], \forall q_i>C, f_i(q)-g_i(q)<0$$ signifiant 
     Ces hypothèses serviront de guide pour l'analyse empirique qui suit, permettant de confronter les prédictions théoriques aux observations du marché.
 
     \newpage
-    \vspace*{3cm}
+    \vspace*{2cm}
     \section{Le modèle QR: observation sur les marchés HF
 }
 \subsection{Intensité des événements}
@@ -1047,7 +1187,7 @@ Nous allons désormais nous intéresser à la localisation des événements cara
 \\
 Précisons la caractéristique d'événement rares. On commence par regroupé les événements par imbalance. Nous calculons ensuite l'intensité de chaque événement dans chaque bucket d'imbalance normalisée par bucket d'imbalance. Après avoir calculé cela, 
 nous avons une série de valeurs normalisées et l'on peut enlever la dépendance à l'imbalance. On sélectionne donc parmi ces valeurs les 5\% les plus faibles, qui sont donc les plus rares au sens du QR. On note cette ensemble $\mathcal{R}$. Afin de calculer la probabilité $p(t)$ d'un événement rare, nous parcourons tout nos événements avec sliding window de 5 minutes et nous calculons la probabilité d'un événement rare sur la sliding window de 5 minutes au jour $j$ noté $S_t^j$:
-$$\hat{p}(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^j\}}$$
+$$\hat{p}(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t^j\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^i\}}$$
 On devrait donc avoir une droite proche de $5\%$ tout les jours. Cependant, après quelques tracés seulement on observe que cette probabilité n'est pas du tout uniforme certain jour.
 \begin{figure}[h!]
     \centering
@@ -1071,7 +1211,7 @@ On devrait donc avoir une droite proche de $5\%$ tout les jours. Cependant, apr�
     \label{fig:comparison}
 \end{figure}
 \\
-Les graphes de probabilité sont en effet très différents: d'un côté la probabilité oscille autour de 0.05, de l'autre elle possède un nette pic à 18:00:00 (heure française des marchés américain). La probabilité n'est pas uniforme dans le second cas. Cela se voit directement sur le graphe des prix, qui semble relativement normale pour la première journée, là où il possède un pic à 18:00:00 le 20 septembre.On en conclue donc que les évènements extrêmes ne sont pas uniformes (tout les jours) et sont pas toujours causées par le MBO. On semble tout de même avoir différents régimes comme vu précédemment.
+Les graphes de probabilité sont en effet très différents: d'un côté la probabilité oscille autour de 0.05, de l'autre elle possède un nette pic à 18:00:00 (heure française des marchés américain). La probabilité n'est pas uniforme dans le second cas. Cela se voit directement sur le graphe des prix, qui semble relativement normale pour la première journée, là où il possède un pic à $18:00:00$ le 20 septembre.On en conclue donc que les évènements extrêmes ne sont pas uniformes (tout les jours) et sont pas toujours causées par le MBO. On semble tout de même avoir différents régimes comme vu précédemment.
 \begin{figure}[h!]
     \centering
     % Premier graphique
@@ -1157,11 +1297,320 @@ Il est alors facile de comprendre ce qu'il se passe en réalité: ces jours corr
     
     
     \newpage
-    \vspace*{5cm}
     \section*{Appendice}
     \addcontentsline{toc}{section}{Appendice}
     \vspace*{2cm}
     \subsection*{Preuves}
+    \subsection*{Preuve de la distribution uniforme des événements rares}
+    \addcontentsline{toc}{subsection}{Preuve de la distribution uniforme des événements rares}
+
+    Considérons $Q$ processus de Poisson indépendants $(T_i)_{i=1,\ldots,Q}$ d'intensités respectives $\lambda_i$. Soit $(S_n)_{n\geq 1}$ la suite des temps de saut du processus minimum $\min_{i=1,\ldots,Q} T_i$. On note $\Delta_n = S_n - S_{n-1}$ les inter-arrivées.
+
+    \begin{proposition}
+    Pour un quantile $\alpha \in (0,1)$ et une fenêtre glissante de taille $N$, sous l'hypothèse de distribution uniforme des événements rares (définis comme les $\Delta_n$ inférieurs au quantile $\alpha$), le nombre $X_k$ d'événements rares dans la $k$-ième fenêtre suit une loi binomiale :
+
+    \[
+    X_k \sim \mathcal{B}(N, \alpha)
+    \]
+    \end{proposition}
+
+    \begin{proof}
+    Nous disposons ainsi d'une matrice d'intensités, où les lignes représentent les différents buckets d'imbalance et les colonnes correspondent aux $Q$ processus de Poisson. Cette structuration matricielle est fondamentale dans le modèle QR, car elle intègre la connaissance du carnet d'ordres avec l'imbalance, permettant une modélisation précise des dynamiques du marché.
+
+    Pour chaque bucket d'imbalance (par exemple, -1, -0.9, ..., 1), les intensités $\lambda_i$ sont conditionnées à l'état du carnet d'ordres, garantissant que les $\Delta_n$ sont distribuées selon une loi exponentielle après normalisation. En utilisant le test de Kolmogorov-Smirnov, nous pouvons inverser la fonction de répartition avec une précision de l'ordre de $\mathcal{O}\left(\frac{1}{\sqrt{N}}\right)$.
+
+    Ainsi, bien que nous considérions $Q$ processus indépendants, la normalisation assure que la distribution des $\Delta_n$ reste cohérente avec les hypothèses de notre modèle, permettant une approximation binomiale valide pour le nombre d'événements rares dans chaque fenêtre glissante.
+
+    La distribution des inter-arrivées $\Delta_n$ du processus minimum suit une loi exponentielle d'intensité $\Lambda = \sum_{i=1}^Q \lambda_i$. La fonction de densité est donnée par :
+
+    \[
+    f_{\Delta}(\delta) = \Lambda e^{-\Lambda \delta} \quad \text{pour } \delta \geq 0
+    \]
+
+    Considérons un quantile $\alpha \in (0,1)$. Le seuil $s_\alpha$ est défini tel que :
+
+    \[
+    P(\Delta_n \leq s_\alpha) = \alpha \quad \Rightarrow \quad s_\alpha = F^{-1}(\alpha) = -\frac{\ln(1 - \alpha)}{\Lambda}
+    \]
+
+    où $F$ est la fonction de répartition de la loi exponentielle. Cette normalisation permet de récupérer une distribution empirique des temps entre sauts ($\Delta_n$) dans chaque bucket d'imbalance, en les normalisant par la moyenne des $\Delta_n$, obtenant ainsi la loi exponentielle, conformément au TLC.
+
+    \end{proof}
+
+
+    Pour une fenêtre glissante de taille $N$, chaque position dans la fenêtre est indépendante des autres étant donné que les $\Delta_n$ sont indépendantes et identiquement distribuées (i.i.d.). La probabilité qu'un inter-arrivée $\Delta_n$ soit un événement rare est donc constante et égale à $\alpha$.
+
+    Le nombre $X_k$ d'événements rares dans la $k$-ième fenêtre est la somme de $N$ variables indicatrices indépendantes, chacune prenant la valeur 1 avec probabilité $\alpha$ et 0 sinon. Ainsi :
+
+    \[
+    X_k = \sum_{i=1}^{N} \mathbb{I}_{\{\Delta_i \leq s_\alpha\}}
+    \]
+
+    Par définition, $X_k$ suit une loi binomiale de paramètres $N$ et $\alpha$ :
+
+    \[
+    X_k \sim \mathcal{B}(N, \alpha)
+    \]
+
+    \textbf{Précision de l'approximation binomiale :} 
+    L'approximation binomiale est justifiée par l'indépendance des événements rares dans la fenêtre glissante. De plus, pour assurer une approximation précise, il est nécessaire que $N$ soit suffisamment grand et que $\alpha$ soit petit, ce qui garantit que la variance $\alpha(1 - \alpha)$ est bien estimée.
+
+    Par conséquent, pour un niveau de confiance $1 - \gamma$, l'intervalle de confiance pour la proportion $p_k = \frac{X_k}{N}$ peut être quantifié avec une précision accrue en utilisant une correction de continuité ou des méthodes d'intervalle de confiance plus raffinées, telles que l'intervalle de Wilson :
+
+    \[
+    IC_{\text{Wilson}} = \left[ \frac{\hat{p} + \frac{z^2}{2N} - z \sqrt{ \frac{\hat{p}(1 - \hat{p})}{N} + \frac{z^2}{4N^2} }}{ 1 + \frac{z^2}{N} }, \frac{\hat{p} + \frac{z^2}{2N} + z \sqrt{ \frac{\hat{p}(1 - \hat{p})}{N} + \frac{z^2}{4N^2} }}{ 1 + \frac{z^2}{N} } \right]
+    \]
+
+    où $\hat{p} = \frac{X_k}{N}$ et $z$ est le quantile de la loi normale standard correspondant au niveau de confiance choisi.
+
+    \textbf{Formulation des tests statistiques :}
+
+    Étant donné que la taille de l'échantillon $N$ est d'environ 10, l'utilisation de l'intervalle de Wilson est particulièrement appropriée pour estimer la proportion $p_k$. De plus, des intervalles de confiance classiques tels que l'intervalle de Wald peuvent être employés, bien que moins précis pour de petites tailles d'échantillons. Ainsi, pour effectuer un test statistique sur la proportion $p_k$, nous utiliserons l'intervalle de Wilson pour une estimation plus fiable dans ce contexte de petite taille d'échantillon.
+
+    \[
+    IC_{\text{Wald}} = \left[ \hat{p} - z \sqrt{ \frac{\hat{p}(1 - \hat{p})}{N} }, \hat{p} + z \sqrt{ \frac{\hat{p}(1 - \hat{p})}{N} } \right]
+    \]
+
+    Cependant, l'intervalle de Wald est moins précis pour de petites tailles d'échantillons et des proportions proches de 0 ou 1.
+
+    \end{proof}
+
+    \begin{corollary}
+    La discrépance $D_N$ entre la distribution empirique des événements rares et la distribution uniforme peut être majorée par :
+
+    \[
+    D_N \leq C \sqrt{ \frac{ \log \log N }{ N } }
+    \]
+
+    presque sûrement, où $C$ est une constante universelle. Cette borne est une conséquence de la loi du logarithme itéré et garantit que la divergence entre les distributions diminue asymptotiquement avec $N$.
+
+    \textbf{Test statistique sur la discrépance :} 
+    Pour formuler un test statistique basé sur la discrépance $D_N$, nous pouvons utiliser le test de Kolmogorov-Smirnov. Dans ce contexte, si la valeur de la constante $C$ est connue ou estimée, le test consiste à comparer la discrépance observée $D_N$ à la borne $C \sqrt{ \frac{ \log \log N }{ N } } $. Si $D_N$ excède cette valeur, cela indique une différence significative entre la distribution empirique des événements rares et la distribution uniforme, menant au rejet de l'hypothèse d'uniformité.
+
+    Ainsi, pour valider la distribution uniforme des événements rares, les tests statistiques suivants sont recommandés :
+
+    \[
+    D_N > C \sqrt{ \frac{ \log \log N }{ N } } \quad \Rightarrow \quad \text{Rejet de l'hypothèse d'uniformité}
+    \]
+
+    et
+
+    \[
+    \text{Utilisation du test de Kolmogorov-Smirnov : } D_N > D_{\text{critique}}(\alpha)
+    \]
+
+    où $D_{\text{critique}}(\alpha)$ est la valeur critique déterminée par le niveau de signification $\alpha$.
+
+    \end{corollary}
+
+    \subsection{Estimation dynamique du paramètre $\theta$}
+
+\begin{proposition}[Estimation de $\theta$ par maximum de vraisemblance conditionnel]
+Soit $\theta(\delta_t, \eta)$ la probabilité de saut du prix de référence en fonction du temps de consommation $\delta_t$ et de l'imbalance $\eta$. Pour une fenêtre glissante $w$, on définit l'estimateur :
+
+\[
+\hat{\theta}(\delta_t, \eta) = \frac{\sum_{i \in w} \mathbb{1}_{\{J_i=1\}} K_h(\delta_t - \delta_i, \eta - \eta_i)}{\sum_{i \in w} K_h(\delta_t - \delta_i, \eta - \eta_i)}
+\]
+
+où $J_i$ est l'indicatrice du saut, $K_h$ est un noyau gaussien de bandwidth $h$, et $(\delta_i, \eta_i)$ sont les observations passées.
+\end{proposition}
+
+\begin{proof}
+La preuve se décompose en plusieurs étapes :
+
+\textbf{1. Construction du modèle}
+
+Considérons le modèle de Bernoulli non-homogène :
+\[
+J_t \sim \mathcal{B}(\theta(\delta_t, \eta_t))
+\]
+où $\theta(\cdot,\cdot)$ est une fonction continue à valeurs dans $[0,1]$.
+
+\textbf{2. Vraisemblance conditionnelle}
+
+La log-vraisemblance locale autour du point $(\delta, \eta)$ s'écrit :
+\[
+\ell(\theta) = \sum_{i \in w} K_h(\delta - \delta_i, \eta - \eta_i) [J_i \log(\theta) + (1-J_i)\log(1-\theta)]
+\]
+
+\textbf{3. Maximisation}
+
+En dérivant par rapport à $\theta$ et en annulant :
+\[
+\frac{\partial \ell}{\partial \theta} = \sum_{i \in w} K_h(\delta - \delta_i, \eta - \eta_i) [\frac{J_i}{\theta} - \frac{1-J_i}{1-\theta}] = 0
+\]
+
+Ce qui conduit à l'estimateur proposé.
+
+\textbf{4. Test statistique}
+
+Pour un niveau $\alpha$, on construit l'intervalle de confiance :
+\[
+IC_{1-\alpha}(\delta, \eta) = \hat{\theta}(\delta, \eta) \pm z_{1-\alpha/2} \sqrt{\frac{\hat{\theta}(1-\hat{\theta})}{\sum_{i \in w} K_h(\delta - \delta_i, \eta - \eta_i)}}
+\]
+
+\textbf{5. Critère de déclenchement}
+
+On définit le critère de déclenchement du saut :
+\[
+\text{Jump}(\delta_t, \eta_t) = \begin{cases}
+1 & \text{si } \hat{\theta}(\delta_t, \eta_t) > \theta_c(\delta_t, \eta_t) \\
+0 & \text{sinon}
+\end{cases}
+\]
+
+où $\theta_c(\delta_t, \eta_t)$ est le seuil critique défini par :
+\[
+\theta_c(\delta_t, \eta_t) = \sup\{\theta : \theta \in IC_{1-\alpha}(\delta_t, \eta_t)\}
+\]
+
+\textbf{6. Consistance asymptotique}
+
+Sous les hypothèses de régularité usuelles sur $K_h$ et pour $h \to 0$, $nh^2 \to \infty$ :
+\[
+\sqrt{nh^2}(\hat{\theta}(\delta, \eta) - \theta(\delta, \eta)) \xrightarrow{d} \mathcal{N}(0, \sigma^2(\delta, \eta))
+\]
+
+où $\sigma^2(\delta, \eta)$ est la variance asymptotique qui peut être estimée par :
+\[
+\hat{\sigma}^2(\delta, \eta) = \frac{\hat{\theta}(1-\hat{\theta})}{\sum_{i \in w} K_h(\delta - \delta_i, \eta - \eta_i)}
+\]
+\end{proof}
+
+\begin{remark}
+Cette approche permet un apprentissage en ligne adaptatif de $\theta$ qui :
+\begin{itemize}
+    \item Capture la dépendance temporelle via une mise à jour séquentielle :
+    \[
+    \theta_{t+1}(\delta, \eta) = \theta_t(\delta, \eta) + \gamma_t(J_t - \theta_t(\delta, \eta))K_h(\delta - \delta_t, \eta - \eta_t)
+    \]
+    où $\gamma_t$ est le taux d'apprentissage adaptatif
+    
+    \item Détecte les sauts exogènes via un score de vraisemblance normalisé :
+    \[
+    S_t = \frac{|J_t - \theta_t(\delta_t, \eta_t)|}{\sqrt{\hat{\sigma}^2_t(\delta_t, \eta_t)}} > c_{\alpha}
+    \]
+    
+    \item Quantifie l'anomalie d'une séquence sur la fenêtre glissante $w_t$ :
+    \[
+    A_t = \sum_{i \in w_t} \mathbb{1}\{S_i > c_{\alpha}\} \cdot \exp(-\lambda(t-i))
+    \]
+    
+    \item Classifie les régimes de marché via un score composite :
+    \[
+    R_t = \begin{cases}
+    \text{Endogène} & \text{si } S_t \leq c_{\alpha} \\
+    \text{Exogène local} & \text{si } S_t > c_{\alpha} \text{ et } A_t \leq a_{\text{crit}} \\
+    \text{Exogène global} & \text{si } S_t > c_{\alpha} \text{ et } A_t > a_{\text{crit}}
+    \end{cases}
+    \]
+    
+    \item Adapte dynamiquement les paramètres d'apprentissage :
+    \[
+    \gamma_t = \gamma_0 \cdot \exp(-\beta A_t) \quad \text{et} \quad h_t = h_0 \cdot (1 + \kappa A_t)
+    \]
+    pour ralentir l'apprentissage et élargir la fenêtre lors des périodes turbulentes
+\end{itemize}
+\end{remark}
+
+\begin{corollary}[Calibration optimale]
+Le bandwidth optimal $h^*$ peut être obtenu par validation croisée :
+\[
+h^* = \argmin_h \sum_{i \in w} (J_i - \hat{\theta}_{-i}(\delta_i, \eta_i))^2
+\]
+où $\hat{\theta}_{-i}$ est l'estimateur calculé sans l'observation $i$.
+\end{corollary}
+
+\begin{proposition}[Noyau adapté pour variables exponentielles]
+    Pour l'estimation de $\theta(\delta_t, \eta)$ où $\delta_t$ suit une loi exponentielle conditionnellement à $\eta$, le noyau optimal prend la forme :
+    
+    \[
+    K_h(\delta_t - \delta_i, \eta - \eta_i) = \frac{1}{h_\delta h_\eta} K_{\text{gamma}}\left(\frac{\delta_t - \delta_i}{h_\delta}\right) K_{\text{std}}\left(\frac{\eta - \eta_i}{h_\eta}\right)
+    \]
+    
+    où :
+    \begin{itemize}
+        \item $K_{\text{gamma}}(x) = x^{\alpha-1}e^{-x/\beta}/(\Gamma(\alpha)\beta^\alpha)$ est un noyau gamma
+        \item $K_{\text{std}}(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}$ est un noyau gaussien standard
+        \item $(h_\delta, h_\eta)$ sont les bandwidths respectifs
+    \end{itemize}
+    \end{proposition}
+    
+    \begin{proof}
+    \textbf{1. Motivation du choix}
+    \begin{itemize}
+        \item Le noyau gamma est choisi pour $\delta_t$ car :
+        \begin{itemize}
+            \item Il préserve la positivité des temps inter-arrivées
+            \item Il respecte la queue exponentielle de la distribution
+            \item Il minimise la variance asymptotique sur $\mathbb{R}^+$
+        \end{itemize}
+        
+        \item Le noyau gaussien est maintenu pour $\eta$ car :
+        \begin{itemize}
+            \item L'imbalance est bornée sur $[-1,1]$
+            \item La symétrie du noyau est désirable pour cette variable
+        \end{itemize}
+    \end{itemize}
+    
+    \textbf{2. Propriétés asymptotiques}
+    
+    Pour $h_\delta, h_\eta \to 0$ et $nh_\delta h_\eta \to \infty$ :
+    \[
+    \mathbb{E}[\hat{\theta}(\delta, \eta) - \theta(\delta, \eta)]^2 = O\left(\frac{1}{nh_\delta h_\eta}\right) + O(h_\delta^2 + h_\eta^2)
+    \]
+    
+    \textbf{3. Bandwidths optimaux}
+    
+    Les bandwidths optimaux pour les estimateurs à noyau gamma et gaussien sont déterminés en minimisant l'erreur quadratique moyenne intégrée (MISE) sous l'hypothèse de variance constante. Ils sont donnés par :
+    \[
+    h_\delta^* = C_\gamma \, n^{-1/5} \quad \text{et} \quad h_\eta^* = C_{\text{gauss}} \, n^{-1/5}
+    \]
+    
+    où \(C_\gamma\) et \(C_{\text{gauss}}\) sont des constantes spécifiques aux noyaux gamma et gaussien, respectivement. Ces constantes dépendent des propriétés du noyau utilisé, telles que la forme et la régularité.
+
+    Pour l'estimateur à noyau gamma :
+    \[
+    C_\gamma = \left( \frac{R(K_{\text{gamma}}) \mu_2(K_{\text{gamma}})^2}{\mu_{0}(K_{\text{gamma}})^2} \right)^{1/5}
+    \]
+    
+    Pour l'estimateur à noyau gaussien :
+    \[
+    C_{\text{gauss}} = \left( \frac{R(K_{\text{std}}) \mu_2(K_{\text{std}})^2}{\mu_{0}(K_{\text{std}})^2} \right)^{1/5}
+    \]
+    
+    où \(R(K)\) représente l'intégrale \( \int K^2(u) \, du \) et \(\mu_k(K)\) représente les moments d'ordre \(k\) du noyau \(K\).
+
+    Ces bandwidths optimaux permettent d'équilibrer le compromis biais-variance, assurant ainsi une estimation efficace des paramètres \(\theta(\delta, \eta)\) pour chaque type de noyau.
+    
+    \textbf{4. Correction aux bords}
+    
+    Pour $\eta$ proche de $\pm 1$, on applique une correction par réflexion :
+    \[
+    \tilde{K}_h(\delta_t - \delta_i, \eta - \eta_i) = K_h(\delta_t - \delta_i, \eta - \eta_i) + K_h(\delta_t - \delta_i, \eta + \eta_i)
+    \]
+    \end{proof}
+    
+    \begin{remark}[Implémentation pratique]
+    Pour l'implémentation :
+    \begin{itemize}
+        \item Choisir $\alpha = 2$ et $\beta = 1$ pour le noyau gamma donne un bon compromis biais-variance
+        \item La correction aux bords n'est nécessaire que si $|\eta| > 1-h_\eta$
+        \item Les bandwidths peuvent être ajustés par validation croisée locale
+    \end{itemize}
+    \end{remark}
+    
+    \begin{corollary}[Efficacité relative]
+    L'efficacité relative de cet estimateur par rapport à un estimateur à noyau gaussien standard est :
+    \[
+    \text{eff}(\hat{\theta}_{\text{gamma}}, \hat{\theta}_{\text{gauss}}) = \frac{\text{MISE}(\hat{\theta}_{\text{gauss}})}{\text{MISE}(\hat{\theta}_{\text{gamma}})} > 1
+    \]
+    particulièrement pour les petites valeurs de $\delta_t$.
+    \end{corollary}
+    
+
+
+    Cette analyse fournit un cadre théorique pour tester la distribution uniforme des événements rares dans le temps, permettant de détecter des clusters temporels significatifs d'événements rares qui s'écarteraient de cette uniformité attendue.
     \addcontentsline{toc}{subsection}{Graphes supplémentaires}
 
 
