@@ -800,6 +800,163 @@ On crée notre test en utilisant une sliding-window $S_t^{\gamma,j}$, où $j$ co
 $$\hat p(S_t^j) = \frac{\#\{e\in \mathcal{R}\cap S_t^{\gamma,j}\}}{\frac{1}{N}\sum_{i=1,i\neq j}^N\#\{e\in S_t^{\gamma,i}\}}$$
 \\
 \\
+
+\subsection{Test statistique sur sliding window temporelle}
+
+
+\subsection{Preuve d'un test statistique avec intervalles de confiance asymptotiques et non asymptotiques}
+
+Dans cette section, nous construisons un test statistique basé sur les développements précédents afin de déterminer l'uniformité des événements rares dans le carnet d'ordres. Nous présenterons à la fois des intervalles de confiance asymptotiques et non asymptotiques.
+
+\subsubsection{Hypothèses du test}
+
+Nous considérons les hypothèses suivantes :
+
+\begin{itemize}
+    \item \textbf{Hypothèse nulle ($H_0$)} : Les événements rares sont distribués uniformément dans le temps.
+    \item \textbf{Hypothèse alternative ($H_A$)} : Les événements rares ne sont pas distribués uniformément, indiquant une agrégation temporelle.
+\end{itemize}
+
+\subsubsection{Définition de la statistique de test}
+
+Nous définissons la statistique de test basée sur la proportion d'événements rares dans une fenêtre glissante de durée $\gamma$ :
+
+$$
+\hat{p}(S_k^{\gamma}) = \frac{\#\{e \in \mathcal{R} \cap S_k^{\gamma}\}}{\frac{1}{N} \sum_{i=1, i \neq j}^N \#\{e \in S_k^{\gamma, i}\}}
+$$
+
+où :
+\begin{itemize}
+    \item $S_k^{\gamma}$ est une fenêtre glissante de durée $\gamma$.
+    \item $\mathcal{R}$ est l'ensemble des événements rares.
+    \item $N$ est le nombre total de fenêtres considérées.
+\end{itemize}
+
+\subsubsection{Construction de l'intervalle de confiance asymptotique}
+
+Sous l'hypothèse $H_0$, grâce au théorème ergodique, la proportion $\hat{p}(S_k^{\gamma})$ converge vers une constante $C^{ste}$ lorsque $n \to \infty$. En appliquant le théorème central limite, nous approximons la distribution asymptotique de $\hat{p}(S_k^{\gamma})$ par une distribution normale :
+
+$$
+\hat{p}(S_k^{\gamma}) \approx \mathcal{N}\left(C^{ste}, \frac{C^{ste}(1 - C^{ste})}{n \gamma^2}\right)
+$$
+
+Ainsi, un intervalle de confiance asymptotique à $1 - \alpha$ niveau de confiance est donné par :
+
+$$
+IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
+$$
+
+où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
+
+\subsubsection{Construction de l'intervalle de confiance non asymptotique}
+
+Pour les intervalles de confiance non asymptotiques, nous utilisons l'inégalité de Hoeffding, qui fournit une borne sur la probabilité que la proportion observée s'écarte de la proportion attendue indépendamment de la taille de l'échantillon. Sous $H_0$, la probabilité que la proportion réelle diffère de la proportion observée par plus de $\epsilon$ est bornée par :
+
+$$
+\mathbb{P}\left( \left| \hat{p}(S_k^{\gamma}) - C^{ste} \right| \geq \epsilon \right) \leq 2 \exp(-2 n \gamma^2 \epsilon^2)
+$$
+
+Pour obtenir un intervalle de confiance non asymptotique à un niveau de confiance $1 - \alpha$, nous résolvons l'inégalité suivante :
+
+$$
+2 \exp(-2 n \gamma^2 \epsilon^2) \leq \alpha
+$$
+
+Ce qui implique :
+
+$$
+\epsilon = \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}
+$$
+
+Ainsi, l'intervalle de confiance non asymptotique est donné par :
+
+$$
+IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
+$$
+
+\subsubsection{Justification des intervalles de confiance}
+
+\paragraph{Asymptotique} L'intervalle de confiance asymptotique repose sur l'application du théorème central limite, qui justifie l'approximation de la distribution de $\hat{p}(S_k^{\gamma})$ par une distribution normale lorsque la taille de l'échantillon $n$ tend vers l'infini.
+
+\paragraph{Non asymptotique} L'intervalle de confiance non asymptotique utilise l'inégalité de Hoeffding, qui fournit une borne stricte sur la déviation de la proportion observée par rapport à la proportion attendue, indépendamment de la taille de l'échantillon.
+
+\subsubsection{Preuve de la convergence}
+
+\begin{proposition}[Convergence du quantile]
+La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$ :
+$$
+T_f \xrightarrow{n \to +\infty} +\infty \quad \text{p.s.}
+$$
+$$
+\frac{n_T}{n} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
+$$
+et
+$$
+\Delta_T^{n_T}(\alpha) \xrightarrow{n \to +\infty} \Delta_T(\alpha) \quad \text{p.s.}
+$$
+\end{proposition}
+
+\textit{Démonstration}
+
+1. **Chaîne de Markov et Ergodicité :** 
+   La famille de vecteurs $\tilde{\eta}_t^{T,\infty} = \left(\text{Imb}_t, \frac{\Delta_t}{\sum_{i=1}^m \mu_i^{\infty} \mathbb{I}_{\text{Imb}_t \in \mathcal{I}^{i}}}\right)$ forme une chaîne de Markov récurrente positive grâce à l'ergodicité. Cela garantit que les moyennes temporelles convergent vers les moyennes d'invariant.
+
+2. **Application du Théorème Ergodique :** 
+   Par le théorème ergodique, pour une fonction indicatrice $\mathbb{I}_{A_t = T}$, nous avons :
+   $$
+   \frac{1}{n} \sum_{i=1}^n \mathbb{I}_{A_t = T} \xrightarrow{n \to +\infty} C^{ste} \quad \text{p.s.}
+   $$
+   
+   De plus, les quantiles des $\Delta_t$ normalisés convergent également vers des constantes $\Delta_T(\alpha)$.
+
+3. **Uniformité des Événements Rares :**
+   Le théorème ergodique assure que la probabilité $\mathbb{P}\left(\tilde{\eta}_t^{T,\infty} \in q_{\alpha}\right)$ devient indépendante du temps à mesure que $n \to +\infty$, ce qui implique une répartition uniforme des événements rares dans le temps.
+
+Ainsi, la proposition est validée.
+
+\subsubsection{Construction de l'intervalle de confiance}
+
+À partir de la convergence du quantile et de l'uniformité des événements rares, nous pouvons établir les intervalles de confiance suivants :
+
+\paragraph{Intervalle de confiance asymptotique}
+
+En utilisant le théorème central limite, pour $n$ grand, la statistique de test suit une distribution normale. L'intervalle de confiance est alors :
+
+$$
+IC_{1 - \alpha}^{\text{asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(S_k^{\gamma})(1 - \hat{p}(S_k^{\gamma}))}{n \gamma^2}} \right]
+$$
+
+où $z_{1 - \alpha/2}$ est le quantile de la distribution normale standard correspondant au niveau de confiance $1 - \alpha$.
+
+\paragraph{Intervalle de confiance non asymptotique}
+
+En appliquant l'inégalité de Hoeffding, nous obtenons un intervalle de confiance non asymptotique :
+
+$$
+IC_{1 - \alpha}^{\text{non-asymptotique}} = \left[ \hat{p}(S_k^{\gamma}) - \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}}, \ \hat{p}(S_k^{\gamma}) + \sqrt{\frac{\ln(2/\alpha)}{2 n \gamma^2}} \right]
+$$
+
+Cet intervalle garantit que la probabilité que la proportion réelle $p$ se trouve en dehors de cet intervalle est au plus $\alpha$.
+
+\subsubsection{Conclusion du test statistique}
+
+Le test statistique se déroule comme suit :
+
+\begin{enumerate}
+    \item \textbf{Calcul de la statistique de test :} Calculer $\hat{p}(S_k^{\gamma})$ pour chaque fenêtre glissante $S_k^{\gamma}$.
+    \item \textbf{Construction des intervalles de confiance :} Construire les intervalles de confiance asymptotiques et non asymptotiques correspondants.
+    \item \textbf{Décision :} Comparer $\hat{p}(S_k^{\gamma})$ avec les intervalles de confiance.
+    \begin{itemize}
+        \item Si $\hat{p}(S_k^{\gamma})$ est en dehors de l'intervalle de confiance, rejeter $H_0$ en faveur de $H_A$.
+        \item Sinon, ne pas rejeter $H_0$.
+    \end{itemize}
+    \item \textbf{Interprétation :} Une proportion significativement différente de $C^{ste}$ indique une non-uniformité des événements rares, suggérant une agrégation temporelle.
+\end{enumerate}
+
+Cette approche permet d'évaluer rigoureusement l'uniformité des événements rares dans le temps, en utilisant des fondements théoriques solides issus du théorème ergodique et des inégalités de concentration.
+
+% Fin de la preuve
+
 \subsection{J'ai pas sup mais c'est à mettre dans les parties d'avant}
 Nous commencerons par aborder la modélisation Queue Reactive dans un monde où il n'existe qu'un seul prix.. Nous complexifierons le modèle au fur et à mesure.
 \\
