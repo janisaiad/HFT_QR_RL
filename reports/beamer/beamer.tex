@@ -1,0 +1,236 @@
+% Classe du document
+\documentclass[aspectratio=169]{beamer}  % Format 16:9 pour un affichage moderne
+
+% Thème et couleurs
+\usetheme{Madrid}
+\usecolortheme{whale}
+\useinnertheme{rectangles}
+\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}  % Supprime les symboles de navigation
+
+% Packages essentiels
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{listings}  % Pour le code
+\pgfplotsset{compat=1.18}
+
+% Informations du document
+\title[Impact des nouvelles sur les LOB]{Impact des nouvelles sur les \textit{Limit Order Books}}
+\subtitle{Une analyse par le modèle Queue-Reactive}
+\author[LAFERTE \& AIAD]{LAFERTE Edouard \and AIAD Janis}
+\institute[École Polytechnique]{
+    Département de mathématiques appliquées\\
+    École Polytechnique
+}
+\date{Juin 2024}
+
+\begin{document}
+
+% Page de titre
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Plan
+\begin{frame}{Plan de la présentation}
+    \tableofcontents
+\end{frame}
+
+% Section 0: Données et Méthodologie
+\section{Données et Méthodologie}
+
+\begin{frame}{Sources des données}
+    \begin{itemize}
+        \item \textbf{Nasdaq Databento}:
+        \begin{itemize}
+            \item Données haute fréquence (microsecondes)
+            \item Format parquet optimisé
+            \item Messages d'ordres complets (ITCH)
+        \end{itemize}
+        \item \textbf{Chicago Mercantile Exchange}:
+        \begin{itemize}
+            \item Données futures et options
+            \item Granularité temporelle fine
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Prétraitement des données}
+    \begin{itemize}
+        \item \textbf{Pipeline de nettoyage}:
+        \begin{itemize}
+            \item Filtrage des données aberrantes
+            \item Synchronisation temporelle
+            \item Reconstruction du carnet d'ordres
+        \end{itemize}
+        \item \textbf{Infrastructure}:
+        \begin{itemize}
+            \item Cluster SLURM pour calculs parallèles
+            \item Optimisation GPU (CUDA)
+            \item Décomposition de Cholesky pour matrices
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Infrastructure technique}
+    \begin{itemize}
+        \item \textbf{Environnement de calcul}:
+        \begin{itemize}
+            \item Jupyter notebooks interactifs
+            \item Calculs distribués sur cluster
+            \item Optimisation mémoire et CPU
+        \end{itemize}
+        \item \textbf{Librairie open-source}:
+        \begin{itemize}
+            \item github.com/janisaiad/HFT\_QR\_RL
+            \item Implémentation du modèle QR
+            \item Outils d'analyse et visualisation
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Section 1: Introduction aux Limit Order Books
+\section{Introduction aux Limit Order Books}
+
+\begin{frame}{Les marchés haute fréquence}
+    \begin{itemize}
+        \item Électronification des marchés financiers
+        \item Réduction drastique du temps d'exécution
+        \item Trois catégories de trading:
+        \begin{itemize}
+            \item \textbf{Low Frequency (LF)}: Échelle de plusieurs mois
+            \item \textbf{Mid Frequency (MF)}: Échelle journalière
+            \item \textbf{High Frequency (HF)}: Échelle microseconde
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Structure du Limit Order Book}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Trois types d'ordres:
+                \begin{itemize}
+                    \item \textbf{Limit Order}: Proposition à prix fixé
+                    \item \textbf{Market Order}: Exécution immédiate
+                    \item \textbf{Cancellation}: Retrait d'ordre
+                \end{itemize}
+                \item Organisation en files d'attente
+                \item Prix de référence $p_{ref}$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            % Insérer ici un schéma simplifié du LOB
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Section 2: Le modèle Queue-Reactive
+\section{Le modèle Queue-Reactive}
+
+\begin{frame}{Principes du modèle QR}
+    \begin{itemize}
+        \item Modélisation par files d'attente
+        \item Prix fixe de référence $p_{ref}$
+        \item Évolution selon processus de Markov
+        \item Variables de Poisson indépendantes
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dynamique du modèle}
+    \begin{equation*}
+        Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))
+    \end{equation*}
+    \begin{itemize}
+        \item Intensités $\lambda_i^U(Q_i(t))$
+        \item Choix de l'action: minimum des variables de Poisson
+        \item Paramètre de mean-reversion $\theta$
+    \end{itemize}
+\end{frame}
+
+% Section 3: Théorèmes principaux
+\section{Théorèmes principaux}
+
+\begin{frame}{Convergence du quantile}
+    \begin{theorem}[Convergence du quantile]
+        La valeur $\Delta_T^{n_T}(\alpha)$ tend vers une constante $\Delta_T(\alpha)$ qui ne dépend plus de $T_f$:
+        \begin{align*}
+            T_f &\underset{n\to +\infty}{\to}+\infty \ \text{p.s} \\
+            \frac{n_T}{n} &\underset{n\to +\infty}{\to}C^{ste} \ \text{p.s} \\
+            \Delta_T^{n_T}(\alpha) &\underset{n\to +\infty}{\to}\Delta_T(\alpha) \ \text{p.s}
+        \end{align*}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Uniformité des événements rares}
+    \begin{theorem}[Uniformité des événements rares]
+        Pour $X_k$ le nombre d'événements rares dans une fenêtre glissante:
+        \[X_k \sim \mathcal{B}(N, \alpha)\]
+        avec intervalle de Wilson pour la proportion $p_k$:
+        \[IC_{\text{Wilson}} = \left[ \frac{\hat{p} + \frac{z^2}{2N} \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{N} + \frac{z^2}{4N^2}}}{1 + \frac{z^2}{N}} \right]\]
+    \end{theorem}
+\end{frame}
+
+% Section 4: Analyse empirique
+\section{Analyse empirique}
+
+\begin{frame}{Données utilisées}
+    \begin{itemize}
+        \item Trois actifs étudiés:
+        \begin{itemize}
+            \item GOOGL: 2.67M actions/jour (49.65\% Add)
+            \item LCID: 70.7k actions/jour (45.69\% Add)
+            \item KHC: 203k actions/jour (47.75\% Add)
+        \end{itemize}
+        \item Période: 65 jours (28 juillet - 4 novembre)
+        \item Source: Databento (Nasdaq)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{L'imbalance: mesure clé}
+    \begin{equation*}
+        \text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}
+    \end{equation*}
+    \begin{itemize}
+        \item Indicateur de déséquilibre
+        \item Prédicteur de mouvements de prix
+        \item Distribution non uniforme
+    \end{itemize}
+\end{frame}
+
+% Section 5: Conclusions
+\section{Conclusions}
+
+\begin{frame}{Conclusions principales}
+    \begin{itemize}
+        \item Contributions méthodologiques:
+        \begin{itemize}
+            \item Cadre probabiliste rigoureux
+            \item Détection fine des anomalies
+        \end{itemize}
+        \item Limites du modèle QR standard
+        \item Nécessité d'intégrer:
+        \begin{itemize}
+            \item Composante endogène (LOB)
+            \item Composante exogène (news)
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Remerciements
+\begin{frame}{Remerciements}
+    \begin{center}
+        \Large Merci de votre attention
+        \vspace{1cm}
+        
+        \normalsize
+        Questions?
+    \end{center}
+\end{frame}
+
+\end{document}
