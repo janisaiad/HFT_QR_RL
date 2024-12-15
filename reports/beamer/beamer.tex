@@ -94,6 +94,81 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Caractéristiques des données}
+    \begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Actif} & \textbf{Nb/Jour Actions} & \textbf{Pct Add} & \textbf{Pct Cancel} & \textbf{Pct Order} \\ \hline
+    GOOGL & 2.67M & 49.65\% & 46.64\% & 3.70\% \\ \hline
+    LCID & 70.7k & 45.69\% & 42.94\% & 11.35\% \\ \hline
+    KHC & 203k & 47.75\% & 45.34\% & 6.89\% \\ \hline
+    \end{tabular}
+    \caption{Statistiques moyennes sur 65 jours (28 juillet - 4 novembre)}
+    \end{table}
+    \vspace{0.3cm}
+    \begin{itemize}
+        \item Données haute fréquence (microsecondes)
+        \item Format parquet optimisé
+        \item Messages d'ordres complets (ITCH)
+        \item Période d'étude : 65 jours
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Critères de filtrage des données}
+    \begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Critère} & \textbf{Seuil} & \textbf{Impact} \\ \hline
+    Outliers & $\pm3\sigma$ des prix & Suppression points aberrants \\ \hline
+    Missing data & $>5\%$ par jour & Interpolation linéaire \\ \hline
+    Valeurs aberrantes & 614 dans les tailles & Remplacement par 0 \\ \hline
+    Profondeur carnet & Niveau 0 & Analyse du BBO \\ \hline
+    Publisher ID & 39 & Sélection publisher\_id 39 \\ \hline
+    Horodatage & ts\_event & 14h-20h uniquement \\ \hline
+    \end{tabular}
+    \end{table}
+    \vspace{0.3cm}
+    \begin{itemize}
+        \item Focus sur un titre unique (LCID)
+        \item Validation systématique des modifications
+        \item Contrôle de cohérence des actions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pipeline de nettoyage}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Étapes de validation}:
+            \begin{itemize}
+                \item Transactions (T):
+                \begin{itemize}
+                    \item Vérification volume échangé
+                    \item Cohérence des diminutions
+                \end{itemize}
+                \item Ajouts (A):
+                \begin{itemize}
+                    \item Validation taille ajoutée
+                    \item Correspondance exacte
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Traitement technique}:
+            \begin{itemize}
+                \item Cast en Int64
+                \item Vérification colonnes
+                \item Indicateurs qualité:
+                \begin{itemize}
+                    \item status\_N
+                    \item status\_diff
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 % Section 1: Introduction aux Limit Order Books
 \section{Introduction aux Limit Order Books}
 
