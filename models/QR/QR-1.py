@@ -3,8 +3,7 @@ import plotly.graph_objects as go
 from typing import List, Tuple
 from dataclasses import dataclass
 from enum import Enum
-import random
-from tqdm import tqdm  # type: ignore # Importation de tqdm pour afficher la progression
+from tqdm import tqdm  # type: ignore
 
 """
 Définition de la classe Queue pour représenter une file d'attente avec un prix et une taille.
@@ -36,84 +35,135 @@ class OrderBook:
 
         :return: Tuple contenant le meilleur prix bid et le meilleur prix ask
         """
-        k = self.k  # Nombre de niveaux de prix
-        bid = self.state[k - 1].price if self.state[k - 1].size > 0 else self.state[k - 2].price  # Meilleur prix bid
-        ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price  # Meilleur prix ask
-        return bid, ask  # Retourne les meilleurs prix bid et ask
+        k = self.k
+        bid = self.state[k - 1].price if self.state[k - 1].size > 0 else self.state[k - 2].price
+        ask = self.state[k].price if self.state[k].size > 0 else self.state[k + 1].price
+        return bid, ask
 
     def update_state(self, lambda_: List[List[float]], mju: List[List[float]], stf: int, Cbound: int, delta: float, H: float):
         """
-        Met à jour l'état du carnet d'ordres en fonction des distributions lambda et mju en tenant compte des Assumptions 1 et 2.
+        Met à jour l'état du carnet d'ordres avec des intensités calibrées.
 
-        :param lambda_: Taux d'arrivée des ordres
-        :param mju: Taux d'annulation des ordres
+        :param lambda_: Taux d'arrivée des ordres calibrés
+        :param mju: Taux d'annulation des ordres calibrés
         :param stf: Facteur de mise à l'échelle du temps
         :param Cbound: Limite supérieure pour la taille de la file d'attente
         :param delta: Valeur delta pour la diminution de la taille de la file d'attente
         :param H: Limite supérieure pour le flux entrant
         """
-        for i in range(self.k * 2):  # Pour chaque niveau de prix
-            size = self.state[i].size  # Taille actuelle de la file d'attente
-            s_lambda = np.random.poisson(lambda_[i % self.k] * stf)  # Taux d'arrivée des ordres
-            s_mju = np.random.poisson(mju[i % self.k] * stf)  # Taux d'annulation des ordres
-            proposed_change = s_lambda - s_mju  # Changement proposé de la taille
+        for i in range(self.k * 2):
+            size = self.state[i].size
+            # Intensités calibrées selon la profondeur du carnet
+            depth_factor = np.exp(-0.1 * abs(i - self.k))  # Décroissance exponentielle avec la profondeur
+            
+            # Taux d'arrivée ajusté selon la profondeur et la taille actuelle
+            arrival_intensity = lambda_[i % self.k][0] * depth_factor * (1 - size/Cbound)
+            s_lambda = np.random.poisson(arrival_intensity * stf)
+            
+            # Taux d'annulation proportionnel à la taille actuelle
+            cancel_intensity = mju[i % self.k][0] * (size/Cbound) * depth_factor
+            s_mju = np.random.poisson(cancel_intensity * stf)
+            
+            proposed_change = s_lambda - s_mju
 
-            # Assumption 1: Negative individual drift
+            # Assumption 1: Negative individual drift pour les grandes queues
             if size > Cbound:
-                proposed_change -= delta
+                proposed_change -= delta * (size/Cbound)
 
-            # Assumption 2: Bound on the incoming flow
-            total_incoming_flow = sum(np.random.poisson(lambda_[j % self.k] * stf) for j in range(-self.k, self.k) if j != 0)
+            # Assumption 2: Bound on the incoming flow avec scaling dynamique
+            total_incoming_flow = sum(
+                np.random.poisson(lambda_[j % self.k][0] * np.exp(-0.1 * abs(j)) * stf) 
+                for j in range(-self.k, self.k) if j != 0
+            )
+            
             if total_incoming_flow > H:
-                proposed_change = min(proposed_change, H - size)
+                scale_factor = H / total_incoming_flow
+                proposed_change = int(proposed_change * scale_factor)
 
-            # Utilisation de la fonction de régénération pour ajuster la taille
+            # Régénération si nécessaire
             if size + proposed_change <= 0:
-                Regen_func_basic(i, self.state)  # Appel à la fonction de régénération
+                self.state[i].size = self.regenerate_queue(i)
+            else:
+                self.state[i].size = min(Cbound, max(0, size + proposed_change))
 
-            self.state[i].size = max(0, size + proposed_change)  # Mise à jour de la taille de la file d'attente
-            
-            
-def Regen_func_basic(i: int, state: List[Queue]):
-    """
-    Fonction de régénération pour ajuster la taille de la file d'attente.
+    def regenerate_queue(self, i: int) -> int:
+        """
+        Régénère une queue vide avec une taille initiale calibrée.
+        
+        :param i: Index de la queue
+        :return: Nouvelle taille de la queue
+        """
+        depth_factor = np.exp(-0.1 * abs(i - self.k))
+        base_size = 5  # Taille de base pour la régénération
+        return int(base_size * depth_factor)
 
-    :param i: Indice de la file d'attente
-    :param state: État actuel du carnet d'ordres
+def init_order_book(p_ref: float, k: int, tick_size: float) -> OrderBook:
     """
-    if state[i].size <= 0:
-        state[i].size = 1  # Régénération de la taille de la file d'attente
-
-def init_order_book(p_ref: float, invariant: List[List[float]], k: int, tick_size: float) -> OrderBook:
-    """
-    Initialise un nouveau carnet d'ordres.
+    Initialise un carnet d'ordres avec des tailles calibrées.
 
     :param p_ref: Prix de référence
-    :param invariant: Liste des états invariants
-    :param k: Nombre de niveaux de prix de chaque côté
+    :param k: Nombre de niveaux de prix
     :param tick_size: Taille du tick
     :return: Carnet d'ordres initialisé
     """
-    p_lowest = p_ref - tick_size/2 - tick_size * k  # Calcul du prix le plus bas
-    state = [Queue(p_lowest + i * tick_size, random.choice(invariant[i % k])) for i in range(k * 2)]  # Initialisation de l'état
-    return OrderBook(state, k, p_ref)  # Retourne le carnet d'ordres initialisé
+    p_lowest = p_ref - tick_size/2 - tick_size * k
+    state = []
+    for i in range(k * 2):
+        depth_factor = np.exp(-0.1 * abs(i - k))
+        initial_size = int(50 * depth_factor)  # Taille initiale calibrée selon la profondeur
+        state.append(Queue(p_lowest + i * tick_size, initial_size))
+    return OrderBook(state, k, p_ref)
 
+def get_calibrated_intensities(k: int) -> Tuple[List[List[float]], List[List[float]]]:
+    """
+    Génère des intensités calibrées pour le modèle.
+
+    :param k: Nombre de niveaux de prix
+    :return: Tuple des intensités lambda et mju calibrées
+    """
+    base_lambda = 100  # Intensité de base pour les arrivées
+    base_mju = 80     # Intensité de base pour les annulations
+    
+    lambda_ = [[base_lambda * np.exp(-0.1 * i)] for i in range(k)]
+    mju = [[base_mju * np.exp(-0.05 * i)] for i in range(k)]
+    
+    return lambda_, mju
+
+# Paramètres optimisés
+params = {
+    "k": 10,
+    "p_ref": 100.0,
+    "tick_size": 0.01,
+    "stf": 1,
+    "simulation_time": 60000,
+    "Cbound": 1000,
+    "delta": 0.5,
+    "H": 500
+}
+
+# Initialisation avec intensités calibrées
+lambda_, mju = get_calibrated_intensities(params["k"])
+order_books = []
+times = []
+
+# Simulation
+lob = init_order_book(params["p_ref"], params["k"], params["tick_size"])
+for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulation Progress"):
+    lob.update_state(lambda_, mju, params["stf"], params["Cbound"], params["delta"], params["H"])
+    if t % 1000 == 0:
+        order_books.append(OrderBook([Queue(q.price, q.size) for q in lob.state], lob.k, lob.p_ref))
+        times.append(t)
+
+# Visualisation
 def plot_order_book_heatmap(order_books: List[OrderBook], times: List[int]):
-    """
-    Trace une carte thermique du carnet d'ordres avec l'axe x représentant le temps, l'axe y représentant le prix et la couleur représentant la taille de la file d'attente.
+    prices = sorted(set(q.price for lob in order_books for q in lob.state))
+    heatmap_data = np.zeros((len(prices), len(times)))
+    price_to_index = {price: idx for idx, price in enumerate(prices)}
 
-    :param order_books: Liste des carnets d'ordres à différents moments
-    :param times: Liste des moments correspondants
-    """
-    prices = sorted(set(q.price for lob in order_books for q in lob.state))  # Récupération de tous les prix uniques
-    heatmap_data = np.zeros((len(prices), len(times)))  # Initialisation de la matrice de données pour la carte thermique
-
-    price_to_index = {price: idx for idx, price in enumerate(prices)}  # Mapping des prix aux indices de la matrice
-
-    for t_idx, lob in enumerate(order_books):  # Pour chaque carnet d'ordres
-        for q in lob.state:  # Pour chaque file d'attente dans le carnet d'ordres
-            price_idx = price_to_index[q.price]  # Récupération de l'indice du prix
-            heatmap_data[price_idx, t_idx] = q.size  # Mise à jour de la matrice de données avec la taille de la file d'attente
+    for t_idx, lob in enumerate(order_books):
+        for q in lob.state:
+            price_idx = price_to_index[q.price]
+            heatmap_data[price_idx, t_idx] = q.size
 
     fig = go.Figure(data=go.Heatmap(
         z=heatmap_data,
@@ -123,63 +173,12 @@ def plot_order_book_heatmap(order_books: List[OrderBook], times: List[int]):
     ))
 
     fig.update_layout(
-        title="Carte thermique du carnet d'ordres",
-        xaxis_title="Temps",
-        yaxis_title="Prix",
+        title="Order Book Depth Heatmap",
+        xaxis_title="Time",
+        yaxis_title="Price",
         yaxis=dict(type='category')
     )
 
-    fig.show()  # Affichage de la figure
+    fig.show()
 
-# Paramètres du modèle
-params = {
-    "k": 10,  # Nombre de niveaux de prix
-    "p_ref": 10.0,  # Prix de référence
-    "tick_size": 0.1,  # Taille du tick
-    "stf": 1,  # Facteur de mise à l'échelle du temps
-    "simulation_time": 60000,  # Temps de simulation
-    "Cbound": 100,  # Limite supérieure pour la taille de la file d'attente
-    "delta": 0.1,  # Valeur delta pour la diminution de la taille de la file d'attente
-    "H": 50  # Limite supérieure pour le flux entrant
-}
-
-# Initialisation
-def get_distributions(k: int, scale: int) -> Tuple[List[float], List[float]]:
-    """
-    Génère des distributions lambda et mju pour le modèle.
-
-    :param k: Nombre de niveaux de prix de chaque côté
-    :param scale: Échelle pour les distributions
-    :return: Tuple des listes lambda et mju
-    """
-    lambda_ = [min(scale, max(0, scale - i)) for i in range(k)]  # Génération des valeurs lambda selon Assumption 1 et 2
-    mju = [random.uniform(0, 1) * scale for _ in range(k)]  # Génération des valeurs mju
-    return lambda_, mju  # Retourne les distributions lambda et mju
-
-def assign_invariant(lambda_: List[float], mju: List[float], k: int) -> List[List[float]]:
-    """
-    Assigne des états invariants basés sur les distributions lambda et mju.
-
-    :param lambda_: Liste des valeurs lambda
-    :param mju: Liste des valeurs mju
-    :param k: Nombre de niveaux de prix de chaque côté
-    :return: Liste des états invariants
-    """
-    invariant = [[lambda_[i], mju[i]] for i in range(k)]  # Création des états invariants
-    return invariant  # Retourne les états invariants
-
-lambda_, mju = get_distributions(params["k"], 100)  # Récupération des distributions lambda et mju
-invariant = assign_invariant(lambda_, mju, params["k"])  # Assignation des états invariants
-order_books = []  # Liste des carnets d'ordres
-times = []  # Liste des moments
-
-# Simulation
-lob = init_order_book(params["p_ref"], invariant, params["k"], params["tick_size"])  # Initialisation du carnet d'ordres
-for t in tqdm(range(0, params["simulation_time"], params["stf"]), desc="Simulation Progress"):  # Pour chaque instant de simulation avec barre de progression
-    lob.update_state(lambda_, mju, params["stf"], params["Cbound"], params["delta"], params["H"])  # Mise à jour de l'état du carnet d'ordres
-    if t % 1000 == 0:  # Enregistrer l'état toutes les 1000 itérations
-        order_books.append(OrderBook([Queue(q.price, q.size) for q in lob.state], lob.k, lob.p_ref))  # Ajout de l'état actuel à la liste
-        times.append(t)  # Ajout du moment actuel à la liste
-
-# Affichage des résultats
-plot_order_book_heatmap(order_books, times)  # Affichage de la carte thermique du carnet d'ordres
+plot_order_book_heatmap(order_books, times)

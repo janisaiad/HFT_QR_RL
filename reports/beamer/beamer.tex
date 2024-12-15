@@ -36,6 +36,157 @@
     \titlepage
 \end{frame}
 
+\begin{frame}{Les marchés haute fréquence}
+    \begin{itemize}
+        \item Électronification des marchés financiers
+        \item Réduction drastique du temps d'exécution
+        \item Trois catégories de trading:
+        \begin{itemize}
+            \item \textbf{Low Frequency (LF)}: Échelle de plusieurs mois
+            \item \textbf{Mid Frequency (MF)}: Échelle journalière
+            \item \textbf{High Frequency (HF)}: Échelle microseconde
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Études empiriques}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Impact des annonces sur le marché}
+            \begin{itemize}
+                \item \textbf{Volatilité}:
+                \begin{itemize}
+                    \item Augmentation de 150-300\%
+                    \item Pics lors des annonces majeures
+                \end{itemize}
+                \item \textbf{Liquidité}:
+                \begin{itemize}
+                    \item Modification des spreads bid-ask
+                    \item Changements de profondeur du LOB
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Source}
+                \small{Review of Financial Studies (2019)}
+                \begin{itemize}
+                    \item Étude sur impact des news
+                    \item Analyse haute fréquence
+                    \item Données multi-marchés
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Comportement des Traders}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Stratégies adaptatives}
+            \begin{itemize}
+                \item \textbf{Pré-annonce}:
+                \begin{itemize}
+                    \item Ordres limites prudents
+                    \item Positionnement stratégique
+                \end{itemize}
+                \item \textbf{Post-annonce}:
+                \begin{itemize}
+                    \item Ordres marchés agressifs
+                    \item Exploitation de l'information
+                \end{itemize}
+                \item \textbf{Stabilisation}:
+                \begin{itemize}
+                    \item Retour progressif à l'équilibre
+                    \item Ajustement des positions
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Source}
+                \small{Journal of Finance (2020)}
+                \begin{itemize}
+                    \item Étude comportementale
+                    \item Cycles d'annonces
+                    \item Stratégies HFT
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Imbalance et Prédiction}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Indicateurs prédictifs}
+            \begin{itemize}
+                \item \textbf{Imbalance du LOB}:
+                \begin{itemize}
+                    \item Indicateur avancé
+                    \item Forte capacité prédictive
+                \end{itemize}
+                \item \textbf{Corrélations}:
+                \begin{itemize}
+                    \item Mouvements de prix futurs
+                    \item Dynamique du marché
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Source}
+                \small{Quantitative Finance (2021)}
+                \begin{itemize}
+                    \item Modèles prédictifs
+                    \item Analyse statistique
+                    \item Validation empirique
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Impact du Tick Size}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Effets sur le marché}
+            \begin{itemize}
+                \item \textbf{Liquidité}:
+                \begin{itemize}
+                    \item Profondeur du marché
+                    \item Résilience des prix
+                \end{itemize}
+                \item \textbf{Spread bid-ask}:
+                \begin{itemize}
+                    \item Coûts de transaction
+                    \item Efficience du marché
+                \end{itemize}
+                \item \textbf{Market making}:
+                \begin{itemize}
+                    \item Stratégies d'arbitrage
+                    \item Gestion du risque
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Source}
+                \small{Market Microstructure\\and Liquidity (2018)}
+                \begin{itemize}
+                    \item Étude empirique
+                    \item Impact réglementaire
+                    \item Efficience du marché
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Problématique}
+    \begin{itemize}
+        \item Détection d'événements rares sur les marchés financiers
+        \item Modélisation des mouvements de prix
+        \item Prédiction des sauts de prix
+    \end{itemize}
+\end{frame}
+
 % Plan
 \begin{frame}{Plan de la présentation}
     \tableofcontents
@@ -58,6 +209,51 @@
             \item Granularité temporelle fine
         \end{itemize}
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Traitement systématique des données}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Événements simultanés}
+            \begin{itemize}
+                \item \small{Trades + Annulations:}
+                \begin{itemize}
+                    \item \footnotesize{Agrégation en un événement}
+                    \item \footnotesize{Annulation intégrée à la séquence}
+                    \item \footnotesize{Gestion des exécutions partielles}
+                \end{itemize}
+                \item \small{Trades multiples:}
+                \begin{itemize}
+                    \item \footnotesize{Agrégation au même timestamp}
+                    \item \footnotesize{Conservation cohérence temporelle}
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Cas spéciaux}
+            \begin{itemize}
+                \item \small{Nouvelle limite:}
+                \begin{itemize}
+                    \item \footnotesize{Changement de niveau de prix}
+                    \item \footnotesize{Réinitialisation des volumes}
+                    \item \footnotesize{Maintien continuité des prix}
+                \end{itemize}
+                \item \small{Séquences complexes:}
+                \begin{itemize}
+                    \item \footnotesize{Vérification cohérence volumes}
+                    \item \footnotesize{Intégrité des données}
+                    \item \footnotesize{Traçabilité des modifications}
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \begin{alertblock}{Objectifs du traitement}
+        \begin{itemize}
+            \item Maintien de la cohérence temporelle des événements
+            \item Conservation de l'intégrité des volumes
+            \item Traitement uniforme des cas particuliers
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 
 \begin{frame}{Prétraitement des données}
@@ -125,7 +321,7 @@
     Missing data & $>5\%$ par jour & Interpolation linéaire \\ \hline
     Valeurs aberrantes & 614 dans les tailles & Remplacement par 0 \\ \hline
     Profondeur carnet & Niveau 0 & Analyse du BBO \\ \hline
-    Publisher ID & 39 & Sélection publisher\_id 39 \\ \hline
+    Publisher ID & 39 & S��lection publisher\_id 39 \\ \hline
     Horodatage & ts\_event & 14h-20h uniquement \\ \hline
     \end{tabular}
     \end{table}
@@ -172,19 +368,6 @@
 % Section 1: Introduction aux Limit Order Books
 \section{Introduction aux Limit Order Books}
 
-\begin{frame}{Les marchés haute fréquence}
-    \begin{itemize}
-        \item Électronification des marchés financiers
-        \item Réduction drastique du temps d'exécution
-        \item Trois catégories de trading:
-        \begin{itemize}
-            \item \textbf{Low Frequency (LF)}: Échelle de plusieurs mois
-            \item \textbf{Mid Frequency (MF)}: Échelle journalière
-            \item \textbf{High Frequency (HF)}: Échelle microseconde
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Structure du Limit Order Book}
     \begin{columns}
         \begin{column}{0.6\textwidth}
@@ -217,14 +400,207 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Dynamique du modèle}
+\begin{frame}{Dynamique du modèle QR}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{equation*}
+                Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),...Q_K(t))
+            \end{equation*}
+            \begin{itemize}
+                \item Processus de Poisson d'intensités $\lambda_i^U(Q_i(t))$
+                \item $U \in \{\text{Add}, \text{Cancel}, \text{Trade}\}$
+                \item Choix de l'action: minimum des variables de Poisson
+                \item Paramètre de mean-reversion $\theta$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Hypothèses clés}
+                \begin{itemize}
+                    \item Indépendance des files
+                    \item Markov en $Q(t)$
+                    \item Intensités stationnaires
+                    \item FIFO pour les ordres
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Faits stylisés du modèle}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Ordres limites (Add)}
+            \begin{itemize}
+                \item \small{Q1: Intensité quasi-constante}
+                \begin{itemize}
+                    \item \footnotesize{Plus faible à 0 (risque)}
+                    \item \footnotesize{Lié au spread et volatilité}
+                \end{itemize}
+                \item \small{Q2/Q3: Décroissante en taille}
+                \begin{itemize}
+                    \item \footnotesize{Stratégie de priorité}
+                \end{itemize}
+            \end{itemize}
+            
+            \textbf{Annulations (Cancel)}
+            \begin{itemize}
+                \item \small{Q1: Concave puis plateau}
+                \begin{itemize}
+                    \item \footnotesize{Valeur de priorité FIFO}
+                \end{itemize}
+                \item \small{Q2: Asymptote plus rapide}
+                \item \small{Q3: Quasi-linéaire}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Ordres marché (Trade)}
+            \begin{itemize}
+                \item \small{Q1: Décroissance exponentielle}
+                \begin{itemize}
+                    \item \footnotesize{Rush sur liquidité rare}
+                    \item \footnotesize{Attente si abondante}
+                \end{itemize}
+                \item \small{Q2: Similaire à Q1}
+                \begin{itemize}
+                    \item \footnotesize{Uniquement si Q1=0}
+                \end{itemize}
+                \item \small{Q3: Rare, spread large}
+            \end{itemize}
+            
+            \begin{alertblock}{Implications}
+                \begin{itemize}
+                    \item Priorité FIFO cruciale
+                    \item Comportements stratégiques
+                    \item Mean-reversion naturelle
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Probabilité de saut $\theta$}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}[scale=0.8]
+                % État initial
+                \draw[thick] (0,4) rectangle (2,5) node[midway] {$Q_1=100$};
+                \draw[thick] (0,3) rectangle (2,4) node[midway] {$Q_{-1}=50$};
+                \draw[dashed] (1,2.5) -- (1,5.5);
+                \node at (1,5.8) {$p_{ref}$};
+                
+                % Flèche
+                \draw[->, thick] (2.5,4) -- (3.5,4);
+                \node[above] at (3,4) {Trade};
+                
+                % État après trade
+                \draw[thick] (4,4) rectangle (6,5) node[midway] {$Q_1=100$};
+                \draw[thick] (4,3) rectangle (6,4) node[midway] {$Q_{-1}=0$};
+                \draw[dashed] (5,2.5) -- (5,5.5);
+                \node at (5,5.8) {$p_{ref}$};
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}[scale=0.8]
+                % Probabilité theta
+                \draw[->] (0,0) -- (2,1) node[right] {$\theta$};
+                \draw[->] (0,0) -- (2,-1) node[right] {$1-\theta$};
+                
+                % États résultants
+                \begin{scope}[shift={(3,1)}]
+                    \draw[thick] (0,0) rectangle (2,1) node[midway] {$Q_1=100$};
+                    \draw[thick] (0,-1) rectangle (2,0) node[midway] {$Q_{-1}=0$};
+                    \draw[dashed] (1,-1.5) -- (1,1.5);
+                    \node at (1,1.8) {$p_{ref}+\delta$};
+                \end{scope}
+                
+                \begin{scope}[shift={(3,-2)}]
+                    \draw[thick] (0,0) rectangle (2,1) node[midway] {$Q_1=100$};
+                    \draw[thick] (0,-1) rectangle (2,0) node[midway] {$Q_{-1}=0$};
+                    \draw[dashed] (1,-1.5) -- (1,1.5);
+                    \node at (1,1.8) {$p_{ref}-\delta$};
+                \end{scope}
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Exemple de sauts consécutifs}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{tikzpicture}[scale=0.7]
+                % Axe temporel
+                \draw[->, thick] (-0.5,0) -- (10,0) node[right] {temps};
+                \foreach \x/\t in {0/t_0, 3/t_1, 6/t_2, 9/t_3} {
+                    \draw (\x,-0.2) -- (\x,0.2);
+                    \node[below] at (\x,-0.2) {$\t$};
+                }
+                
+                % État à t0
+                \begin{scope}[shift={(0,1)}]
+                    \draw[thick] (0,0) rectangle (1.5,0.8) node[midway] {\small $Q_1=100$};
+                    \draw[thick] (0,-0.8) rectangle (1.5,0) node[midway] {\small $Q_{-1}=50$};
+                    \draw[dashed] (0.75,-1.2) -- (0.75,1.2);
+                    \node[above] at (0.75,1.2) {$p_{ref}$};
+                \end{scope}
+                
+                % État à t1
+                \begin{scope}[shift={(3,1)}]
+                    \draw[thick] (0,0) rectangle (1.5,0.8) node[midway] {\small $Q_1=100$};
+                    \draw[thick] (0,-0.8) rectangle (1.5,0) node[midway] {\small $Q_{-1}=0$};
+                    \draw[dashed] (0.75,-1.2) -- (0.75,1.2);
+                    \node[above] at (0.75,1.2) {$p_{ref}+\delta$};
+                \end{scope}
+                
+                % État à t2
+                \begin{scope}[shift={(6,1)}]
+                    \draw[thick] (0,0) rectangle (1.5,0.8) node[midway] {\small $Q_1=0$};
+                    \draw[thick] (0,-0.8) rectangle (1.5,0) node[midway] {\small $Q_{-1}=50$};
+                    \draw[dashed] (0.75,-1.2) -- (0.75,1.2);
+                    \node[above] at (0.75,1.2) {$p_{ref}+2\delta$};
+                \end{scope}
+                
+                % État à t3
+                \begin{scope}[shift={(9,1)}]
+                    \draw[thick] (0,0) rectangle (1.5,0.8) node[midway] {\small $Q_1=0$};
+                    \draw[thick] (0,-0.8) rectangle (1.5,0) node[midway] {\small $Q_{-1}=0$};
+                    \draw[dashed] (0.75,-1.2) -- (0.75,1.2);
+                    \node[above] at (0.75,1.2) {$p_{ref}+3\delta$};
+                \end{scope}
+                
+                % Flèches entre les états
+                \draw[->, thick] (1.7,1) -- (2.8,1);
+                \draw[->, thick] (4.7,1) -- (5.8,1);
+                \draw[->, thick] (7.7,1) -- (8.8,1);
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \textbf{Calcul de probabilité:}
+            \vspace{0.3cm}
+            
+            Pour 3 sauts consécutifs vers le haut:
+            \begin{align*}
+                P &= \theta \cdot \theta \cdot \theta \\
+                &= \theta^3
+            \end{align*}
+            \vspace{0.2cm}
+            Avec $\theta \approx 0.7$:
+            \begin{align*}
+                P &\approx 0.343
+            \end{align*}
+            \vspace{0.2cm}
+            Cette probabilité relativement faible explique l'effet de mean-reversion observé sur les marchés.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{L'imbalance: mesure clé}
     \begin{equation*}
-        Q(t) = (Q_{-K}(t),...Q_{-1}(t),Q_{1}(t),Q_K(t))
+        \text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}
     \end{equation*}
     \begin{itemize}
-        \item Intensités $\lambda_i^U(Q_i(t))$
-        \item Choix de l'action: minimum des variables de Poisson
-        \item Paramètre de mean-reversion $\theta$
+        \item Indicateur de déséquilibre
+        \item Prédicteur de mouvements de prix
+        \item Distribution non uniforme
     \end{itemize}
 \end{frame}
 
@@ -267,17 +643,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{L'imbalance: mesure clé}
-    \begin{equation*}
-        \text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}
-    \end{equation*}
-    \begin{itemize}
-        \item Indicateur de déséquilibre
-        \item Prédicteur de mouvements de prix
-        \item Distribution non uniforme
-    \end{itemize}
-\end{frame}
-
 % Section 5: Conclusions
 \section{Conclusions}
 
@@ -306,6 +671,147 @@
         \normalsize
         Questions?
     \end{center}
+\end{frame}
+
+\section{Résultats empiriques sur GOOGL}
+
+\begin{frame}{Prix et limites de GOOGL}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.25\textwidth]{Prix&limit.png}
+                \caption{Évolution du prix de GOOGL avec le bid-ask (2024-07-25, 16:02-16:03). Les points noirs sont les trades, les tracés sont les limites -9 à +9}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \begin{alertblock}{Validation du modèle QR}
+                \begin{itemize}
+                    \item Mouvements de prix conformes aux prédictions
+                    \item Mean-reversion observée
+                    \item Sauts de prix cohérents avec $\theta$
+                    \item Imbalances prédictives
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Intensités des événements}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.25\textwidth]{trades_imbalnces_intensity.png}
+        \caption{Intensité des Trades en fonction de l'imbalance pour GOOGL (IC 95\%, première limite)}
+    \end{figure}
+    \begin{itemize}
+        \item Symétrie de l'imbalance entre ask et bid
+        \item Intensité plus élevée aux imbalances extrêmes
+        \item Les acteurs exploitent le MBO aux imbalances extrêmes
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Add et Cancel en fonction de l'imbalance}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.25\textwidth]{ADD_CANCEL_INTENSITY_IMBALANCE_GOOGL.png}
+        \caption{Intensité des Add (bleu) et Cancel (vert) vs imbalance pour GOOGL (IC 95\%, seconde limite)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Événements majeurs (1/3)}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Graphe_1.png}
+            \caption{20 sept. 2024: Plainte UK monopole}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Graphe4.png}
+            \caption{25 juil. 2024: Résultats Q2 + ChatGPT}
+        \end{subfigure}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Événements majeurs (2/3)}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Graphe5.png}
+            \caption{17 nov. 2024: Gemini + Pixel 9}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Graphe6.png}
+            \caption{29 août 2024: Faille Chrome}
+        \end{subfigure}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Événements majeurs (3/3)}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Graphe7.png}
+            \caption{18 sept. 2024: Cut FED}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=0.25\textwidth]{Grpahe7.png}
+            \caption{5 août 2024: Amende US}
+        \end{subfigure}
+        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Asymétrie du LOB Bitcoin}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{bitcoin.png}
+        \caption{Structure asymétrique du Limit Order Book du Bitcoin}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Explication de l'asymétrie Bitcoin}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Côté Ask (Vente)}
+            \begin{itemize}
+                \item \small{Courbe concave}
+                \begin{itemize}
+                    \item \footnotesize{Accumulation d'ordres à prix élevés}
+                    \item \footnotesize{Anticipation de hausses futures}
+                    \item \footnotesize{Comportement HODL}
+                \end{itemize}
+                \item \small{Grosses queues en volume}
+                \begin{itemize}
+                    \item \footnotesize{Mineurs et early adopters}
+                    \item \footnotesize{Positions historiques}
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Côté Bid (Achat)}
+            \begin{itemize}
+                \item \small{Courbe convexe}
+                \begin{itemize}
+                    \item \footnotesize{Concentration près du prix courant}
+                    \item \footnotesize{Stratégie d'accumulation}
+                    \item \footnotesize{Liquidité immédiate}
+                \end{itemize}
+                \item \small{Implications}
+                \begin{itemize}
+                    \item \footnotesize{Résistance aux mouvements haussiers}
+                    \item \footnotesize{Volatilité asymétrique}
+                \end{itemize}
+            \end{itemize}
+            \begin{alertblock}{Particularité}
+                Cette structure unique reflète la nature spéculative et la psychologie particulière du marché crypto
+            \end{alertblock}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \end{document}
