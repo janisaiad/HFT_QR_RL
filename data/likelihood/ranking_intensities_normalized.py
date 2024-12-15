@@ -111,7 +111,7 @@ def analyze_normalized_intensities(folder_path: str, alpha_add: float = 0.98, al
                         # Sélectionner les points au-dessus du seuil
                         thresholded_indices = sorted_indices[:threshold_idx]
                         
-                        # Organiser les points par bucket
+                        # Organiser les points par  
                         bucket_points = {}
                         for idx in thresholded_indices:
                             bucket = all_bucket_labels[idx]
