@@ -79,35 +79,31 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Comportement des Traders}
+\begin{frame}{Comportement des Traders et Microstructure}
     \begin{columns}
         \begin{column}{0.6\textwidth}
-            \textbf{Stratégies adaptatives}
+            \textbf{Déroulé d'une annonce}
             \begin{itemize}
                 \item \textbf{Pré-annonce}:
                 \begin{itemize}
                     \item Ordres limites prudents
                     \item Positionnement stratégique
+                    \item Réduction de l'exposition
                 \end{itemize}
                 \item \textbf{Post-annonce}:
                 \begin{itemize}
                     \item Ordres marchés agressifs
                     \item Exploitation de l'information
-                \end{itemize}
-                \item \textbf{Stabilisation}:
-                \begin{itemize}
-                    \item Retour progressif à l'équilibre
-                    \item Ajustement des positions
+                    \item Augmentation de la volatilité
                 \end{itemize}
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
-            \begin{alertblock}{Source}
-                \small{Journal of Finance (2020)}
+            \begin{alertblock}{Impact sur le LOB}
                 \begin{itemize}
-                    \item Étude comportementale
-                    \item Cycles d'annonces
-                    \item Stratégies HFT
+                    \item Volatilité +150-300\%
+                    \item Modification des spreads
+                    \item Changement de profondeur
                 \end{itemize}
             \end{alertblock}
         \end{column}
@@ -117,62 +113,25 @@
 \begin{frame}{Imbalance et Prédiction}
     \begin{columns}
         \begin{column}{0.6\textwidth}
-            \textbf{Indicateurs prédictifs}
+            \textbf{Mesure d'imbalance}
+            \begin{equation*}
+                \text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}
+            \end{equation*}
             \begin{itemize}
-                % \item \textbf{Imbalance du LOB}:
+                \item \textbf{Pouvoir prédictif}:
                 \begin{itemize}
-                    \item Indicateur avancé
-                    \item Forte capacité prédictive
-                \end{itemize}
-                \item \textbf{Corrélations}:
-                \begin{itemize}
-                    \item Mouvements de prix futurs
-                    \item Dynamique du marché
+                    \item Indicateur avancé des prix
+                    \item Forte corrélation avec mouvements
+                    \item Efficace sur spread 1 tick
                 \end{itemize}
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
-            \begin{alertblock}{Source}
-                \small{Quantitative Finance (2021)}
+            \begin{alertblock}{Choix des actifs}
                 \begin{itemize}
-                    \item Modèles prédictifs
-                    \item Analyse statistique
-                    \item Validation empirique
-                \end{itemize}
-            \end{alertblock}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Impact du Tick Size}
-    \begin{columns}
-        \begin{column}{0.6\textwidth}
-            \textbf{Effets sur le marché}
-            \begin{itemize}
-                \item \textbf{Liquidité}:
-                \begin{itemize}
-                    \item Profondeur du marché
-                    \item Résilience des prix
-                \end{itemize}
-                \item \textbf{Spread bid-ask}:
-                \begin{itemize}
-                    \item Coûts de transaction
-                    \item Efficience du marché
-                \end{itemize}
-                \item \textbf{Market making}:
-                \begin{itemize}
-                    \item Stratégies d'arbitrage
-                    \item Gestion du risque
-                \end{itemize}
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.4\textwidth}
-            \begin{alertblock}{Source}
-                \small{Market Microstructure\\and Liquidity (2018)}
-                \begin{itemize}
-                    \item Étude empirique
-                    \item Impact réglementaire
-                    \item Efficience du marché
+                    \item Focus spread 1 tick
+                    \item Réduction du bruit
+                    \item Meilleure prédictibilité
                 \end{itemize}
             \end{alertblock}
         \end{column}
@@ -211,81 +170,100 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Traitement systématique des données}
+\begin{frame}{Cas particulier de RIOT}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \textbf{Événements simultanés}
+        \begin{column}{0.6\textwidth}
+            \textbf{Deux régimes distincts observés}:
             \begin{itemize}
-                \item \small{Trades + Annulations:}
+                \item \textbf{Régime 1}: Trading classique
                 \begin{itemize}
-                    \item \footnotesize{Agrégation en un événement}
-                    \item \footnotesize{Annulation intégrée à la séquence}
-                    \item \footnotesize{Gestion des exécutions partielles}
+                    \item Dynamique de marché standard
+                    \item Variation des prix normale
                 \end{itemize}
-                \item \small{Trades multiples:}
+                \item \textbf{Régime 2}: Trading suspect
                 \begin{itemize}
-                    \item \footnotesize{Agrégation au même timestamp}
-                    \item \footnotesize{Conservation cohérence temporelle}
+                    \item Prix constants sur longues périodes
+                    \item Volumes d'échange importants
+                    \item Potentiels accords hors marché
                 \end{itemize}
             \end{itemize}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \textbf{Cas spéciaux}
-            \begin{itemize}
-                \item \small{Nouvelle limite:}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Particularités CME}
                 \begin{itemize}
-                    \item \footnotesize{Changement de niveau de prix}
-                    \item \footnotesize{Réinitialisation des volumes}
-                    \item \footnotesize{Maintien continuité des prix}
+                    \item Transactions répétées au même prix
+                    \item Volumes prédéfinis
+                    \item Possible entente entre acteurs
+                    \item Marché Chicago spécifique
                 \end{itemize}
-                \item \small{Séquences complexes:}
-                \begin{itemize}
-                    \item \footnotesize{Vérification cohérence volumes}
-                    \item \footnotesize{Intégrité des données}
-                    \item \footnotesize{Traçabilité des modifications}
-                \end{itemize}
-            \end{itemize}
+            \end{alertblock}
         \end{column}
     \end{columns}
-    \begin{alertblock}{Objectifs du traitement}
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item \textbf{Implications}:
         \begin{itemize}
-            \item Maintien de la cohérence temporelle des événements
-            \item Conservation de l'intégrité des volumes
-            \item Traitement uniforme des cas particuliers
+            \item Nécessité de filtrer ces périodes
+            \item Biais potentiel dans l'analyse
+            \item Question de la manipulation de marché
         \end{itemize}
-    \end{alertblock}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Prétraitement des données}
+\begin{frame}{Prétraitement systématique des données}
     \begin{itemize}
-        \item \textbf{Pipeline de nettoyage}:
+        \item \textbf{Pipeline systématique de nettoyage}:
         \begin{itemize}
             \item Filtrage des données aberrantes
             \item Synchronisation temporelle
             \item Reconstruction du carnet d'ordres
         \end{itemize}
-        \item \textbf{Infrastructure}:
+        \item \textbf{Hypothèses validées}:
         \begin{itemize}
-            \item Cluster SLURM pour calculs parallèles
-            \item Optimisation GPU (CUDA)
-            \item Décomposition de Cholesky pour matrices
+            \item Indépendance sur périodes sans drift
+            \item Validation empirique sur données
+            \item Stationnarité des intensités
         \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Infrastructure technique}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Traitement des données (100 Go)}:
+            \begin{itemize}
+                \item \textbf{Librairies haute performance}:
+                \begin{itemize}
+                    \item cuDF: Traitement GPU natif
+                    \item Polars: Optimisation CPU
+                    \item Polars-CUDA: Accélération GPU
+                \end{itemize}
+                \item \textbf{Environnement de calcul}:
+                \begin{itemize}
+                    \item Jupyter notebooks interactifs
+                    \item Calculs distribués sur cluster
+                    \item Optimisation mémoire et CPU/GPU
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Librairie open-source}
+                \begin{itemize}
+                    \item github.com/janisaiad/HFT\_QR\_RL
+                    \item Implémentation QR
+                    \item Outils d'analyse
+                    \item Pipeline de simulation
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    \vspace{0.2cm}
     \begin{itemize}
-        \item \textbf{Environnement de calcul}:
+        \item \textbf{Avantages}:
         \begin{itemize}
-            \item Jupyter notebooks interactifs
-            \item Calculs distribués sur cluster
-            \item Optimisation mémoire et CPU
-        \end{itemize}
-        \item \textbf{Librairie open-source}:
-        \begin{itemize}
-            \item github.com/janisaiad/HFT\_QR\_RL
-            \item Implémentation du modèle QR
-            \item Outils d'analyse et visualisation
+            \item Traitement parallèle efficace
+            \item Gestion optimisée de la mémoire
+            \item Réduction temps de calcul ×10-100
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -321,13 +299,17 @@
     Missing data & $>5\%$ par jour & Interpolation linéaire \\ \hline
     Valeurs aberrantes & 614 dans les tailles & Remplacement par 0 \\ \hline
     Profondeur carnet & Niveau 0 & Analyse du BBO \\ \hline
-    Publisher ID & 39 & S��lection publisher\_id 39 \\ \hline
+    Publisher ID & 39 & Sélection publisher\_id 39 \\ \hline
     Horodatage & ts\_event & 14h-20h uniquement \\ \hline
     \end{tabular}
     \end{table}
     \vspace{0.3cm}
     \begin{itemize}
-        \item Focus sur un titre unique (LCID)
+        \item Focus sur deux titres complémentaires:
+        \begin{itemize}
+            \item \textbf{GOOGL}: Volume élevé (2.67M/jour), tick fin
+            \item \textbf{KHC}: Moins de trades (203k/jour), tick plus large
+        \end{itemize}
         \item Validation systématique des modifications
         \item Contrôle de cohérence des actions
     \end{itemize}
@@ -388,6 +370,54 @@
     \end{columns}
 \end{frame}
 
+\begin{frame}{Point anecdotique sur l'asymétrie du LOB Bitcoin}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.25\textwidth]{bitcoin.png}
+        \caption{Structure asymétrique du Limit Order Book du Bitcoin}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Explication de l'asymétrie Bitcoin}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Côté Ask (Vente)}
+            \begin{itemize}
+                \item \small{Courbe concave}
+                \begin{itemize}
+                    \item \footnotesize{Accumulation d'ordres à prix élevés}
+                    \item \footnotesize{Anticipation de hausses futures}
+                    \item \footnotesize{Comportement HODL}
+                \end{itemize}
+                \item \small{Grosses queues en volume}
+                \begin{itemize}
+                    \item \footnotesize{Mineurs et early adopters}
+                    \item \footnotesize{Positions historiques}
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Côté Bid (Achat)}
+            \begin{itemize}
+                \item \small{Courbe convexe}
+                \begin{itemize}
+                    \item \footnotesize{Concentration près du prix courant}
+                    \item \footnotesize{Stratégie d'accumulation}
+                    \item \footnotesize{Liquidité immédiate}
+                \end{itemize}
+                \item \small{Implications}
+                \begin{itemize}
+                    \item \footnotesize{Résistance aux mouvements haussiers}
+                    \item \footnotesize{Volatilité asymétrique}
+                \end{itemize}
+            \end{itemize}
+            \begin{alertblock}{Particularité}
+                Cette structure unique reflète la nature spéculative et la psychologie particulière du marché crypto
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 % Section 2: Le modèle Queue-Reactive
 \section{Le modèle Queue-Reactive}
 
@@ -409,17 +439,19 @@
             \begin{itemize}
                 \item Processus de Poisson d'intensités $\lambda_i^U(Q_i(t))$
                 \item $U \in \{\text{Add}, \text{Cancel}, \text{Trade}\}$
-                \item Choix de l'action: minimum des variables de Poisson
-                \item Paramètre de mean-reversion $\theta$
+                \item \textbf{Mean-reversion double}:
+                \begin{itemize}
+                    \item $\theta$: retour au prix de référence
+                    \item $\theta_{\text{reinit}}$: nouveau $p_{\text{ref}}$ avec LOB invariant
+                \end{itemize}
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
-            \begin{alertblock}{Hypothèses clés}
+            \begin{alertblock}{Mécanismes de stabilisation}
                 \begin{itemize}
-                    \item Indépendance des files
-                    \item Markov en $Q(t)$
-                    \item Intensités stationnaires
-                    \item FIFO pour les ordres
+                    \item $\theta$: stabilisation locale
+                    \item $\theta_{\text{reinit}}$: adaptation globale
+                    \item Loi invariante du LOB
                 \end{itemize}
             \end{alertblock}
         \end{column}
@@ -593,17 +625,6 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{L'imbalance: mesure clé}
-    \begin{equation*}
-        \text{Imb}_t = \frac{Q^{best\ bid}_t-Q^{best\ ask}_t}{Q^{best\ bid}_t+Q^{best\ ask}_t}
-    \end{equation*}
-    \begin{itemize}
-        \item Indicateur de déséquilibre
-        \item Prédicteur de mouvements de prix
-        \item Distribution non uniforme
-    \end{itemize}
-\end{frame}
-
 % Section 3: Théorèmes principaux
 \section{Théorèmes principaux}
 
@@ -643,37 +664,51 @@
     \end{itemize}
 \end{frame}
 
-% Section 5: Conclusions
-\section{Conclusions}
+\section{Hypothèses de recherche et résultats empiriques sur GOOGL}
 
-\begin{frame}{Conclusions principales}
+\begin{frame}{Hypothèses théoriques (1/2)}
     \begin{itemize}
-        \item Contributions méthodologiques:
+        \item \textbf{Impact sur les intensités}:
         \begin{itemize}
-            \item Cadre probabiliste rigoureux
-            \item Détection fine des anomalies
+            \item Augmentation $\lambda^L$ post-news
+            \item Modification $\lambda^C$ (repositionnement)
+            \item Variation $\lambda^M$ selon nature de l'information
+            \item Asymétrie côté carnet impacté
         \end{itemize}
-        \item Limites du modèle QR standard
-        \item Nécessité d'intégrer:
+        \item \textbf{Structure du LOB}:
         \begin{itemize}
-            \item Composante endogène (LOB)
-            \item Composante exogène (news)
+            \item Déformation temporaire des queues
+            \item Modification ratios $q_1/q_{-1}$
+            \item Ajustement queues secondaires
+            \item Changement probabilité $p_{\text{ref}}$
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-% Remerciements
-\begin{frame}{Remerciements}
-    \begin{center}
-        \Large Merci de votre attention
-        \vspace{1cm}
-        
-        \normalsize
-        Questions?
-    \end{center}
+\begin{frame}{Hypothèses théoriques (2/2)}
+    \begin{itemize}
+        \item \textbf{Comportements stratégiques}:
+        \begin{itemize}
+            \item Phase 1: Annulations + Ordres marché
+            \item Phase 2: Repositionnement progressif
+            \item Retour à l'��quilibre des intensités
+        \end{itemize}
+        \item \textbf{Impact sur la liquidité}:
+        \begin{itemize}
+            \item Court terme:
+            \begin{itemize}
+                \item Augmentation spread
+                \item Baisse profondeur
+                \item Hausse volatilité
+            \end{itemize}
+            \item Moyen terme:
+            \begin{itemize}
+                \item Retour à l'équilibre
+                \item Meilleure efficience informationnelle
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
-
-\section{Résultats empiriques sur GOOGL}
 
 \begin{frame}{Prix et limites de GOOGL}
     \begin{columns}
@@ -719,102 +754,148 @@
 \end{frame}
 
 \begin{frame}{Événements majeurs (1/3)}
-    \begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Graphe_1.png}
-            \caption{20 sept. 2024: Plainte UK monopole}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Graphe4.png}
-            \caption{25 juil. 2024: Résultats Q2 + ChatGPT}
-        \end{subfigure}
-        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Graphe_1.png}
+                \caption{20 sept. 2024: Plainte UK monopole\\
+                Impact fort et immédiat sur le LOB}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Graphe4.png}
+                \caption{25 juil. 2024: Résultats Q2 + ChatGPT\\
+                Double impact: financier et technologique}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Événements majeurs (2/3)}
-    \begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Graphe5.png}
-            \caption{17 nov. 2024: Gemini + Pixel 9}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Graphe6.png}
-            \caption{29 août 2024: Faille Chrome}
-        \end{subfigure}
-        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Graphe5.png}
+                \caption{17 nov. 2024: Gemini + Pixel 9\\
+                Impact technologique majeur}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Graphe6.png}
+                \caption{29 août 2024: Faille Chrome\\
+                Réaction rapide mais limitée}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Événements majeurs (3/3)}
-    \begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Graphe7.png}
-            \caption{18 sept. 2024: Cut FED}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.48\textwidth}
-            \includegraphics[width=0.25\textwidth]{Grpahe7.png}
-            \caption{5 août 2024: Amende US}
-        \end{subfigure}
-        \caption{$\hat{p}(S_t^j)$ de GOOGL sur événements majeurs}
-    \end{figure}
-\end{frame}
-
-
-
-
-\begin{frame}{Point anecdotique sur l'asymétrie du LOB Bitcoin}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.25\textwidth]{bitcoin.png}
-        \caption{Structure asymétrique du Limit Order Book du Bitcoin}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Explication de l'asymétrie Bitcoin}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \textbf{Côté Ask (Vente)}
-            \begin{itemize}
-                \item \small{Courbe concave}
-                \begin{itemize}
-                    \item \footnotesize{Accumulation d'ordres à prix élevés}
-                    \item \footnotesize{Anticipation de hausses futures}
-                    \item \footnotesize{Comportement HODL}
-                \end{itemize}
-                \item \small{Grosses queues en volume}
-                \begin{itemize}
-                    \item \footnotesize{Mineurs et early adopters}
-                    \item \footnotesize{Positions historiques}
-                \end{itemize}
-            \end{itemize}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Graphe7.png}
+                \caption{18 sept. 2024: Cut FED\\
+                Impact macroéconomique global}
+            \end{figure}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \textbf{Côté Bid (Achat)}
-            \begin{itemize}
-                \item \small{Courbe convexe}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Grpahe7.png}
+                \caption{5 août 2024: Amende US\\
+                Impact réglementaire direct}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Synthèse des événements majeurs}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{alertblock}{Caractéristiques communes}
                 \begin{itemize}
-                    \item \footnotesize{Concentration près du prix courant}
-                    \item \footnotesize{Stratégie d'accumulation}
-                    \item \footnotesize{Liquidité immédiate}
+                    \item Asymétrie des réactions selon nature de la news
+                    \item Temps de réaction différents selon l'événement
+                    \item Impact sur la profondeur du carnet
+                    \item Réaction instantanée du marché
+                    \item Modification profonde de la structure du LOB
+                    \item Persistance des effets sur plusieurs minutes
                 \end{itemize}
-                \item \small{Implications}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{alertblock}{Synthèse des impacts}
                 \begin{itemize}
-                    \item \footnotesize{Résistance aux mouvements haussiers}
-                    \item \footnotesize{Volatilité asymétrique}
+                    \item Hiérarchie claire des impacts selon type de news
+                    \item Patterns de réaction spécifiques
+                    \item Corrélation avec volume d'échanges
+                    \item Classification possible des événements:
+                    \begin{itemize}
+                        \item Impacts réglementaires
+                        \item Impacts technologiques
+                        \item Impacts macroéconomiques
+                    \end{itemize}
                 \end{itemize}
-            \end{itemize}
-            \begin{alertblock}{Particularité}
-                Cette structure unique reflète la nature spéculative et la psychologie particulière du marché crypto
             \end{alertblock}
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}{Microstructure des perturbations}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \textbf{Changement de régime lors d'une news blbla}
+            \begin{itemize}
+                \item \textbf{Phase pré-perturbation blbla}:
+                \begin{itemize}
+                    \item Structure normale du LOB blbla
+                    \item Intensités standards blbla
+                \end{itemize}
+                \item \textbf{Phase de transition blbla}:
+                \begin{itemize}
+                    \item Rupture brutale blbla
+                    \item Modification des intensités blbla
+                    \item Réorganisation du carnet blbla
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Visualisation}
+                \centering
+                \textit{IMAGE A METTRE DE GOOGL\\
+                PILE AU MOMENT DU\\
+                CHANGEMENT DE REGIME\\
+                DE NEWS}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item \textbf{Caractéristiques observées blbla}:
+        \begin{itemize}
+            \item Discontinuité des intensités blbla
+            \item Modification du ratio bid/ask blbla
+            \item Nouvelle structure d'équilibre blbla
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Remerciements
+\begin{frame}{Remerciements}
+    \begin{center}
+        \Large Merci de votre attention
+        \vspace{1cm}
+        
+        \normalsize
+        Questions?
+    \end{center}
 \end{frame}
 
 \end{document}
