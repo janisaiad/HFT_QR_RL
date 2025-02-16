@@ -365,6 +365,49 @@ wheels = [
 ]
 
 [[package]]
+name = "dash"
+version = "2.9.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dash-core-components" },
+    { name = "dash-html-components" },
+    { name = "dash-table" },
+    { name = "flask" },
+    { name = "plotly" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/19/e3/a75cb5b353492ab7f76ff8c4076a1d2047feed060cbbcf51c14e3c713caa/dash-2.9.3.tar.gz", hash = "sha256:47392f8d6455dc989a697407eb5941f3bad80604df985ab1ac9d4244568ffb34", size = 9943209 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b8/93/5828bf77b8dc538146ea81c1d9970d235e2f4dfb25f11ac153823c11e669/dash-2.9.3-py3-none-any.whl", hash = "sha256:a749ae1ea9de3fe7b785353a818ec9b629d39c6b7e02462954203bd1e296fd0e", size = 10240818 },
+]
+
+[[package]]
+name = "dash-core-components"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/55/ad4a2cf9b7d4134779bd8d3a7e5b5f8cc757f421809e07c3e73bb374fdd7/dash_core_components-2.0.0.tar.gz", hash = "sha256:c6733874af975e552f95a1398a16c2ee7df14ce43fa60bb3718a3c6e0b63ffee", size = 3427 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/00/9e/a29f726e84e531a36d56cff187e61d8c96d2cc253c5bcef9a7695acb7e6a/dash_core_components-2.0.0-py3-none-any.whl", hash = "sha256:52b8e8cce13b18d0802ee3acbc5e888cb1248a04968f962d63d070400af2e346", size = 3822 },
+]
+
+[[package]]
+name = "dash-html-components"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/14/c6/957d5e83b620473eb3c8557a253fb01c6a817b10ca43d3ff9d31796f32a6/dash_html_components-2.0.0.tar.gz", hash = "sha256:8703a601080f02619a6390998e0b3da4a5daabe97a1fd7a9cebc09d015f26e50", size = 3840 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/75/65/1b16b853844ef59b2742a7de74a598f376ac0ab581f0dcc34db294e5c90e/dash_html_components-2.0.0-py3-none-any.whl", hash = "sha256:b42cc903713c9706af03b3f2548bda4be7307a7cf89b7d6eae3da872717d1b63", size = 4092 },
+]
+
+[[package]]
+name = "dash-table"
+version = "5.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/3a/81/34983fa0c67125d7fff9d55e5d1a065127bde7ca49ca32d04dedd55f9f35/dash_table-5.0.0.tar.gz", hash = "sha256:18624d693d4c8ef2ddec99a6f167593437a7ea0bf153aa20f318c170c5bc7308", size = 3391 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/ce/43f77dc8e7bbad02a9f88d07bf794eaf68359df756a28bb9f2f78e255bb1/dash_table-5.0.0-py3-none-any.whl", hash = "sha256:19036fa352bb1c11baf38068ec62d172f0515f73ca3276c79dee49b95ddc16c9", size = 3912 },
+]
+
+[[package]]
 name = "databento"
 version = "0.45.0"
 source = { registry = "https://pypi.org/simple" }
@@ -653,6 +696,7 @@ source = { editable = "." }
 dependencies = [
     { name = "altair" },
     { name = "cupy-cuda12x" },
+    { name = "dash" },
     { name = "databento" },
     { name = "flask" },
     { name = "ipykernel" },
@@ -667,6 +711,7 @@ dependencies = [
     { name = "ruff" },
     { name = "scikit-learn" },
     { name = "seaborn" },
+    { name = "setuptools" },
     { name = "tach" },
     { name = "tqdm" },
 ]
@@ -675,6 +720,7 @@ dependencies = [
 requires-dist = [
     { name = "altair", specifier = ">=5.5.0" },
     { name = "cupy-cuda12x", specifier = ">=13.3.0" },
+    { name = "dash", specifier = ">=2.9.3" },
     { name = "databento", specifier = ">=0.45.0" },
     { name = "flask", specifier = ">=3.1.0" },
     { name = "ipykernel", specifier = ">=6.29.5" },
@@ -689,6 +735,7 @@ requires-dist = [
     { name = "ruff", specifier = ">=0.8.0" },
     { name = "scikit-learn", specifier = ">=1.5.2" },
     { name = "seaborn", specifier = ">=0.13.2" },
+    { name = "setuptools", specifier = ">=75.8.0" },
     { name = "tach", specifier = ">=0.15.1" },
     { name = "tqdm", specifier = ">=4.67.0" },
 ]
@@ -1891,6 +1938,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/75/28/789d895e59cbe9037de2308139629c3b1479c621efc4360b8fa0f0bb4a41/segment-analytics-python-2.2.3.tar.gz", hash = "sha256:0df5908e3df74b4482f33392fdd450df4c8351bf54974376fbe6bf33b0700865", size = 29335 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2a/48/b00bc8b5d9f2f5bc6ca3a42846e78585e7460cb889af65cc62b33a201008/segment_analytics_python-2.2.3-py2.py3-none-any.whl", hash = "sha256:06cc3d8e79103f02c3878ec66cb66152415473d0d2a142b98a0ee18da972e109", size = 24668 },
+]
+
+[[package]]
+name = "setuptools"
+version = "75.8.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz", hash = "sha256:c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6", size = 1343222 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/69/8a/b9dc7678803429e4a3bc9ba462fa3dd9066824d3c607490235c6a796be5a/setuptools-75.8.0-py3-none-any.whl", hash = "sha256:e3982f444617239225d675215d51f6ba05f845d4eec313da4418fdbb56fb27e3", size = 1228782 },
 ]
 
 [[package]]
