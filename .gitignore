@@ -2248,3 +2248,1345 @@ data/smash4/parquet/WBD/WBD_2024-10-29.parquet
 data/smash4/parquet/WBD/WBD_2024-10-30.parquet
 data/smash4/parquet/WBD/WBD_2024-10-31.parquet
 data/smash4/parquet/WBD/WBD_2024-11-01.parquet
+data/smash4/parquet/CSX/CSX_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-22.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-23.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-24.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-25.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-28.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-29.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-30.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-10-31.parquet:Zone.Identifier
+data/smash4/parquet/CSX/CSX_2024-11-01.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-22.parquet
+data/smash4/parquet/CXW/CXW_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-23.parquet
+data/smash4/parquet/CXW/CXW_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-24.parquet
+data/smash4/parquet/CXW/CXW_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-25.parquet
+data/smash4/parquet/CXW/CXW_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-26.parquet
+data/smash4/parquet/CXW/CXW_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-29.parquet
+data/smash4/parquet/CXW/CXW_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-30.parquet
+data/smash4/parquet/CXW/CXW_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-07-31.parquet
+data/smash4/parquet/CXW/CXW_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-01.parquet
+data/smash4/parquet/CXW/CXW_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-02.parquet
+data/smash4/parquet/CXW/CXW_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-05.parquet
+data/smash4/parquet/CXW/CXW_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-06.parquet
+data/smash4/parquet/CXW/CXW_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-07.parquet
+data/smash4/parquet/CXW/CXW_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-08.parquet
+data/smash4/parquet/CXW/CXW_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-09.parquet
+data/smash4/parquet/CXW/CXW_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-12.parquet
+data/smash4/parquet/CXW/CXW_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-13.parquet
+data/smash4/parquet/CXW/CXW_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-14.parquet
+data/smash4/parquet/CXW/CXW_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-15.parquet
+data/smash4/parquet/CXW/CXW_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-16.parquet
+data/smash4/parquet/CXW/CXW_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-19.parquet
+data/smash4/parquet/CXW/CXW_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-20.parquet
+data/smash4/parquet/CXW/CXW_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-21.parquet
+data/smash4/parquet/CXW/CXW_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-22.parquet
+data/smash4/parquet/CXW/CXW_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-23.parquet
+data/smash4/parquet/CXW/CXW_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-26.parquet
+data/smash4/parquet/CXW/CXW_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-27.parquet
+data/smash4/parquet/CXW/CXW_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-28.parquet
+data/smash4/parquet/CXW/CXW_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-29.parquet
+data/smash4/parquet/CXW/CXW_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-08-30.parquet
+data/smash4/parquet/CXW/CXW_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-03.parquet
+data/smash4/parquet/CXW/CXW_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-04.parquet
+data/smash4/parquet/CXW/CXW_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-05.parquet
+data/smash4/parquet/CXW/CXW_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-06.parquet
+data/smash4/parquet/CXW/CXW_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-09.parquet
+data/smash4/parquet/CXW/CXW_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-10.parquet
+data/smash4/parquet/CXW/CXW_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-11.parquet
+data/smash4/parquet/CXW/CXW_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-12.parquet
+data/smash4/parquet/CXW/CXW_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-13.parquet
+data/smash4/parquet/CXW/CXW_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-16.parquet
+data/smash4/parquet/CXW/CXW_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-17.parquet
+data/smash4/parquet/CXW/CXW_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-18.parquet
+data/smash4/parquet/CXW/CXW_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-19.parquet
+data/smash4/parquet/CXW/CXW_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-20.parquet
+data/smash4/parquet/CXW/CXW_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-23.parquet
+data/smash4/parquet/CXW/CXW_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-24.parquet
+data/smash4/parquet/CXW/CXW_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-25.parquet
+data/smash4/parquet/CXW/CXW_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-26.parquet
+data/smash4/parquet/CXW/CXW_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-27.parquet
+data/smash4/parquet/CXW/CXW_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-09-30.parquet
+data/smash4/parquet/CXW/CXW_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-01.parquet
+data/smash4/parquet/CXW/CXW_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-02.parquet
+data/smash4/parquet/CXW/CXW_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-03.parquet
+data/smash4/parquet/CXW/CXW_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-04.parquet
+data/smash4/parquet/CXW/CXW_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-07.parquet
+data/smash4/parquet/CXW/CXW_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-08.parquet
+data/smash4/parquet/CXW/CXW_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-09.parquet
+data/smash4/parquet/CXW/CXW_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-10.parquet
+data/smash4/parquet/CXW/CXW_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-11.parquet
+data/smash4/parquet/CXW/CXW_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-14.parquet
+data/smash4/parquet/CXW/CXW_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-15.parquet
+data/smash4/parquet/CXW/CXW_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-16.parquet
+data/smash4/parquet/CXW/CXW_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-17.parquet
+data/smash4/parquet/CXW/CXW_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-18.parquet
+data/smash4/parquet/CXW/CXW_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-21.parquet
+data/smash4/parquet/CXW/CXW_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-22.parquet
+data/smash4/parquet/CXW/CXW_2024-10-22.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-23.parquet
+data/smash4/parquet/CXW/CXW_2024-10-23.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-24.parquet
+data/smash4/parquet/CXW/CXW_2024-10-24.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-25.parquet
+data/smash4/parquet/CXW/CXW_2024-10-25.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-28.parquet
+data/smash4/parquet/CXW/CXW_2024-10-28.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-29.parquet
+data/smash4/parquet/CXW/CXW_2024-10-29.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-30.parquet
+data/smash4/parquet/CXW/CXW_2024-10-30.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-10-31.parquet
+data/smash4/parquet/CXW/CXW_2024-10-31.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-01.parquet
+data/smash4/parquet/CXW/CXW_2024-11-01.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-04.parquet
+data/smash4/parquet/CXW/CXW_2024-11-04.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-05.parquet
+data/smash4/parquet/CXW/CXW_2024-11-05.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-06.parquet
+data/smash4/parquet/CXW/CXW_2024-11-06.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-07.parquet
+data/smash4/parquet/CXW/CXW_2024-11-07.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-08.parquet
+data/smash4/parquet/CXW/CXW_2024-11-08.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-11.parquet
+data/smash4/parquet/CXW/CXW_2024-11-11.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-12.parquet
+data/smash4/parquet/CXW/CXW_2024-11-12.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-13.parquet
+data/smash4/parquet/CXW/CXW_2024-11-13.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-14.parquet
+data/smash4/parquet/CXW/CXW_2024-11-14.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-15.parquet
+data/smash4/parquet/CXW/CXW_2024-11-15.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-18.parquet
+data/smash4/parquet/CXW/CXW_2024-11-18.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-19.parquet
+data/smash4/parquet/CXW/CXW_2024-11-19.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-20.parquet
+data/smash4/parquet/CXW/CXW_2024-11-20.parquet:Zone.Identifier
+data/smash4/parquet/CXW/CXW_2024-11-21.parquet
+data/smash4/parquet/CXW/CXW_2024-11-21.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-22.parquet
+data/smash4/parquet/GEO/GEO_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-23.parquet
+data/smash4/parquet/GEO/GEO_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-24.parquet
+data/smash4/parquet/GEO/GEO_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-25.parquet
+data/smash4/parquet/GEO/GEO_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-26.parquet
+data/smash4/parquet/GEO/GEO_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-29.parquet
+data/smash4/parquet/GEO/GEO_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-30.parquet
+data/smash4/parquet/GEO/GEO_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-07-31.parquet
+data/smash4/parquet/GEO/GEO_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-01.parquet
+data/smash4/parquet/GEO/GEO_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-02.parquet
+data/smash4/parquet/GEO/GEO_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-05.parquet
+data/smash4/parquet/GEO/GEO_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-06.parquet
+data/smash4/parquet/GEO/GEO_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-07.parquet
+data/smash4/parquet/GEO/GEO_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-08.parquet
+data/smash4/parquet/GEO/GEO_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-09.parquet
+data/smash4/parquet/GEO/GEO_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-12.parquet
+data/smash4/parquet/GEO/GEO_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-13.parquet
+data/smash4/parquet/GEO/GEO_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-14.parquet
+data/smash4/parquet/GEO/GEO_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-15.parquet
+data/smash4/parquet/GEO/GEO_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-16.parquet
+data/smash4/parquet/GEO/GEO_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-19.parquet
+data/smash4/parquet/GEO/GEO_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-20.parquet
+data/smash4/parquet/GEO/GEO_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-21.parquet
+data/smash4/parquet/GEO/GEO_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-22.parquet
+data/smash4/parquet/GEO/GEO_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-23.parquet
+data/smash4/parquet/GEO/GEO_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-26.parquet
+data/smash4/parquet/GEO/GEO_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-27.parquet
+data/smash4/parquet/GEO/GEO_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-28.parquet
+data/smash4/parquet/GEO/GEO_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-29.parquet
+data/smash4/parquet/GEO/GEO_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-08-30.parquet
+data/smash4/parquet/GEO/GEO_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-03.parquet
+data/smash4/parquet/GEO/GEO_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-04.parquet
+data/smash4/parquet/GEO/GEO_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-05.parquet
+data/smash4/parquet/GEO/GEO_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-06.parquet
+data/smash4/parquet/GEO/GEO_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-09.parquet
+data/smash4/parquet/GEO/GEO_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-10.parquet
+data/smash4/parquet/GEO/GEO_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-11.parquet
+data/smash4/parquet/GEO/GEO_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-12.parquet
+data/smash4/parquet/GEO/GEO_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-13.parquet
+data/smash4/parquet/GEO/GEO_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-16.parquet
+data/smash4/parquet/GEO/GEO_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-17.parquet
+data/smash4/parquet/GEO/GEO_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-18.parquet
+data/smash4/parquet/GEO/GEO_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-19.parquet
+data/smash4/parquet/GEO/GEO_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-20.parquet
+data/smash4/parquet/GEO/GEO_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-23.parquet
+data/smash4/parquet/GEO/GEO_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-24.parquet
+data/smash4/parquet/GEO/GEO_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-25.parquet
+data/smash4/parquet/GEO/GEO_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-26.parquet
+data/smash4/parquet/GEO/GEO_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-27.parquet
+data/smash4/parquet/GEO/GEO_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-09-30.parquet
+data/smash4/parquet/GEO/GEO_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-01.parquet
+data/smash4/parquet/GEO/GEO_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-02.parquet
+data/smash4/parquet/GEO/GEO_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-03.parquet
+data/smash4/parquet/GEO/GEO_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-04.parquet
+data/smash4/parquet/GEO/GEO_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-07.parquet
+data/smash4/parquet/GEO/GEO_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-08.parquet
+data/smash4/parquet/GEO/GEO_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-09.parquet
+data/smash4/parquet/GEO/GEO_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-10.parquet
+data/smash4/parquet/GEO/GEO_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-11.parquet
+data/smash4/parquet/GEO/GEO_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-14.parquet
+data/smash4/parquet/GEO/GEO_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-15.parquet
+data/smash4/parquet/GEO/GEO_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-16.parquet
+data/smash4/parquet/GEO/GEO_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-17.parquet
+data/smash4/parquet/GEO/GEO_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-18.parquet
+data/smash4/parquet/GEO/GEO_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-21.parquet
+data/smash4/parquet/GEO/GEO_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-22.parquet
+data/smash4/parquet/GEO/GEO_2024-10-22.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-23.parquet
+data/smash4/parquet/GEO/GEO_2024-10-23.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-24.parquet
+data/smash4/parquet/GEO/GEO_2024-10-24.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-25.parquet
+data/smash4/parquet/GEO/GEO_2024-10-25.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-28.parquet
+data/smash4/parquet/GEO/GEO_2024-10-28.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-29.parquet
+data/smash4/parquet/GEO/GEO_2024-10-29.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-30.parquet
+data/smash4/parquet/GEO/GEO_2024-10-30.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-10-31.parquet
+data/smash4/parquet/GEO/GEO_2024-10-31.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-01.parquet
+data/smash4/parquet/GEO/GEO_2024-11-01.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-04.parquet
+data/smash4/parquet/GEO/GEO_2024-11-04.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-05.parquet
+data/smash4/parquet/GEO/GEO_2024-11-05.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-06.parquet
+data/smash4/parquet/GEO/GEO_2024-11-06.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-07.parquet
+data/smash4/parquet/GEO/GEO_2024-11-07.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-08.parquet
+data/smash4/parquet/GEO/GEO_2024-11-08.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-11.parquet
+data/smash4/parquet/GEO/GEO_2024-11-11.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-12.parquet
+data/smash4/parquet/GEO/GEO_2024-11-12.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-13.parquet
+data/smash4/parquet/GEO/GEO_2024-11-13.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-14.parquet
+data/smash4/parquet/GEO/GEO_2024-11-14.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-15.parquet
+data/smash4/parquet/GEO/GEO_2024-11-15.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-18.parquet
+data/smash4/parquet/GEO/GEO_2024-11-18.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-19.parquet
+data/smash4/parquet/GEO/GEO_2024-11-19.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-20.parquet
+data/smash4/parquet/GEO/GEO_2024-11-20.parquet:Zone.Identifier
+data/smash4/parquet/GEO/GEO_2024-11-21.parquet
+data/smash4/parquet/GEO/GEO_2024-11-21.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/GOOGL/GOOGL_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-22.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-23.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-24.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-25.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-28.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-29.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-30.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-10-31.parquet:Zone.Identifier
+data/smash4/parquet/INTC/INTC_2024-11-01.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/KHC/KHC_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/LCID/LCID_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/logs/ledger_summary.csv
+data/smash4/parquet/logs/ledger_summary.csv:Zone.Identifier
+data/smash4/parquet/logs/ledger.csv
+data/smash4/parquet/logs/ledger.csv:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240722_log.json
+data/smash4/parquet/logs/xnas-itch-20240722_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240723_log.json
+data/smash4/parquet/logs/xnas-itch-20240723_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240724_log.json
+data/smash4/parquet/logs/xnas-itch-20240724_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240725_log.json
+data/smash4/parquet/logs/xnas-itch-20240725_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240726_log.json
+data/smash4/parquet/logs/xnas-itch-20240726_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240729_log.json
+data/smash4/parquet/logs/xnas-itch-20240729_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240730_log.json
+data/smash4/parquet/logs/xnas-itch-20240730_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240731_log.json
+data/smash4/parquet/logs/xnas-itch-20240731_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240801_log.json
+data/smash4/parquet/logs/xnas-itch-20240801_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240802_log.json
+data/smash4/parquet/logs/xnas-itch-20240802_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240805_log.json
+data/smash4/parquet/logs/xnas-itch-20240805_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240806_log.json
+data/smash4/parquet/logs/xnas-itch-20240806_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240807_log.json
+data/smash4/parquet/logs/xnas-itch-20240807_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240808_log.json
+data/smash4/parquet/logs/xnas-itch-20240808_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240809_log.json
+data/smash4/parquet/logs/xnas-itch-20240809_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240812_log.json
+data/smash4/parquet/logs/xnas-itch-20240812_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240813_log.json
+data/smash4/parquet/logs/xnas-itch-20240813_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240814_log.json
+data/smash4/parquet/logs/xnas-itch-20240814_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240815_log.json
+data/smash4/parquet/logs/xnas-itch-20240815_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240816_log.json
+data/smash4/parquet/logs/xnas-itch-20240816_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240819_log.json
+data/smash4/parquet/logs/xnas-itch-20240819_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240820_log.json
+data/smash4/parquet/logs/xnas-itch-20240820_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240821_log.json
+data/smash4/parquet/logs/xnas-itch-20240821_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240822_log.json
+data/smash4/parquet/logs/xnas-itch-20240822_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240823_log.json
+data/smash4/parquet/logs/xnas-itch-20240823_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240826_log.json
+data/smash4/parquet/logs/xnas-itch-20240826_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240827_log.json
+data/smash4/parquet/logs/xnas-itch-20240827_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240828_log.json
+data/smash4/parquet/logs/xnas-itch-20240828_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240829_log.json
+data/smash4/parquet/logs/xnas-itch-20240829_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240830_log.json
+data/smash4/parquet/logs/xnas-itch-20240830_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240903_log.json
+data/smash4/parquet/logs/xnas-itch-20240903_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240904_log.json
+data/smash4/parquet/logs/xnas-itch-20240904_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240905_log.json
+data/smash4/parquet/logs/xnas-itch-20240905_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240906_log.json
+data/smash4/parquet/logs/xnas-itch-20240906_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240909_log.json
+data/smash4/parquet/logs/xnas-itch-20240909_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240910_log.json
+data/smash4/parquet/logs/xnas-itch-20240910_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240911_log.json
+data/smash4/parquet/logs/xnas-itch-20240911_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240912_log.json
+data/smash4/parquet/logs/xnas-itch-20240912_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240913_log.json
+data/smash4/parquet/logs/xnas-itch-20240913_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240916_log.json
+data/smash4/parquet/logs/xnas-itch-20240916_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240917_log.json
+data/smash4/parquet/logs/xnas-itch-20240917_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240918_log.json
+data/smash4/parquet/logs/xnas-itch-20240918_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240919_log.json
+data/smash4/parquet/logs/xnas-itch-20240919_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240920_log.json
+data/smash4/parquet/logs/xnas-itch-20240920_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240923_log.json
+data/smash4/parquet/logs/xnas-itch-20240923_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240924_log.json
+data/smash4/parquet/logs/xnas-itch-20240924_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240925_log.json
+data/smash4/parquet/logs/xnas-itch-20240925_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240926_log.json
+data/smash4/parquet/logs/xnas-itch-20240926_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240927_log.json
+data/smash4/parquet/logs/xnas-itch-20240927_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20240930_log.json
+data/smash4/parquet/logs/xnas-itch-20240930_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241001_log.json
+data/smash4/parquet/logs/xnas-itch-20241001_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241002_log.json
+data/smash4/parquet/logs/xnas-itch-20241002_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241003_log.json
+data/smash4/parquet/logs/xnas-itch-20241003_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241004_log.json
+data/smash4/parquet/logs/xnas-itch-20241004_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241007_log.json
+data/smash4/parquet/logs/xnas-itch-20241007_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241008_log.json
+data/smash4/parquet/logs/xnas-itch-20241008_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241009_log.json
+data/smash4/parquet/logs/xnas-itch-20241009_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241010_log.json
+data/smash4/parquet/logs/xnas-itch-20241010_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241011_log.json
+data/smash4/parquet/logs/xnas-itch-20241011_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241014_log.json
+data/smash4/parquet/logs/xnas-itch-20241014_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241015_log.json
+data/smash4/parquet/logs/xnas-itch-20241015_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241016_log.json
+data/smash4/parquet/logs/xnas-itch-20241016_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241017_log.json
+data/smash4/parquet/logs/xnas-itch-20241017_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241018_log.json
+data/smash4/parquet/logs/xnas-itch-20241018_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241021_log.json
+data/smash4/parquet/logs/xnas-itch-20241021_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241022_log.json
+data/smash4/parquet/logs/xnas-itch-20241022_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241023_log.json
+data/smash4/parquet/logs/xnas-itch-20241023_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241024_log.json
+data/smash4/parquet/logs/xnas-itch-20241024_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241025_log.json
+data/smash4/parquet/logs/xnas-itch-20241025_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241028_log.json
+data/smash4/parquet/logs/xnas-itch-20241028_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241029_log.json
+data/smash4/parquet/logs/xnas-itch-20241029_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241030_log.json
+data/smash4/parquet/logs/xnas-itch-20241030_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241031_log.json
+data/smash4/parquet/logs/xnas-itch-20241031_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241101_log.json
+data/smash4/parquet/logs/xnas-itch-20241101_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241104_log.json
+data/smash4/parquet/logs/xnas-itch-20241104_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241105_log.json
+data/smash4/parquet/logs/xnas-itch-20241105_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241106_log.json
+data/smash4/parquet/logs/xnas-itch-20241106_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241107_log.json
+data/smash4/parquet/logs/xnas-itch-20241107_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241108_log.json
+data/smash4/parquet/logs/xnas-itch-20241108_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241111_log.json
+data/smash4/parquet/logs/xnas-itch-20241111_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241112_log.json
+data/smash4/parquet/logs/xnas-itch-20241112_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241113_log.json
+data/smash4/parquet/logs/xnas-itch-20241113_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241114_log.json
+data/smash4/parquet/logs/xnas-itch-20241114_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241115_log.json
+data/smash4/parquet/logs/xnas-itch-20241115_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241118_log.json
+data/smash4/parquet/logs/xnas-itch-20241118_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241119_log.json
+data/smash4/parquet/logs/xnas-itch-20241119_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241120_log.json
+data/smash4/parquet/logs/xnas-itch-20241120_log.json:Zone.Identifier
+data/smash4/parquet/logs/xnas-itch-20241121_log.json
+data/smash4/parquet/logs/xnas-itch-20241121_log.json:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-22.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-23.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-24.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-25.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-26.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-29.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-30.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-07-31.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-01.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-02.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-05.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-06.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-07.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-08.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-09.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-12.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-13.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-14.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-15.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-16.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-19.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-20.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-21.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-22.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-23.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-26.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-27.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-28.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-29.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-08-30.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-03.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-04.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-05.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-06.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-09.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-10.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-11.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-12.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-13.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-16.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-17.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-18.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-19.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-20.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-23.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-24.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-25.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-26.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-27.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-09-30.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-01.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-02.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-03.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-04.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-07.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-08.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-09.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-10.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-11.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-14.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-15.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-16.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-17.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-18.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-21.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-22.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-23.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-24.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-25.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-28.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-29.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-30.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-10-31.parquet:Zone.Identifier
+data/smash4/parquet/WBD/WBD_2024-11-01.parquet:Zone.Identifier
+data/smash4/plotly/
+data/smash4/DB_MBP_10
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_PL/xnas-itch-20241021.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_GOOGL_NASDAQ_SL/xnas-itch-20241021.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_PL/xnas-itch-20241021.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_KHC_NASDAQ_SL/xnas-itch-20241021.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_PL/xnas-itch-20241021.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240722.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240723.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240724.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240725.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240726.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240729.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240730.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240731.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240801.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240802.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240805.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240806.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240807.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240808.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240809.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240812.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240813.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240814.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240815.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240816.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240819.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240820.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240821.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240822.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240823.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240826.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240827.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240828.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240829.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240830.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240903.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240904.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240905.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240906.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240909.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240910.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240911.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240912.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240913.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240916.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240917.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240918.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240919.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240920.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240923.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240924.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240925.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240926.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240927.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20240930.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241001.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241002.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241003.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241004.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241007.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241008.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241009.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241010.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241011.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241014.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241015.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241016.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241017.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241018.mbp-10.csv
+data/smash3/data/done ed/CSV_LCID_NASDAQ_SL/xnas-itch-20241021.mbp-10.csv
+.specstory/

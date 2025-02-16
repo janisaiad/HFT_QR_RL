@@ -16,6 +16,22 @@ ___ uv pip install --index-url https://pypi.org/simple --extra-index-url https:/
 and for timeout 
 UV_HTTP_TIMEOUT=300 uv pip install --index-url https://pypi.org/simple --extra-index-url https://pypi.nvidia.com --index-strategy unsafe-best-match cudf-cu12
 
+added cupy also : 
+uv add cupy-cuda12x
+
+added numba: 
+
+
+
+
+port management for plotly : 
+
+# Trouver l'IP de WSL
+ >> wsl hostname -I
+172.24.19.37
+
+netsh interface portproxy add v4tov4 listenport=8050 listenaddress=0.0.0.0 connectport=8050 connectaddress=172.24.19.37
+
 
 ### New Libraries
 

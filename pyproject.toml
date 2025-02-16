@@ -5,6 +5,8 @@ description = "Application de l'apprentissage par renforcement pour le contrôle
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+   "altair>=5.5.0",
+   "cupy-cuda12x>=13.3.0",
    "databento>=0.45.0",
    "flask>=3.1.0",
    "ipykernel>=6.29.5",
