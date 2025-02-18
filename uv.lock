@@ -702,6 +702,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "jupytext" },
     { name = "matplotlib" },
+    { name = "mplcursors" },
     { name = "numpy" },
     { name = "plotly" },
     { name = "polars" },
@@ -726,6 +727,7 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jupytext", specifier = ">=1.16.4" },
     { name = "matplotlib", specifier = ">=3.9.2" },
+    { name = "mplcursors", specifier = ">=0.6" },
     { name = "numpy", specifier = "==2.0.0" },
     { name = "plotly", specifier = ">=5.24.1" },
     { name = "polars", specifier = "==1.6.0" },
@@ -1131,6 +1133,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ea/ca/8e91948b782ddfbd194f323e7e7d9ba12e5877addf04fb2bf8fca38e86ac/monotonic-1.6.tar.gz", hash = "sha256:3a55207bcfed53ddd5c5bae174524062935efed17792e9de2ad0205ce9ad63f7", size = 7615 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9a/67/7e8406a29b6c45be7af7740456f7f37025f0506ae2e05fb9009a53946860/monotonic-1.6-py2.py3-none-any.whl", hash = "sha256:68687e19a14f11f26d140dd5c86f3dba4bf5df58003000ed467e0e2a69bca96c", size = 8154 },
+]
+
+[[package]]
+name = "mplcursors"
+version = "0.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d4/51/05bfb154407ca93f98032faf30596f610178c92dad454d4d7273910d600a/mplcursors-0.6.tar.gz", hash = "sha256:775217cd09965bb17179c0cd0fb123fed4f4f00d7ade7e7e8788a6581fb2c8a9", size = 88578 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/a4/070512af1bbf73de4d2648bbfc355619abf27dd468dba6dae35805a05b43/mplcursors-0.6-py3-none-any.whl", hash = "sha256:2d900267848378987c46ad2504ea484e274adbb596a71547c5c95d2b4f520a56", size = 20471 },
 ]
 
 [[package]]
