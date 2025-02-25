@@ -13,8 +13,8 @@ def scan_database():
         dates (list): List of unique dates found in parquet files
     """
     # Base path
-    base_path = Path('/home/janis/3A/EA/HFT_QR_RL/data/smash4/DB_MBP_10')
-    results_path = Path('/home/janis/3A/EA/HFT_QR_RL/data/smash4/analyze/results')
+    base_path = Path('/home/janis/EAP1/HFT_QR_RL/data/smash4/DB_MBP_10')
+    results_path = Path('/home/janis/EAP1/HFT_QR_RL/data/smash4/analyze/results')
     
     # Create results directory if it doesn't exist
     results_path.mkdir(parents=True, exist_ok=True)
