@@ -80,7 +80,7 @@ def remove_nan_from_dico(dico):
     return cleaned_dico
 
 def visu(files, symbole):
-    df_final = pd.DataFrame(columns=['date', 'nombre de trades', 'variance', 'max_proba', 'min_proba', 'variance_proba', 'intensité max', 'seuil'])
+    df_final = pd.DataFrame(columns=['date', 'nombre de trades', 'variance', 'max_proba', 'min_proba', 'variance_proba', 'intensité max', 'seuil','vol_GK'])
     files_csv = glob.glob(os.path.join(files, "*.csv"))
     dic = {}
     means_trades = []
@@ -106,7 +106,6 @@ def visu(files, symbole):
     all_time = pd.Series(pd.to_datetime(all_time, errors='coerce'))
     all_time = all_time.dropna()
     all_time = all_time.sort_values().reset_index(drop=True)
-    #print(all_time)
     dic = dict(sorted(dic.items()))
     means_size = []
     for i in tqdm(dic):
@@ -183,20 +182,121 @@ def visu(files, symbole):
         Size_tot = np.concatenate(size)
         indices = np.argsort(Size_tot)
         add_tot = np.concatenate(Add)
+        #addu_tot = np.concatenate(Add)
         
         Size_tot = Size_tot[indices][::-1][:int(extreme*len(intens))]
         add_tot = add_tot[indices][::-1][:int(extreme*len(intens))]
 
         for i in range (len(add_tot)):
             add_tot[i] = add_tot[i].strftime('%H:%M:%S.%f')[:-3]
+            #addu_tot[i] = addu_tot[i].strftime('%H:%M:%S.%f')[:-3]
         add_tot = pd.Series(pd.to_datetime(add_tot, errors='coerce'))
-
+        #addu_tot = pd.Series(pd.to_datetime(addu_tot, errors='coerce'))
+        
+        
+        
+        # fig = go.Figure()
+        # fig.add_trace(go.Scatter(x=addu_tot, y=sizzzze, mode='lines', line=dict(color='green', width=2), name='Intensités extrêmes'))
+        # #fig.add_trace(go.Scatter(x=timy, y=counts_size, mode='lines', line=dict(color='red', width=2), name='Sizes extrêmes'))
+        # # fig.update_layout(
+        # #     title=(
+        # #         f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
+        # #         f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
+        # #         f"pour {len(add)} événements ({extreme}% plus extrême)"
+        # #     ),
+        # #     title_x=0.5,
+        # #     title_y=0.15,
+        # #     yaxis_title='probabilité',
+        # #     margin=dict(t=50, b=110),
+        # #     showlegend=True
+        # # )
+        # fig.update_layout(
+        #     # title=(
+        #     #     f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
+        #     #     f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
+        #     #     f"pour {len(add)} événements ({extreme}% plus extrême)"
+        #     # ),
+        #     xaxis=dict(
+        #         title_font=dict(size=40, family='Times New Roman'),
+        #         tickfont=dict(size=36, family='Times New Roman'),
+        #         showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+        #         zeroline=False, linecolor='black'
+        #     ),
+        #     yaxis=dict(
+        #         title='Event_Size',
+        #         title_font=dict(size=40, family='Times New Roman'),
+        #         tickfont=dict(size=36, family='Times New Roman'),
+        #         showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+        #         zeroline=False, linecolor='black'
+        #     ),
+        #     plot_bgcolor='white',  # Fond blanc
+        #     showlegend=False,
+        #     legend=dict(
+        #         font=dict(size=10, family='Times New Roman'),
+        #         bordercolor='black', borderwidth=0.5
+        #     ),
+        #     width=1000,  # Largeur du graphe en pixels
+        #     height=600
+        # )
+        # #fig.write_image(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_proba/{start_time_.day}-{start_time_.month}-{start_time_.year}.png", format="png")
+        # fig.show()
+        
+        
+        
+        
+        
+        
         df = pd.read_csv(file)
 
         df = df[df['action'] == 'T']
         df['ts_event'] = pd.to_datetime(df['ts_event'], errors='coerce')
         df = df[(df['ts_event'].dt.hour >= 15) & (df['ts_event'].dt.hour <= 18)]
-
+        df['ts_event'] = pd.to_datetime(df['ts_event'], errors='coerce')
+                
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=df['ts_event'], y=df['size'], mode='lines', line=dict(color='green', width=2), name='Intensités extrêmes'))
+        #fig.add_trace(go.Scatter(x=timy, y=counts_size, mode='lines', line=dict(color='red', width=2), name='Sizes extrêmes'))
+        # fig.update_layout(
+        #     title=(
+        #         f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
+        #         f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
+        #         f"pour {len(add)} événements ({extreme}% plus extrême)"
+        #     ),
+        #     title_x=0.5,
+        #     title_y=0.15,
+        #     yaxis_title='probabilité',
+        #     margin=dict(t=50, b=110),
+        #     showlegend=True
+        # )
+        fig.update_layout(
+            # title=(
+            #     f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
+            #     f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
+            #     f"pour {len(add)} événements ({extreme}% plus extrême)"
+            # ),
+            xaxis=dict(
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            yaxis=dict(
+                title='Event_Size',
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            plot_bgcolor='white',  # Fond blanc
+            showlegend=False,
+            legend=dict(
+                font=dict(size=10, family='Times New Roman'),
+                bordercolor='black', borderwidth=0.5
+            ),
+            width=1000,  # Largeur du graphe en pixels
+            height=600
+        )
+        fig.show()
         start_time_ = pd.to_datetime(df['ts_event'].iloc[0])
         end_time = pd.to_datetime(df['ts_event'].iloc[-1])
         timy = pd.date_range(start=all_time[0], end=all_time[len(all_time)-1], periods=1000)
@@ -209,32 +309,77 @@ def visu(files, symbole):
             count_all_time = ((all_time >= start_time) & (all_time <= end_time)).sum()
             count = ((add >= start_time) & (add <= end_time)).sum()
             count_size = ((add_tot >= start_time) & (add_tot <= end_time)).sum()
-            #print(count_all_time, count)
             counts.append(count/(count_all_time/len(files_csv)))
             counts_size.append(count_size/(count_all_time/len(files_csv)))
-            
+        
+        timy = timy[window_size:]
+        print(timy)
+        print(counts)
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=timy, y=counts, mode='lines', line=dict(color='green', width=2), name='Intensités extrêmes'))
-        fig.add_trace(go.Scatter(x=timy, y=counts_size, mode='lines', line=dict(color='red', width=2), name='Sizes extrêmes'))
+        #fig.add_trace(go.Scatter(x=timy, y=counts_size, mode='lines', line=dict(color='red', width=2), name='Sizes extrêmes'))
+        # fig.update_layout(
+        #     title=(
+        #         f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
+        #         f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
+        #         f"pour {len(add)} événements ({extreme}% plus extrême)"
+        #     ),
+        #     title_x=0.5,
+        #     title_y=0.15,
+        #     yaxis_title='probabilité',
+        #     margin=dict(t=50, b=110),
+        #     showlegend=True
+        # )
         fig.update_layout(
             title=(
                 f"Étude du jour {start_time_.day}/{start_time_.month}/{start_time_.year}:<br>"
                 f"Proba d'événements extrêmes sur une sliding window de {window_size}<br>"
                 f"pour {len(add)} événements ({extreme}% plus extrême)"
             ),
-            title_x=0.5,
-            title_y=0.15,
-            yaxis_title='probabilité',
-            margin=dict(t=50, b=110),
-            showlegend=True
+            xaxis=dict(
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            yaxis=dict(
+                title='Probabilité',
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            plot_bgcolor='white',  # Fond blanc
+            showlegend=False,
+            legend=dict(
+                font=dict(size=10, family='Times New Roman'),
+                bordercolor='black', borderwidth=0.5
+            ),
+            width=1000,  # Largeur du graphe en pixels
+            height=600
         )
-        fig.write_image(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_proba/{start_time_.day}-{start_time_.month}-{start_time_.year}.png", format="png")
+        #fig.write_image(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_proba/{start_time_.day}-{start_time_.month}-{start_time_.year}.png", format="png")
         fig.show()
         
+        df['ts_time'] = pd.to_datetime(df['ts_event'], errors = 'coerce')
+        df.set_index('ts_time', inplace=True)
+        rolling_window = df['price'].rolling('5min', min_periods=2)
+        ohlc_rolling = pd.DataFrame({
+            'open': rolling_window.apply(lambda x: x.iloc[0], raw=False),
+            'high': rolling_window.max(),
+            'low': rolling_window.min(),
+            'close': rolling_window.apply(lambda x: x.iloc[-1], raw=False)
+        })
+        log_high_low = np.log(ohlc_rolling['high'] / ohlc_rolling['low']) ** 2
+        log_close_open = np.log(ohlc_rolling['close'] / ohlc_rolling['open']) ** 2
+        garman_klass_volatility_gliding = np.sqrt(0.5 * log_high_low - (2 * np.log(2) - 1) * log_close_open)
+        df['vol_garman_klauss'] = garman_klass_volatility_gliding
+        df.to_csv(f'/Volumes/T9/CSV_{symbole}_PL_GK/{f[-29:]}', index = False)
+        time_GK = pd.to_datetime(df['ts_event'], errors = 'coerce')
+        vol_GK = df['vol_garman_klauss']
+        
         # fig = go.Figure()
-
         # fig.add_trace(go.Scatter(x=timy, y=np.array(counts_size)/np.array(counts), mode='lines', line=dict(color='red', width=2), name='Intensité/size'))
-
         # fig.update_layout(
         #     title=(
         #         f"Étude du jour {start_time.day}-{start_time.month}-{start_time.year}:<br>"
@@ -248,8 +393,90 @@ def visu(files, symbole):
         #     showlegend=True
         # )
         # fig.write_image(f"/Volumes/T9/CSV_LCID_NASDAQ_PL_rapport/{start_time.day}-{start_time.month}-{start_time.year}.png", format="png")
-        df_final.loc[ou] = [f'{start_time_.day}/{start_time_.month}/{start_time_.year}',len(df[df['action'] == 'T']),np.var(df[df['action'] == 'T']['price'].to_numpy()),np.max(np.array(counts)),np.min(np.array(counts)),np.var(counts), np.min(np.array(intens)),np.mean(intens[:int(extreme*len(intens))]) ]
+        
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(x=time_GK, y=vol_GK, mode='lines', line=dict(color='red', width=2), name='Garman-Klass vol 5m'))
+
+        fig.update_layout(
+            yaxis=dict(
+                title='Volatilité GK',
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            plot_bgcolor='white',  # Fond blanc
+            showlegend=False,
+            legend=dict(
+                font=dict(size=10, family='Times New Roman'),
+                bordercolor='black', borderwidth=0.5
+            ),
+            width=1000,  # Largeur du graphe en pixels
+            height=600
+        )
+        fig.show()
+        
+        #fig.write_image(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_GK/{start_time_.day}-{start_time_.month}-{start_time_.year}.png", format="png")
+        
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(x=time_GK, y=df['price'], mode='lines', line=dict(color='red', width=2), name='Prix'))
+
+        # fig.update_layout(
+        #     title=(
+        #         f"Étude du jour {start_time_.day}-{start_time_.month}-{start_time_.year}:<br>"
+        #         "Prix"
+        #     ),
+        #     title_x=0.5,
+        #     title_y=0.15,
+        #     yaxis_title='Prix',
+        #     margin=dict(t=50, b=110),
+        #     showlegend=True
+        # )
+        fig.update_layout(
+            yaxis=dict(
+                title='Prix',
+                title_font=dict(size=40, family='Times New Roman'),
+                tickfont=dict(size=36, family='Times New Roman'),
+                showgrid=True, gridwidth=0.5, gridcolor='lightgrey',  # Grille légère
+                zeroline=False, linecolor='black'
+            ),
+            plot_bgcolor='white',  # Fond blanc
+            showlegend=False,
+            legend=dict(
+                font=dict(size=10, family='Times New Roman'),
+                bordercolor='black', borderwidth=0.5
+            ),
+            width=1000,  # Largeur du graphe en pixels
+            height=600
+        )
+        fig.show()
+        df_final.loc[ou] = [f'{start_time_.day}/{start_time_.month}/{start_time_.year}',len(df[df['action'] == 'T']),np.var(df[df['action'] == 'T']['price'].to_numpy()),np.max(np.array(counts)),np.min(np.array(counts)),np.var(counts), np.min(np.array(intens)),np.mean(intens[:int(extreme*len(intens))]) , np.max(df['vol_garman_klauss'].to_numpy())]
         ou+=1
-    df_final.to_csv(f'/Volumes/T9/CSV_{symbole}_PL_Analyse.csv', index = False)
+        
+        df_cours = pd.DataFrame({'price' : df['price'], 'time' : time_GK})
+        df_prob = pd.DataFrame({'time' : timy, 'proba' : counts})
+        df_cours.to_csv(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_cours/{start_time_.day}-{start_time_.month}-{start_time_.year}.csv", index = False)
+        df_prob.to_csv(f"/Volumes/T9/CSV_{symbole}_NASDAQ_PL_prob/{start_time_.day}-{start_time_.month}-{start_time_.year}.csv", index = False)
+    #df_final.to_csv(f'/Volumes/T9/CSV_{symbole}_PL_Analyse.csv', index = False)
     return df_final
-    
+
+def Garman_Klauss(files, symbole):
+    files_csv = glob.glob(os.path.join(files, "*.csv"))
+    for f in tqdm(files_csv):
+        df = pd.read_csv(f)
+        df['ts_time'] = pd.to_datetime(df['ts_event'], errors = 'coerce')
+        df.set_index('ts_time', inplace=True)
+        rolling_window = df['price'].rolling('5min', min_periods=2)
+        ohlc_rolling = pd.DataFrame({
+            'open': rolling_window.apply(lambda x: x.iloc[0], raw=False),
+            'high': rolling_window.max(),
+            'low': rolling_window.min(),
+            'close': rolling_window.apply(lambda x: x.iloc[-1], raw=False)
+        })
+        log_high_low = np.log(ohlc_rolling['high'] / ohlc_rolling['low']) ** 2
+        log_close_open = np.log(ohlc_rolling['close'] / ohlc_rolling['open']) ** 2
+        garman_klass_volatility_gliding = np.sqrt(0.5 * log_high_low - (2 * np.log(2) - 1) * log_close_open)
+        df['vol_garman_klauss'] = garman_klass_volatility_gliding
+        df.to_csv(f'/Volumes/T9/CSV_{symbole}_PL_GK/{f[-29:]}', index = False)
