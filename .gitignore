@@ -11,6 +11,7 @@ former/qr/Data/Intens_val_qr.csv
 models/QR/modified/Data/Intens_val_qr.csv
 models/QR/modified/Data/Intens_val_qr.csv
 .idea/*
+.specstory/*
 /data/likelihood/logs/*
 data/Data_order_book_premiere_analyse/Visualisation_data.ipynb
 data/likelihood/metrics_plots/*
